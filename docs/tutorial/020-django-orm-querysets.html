@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Django ORM (Querysets)</title>
+    <base href="content/" />
+    <link rel="stylesheet" href="book.css" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"></meta>
+    <meta name="description" content=""></meta>
+    <meta name="generator" content="HonKit 3.7.5"></meta>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta>
+  <link rel="stylesheet" type="text/css" href="stylesheet.css"></link>
+<link rel="stylesheet" type="text/css" href="page_styles.css"></link>
+
+</head>
+<body>
+    <header class="book-header">
+        <h1>Django ORM (Querysets)</h1>
+    </header>
+    <nav class="book-nav"><a href="index.html">Contents</a><a href="019-introduction-to-html.html">Previous</a><a href="021-dynamic-data-in-templates.html">Next</a></nav>
+    <main>
+        <div class="page">
+    
+                <h1 class="calibre1" id="calibre_toc_18">Django ORM (Querysets)</h1>
+                <div class="page">
+                    <h1 id="django-orm-and-querysets" class="calibre1">Django ORM and QuerySets</h1>
+        <p class="calibre6">In this chapter you'll learn how Django connects to the database and stores data in it. Let's dive in!</p>
+        <h2 id="what-is-a-queryset" class="calibre7">What is a QuerySet?</h2>
+        <p class="calibre6">A QuerySet is, in essence, a list of objects of a given Model. QuerySets allow you to read the data from the database, filter it and order it.</p>
+        <p class="calibre6">It's easier to learn by example. Let's try this, shall we?</p>
+        <h2 id="django-shell" class="calibre7">Django shell</h2>
+        <p class="calibre6">Open up your local console (not on PythonAnywhere) and type this command:</p>
+        <p class="calibre6"></p><p class="calibre6">command-line</p><p class="calibre6"></p>
+        <pre class="calibre13"><code class="calibre11">(myvenv) ~/djangogirls$ python manage.py shell
+        </code></pre><p class="calibre6">The effect should be like this:</p>
+        <p class="calibre6"></p><p class="calibre6">command-line</p><p class="calibre6"></p>
+        <pre class="calibre13"><code class="calibre11">(InteractiveConsole)
+        &gt;&gt;&gt;
+        </code></pre>
+        <p class="calibre6">You're now in Django's interactive console. It's just like the Python prompt, but with some additional Django magic. :)  You can use all the Python commands here too.</p>
+        <h3 id="all-objects" class="calibre12">All objects</h3>
+        <p class="calibre6">Let's try to display all of our posts first. You can do that with the following command:</p>
+        <p class="calibre6"></p><p class="calibre6">command-line</p><p class="calibre6"></p>
+        <pre class="calibre13"><code class="calibre11"><span>&gt;&gt;&gt; </span>Post.objects.<span>all</span>()
+        Traceback (most recent call last):
+              File <span>"&lt;console&gt;"</span>, line <span>1</span>, <span>in</span> &lt;module&gt;
+        NameError: name <span>'Post'</span> <span>is</span> <span>not</span> defined
+        </code></pre>
+        <p class="calibre6">Oops! An error showed up. It tells us that there is no Post. It's correct – we forgot to import it first!</p>
+        <p class="calibre6"></p><p class="calibre6">command-line</p><p class="calibre6"></p>
+        <pre class="calibre13"><code class="calibre11"><span>&gt;&gt;&gt; </span><span>from</span> blog.models <span>import</span> Post
+        </code></pre>
+        <p class="calibre6">We import the model <code class="calibre11">Post</code> from <code class="calibre11">blog.models</code>. Let's try displaying all posts again:</p>
+        <p class="calibre6"></p><p class="calibre6">command-line</p><p class="calibre6"></p>
+        <pre class="calibre13"><code class="calibre11"><span>&gt;&gt;&gt; </span>Post.objects.<span>all</span>()
+        &lt;QuerySet [&lt;Post: my post title&gt;, &lt;Post: another post title&gt;]&gt;
+        </code></pre>
+        <p class="calibre6">This is a list of the posts we created earlier! We created these posts using the Django admin interface. But now we want to create new posts using Python, so how do we do that?</p>
+        <h3 id="create-object" class="calibre12">Create object</h3>
+        <p class="calibre6">This is how you create a new Post object in database:</p>
+        <p class="calibre6"></p><p class="calibre6">command-line</p><p class="calibre6"></p>
+        <pre class="calibre13"><code class="calibre11"><span>&gt;&gt;&gt; </span>Post.objects.create(author=me, title=<span>'Sample title'</span>, text=<span>'Test'</span>)
+        </code></pre>
+        <p class="calibre6">But we have one missing ingredient here: <code class="calibre11">me</code>. We need to pass an instance of <code class="calibre11">User</code> model as an author. How do we do that?</p>
+        <p class="calibre6">Let's import User model first:</p>
+        <p class="calibre6"></p><p class="calibre6">command-line</p><p class="calibre6"></p>
+        <pre class="calibre13"><code class="calibre11"><span>&gt;&gt;&gt; </span><span>from</span> django.contrib.auth.models <span>import</span> User
+        </code></pre>
+        <p class="calibre6">What users do we have in our database? Try this:</p>
+        <p class="calibre6"></p><p class="calibre6">command-line</p><p class="calibre6"></p>
+        <pre class="calibre13"><code class="calibre11"><span>&gt;&gt;&gt; </span>User.objects.<span>all</span>()
+        &lt;QuerySet [&lt;User: ola&gt;]&gt;
+        </code></pre>
+        <p class="calibre6">This is the superuser we created earlier! Let's get an instance of the user now (adjust this line to use your own username):</p>
+        <p class="calibre6"></p><p class="calibre6">command-line</p><p class="calibre6"></p>
+        <pre class="calibre13"><code class="calibre11"><span>&gt;&gt;&gt; </span>me = User.objects.get(username=<span>'ola'</span>)
+        </code></pre>
+        <p class="calibre6">As you can see, we now <code class="calibre11">get</code> a <code class="calibre11">User</code> with a <code class="calibre11">username</code> that equals 'ola'. Neat!</p>
+        <p class="calibre6">Now we can finally create our post:</p>
+        <p class="calibre6"></p><p class="calibre6">command-line</p><p class="calibre6"></p>
+        <pre class="calibre13"><code class="calibre11"><span>&gt;&gt;&gt; </span>Post.objects.create(author=me, title=<span>'Sample title'</span>, text=<span>'Test'</span>)
+        &lt;Post: Sample title&gt;
+        </code></pre>
+        <p class="calibre6">Hurray! Wanna check if it worked?</p>
+        <p class="calibre6"></p><p class="calibre6">command-line</p><p class="calibre6"></p>
+        <pre class="calibre13"><code class="calibre11"><span>&gt;&gt;&gt; </span>Post.objects.<span>all</span>()
+        &lt;QuerySet [&lt;Post: my post title&gt;, &lt;Post: another post title&gt;, &lt;Post: Sample title&gt;]&gt;
+        </code></pre>
+        <p class="calibre6">There it is, one more post in the list!</p>
+        <h3 id="add-more-posts" class="calibre12">Add more posts</h3>
+        <p class="calibre6">You can now have a little fun and add more posts to see how it works. Add two or three more and then go ahead to the next part.</p>
+        <h3 id="filter-objects" class="calibre12">Filter objects</h3>
+        <p class="calibre6">A big part of QuerySets is the ability to filter them. Let's say we want to find all posts that user ola authored. We will use <code class="calibre11">filter</code> instead of <code class="calibre11">all</code> in <code class="calibre11">Post.objects.all()</code>. In parentheses we state what condition(s) a blog post needs to meet to end up in our queryset. In our case, the condition is that <code class="calibre11">author</code> should be equal to <code class="calibre11">me</code>. The way to write it in Django is <code class="calibre11">author=me</code>. Now our piece of code looks like this:</p>
+        <p class="calibre6"></p><p class="calibre6">command-line</p><p class="calibre6"></p>
+        <pre class="calibre13"><code class="calibre11"><span>&gt;&gt;&gt; </span>Post.objects.<span>filter</span>(author=me)
+        &lt;QuerySet [&lt;Post: Sample title&gt;, &lt;Post: Post number <span>2</span>&gt;, &lt;Post: My 3rd post!&gt;, &lt;Post: 4th title of post&gt;]&gt;
+        </code></pre>
+        <p class="calibre6">Or maybe we want to see all the posts that contain the word 'title' in the <code class="calibre11">title</code> field?</p>
+        <p class="calibre6"></p><p class="calibre6">command-line</p><p class="calibre6"></p>
+        <pre class="calibre13"><code class="calibre11"><span>&gt;&gt;&gt; </span>Post.objects.<span>filter</span>(title__contains=<span>'title'</span>)
+        &lt;QuerySet [&lt;Post: Sample title&gt;, &lt;Post: 4th title of post&gt;]&gt;
+        </code></pre>
+        <blockquote class="calibre5"><strong class="calibre10"></strong>
+        <p class="calibre6"> There are two underscore characters (<code class="calibre11">_</code>) between <code class="calibre11">title</code> and <code class="calibre11">contains</code>. Django's ORM uses this rule to separate field names ("title") and operations or filters ("contains"). If you use only one underscore, you'll get an error like "FieldError: Cannot resolve keyword title_contains".</p>
+        </blockquote>
+        <p class="calibre6">You can also get a list of all published posts. We do this by filtering all the posts that have <code class="calibre11">published_date</code> set in the past:</p>
+        <p class="calibre6"></p><p class="calibre6">command-line</p><p class="calibre6"></p>
+        <pre class="calibre13"><code class="calibre11"><span>&gt;&gt;&gt; </span><span>from</span> django.utils <span>import</span> timezone
+        <span>&gt;&gt;&gt; </span>Post.objects.<span>filter</span>(published_date__lte=timezone.now())
+        &lt;QuerySet []&gt;
+        </code></pre>
+        <p class="calibre6">Unfortunately, the post we added from the Python console is not published yet. But we can change that! First get an instance of a post we want to publish:</p>
+        <p class="calibre6"></p><p class="calibre6">command-line</p><p class="calibre6"></p>
+        <pre class="calibre13"><code class="calibre11"><span>&gt;&gt;&gt; </span>post = Post.objects.get(title=<span>"Sample title"</span>)
+        </code></pre>
+        <p class="calibre6">And then publish it with our <code class="calibre11">publish</code> method:</p>
+        <p class="calibre6"></p><p class="calibre6">command-line</p><p class="calibre6"></p>
+        <pre class="calibre13"><code class="calibre11"><span>&gt;&gt;&gt; </span>post.publish()
+        </code></pre>
+        <p class="calibre6">Now try to get list of published posts again (press the up arrow key three times and hit <code class="calibre11">enter</code>):</p>
+        <p class="calibre6"></p><p class="calibre6">command-line</p><p class="calibre6"></p>
+        <pre class="calibre13"><code class="calibre11"><span>&gt;&gt;&gt; </span>Post.objects.<span>filter</span>(published_date__lte=timezone.now())
+        &lt;QuerySet [&lt;Post: Sample title&gt;]&gt;
+        </code></pre>
+        <h3 id="ordering-objects" class="calibre12">Ordering objects</h3>
+        <p class="calibre6">QuerySets also allow you to order the list of objects. Let's try to order them by <code class="calibre11">created_date</code> field:</p>
+        <p class="calibre6"></p><p class="calibre6">command-line</p><p class="calibre6"></p>
+        <pre class="calibre13"><code class="calibre11"><span>&gt;&gt;&gt; </span>Post.objects.order_by(<span>'created_date'</span>)
+        &lt;QuerySet [&lt;Post: Sample title&gt;, &lt;Post: Post number <span>2</span>&gt;, &lt;Post: My 3rd post!&gt;, &lt;Post: 4th title of post&gt;]&gt;
+        </code></pre>
+        <p class="calibre6">We can also reverse the ordering by adding <code class="calibre11">-</code> at the beginning:</p>
+        <p class="calibre6"></p><p class="calibre6">command-line</p><p class="calibre6"></p>
+        <pre class="calibre13"><code class="calibre11"><span>&gt;&gt;&gt; </span>Post.objects.order_by(<span>'-created_date'</span>)
+        &lt;QuerySet [&lt;Post: 4th title of post&gt;,  &lt;Post: My 3rd post!&gt;, &lt;Post: Post number <span>2</span>&gt;, &lt;Post: Sample title&gt;]&gt;
+        </code></pre>
+        <h3 id="complex-queries-through-method-chaining" class="calibre12">Complex queries through method-chaining</h3>
+        <p class="calibre6">As you saw, some methods on <code class="calibre11">Post.objects</code> return a QuerySet.
+        The same methods can in turn also be called on a QuerySet,
+        and will then return a new QuerySet.
+        Thus,
+        you can combine their effect by <strong class="calibre10">chaining</strong> them together:</p>
+        <pre class="calibre13"><code class="calibre11"><span>&gt;&gt;&gt; </span>Post.objects.<span>filter</span>(published_date__lte=timezone.now()).order_by(<span>'published_date'</span>)
+        &lt;QuerySet [&lt;Post: Post number <span>2</span>&gt;, &lt;Post: My 3rd post!&gt;, &lt;Post: 4th title of post&gt;, &lt;Post: Sample title&gt;]&gt;
+        </code></pre>
+        <p class="calibre6">This is really powerful and lets you write quite complex queries.</p>
+        <p class="calibre6">Cool! You're now ready for the next part! To close the shell, type this:</p>
+        <p class="calibre6"></p><p class="calibre6">command-line</p><p class="calibre6"></p>
+        <pre class="calibre13"><code class="calibre11"><span>&gt;&gt;&gt; </span>exit()
+        $
+        </code></pre>
+
+                </div>
+    
+        </div>
+
+        
+    
+    </main>
+    <nav class="book-nav"><a href="index.html">Contents</a><a href="019-introduction-to-html.html">Previous</a><a href="021-dynamic-data-in-templates.html">Next</a></nav>
+    <footer class="book-footer">
+        <p>Generated from the original EPUB. Content © respective authors under CC BY-SA 4.0.</p>
+    </footer>
+</body>
+</html>

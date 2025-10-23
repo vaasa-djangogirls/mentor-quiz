@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Python installation</title>
+    <base href="content/" />
+    <link rel="stylesheet" href="book.css" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"></meta>
+    <meta name="description" content=""></meta>
+    <meta name="generator" content="HonKit 3.7.5"></meta>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta>
+  <link rel="stylesheet" type="text/css" href="stylesheet.css"></link>
+<link rel="stylesheet" type="text/css" href="page_styles.css"></link>
+
+</head>
+<body>
+    <header class="book-header">
+        <h1>Python installation</h1>
+    </header>
+    <nav class="book-nav"><a href="index.html">Contents</a><a href="007-introduction-to-command-line.html">Previous</a><a href="009-code-editor.html">Next</a></nav>
+    <main>
+        <div class="page">
+    
+                <h1 class="calibre1" id="calibre_toc_6">Python installation</h1>
+                <div class="page">
+                    <h1 id="lets-start-with-python" class="calibre1">Let’s start with Python</h1>
+        <p class="calibre6">We're finally here!</p>
+        <p class="calibre6">But first, let us tell you what Python is. Python is a very popular programming language that can be used for creating websites, games, scientific software, graphics, and much, much more.</p>
+        <p class="calibre6">Python originated in the late 1980s and its main goal is to be readable by human beings (not only machines!). This is why it looks simpler than other programming languages, but don't worry – Python is also really powerful!</p>
+        <h1 id="python-installation" class="calibre1">Python installation</h1>
+        <blockquote class="calibre5">
+        <p class="calibre6"><strong class="calibre10">Note</strong> If you're using a Chromebook, skip this chapter and make sure you follow the <a href="index2.html">Chromebook Setup</a> instructions.</p>
+        <p class="calibre6"><strong class="calibre10">Note</strong> If you already worked through the <a href="index1.html">installation steps</a>, there's no need to do this again – you can skip straight ahead to the next chapter!</p>
+        <p class="calibre6">For readers at home: this chapter is covered in the <a href="https://www.youtube.com/watch?v=pVTaqzKZCdA" target="_blank">Installing Python &amp; Code Editor</a> video.</p>
+        <p class="calibre6">This section is based on a tutorial by Geek Girls Carrots (<a href="https://github.com/ggcarrots/django-carrots" target="_blank">https://github.com/ggcarrots/django-carrots</a>)</p>
+        </blockquote>
+        <p class="calibre6">Django is written in Python. We need Python to do anything in Django. Let's start by installing it! We want you to install the latest version of Python 3, so if you have any earlier version, you will need to upgrade it. If you already have version 3.10 or higher you should be fine.</p>
+        <p class="calibre6">Please install normal Python as follows, even when you have Anaconda installed on your computer.</p>
+        <sec data-title="Install Python: Windows" data-id="python_windows" data-collapse="true"><b class="calibre10">Install Python: Windows</b>
+        <p class="calibre6">First check whether your computer is running a 32-bit version or a 64-bit version of Windows, on the "System type" line of the System Info page. To reach this page, try one of these methods:</p>
+        <ul class="calibre9">
+        <li class="calibre3">Press the Windows key and Pause/Break key at the same time</li>
+        <li class="calibre3">Open your Control Panel from the Windows menu, then navigate to System &amp; Security, then System</li>
+        <li class="calibre3">Press the Windows button, then navigate to Settings &gt; System &gt; About</li>
+        <li class="calibre3">Search the Windows Start menu for "System Information". To do that, click the Start button or press the Windows key, then begin to type <code class="calibre11">System Information</code>. It will start making suggestions as soon as you type. You can select the entry once it shows up.</li>
+        </ul>
+        <p class="calibre6">You can download Python for Windows from the website <a href="https://www.python.org/downloads/windows/" target="_blank">https://www.python.org/downloads/windows/</a>. Click on the "Latest Python 3 Release - Python x.x.x" link. If your computer is running a <strong class="calibre10">64-bit</strong> version of Windows, download the <strong class="calibre10">Windows x86-64 executable installer</strong>. Otherwise, download the <strong class="calibre10">Windows x86 executable installer</strong>. After downloading the installer, you should run it (double-click on it) and follow the instructions there.</p>
+        <p class="calibre6">One thing to watch out for: During the installation, you will notice a window marked "Setup". Make sure you tick the "Add Python 3.12 to PATH" or 'Add Python to your environment variables" checkbox and click on "Install Now", as shown here (it may look a bit different if you are installing a different version):</p>
+        <p class="calibre6"><img src="python-installation-options.png" alt="Don't forget to add Python to the Path" class="calibre8"></img></p>
+        <p class="calibre6">When the installation completes, you may see a dialog box with a link you can follow to learn more about Python or about the version you installed. Close or cancel that dialog -- you'll be learning more in this tutorial!</p>
+        <p class="calibre6">Note: If you are using an older version of Windows (7, Vista, or any older version) and the Python 3.12 installer fails with an error, then install all Windows Updates and try to install Python again. If you still have the error, try installing Python version 3.10.13 from <a href="https://www.python.org/downloads/windows/" target="_blank">Python.org</a>.</p>
+        <blockquote class="calibre5">
+        <p class="calibre6">Django 5.1.2 needs Python 3.10 or greater, which does not support Windows XP or earlier versions.</p>
+        </blockquote>
+        </sec>
+        <sec data-title="Install Python: macOS" data-id="python_OSX" data-collapse="true"><b class="calibre10">Install Python: macOS</b>
+        <blockquote class="calibre5">
+        <p class="calibre6"><strong class="calibre10">Note</strong> Before you install Python on macOS, you should ensure your Mac settings allow installing packages that aren't from the App Store. Go to System Preferences (it's in the Applications folder), click "Security &amp; Privacy," and then the "General" tab. If your "Allow apps downloaded from:" is set to "Mac App Store," change it to "Mac App Store and identified developers."</p>
+        </blockquote>
+        <p class="calibre6">You need to go to the website <a href="https://www.python.org/downloads/" target="_blank">https://www.python.org/downloads/</a> and download the latest Python installer:</p>
+        <ul class="calibre9">
+        <li class="calibre3">Download Python 3.12.3,</li>
+        <li class="calibre3">Double click <em class="calibre14">python-3.12.3-macos11.pkg</em> to run the installer.</li>
+        </ul>
+        </sec>
+        <sec data-title="Install Python: Linux" data-id="python_linux" data-collapse="true"><b class="calibre10">Install Python: Linux</b>
+        <p class="calibre6">It is very likely that you already have Python installed out of the box. To check if you have it installed (and which version it is), open a console and type the following command:</p>
+        <p class="calibre6"></p><p class="calibre6">command-line</p><p class="calibre6"></p>
+        <pre class="calibre13"><code class="calibre11">$ python3 --version
+        Python 3.12.3
+        </code></pre><p class="calibre6">If you have a different version of Python installed, at least 3.10 (e.g. 3.10.13), then you don't have to upgrade. If you don't have Python installed, or if you want a different version, first check which Linux distribution you are using with the following command:</p>
+        <p class="calibre6"></p><p class="calibre6">command-line</p><p class="calibre6"></p>
+        <pre class="calibre13"><code class="calibre11">$ grep '^NAME=' /etc/os-release
+        </code></pre><p class="calibre6">Afterwards, depending on the result, follow one of the following installation guides below this section.</p>
+        </sec>
+        <sec data-title="Install Python: Debian or Ubuntu" data-id="python_debian" data-collapse="true"><b class="calibre10">Install Python: Debian or Ubuntu</b>
+        <p class="calibre6">Type this command into your console:</p>
+        <p class="calibre6"></p><p class="calibre6">command-line</p><p class="calibre6"></p>
+        <pre class="calibre13"><code class="calibre11">$ sudo apt install python3
+        </code></pre></sec>
+        <sec data-title="Install Python: Fedora" data-id="python_fedora" data-collapse="true"><b class="calibre10">Install Python: Fedora</b>
+        <p class="calibre6">Use this command in your console:</p>
+        <p class="calibre6"></p><p class="calibre6">command-line</p><p class="calibre6"></p>
+        <pre class="calibre13"><code class="calibre11">$ sudo dnf install python3
+        </code></pre><p class="calibre6">If you're on older Fedora versions you might get an error that the command <code class="calibre11">dnf</code> is not found. In that case, you need to use <code class="calibre11">yum</code> instead.</p>
+        </sec>
+        <sec data-title="Install Python: openSUSE" data-id="python_openSUSE" data-collapse="true"><b class="calibre10">Install Python: openSUSE</b>
+        <p class="calibre6">Use this command in your console:</p>
+        <p class="calibre6"></p><p class="calibre6">command-line</p><p class="calibre6"></p>
+        <pre class="calibre13"><code class="calibre11">$ sudo zypper install python3
+        </code></pre></sec>
+        <p class="calibre6">Verify the installation was successful by opening a command prompt and running the <code class="calibre11">python3</code> command:</p>
+        <p class="calibre6"></p><p class="calibre6">command-line</p><p class="calibre6"></p>
+        <pre class="calibre13"><code class="calibre11">$ python3 --version
+        Python 3.12.3
+        </code></pre><p class="calibre6">The version shown may be different from 3.12.3 -- it should match the version you installed.</p>
+        <p class="calibre6"><strong class="calibre10">NOTE:</strong> If you're on Windows and you get an error message that <code class="calibre11">python3</code> wasn't found, try using <code class="calibre11">python</code> (without the <code class="calibre11">3</code>) and check if it still might be a version of Python that is 3.10 or higher. If that doesn't work either, you may open a new command prompt and try again; this happens if you use a command prompt that was opened before the Python installation.</p>
+        <hr class="calibre15"></hr>
+        <p class="calibre6">If you have any doubts, or if something went wrong and you have no idea what to do next, please ask your coach! Sometimes things don't go smoothly and it's better to ask for help from someone with more experience.</p>
+
+                </div>
+    
+        </div>
+
+        
+    
+    </main>
+    <nav class="book-nav"><a href="index.html">Contents</a><a href="007-introduction-to-command-line.html">Previous</a><a href="009-code-editor.html">Next</a></nav>
+    <footer class="book-footer">
+        <p>Generated from the original EPUB. Content © respective authors under CC BY-SA 4.0.</p>
+    </footer>
+</body>
+</html>

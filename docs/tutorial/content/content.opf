@@ -1,0 +1,130 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" version="2.0" unique-identifier="uuid_id">
+  <metadata xmlns:opf="http://www.idpf.org/2007/opf" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:calibre="http://calibre.kovidgoyal.net/2009/metadata">
+    <dc:title>Table of Contents</dc:title>
+    <meta name="calibre:timestamp" content="2025-10-06T11:21:11.174024+00:00"/>
+    <dc:language>en</dc:language>
+    <dc:creator>Unknown</dc:creator>
+    <dc:identifier id="uuid_id" opf:scheme="uuid">dbc25503-4f0c-48e3-bf51-dec8307cecf5</dc:identifier>
+    <dc:contributor opf:role="bkp">HonKit</dc:contributor>
+    <dc:publisher>HonKit</dc:publisher>
+    <meta name="cover" content="cover"/>
+  </metadata>
+  <manifest>
+    <item id="cover" href="cover.jpg" media-type="image/jpeg"/>
+    <item id="titlepage" href="titlepage.xhtml" media-type="application/xhtml+xml"/>
+    <item id="html" href="SUMMARY.html" media-type="application/xhtml+xml"/>
+    <item id="html1" href="index.html" media-type="application/xhtml+xml"/>
+    <item id="html2" href="index1.html" media-type="application/xhtml+xml"/>
+    <item id="html3" href="index2.html" media-type="application/xhtml+xml"/>
+    <item id="html4" href="index3.html" media-type="application/xhtml+xml"/>
+    <item id="html5" href="index4.html" media-type="application/xhtml+xml"/>
+    <item id="html6" href="index5.html" media-type="application/xhtml+xml"/>
+    <item id="html7" href="index6.html" media-type="application/xhtml+xml"/>
+    <item id="html8" href="index7.html" media-type="application/xhtml+xml"/>
+    <item id="html9" href="index8.html" media-type="application/xhtml+xml"/>
+    <item id="html10" href="index9.html" media-type="application/xhtml+xml"/>
+    <item id="html11" href="index10.html" media-type="application/xhtml+xml"/>
+    <item id="html12" href="index11.html" media-type="application/xhtml+xml"/>
+    <item id="html13" href="index12.html" media-type="application/xhtml+xml"/>
+    <item id="html14" href="index13.html" media-type="application/xhtml+xml"/>
+    <item id="html15" href="index14.html" media-type="application/xhtml+xml"/>
+    <item id="html16" href="index15.html" media-type="application/xhtml+xml"/>
+    <item id="html17" href="index16.html" media-type="application/xhtml+xml"/>
+    <item id="html18" href="index17.html" media-type="application/xhtml+xml"/>
+    <item id="html19" href="index18.html" media-type="application/xhtml+xml"/>
+    <item id="html20" href="index19.html" media-type="application/xhtml+xml"/>
+    <item id="html21" href="index20.html" media-type="application/xhtml+xml"/>
+    <item id="html22" href="index21.html" media-type="application/xhtml+xml"/>
+    <item id="html23" href="index22.html" media-type="application/xhtml+xml"/>
+    <item id="html24" href="index23.html" media-type="application/xhtml+xml"/>
+    <item id="html25" href="index24.html" media-type="application/xhtml+xml"/>
+    <item id="added42" href="404_2.png" media-type="image/png"/>
+    <item id="added" href="application.png" media-type="image/png"/>
+    <item id="added35" href="bootstrap1.png" media-type="image/png"/>
+    <item id="added5" href="codespace-auto-delete-off.png" media-type="image/png"/>
+    <item id="added3" href="codespace-preview.png" media-type="image/png"/>
+    <item id="added36" href="color2.png" media-type="image/png"/>
+    <item id="added2" href="create-new-codespace.png" media-type="image/png"/>
+    <item id="added1" href="create-new-repo.png" media-type="image/png"/>
+    <item id="added46" href="csrf2.png" media-type="image/png"/>
+    <item id="added15" href="cupcake.png" media-type="image/png"/>
+    <item id="added21" href="deployment_cloud.png" media-type="image/png"/>
+    <item id="added20" href="deployment_local.png" media-type="image/png"/>
+    <item id="added18" href="django_admin3.png" media-type="image/png"/>
+    <item id="added41" href="does_not_exist2.png" media-type="image/png"/>
+    <item id="added34" href="donut.png" media-type="image/png"/>
+    <item id="added50" href="edit_button2.png" media-type="image/png"/>
+    <item id="added51" href="edit_form2.png" media-type="image/png"/>
+    <item id="added19" href="edit_post3.png" media-type="image/png"/>
+    <item id="added26" href="error.png" media-type="image/png"/>
+    <item id="added39" href="final.png" media-type="image/png"/>
+    <item id="added38" href="font.png" media-type="image/png"/>
+    <item id="added49" href="form_validation2.png" media-type="image/png"/>
+    <item id="added23" href="github_get_repo_url_screenshot.png" media-type="image/png"/>
+    <item id="added16" href="install_worked.png" media-type="image/png"/>
+    <item id="added11" href="internet_1.png" media-type="image/png"/>
+    <item id="added13" href="internet_2.png" media-type="image/png"/>
+    <item id="added12" href="internet_3.png" media-type="image/png"/>
+    <item id="added14" href="internet_4.png" media-type="image/png"/>
+    <item id="added17" href="login_page2.png" media-type="image/png"/>
+    <item id="added37" href="margin2.png" media-type="image/png"/>
+    <item id="added47" href="new_form2.png" media-type="image/png"/>
+    <item id="added22" href="new_github_repo.png" media-type="image/png"/>
+    <item id="added40" href="no_reverse_match2.png" media-type="image/png"/>
+    <item id="added48" href="post_create_error.png" media-type="image/png"/>
+    <item id="added45" href="post_detail2.png" media-type="image/png"/>
+    <item id="added43" href="post_list2.png" media-type="image/png"/>
+    <item id="added7" href="python-installation-options.png" media-type="image/png"/>
+    <item id="added9" href="pythonanywhere_account.png" media-type="image/png"/>
+    <item id="added24" href="pythonanywhere_bash_console.png" media-type="image/png"/>
+    <item id="added8" href="pythonanywhere_beginner_account_button.png" media-type="image/png"/>
+    <item id="added10" href="pythonanywhere_create_api_token.png" media-type="image/png"/>
+    <item id="added27" href="step1.png" media-type="image/png"/>
+    <item id="added32" href="step2.png" media-type="image/png"/>
+    <item id="added28" href="step3.png" media-type="image/png"/>
+    <item id="added29" href="step4.png" media-type="image/png"/>
+    <item id="added30" href="step6.png" media-type="image/png"/>
+    <item id="added31" href="step11.png" media-type="image/png"/>
+    <item id="added33" href="step31.png" media-type="image/png"/>
+    <item id="added44" href="template_does_not_exist2.png" media-type="image/png"/>
+    <item id="added25" href="url.png" media-type="image/png"/>
+    <item id="added4" href="vscode-install-python.png" media-type="image/png"/>
+    <item id="added6" href="windows-plus-r.png" media-type="image/png"/>
+    <item id="page_css" href="page_styles.css" media-type="text/css"/>
+    <item id="css" href="stylesheet.css" media-type="text/css"/>
+    <item id="ncx" href="toc.ncx" media-type="application/x-dtbncx+xml"/>
+  </manifest>
+  <spine toc="ncx">
+    <itemref idref="titlepage"/>
+    <itemref idref="html"/>
+    <itemref idref="html1"/>
+    <itemref idref="html2"/>
+    <itemref idref="html3"/>
+    <itemref idref="html4"/>
+    <itemref idref="html5"/>
+    <itemref idref="html6"/>
+    <itemref idref="html7"/>
+    <itemref idref="html8"/>
+    <itemref idref="html9"/>
+    <itemref idref="html10"/>
+    <itemref idref="html11"/>
+    <itemref idref="html12"/>
+    <itemref idref="html13"/>
+    <itemref idref="html14"/>
+    <itemref idref="html15"/>
+    <itemref idref="html16"/>
+    <itemref idref="html17"/>
+    <itemref idref="html18"/>
+    <itemref idref="html19"/>
+    <itemref idref="html20"/>
+    <itemref idref="html21"/>
+    <itemref idref="html22"/>
+    <itemref idref="html23"/>
+    <itemref idref="html24"/>
+    <itemref idref="html25"/>
+  </spine>
+  <guide>
+    <reference type="cover" href="titlepage.xhtml" title="Cover"/>
+  </guide>
+</package>

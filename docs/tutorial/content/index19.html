@@ -1,0 +1,97 @@
+<?xml version='1.0' encoding='utf-8'?>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+  <head>
+    <title>Django templates</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="description" content=""/>
+    <meta name="generator" content="HonKit 3.7.5"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <link rel="stylesheet" type="text/css" href="stylesheet.css"/>
+<link rel="stylesheet" type="text/css" href="page_styles.css"/>
+</head>
+  <body class="calibre">
+        
+<div class="page">
+    
+        <h1 class="calibre1" id="calibre_toc_20">Django templates</h1>
+        <div class="page">
+            <h1 id="django-templates" class="calibre1">Django templates</h1>
+<p class="calibre6">Time to display some data! Django gives us some helpful built-in <strong class="calibre10">template tags</strong> for that.</p>
+<h2 id="what-are-template-tags" class="calibre7">What are template tags?</h2>
+<p class="calibre6">You see, in HTML, you can't really write Python code, because browsers don't understand it. They know only HTML. We know that HTML is rather static, while Python is much more dynamic.</p>
+<p class="calibre6"><strong class="calibre10">Django template tags</strong> allow us to transfer Python-like things into HTML, so you can build dynamic websites faster. Cool!</p>
+<h2 id="display-post-list-template" class="calibre7">Display post list template</h2>
+<p class="calibre6">In the previous chapter we gave our template a list of posts in the <code class="calibre11">posts</code> variable. Now we will display it in HTML.</p>
+<p class="calibre6">To print a variable in Django templates, we use double curly brackets with the variable's name inside, like this:</p>
+<p class="calibre6"></p><p class="calibre6">blog/templates/blog/post_list.html</p><p class="calibre6"></p>
+<pre class="calibre13"><code class="calibre11">{{ posts }}
+</code></pre>
+<p class="calibre6">Try this in your <code class="calibre11">blog/templates/blog/post_list.html</code> template. Open it up in the code editor, and replace the existing <code class="calibre11">&lt;article&gt;</code> elements with <code class="calibre11">{{ posts }}</code>. Save the file, and refresh the page to see the results:</p>
+<p class="calibre6"><img src="step11.png" alt="Figure 13.1" class="calibre8"/></p>
+<p class="calibre6">As you can see, all we've got is this:</p>
+<p class="calibre6"></p><p class="calibre6">blog/templates/blog/post_list.html</p><p class="calibre6"></p>
+<pre class="calibre13"><code class="calibre11">&lt;QuerySet [&lt;Post: My second post&gt;, &lt;Post: My first post&gt;]&gt;
+</code></pre>
+<p class="calibre6">This means that Django understands it as a list of objects. Remember from <strong class="calibre10">Introduction to Python</strong> how we can display lists? Yes, with for loops! In a Django template you do them like this:</p>
+<p class="calibre6"></p><p class="calibre6">blog/templates/blog/post_list.html</p><p class="calibre6"></p>
+<pre class="calibre13"><code class="calibre11">{% for post in posts %}
+    {{ post }}
+{% endfor %}
+</code></pre>
+<p class="calibre6">Try this in your template.</p>
+<p class="calibre6"><img src="step2.png" alt="Figure 13.2" class="calibre8"/></p>
+<p class="calibre6">It works! But we want the posts to be displayed like the static posts we created earlier in the <strong class="calibre10">Introduction to HTML</strong> chapter. You can mix HTML and template tags. Our <code class="calibre11">body</code> will look like this:</p>
+<p class="calibre6"></p><p class="calibre6">blog/templates/blog/post_list.html</p><p class="calibre6"></p>
+<pre class="calibre13"><code class="calibre11"><span>&lt;<span>header</span>&gt;</span>
+    <span>&lt;<span>h1</span>&gt;</span><span>&lt;<span>a</span> <span>href</span>=<span>"/"</span>&gt;</span>Django Girls Blog<span>&lt;/<span>a</span>&gt;</span><span>&lt;/<span>h1</span>&gt;</span>
+<span>&lt;/<span>header</span>&gt;</span>
+
+{% for post in posts %}
+    <span>&lt;<span>article</span>&gt;</span>
+        <span>&lt;<span>time</span>&gt;</span>published: {{ post.published_date }}<span>&lt;/<span>time</span>&gt;</span>
+        <span>&lt;<span>h2</span>&gt;</span><span>&lt;<span>a</span> <span>href</span>=<span>""</span>&gt;</span>{{ post.title }}<span>&lt;/<span>a</span>&gt;</span><span>&lt;/<span>h2</span>&gt;</span>
+        <span>&lt;<span>p</span>&gt;</span>{{ post.text|linebreaksbr }}<span>&lt;/<span>p</span>&gt;</span>
+    <span>&lt;/<span>article</span>&gt;</span>
+{% endfor %}
+</code></pre>
+<p class="calibre6">Everything you put between <code class="calibre11">{% for %}</code> and <code class="calibre11">{% endfor %}</code> will be repeated for each object in the list. Refresh your page:</p>
+<p class="calibre6"><img src="step31.png" alt="Figure 13.3" class="calibre8"/></p>
+<p class="calibre6">Have you noticed that we used a slightly different notation this time (<code class="calibre11">{{ post.title }}</code> or <code class="calibre11">{{ post.text }}</code>)? We are accessing data in each of the fields defined in our <code class="calibre11">Post</code> model. Also, the <code class="calibre11">|linebreaksbr</code> is piping the posts' text through a filter to convert line-breaks into paragraphs.</p>
+<h2 id="one-more-thing" class="calibre7">One more thing</h2>
+<p class="calibre6">It'd be good to see if your website will still be working on the public Internet, right? Let's try deploying to PythonAnywhere again. Here's a recap of the steps…</p>
+<ul class="calibre9">
+<li class="calibre3">First, push your code to GitHub</li>
+</ul>
+<p class="calibre6"></p><p class="calibre6">command-line</p><p class="calibre6"></p>
+<pre class="calibre13"><code class="calibre11">$ git status
+[...]
+$ git add .
+$ git status
+[...]
+$ git commit -m "Modified templates to display posts from database."
+[...]
+$ git push
+</code></pre><ul class="calibre9">
+<li class="calibre3">Then, log back in to <a href="https://www.pythonanywhere.com/consoles/" target="_blank">PythonAnywhere</a> and go to your <strong class="calibre10">Bash console</strong> (or start a new one), and run:</li>
+</ul>
+<p class="calibre6"></p><p class="calibre6">PythonAnywhere command-line</p><p class="calibre6"></p>
+<pre class="calibre13"><code class="calibre11">$ cd &lt;your-pythonanywhere-domain&gt;.pythonanywhere.com
+$ git pull
+[...]
+</code></pre><p class="calibre6">(Remember to substitute <code class="calibre11">&lt;your-pythonanywhere-domain&gt;</code> with your actual PythonAnywhere subdomain, without the angle-brackets.)</p>
+<ul class="calibre9">
+<li class="calibre3">Finally, hop on over to the <a href="https://www.pythonanywhere.com/web_app_setup/" target="_blank">"Web" page</a> and hit <strong class="calibre10">Reload</strong> on your web app. (To reach other PythonAnywhere pages from the console, use the menu button in the upper right corner.) Your update should be live on <a href="https://subdomain.pythonanywhere.com" target="_blank">https://subdomain.pythonanywhere.com</a> -- check it out in the browser! If the blog posts on your PythonAnywhere site don't match the posts appearing on the blog hosted on your local server, that's OK. The databases on your local computer and Python Anywhere don't sync with the rest of your files.</li>
+</ul>
+<p class="calibre6">Congrats! Now go ahead and try adding a new post in your Django admin (remember to add published_date!) Make sure you are in the Django admin for your pythonanywhere site, <a href="https://subdomain.pythonanywhere.com/admin" target="_blank">https://subdomain.pythonanywhere.com/admin</a>. Then refresh your page to see if the post appears there.</p>
+<p class="calibre6">Works like a charm? We're proud! Step away from your computer for a bit – you have earned a break. :)</p>
+<p class="calibre6"><img src="donut.png" alt="Figure 13.4" class="calibre8"/></p>
+
+        </div>
+    
+</div>
+
+        
+    
+
+
+</body></html>

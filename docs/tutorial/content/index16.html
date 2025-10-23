@@ -1,0 +1,186 @@
+<?xml version='1.0' encoding='utf-8'?>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+  <head>
+    <title>Introduction to HTML</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="description" content=""/>
+    <meta name="generator" content="HonKit 3.7.5"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <link rel="stylesheet" type="text/css" href="stylesheet.css"/>
+<link rel="stylesheet" type="text/css" href="page_styles.css"/>
+</head>
+  <body class="calibre">
+        
+<div class="page">
+    
+        <h1 class="calibre1" id="calibre_toc_17">Introduction to HTML</h1>
+        <div class="page">
+            <h1 id="introduction-to-html" class="calibre1">Introduction to HTML</h1>
+<p class="calibre6">What's a template, you may ask?</p>
+<p class="calibre6">A template is a file that we can re-use to present different information in a consistent format – for example, you could use a template to help you write a letter because although each letter might contain a different message and be addressed to a different person, they will share the same format.</p>
+<p class="calibre6">A Django template's format is described in a language called HTML (that's the HTML we mentioned in the first chapter, <strong class="calibre10">How the Internet works</strong>).</p>
+<h2 id="what-is-html" class="calibre7">What is HTML?</h2>
+<p class="calibre6">HTML is a code that is interpreted by your web browser – such as Chrome, Firefox or Safari – to display a web page for the user.</p>
+<p class="calibre6">HTML stands for "HyperText Markup Language". <strong class="calibre10">HyperText</strong> means it's a type of text that supports hyperlinks between pages. <strong class="calibre10">Markup</strong> means we have taken a document and marked it up with code to tell something (in this case, a browser) how to interpret the page. HTML code is built with <strong class="calibre10">tags</strong>, each one starting with <code class="calibre11">&lt;</code> and ending with <code class="calibre11">&gt;</code>. These tags represent markup <strong class="calibre10">elements</strong>.</p>
+<h2 id="your-first-template" class="calibre7">Your first template!</h2>
+<p class="calibre6">Creating a template means creating a template file. Everything is a file, right? You have probably noticed this already.</p>
+<p class="calibre6">Templates are saved in <code class="calibre11">blog/templates/blog</code> directory. So first create a directory called <code class="calibre11">templates</code> inside your blog directory. Then create another directory called <code class="calibre11">blog</code> inside your templates directory:</p>
+<pre class="calibre13"><code class="calibre11">blog
+└───templates
+    └───blog
+</code></pre><p class="calibre6">(You might wonder why we need two directories both called <code class="calibre11">blog</code> – as you will discover later, this is a useful naming convention that makes life easier when things start to get more complicated.)</p>
+<p class="calibre6">And now create a <code class="calibre11">post_list.html</code> file (just leave it blank for now) inside the <code class="calibre11">blog/templates/blog</code> directory.</p>
+<p class="calibre6">See how your website looks now: <a href="http://127.0.0.1:8000/" target="_blank">http://127.0.0.1:8000/</a></p>
+<blockquote class="calibre5">
+<p class="calibre6">If you still have an error <code class="calibre11">TemplateDoesNotExist</code>, try to restart your server. Go to the command line, stop the server by pressing Ctrl+C (Control and C keys together) and start it again by running a <code class="calibre11">python manage.py runserver</code> command.</p>
+</blockquote>
+<p class="calibre6"><img src="step1.png" alt="Figure 11.1" class="calibre8"/></p>
+<p class="calibre6">No error anymore! Congratulations! :) However, your website isn't actually publishing anything except an empty page, because your template is empty too. We need to fix that.</p>
+<p class="calibre6">Open the new file in the code editor, and add the following:</p>
+<p class="calibre6"></p><p class="calibre6">blog/templates/blog/post_list.html</p><p class="calibre6"></p>
+<pre class="calibre13"><code class="calibre11"><span>&lt;!DOCTYPE <span>html</span>&gt;</span>
+<span>&lt;<span>html</span>&gt;</span>
+<span>&lt;<span>body</span>&gt;</span>
+    <span>&lt;<span>p</span>&gt;</span>Hi there!<span>&lt;/<span>p</span>&gt;</span>
+    <span>&lt;<span>p</span>&gt;</span>It works!<span>&lt;/<span>p</span>&gt;</span>
+<span>&lt;/<span>body</span>&gt;</span>
+<span>&lt;/<span>html</span>&gt;</span>
+</code></pre>
+<p class="calibre6">So how does your website look now? Visit it to find out: <a href="http://127.0.0.1:8000/" target="_blank">http://127.0.0.1:8000/</a></p>
+<p class="calibre6"><img src="step3.png" alt="Figure 11.2" class="calibre8"/></p>
+<p class="calibre6">It worked. Nice work there! :)</p>
+<ul class="calibre9">
+<li class="calibre3">The line <code class="calibre11">&lt;!DOCTYPE html&gt;</code> is not a HTML tag. It only declares the document type. Here, it informs the browser that document type is <a href="https://html.spec.whatwg.org/#the-doctype" target="_blank">HTML5</a>. This is always the beginning of any HTML5 file.</li>
+<li class="calibre3">The most basic tag, <code class="calibre11">&lt;html&gt;</code>, is always the beginning of html content and <code class="calibre11">&lt;/html&gt;</code> is always the end. As you can see, the whole content of the website goes between the beginning tag <code class="calibre11">&lt;html&gt;</code> and closing tag <code class="calibre11">&lt;/html&gt;</code></li>
+<li class="calibre3"><code class="calibre11">&lt;p&gt;</code> is a tag for paragraph elements; <code class="calibre11">&lt;/p&gt;</code> closes each paragraph</li>
+</ul>
+<h2 id="head-and-body" class="calibre7">Head and body</h2>
+<p class="calibre6">Each HTML page is also divided into two elements: <strong class="calibre10">head</strong> and <strong class="calibre10">body</strong>.</p>
+<ul class="calibre9">
+<li class="calibre3"><p class="calibre6"><strong class="calibre10">head</strong> is an element that contains information about the document that is not displayed on the screen.</p>
+</li>
+<li class="calibre3"><p class="calibre6"><strong class="calibre10">body</strong> is an element that contains everything else that is displayed as part of the web page.</p>
+</li>
+</ul>
+<p class="calibre6">We use <code class="calibre11">&lt;head&gt;</code> to tell the browser about the configuration of the page, and <code class="calibre11">&lt;body&gt;</code> to tell it what's actually on the page.</p>
+<p class="calibre6">For example, you can put a web page title element inside the <code class="calibre11">&lt;head&gt;</code>, like this:</p>
+<p class="calibre6"></p><p class="calibre6">blog/templates/blog/post_list.html</p><p class="calibre6"></p>
+<pre class="calibre13"><code class="calibre11"><span>&lt;!DOCTYPE <span>html</span>&gt;</span>
+<span>&lt;<span>html</span>&gt;</span>
+    <span>&lt;<span>head</span>&gt;</span>
+        <span>&lt;<span>title</span>&gt;</span>Ola's blog<span>&lt;/<span>title</span>&gt;</span>
+    <span>&lt;/<span>head</span>&gt;</span>
+    <span>&lt;<span>body</span>&gt;</span>
+        <span>&lt;<span>p</span>&gt;</span>Hi there!<span>&lt;/<span>p</span>&gt;</span>
+        <span>&lt;<span>p</span>&gt;</span>It works!<span>&lt;/<span>p</span>&gt;</span>
+    <span>&lt;/<span>body</span>&gt;</span>
+<span>&lt;/<span>html</span>&gt;</span>
+</code></pre>
+<p class="calibre6">Save the file and refresh your page.</p>
+<p class="calibre6"><img src="step4.png" alt="Figure 11.3" class="calibre8"/></p>
+<p class="calibre6">Notice how the browser has understood that "Ola's blog" is the title of your page? It has interpreted <code class="calibre11">&lt;title&gt;Ola's blog&lt;/title&gt;</code> and placed the text in the title bar of your browser (it will also be used for bookmarks and so on).</p>
+<p class="calibre6">Probably you have also noticed that each opening tag is matched by a <em class="calibre14">closing tag</em>, with a <code class="calibre11">/</code>, and that elements are <em class="calibre14">nested</em> (i.e. you can't close a particular tag until all the ones that were inside it have been closed too).</p>
+<p class="calibre6">It's like putting things into boxes. You have one big box, <code class="calibre11">&lt;html&gt;&lt;/html&gt;</code>; inside it there is <code class="calibre11">&lt;body&gt;&lt;/body&gt;</code>, and that contains still smaller boxes: <code class="calibre11">&lt;p&gt;&lt;/p&gt;</code>.</p>
+<p class="calibre6">You need to follow these rules of <em class="calibre14">closing</em> tags, and of <em class="calibre14">nesting</em> elements – if you don't, the browser may not be able to interpret them properly and your page will display incorrectly.</p>
+<h2 id="customize-your-template" class="calibre7">Customize your template</h2>
+<p class="calibre6">You can now have a little fun and try to customize your template! Here are a few useful tags for that:</p>
+<ul class="calibre9">
+<li class="calibre3"><code class="calibre11">&lt;h1&gt;A heading&lt;/h1&gt;</code> for your most important heading</li>
+<li class="calibre3"><code class="calibre11">&lt;h2&gt;A sub-heading&lt;/h2&gt;</code> for a heading at the next level</li>
+<li class="calibre3"><code class="calibre11">&lt;h3&gt;A sub-sub-heading&lt;/h3&gt;</code> …and so on, up to <code class="calibre11">&lt;h6&gt;</code></li>
+<li class="calibre3"><code class="calibre11">&lt;p&gt;A paragraph of text&lt;/p&gt;</code></li>
+<li class="calibre3"><code class="calibre11">&lt;em&gt;text&lt;/em&gt;</code> emphasizes your text</li>
+<li class="calibre3"><code class="calibre11">&lt;strong&gt;text&lt;/strong&gt;</code> strongly emphasizes your text</li>
+<li class="calibre3"><code class="calibre11">&lt;br&gt;</code> goes to another line (you can't put anything inside br and there's no closing tag)</li>
+<li class="calibre3"><code class="calibre11">&lt;a href="https://djangogirls.org"&gt;link&lt;/a&gt;</code> creates a link</li>
+<li class="calibre3"><code class="calibre11">&lt;ul&gt;&lt;li&gt;first item&lt;/li&gt;&lt;li&gt;second item&lt;/li&gt;&lt;/ul&gt;</code> makes a list, just like this one!</li>
+<li class="calibre3"><code class="calibre11">&lt;div&gt;&lt;/div&gt;</code> defines a section of the page</li>
+<li class="calibre3"><code class="calibre11">&lt;nav&gt;&lt;/nav&gt;</code> defines a set of navigation links</li>
+<li class="calibre3"><code class="calibre11">&lt;article&gt;&lt;/article&gt;</code> specifies independent, self-contained content</li>
+<li class="calibre3"><code class="calibre11">&lt;section&gt;&lt;/section&gt;</code> defines a section in a document</li>
+<li class="calibre3"><code class="calibre11">&lt;header&gt;&lt;/header&gt;</code> specifies a header for a document or section</li>
+<li class="calibre3"><code class="calibre11">&lt;main&gt;&lt;/main&gt;</code> specifies the main content of a document</li>
+<li class="calibre3"><code class="calibre11">&lt;aside&gt;&lt;/aside&gt;</code> defines some content aside from the content it is placed in (like a sidebar)</li>
+<li class="calibre3"><code class="calibre11">&lt;footer&gt;&lt;/footer&gt;</code> defines a footer for a document or section</li>
+<li class="calibre3"><code class="calibre11">&lt;time&gt;&lt;/time&gt;</code> defines a specific time (or datetime)</li>
+</ul>
+<p class="calibre6">Here's an example of a full template, copy and paste it into <code class="calibre11">blog/templates/blog/post_list.html</code>:</p>
+<p class="calibre6"></p><p class="calibre6">blog/templates/blog/post_list.html</p><p class="calibre6"></p>
+<pre class="calibre13"><code class="calibre11"><span>&lt;!DOCTYPE <span>html</span>&gt;</span>
+<span>&lt;<span>html</span>&gt;</span>
+    <span>&lt;<span>head</span>&gt;</span>
+        <span>&lt;<span>title</span>&gt;</span>Django Girls blog<span>&lt;/<span>title</span>&gt;</span>
+    <span>&lt;/<span>head</span>&gt;</span>
+    <span>&lt;<span>body</span>&gt;</span>
+        <span>&lt;<span>header</span>&gt;</span>
+            <span>&lt;<span>h1</span>&gt;</span><span>&lt;<span>a</span> <span>href</span>=<span>"/"</span>&gt;</span>Django Girls Blog<span>&lt;/<span>a</span>&gt;</span><span>&lt;/<span>h1</span>&gt;</span>
+        <span>&lt;/<span>header</span>&gt;</span>
+
+        <span>&lt;<span>article</span>&gt;</span>
+            <span>&lt;<span>time</span>&gt;</span>published: 14.06.2014, 12:14<span>&lt;/<span>time</span>&gt;</span>
+            <span>&lt;<span>h2</span>&gt;</span><span>&lt;<span>a</span> <span>href</span>=<span>""</span>&gt;</span>My first post<span>&lt;/<span>a</span>&gt;</span><span>&lt;/<span>h2</span>&gt;</span>
+            <span>&lt;<span>p</span>&gt;</span>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.<span>&lt;/<span>p</span>&gt;</span>
+        <span>&lt;/<span>article</span>&gt;</span>
+
+        <span>&lt;<span>article</span>&gt;</span>
+            <span>&lt;<span>time</span>&gt;</span>published: 14.06.2014, 12:14<span>&lt;/<span>time</span>&gt;</span>
+            <span>&lt;<span>h2</span>&gt;</span><span>&lt;<span>a</span> <span>href</span>=<span>""</span>&gt;</span>My second post<span>&lt;/<span>a</span>&gt;</span><span>&lt;/<span>h2</span>&gt;</span>
+            <span>&lt;<span>p</span>&gt;</span>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut f.<span>&lt;/<span>p</span>&gt;</span>
+        <span>&lt;/<span>article</span>&gt;</span>
+    <span>&lt;/<span>body</span>&gt;</span>
+<span>&lt;/<span>html</span>&gt;</span>
+</code></pre>
+<p class="calibre6">We've created one <code class="calibre11">header</code> section and two <code class="calibre11">article</code> section here.</p>
+<ul class="calibre9">
+<li class="calibre3">The <code class="calibre11">header</code> element contains the title of our blog – it's a heading and a link</li>
+<li class="calibre3">The two <code class="calibre11">article</code> elements contain our blog posts with a published date in a <code class="calibre11">time</code> element, a <code class="calibre11">h2</code> element with a post title that is clickable and a <code class="calibre11">p</code> (paragraph) element for text of our blog post.</li>
+</ul>
+<p class="calibre6">It gives us this effect:</p>
+<p class="calibre6"><img src="step6.png" alt="Figure 11.4" class="calibre8"/></p>
+<p class="calibre6">Yaaay! But so far, our template only ever displays exactly <strong class="calibre10">the same information</strong> – whereas earlier we were talking about templates as allowing us to display <strong class="calibre10">different</strong> information in the <strong class="calibre10">same format</strong>.</p>
+<p class="calibre6">What we really want to do is display real posts added in our Django admin – and that's where we're going next.</p>
+<h2 id="one-more-thing--deploy" class="calibre7">One more thing:  deploy!</h2>
+<p class="calibre6">It'd be good to see all this out and live on the Internet, right?  Let's do another PythonAnywhere deploy:</p>
+<h3 id="commit-and-push-your-code-up-to-github" class="calibre12">Commit, and push your code up to GitHub</h3>
+<p class="calibre6">First off, let's see what files have changed since we last deployed (run these commands locally, not on PythonAnywhere):</p>
+<p class="calibre6"></p><p class="calibre6">command-line</p><p class="calibre6"></p>
+<pre class="calibre13"><code class="calibre11">$ git status
+</code></pre><p class="calibre6">Make sure you're in the <code class="calibre11">djangogirls</code> directory and let's tell <code class="calibre11">git</code> to include all the changes in this directory:</p>
+<p class="calibre6"></p><p class="calibre6">command-line</p><p class="calibre6"></p>
+<pre class="calibre13"><code class="calibre11">$ git add .
+</code></pre><p class="calibre6">Before we upload all the files, let's check what <code class="calibre11">git</code> will be uploading (all the files that <code class="calibre11">git</code> will upload should now appear in green):</p>
+<p class="calibre6"></p><p class="calibre6">command-line</p><p class="calibre6"></p>
+<pre class="calibre13"><code class="calibre11">$ git status
+</code></pre><p class="calibre6">We're almost there, now it's time to tell it to save this change in its history. We're going to give it a "commit message" where we describe what we've changed. You can type anything you'd like at this stage, but it's helpful to type something descriptive so that, in the future, you can remember what you've done.</p>
+<p class="calibre6"></p><p class="calibre6">command-line</p><p class="calibre6"></p>
+<pre class="calibre13"><code class="calibre11">$ git commit -m "Changed the HTML for the site."
+</code></pre><blockquote class="calibre5"><strong class="calibre10"></strong>
+<p class="calibre6"> Make sure you use double quotes around the commit message.</p>
+</blockquote>
+<p class="calibre6">Once we've done that, we upload (push) our changes up to GitHub:</p>
+<p class="calibre6"></p><p class="calibre6">command-line</p><p class="calibre6"></p>
+<pre class="calibre13"><code class="calibre11">$ git push
+</code></pre><h3 id="pull-your-new-code-down-to-pythonanywhere-and-reload-your-web-app" class="calibre12">Pull your new code down to PythonAnywhere, and reload your web app</h3>
+<ul class="calibre9">
+<li class="calibre3">Open up the <a href="https://www.pythonanywhere.com/consoles/" target="_blank">PythonAnywhere consoles page</a> and go to your <strong class="calibre10">Bash console</strong> (or start a new one). Then, run:</li>
+</ul>
+<p class="calibre6"></p><p class="calibre6">PythonAnywhere command-line</p><p class="calibre6"></p>
+<pre class="calibre13"><code class="calibre11">$ cd ~/&lt;your-pythonanywhere-domain&gt;.pythonanywhere.com
+$ git pull
+[...]
+</code></pre><p class="calibre6">You'll need to substitute <code class="calibre11">&lt;your-pythonanywhere-domain&gt;</code> with your actual PythonAnywhere subdomain name, without the angle-brackets. Your subdomain name is normally your PythonAnywhere user name, but in some cases it might be a bit different (such as if your user name contains capital letters). So if this command doesn't work, use the <code class="calibre11">ls</code> (list files) command to find your actual subdomain/folder name, and then <code class="calibre11">cd</code> to there.</p>
+<p class="calibre6">Now watch your code getting downloaded. If you want to check that it's arrived, you can hop over to the <strong class="calibre10">"Files" page</strong> and view your code on PythonAnywhere (you can reach other PythonAnywhere pages from the menu button on the console page).</p>
+<ul class="calibre9">
+<li class="calibre3">Finally, hop on over to the <a href="https://www.pythonanywhere.com/web_app_setup/" target="_blank">"Web" page</a> and hit <strong class="calibre10">Reload</strong> on your web app.</li>
+</ul>
+<p class="calibre6">Your update should be live! Go ahead and refresh your website in the browser. Changes should be visible. :)</p>
+
+        </div>
+    
+</div>
+
+        
+    
+
+
+</body></html>

@@ -1,0 +1,165 @@
+<?xml version='1.0' encoding='utf-8'?>
+<ncx xmlns="http://www.daisy.org/z3986/2005/ncx/" version="2005-1" xml:lang="en">
+  <head>
+    <meta name="dtb:uid" content="dbc25503-4f0c-48e3-bf51-dec8307cecf5"/>
+    <meta name="dtb:depth" content="3"/>
+    <meta name="dtb:generator" content="calibre (7.6.0)"/>
+    <meta name="dtb:totalPageCount" content="0"/>
+    <meta name="dtb:maxPageNumber" content="0"/>
+  </head>
+  <docTitle>
+    <text>Table of Contents</text>
+  </docTitle>
+  <navMap>
+    <navPoint id="uxXGvShQ2pNMLsEtx3Emvt9" playOrder="1">
+      <navLabel>
+        <text>Introduction</text>
+      </navLabel>
+      <content src="index.html"/>
+    </navPoint>
+    <navPoint id="uCCHCzYkdGcUfghYa6GJALD" playOrder="2">
+      <navLabel>
+        <text>Installation</text>
+      </navLabel>
+      <content src="index1.html"/>
+      <navPoint id="u9cxJvuQdT3xGJVu9TWaVAA" playOrder="3">
+        <navLabel>
+          <text>Installation (Chromebook)</text>
+        </navLabel>
+        <content src="index2.html"/>
+      </navPoint>
+    </navPoint>
+    <navPoint id="uSVJyrvikGB7rYwPjvt5M63" playOrder="4">
+      <navLabel>
+        <text>How the Internet works</text>
+      </navLabel>
+      <content src="index3.html"/>
+    </navPoint>
+    <navPoint id="unOevBLdKr38Wd6fkGApdIF" playOrder="5">
+      <navLabel>
+        <text>Introduction to command line</text>
+      </navLabel>
+      <content src="index4.html"/>
+    </navPoint>
+    <navPoint id="u5RiOepzzQNfJwJLmrIaN3E" playOrder="6">
+      <navLabel>
+        <text>Python installation</text>
+      </navLabel>
+      <content src="index5.html"/>
+    </navPoint>
+    <navPoint id="u2KW4GxsMP5cHH7NM7THvf7" playOrder="7">
+      <navLabel>
+        <text>Code editor</text>
+      </navLabel>
+      <content src="index6.html"/>
+    </navPoint>
+    <navPoint id="uQcZBJKfFAKgkmLnyMN7w6G" playOrder="8">
+      <navLabel>
+        <text>Introduction to Python</text>
+      </navLabel>
+      <content src="index7.html"/>
+    </navPoint>
+    <navPoint id="uQLdVYULAII9OKqFnQVCdoF" playOrder="9">
+      <navLabel>
+        <text>What is Django?</text>
+      </navLabel>
+      <content src="index8.html"/>
+    </navPoint>
+    <navPoint id="u8a4GiEAivNgdsrw29kPzTG" playOrder="10">
+      <navLabel>
+        <text>Django installation</text>
+      </navLabel>
+      <content src="index9.html"/>
+    </navPoint>
+    <navPoint id="uiwaFn2IIE6y6ZCTt2UQIs4" playOrder="11">
+      <navLabel>
+        <text>Your first Django project!</text>
+      </navLabel>
+      <content src="index10.html"/>
+    </navPoint>
+    <navPoint id="utjvjB9RASQngiqeUmL3OQC" playOrder="12">
+      <navLabel>
+        <text>Django models</text>
+      </navLabel>
+      <content src="index11.html"/>
+    </navPoint>
+    <navPoint id="u4mBASuoE49wZnX8xcWh2O7" playOrder="13">
+      <navLabel>
+        <text>Django admin</text>
+      </navLabel>
+      <content src="index12.html"/>
+    </navPoint>
+    <navPoint id="uGdauClwDEykR3SzO6fPH4C" playOrder="14">
+      <navLabel>
+        <text>Deploy!</text>
+      </navLabel>
+      <content src="index13.html"/>
+    </navPoint>
+    <navPoint id="ubBAld6HNmB3axiiFbPkYV3" playOrder="15">
+      <navLabel>
+        <text>Django URLs</text>
+      </navLabel>
+      <content src="index14.html"/>
+    </navPoint>
+    <navPoint id="uhTJuDovLlHqT2GPGGaOatG" playOrder="16">
+      <navLabel>
+        <text>Django views – time to create!</text>
+      </navLabel>
+      <content src="index15.html"/>
+    </navPoint>
+    <navPoint id="uL5gzC8QMoNNQzLmYykdrB7" playOrder="17">
+      <navLabel>
+        <text>Introduction to HTML</text>
+      </navLabel>
+      <content src="index16.html"/>
+    </navPoint>
+    <navPoint id="upWO7cMTD3HXa4brmZ5VzF8" playOrder="18">
+      <navLabel>
+        <text>Django ORM (Querysets)</text>
+      </navLabel>
+      <content src="index17.html"/>
+    </navPoint>
+    <navPoint id="unhUbSUl2rL2SoxQtHVBfk9" playOrder="19">
+      <navLabel>
+        <text>Dynamic data in templates</text>
+      </navLabel>
+      <content src="index18.html"/>
+    </navPoint>
+    <navPoint id="uhN2MxrGTKNCIUPWWRmN363" playOrder="20">
+      <navLabel>
+        <text>Django templates</text>
+      </navLabel>
+      <content src="index19.html"/>
+    </navPoint>
+    <navPoint id="ugWaXN7ol6JematkuubwERD" playOrder="21">
+      <navLabel>
+        <text>CSS – make it pretty</text>
+      </navLabel>
+      <content src="index20.html"/>
+    </navPoint>
+    <navPoint id="uVUMkm86TNDUaIUeZdjAMRB" playOrder="22">
+      <navLabel>
+        <text>Template extending</text>
+      </navLabel>
+      <content src="index21.html"/>
+    </navPoint>
+    <navPoint id="u7HVAoDpbmdFUOvyZEQddYC" playOrder="23">
+      <navLabel>
+        <text>Extend your application</text>
+      </navLabel>
+      <content src="index22.html"/>
+    </navPoint>
+    <navPoint id="ugXmm7rRMSNu4yPIgCObgb8" playOrder="24">
+      <navLabel>
+        <text>Django Forms</text>
+      </navLabel>
+      <content src="index23.html"/>
+    </navPoint>
+    <navPoint id="uMWaNUkhXiWx9jrIMeK9WJ4" playOrder="25">
+      <navLabel>
+        <text>What's next?</text>
+      </navLabel>
+      <content src="index24.html"/>
+    </navPoint>
+  </navMap>
+</ncx>

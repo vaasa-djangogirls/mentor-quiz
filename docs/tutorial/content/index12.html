@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='utf-8'?>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+  <head>
+    <title>Django admin</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="description" content=""/>
+    <meta name="generator" content="HonKit 3.7.5"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <link rel="stylesheet" type="text/css" href="stylesheet.css"/>
+<link rel="stylesheet" type="text/css" href="page_styles.css"/>
+</head>
+  <body class="calibre">
+        
+<div class="page">
+    
+        <h1 class="calibre1" id="calibre_toc_13">Django admin</h1>
+        <div class="page">
+            <h1 id="django-admin" class="calibre1">Django admin</h1>
+<p class="calibre6">To add, edit and delete the posts we've just modeled, we will use Django admin.</p>
+<p class="calibre6">Let's open the <code class="calibre11">blog/admin.py</code> file in the code editor and replace its contents with this:</p>
+<p class="calibre6"></p><p class="calibre6">blog/admin.py</p><p class="calibre6"></p>
+<pre class="calibre13"><code class="calibre11"><span>from</span> django.contrib <span>import</span> admin
+<span>from</span> .models <span>import</span> Post
+
+admin.site.register(Post)
+</code></pre>
+<p class="calibre6">As you can see, we import (include) the Post model defined in the previous chapter. To make our model visible on the admin page, we need to register the model with <code class="calibre11">admin.site.register(Post)</code>.</p>
+<p class="calibre6">OK, time to look at our Post model. Remember to run <code class="calibre11">python manage.py runserver</code> in the console to run the web server. Go to your browser and type the address <a href="http://127.0.0.1:8000/admin/" target="_blank">http://127.0.0.1:8000/admin/</a>. You will see a login page like this:</p>
+<p class="calibre6"><img src="login_page2.png" alt="Login page" class="calibre8"/></p>
+<p class="calibre6">To log in, you need to create a <em class="calibre14">superuser</em> - a user account that has control over everything on the site. Go back to the command line, type <code class="calibre11">python manage.py createsuperuser</code>, and press enter.</p>
+<blockquote class="calibre5">
+<p class="calibre6">Remember, to write new commands while the web server is running, open a new terminal window and activate your virtualenv. We reviewed how to write new commands in the <b class="calibre10">Your first Django project!</b> chapter, in the <b class="calibre10">Starting the web server</b> section.</p>
+</blockquote>
+<p class="calibre6"></p><p class="calibre6">macOS or Linux:</p><p class="calibre6"></p>
+<pre class="calibre13"><code class="calibre11">(myvenv) ~/djangogirls$ python manage.py createsuperuser
+</code></pre><p class="calibre6"></p><p class="calibre6">Windows:</p><p class="calibre6"></p>
+<pre class="calibre13"><code class="calibre11">(myvenv) C:\Users\Name\djangogirls&gt; python manage.py createsuperuser
+</code></pre><p class="calibre6">When prompted, type your username (lowercase, no spaces), email address, and password. <strong class="calibre10">Don't worry that you can't see the password you're typing in – that's how it's supposed to be.</strong> Type it in and press <code class="calibre11">enter</code> to continue. The output should look like this (where the username and email should be your own ones):</p>
+<pre class="calibre13"><code class="calibre11">Username: ola
+Email address: ola@example.com
+Password:
+Password (again):
+Superuser created successfully.
+</code></pre><p class="calibre6">Return to your browser. Log in with the superuser's credentials you chose; you should see the Django admin dashboard.</p>
+<p class="calibre6"><img src="django_admin3.png" alt="Django admin" class="calibre8"/></p>
+<p class="calibre6">Go to Posts and experiment a little bit with it. Add five or six blog posts. Don't worry about the content –- it's only visible to you on your local computer -- you can copy-paste some text from this tutorial to save time. :)</p>
+<p class="calibre6">Make sure that at least two or three posts (but not all) have the publish date set. It will be helpful later.</p>
+<p class="calibre6"><img src="edit_post3.png" alt="Django admin" class="calibre8"/></p>
+<p class="calibre6">If you want to know more about Django admin, you should check Django's documentation: <a href="https://docs.djangoproject.com/en/5.1/ref/contrib/admin/" target="_blank">https://docs.djangoproject.com/en/5.1/ref/contrib/admin/</a></p>
+<p class="calibre6">This is probably a good moment to grab a coffee (or tea) or something to eat to re-energize yourself. You created your first Django model – you deserve a little break!</p>
+
+        </div>
+    
+</div>
+
+        
+    
+
+
+</body></html>

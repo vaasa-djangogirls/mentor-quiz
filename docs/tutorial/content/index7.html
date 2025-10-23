@@ -1,0 +1,697 @@
+<?xml version='1.0' encoding='utf-8'?>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+  <head>
+    <title>Introduction to Python</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="description" content=""/>
+    <meta name="generator" content="HonKit 3.7.5"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <link rel="stylesheet" type="text/css" href="stylesheet.css"/>
+<link rel="stylesheet" type="text/css" href="page_styles.css"/>
+</head>
+  <body class="calibre">
+        
+<div class="page">
+    
+        <h1 class="calibre1" id="calibre_toc_8">Introduction to Python</h1>
+        <div class="page">
+            <h1 id="introduction-to-python" class="calibre1">Introduction to Python</h1>
+<blockquote class="calibre5">
+<p class="calibre6">Part of this chapter is based on tutorials by Geek Girls Carrots (<a href="https://github.com/ggcarrots/django-carrots" target="_blank">https://github.com/ggcarrots/django-carrots</a>).</p>
+</blockquote>
+<p class="calibre6">Let's write some code!</p>
+<h2 id="python-prompt" class="calibre7">Python prompt</h2>
+<blockquote class="calibre5">
+<p class="calibre6">For readers at home: this part is covered in the <a href="https://www.youtube.com/watch?v=MO63L4s-20U" target="_blank">Python Basics: Integers, Strings, Lists, Variables and Errors</a> video.</p>
+</blockquote>
+<p class="calibre6">To start playing with Python, we need to open up a <em class="calibre14">command line</em> on your computer. You should already know how to do that – you learned it in the <a href="index4.html">Intro to Command Line</a> chapter.</p>
+<p class="calibre6">Once you're ready, follow the instructions below.</p>
+<p class="calibre6">We want to open up a Python console, so type in <code class="calibre11">python</code> on Windows or <code class="calibre11">python3</code> on Mac OS/Linux and hit <code class="calibre11">enter</code>.</p>
+<p class="calibre6"></p><p class="calibre6">command-line</p><p class="calibre6"></p>
+<pre class="calibre13"><code class="calibre11">$ python3
+Python 3.12.3 (...)
+Type "help", "copyright", "credits" or "license" for more information.
+&gt;&gt;&gt;
+</code></pre><h2 id="your-first-python-command" class="calibre7">Your first Python command!</h2>
+<p class="calibre6">After running the Python command, the prompt changed to <code class="calibre11">&gt;&gt;&gt;</code>. For us this means that for now we may only use commands in the Python language. You don't have to type in <code class="calibre11">&gt;&gt;&gt;</code> – Python will do that for you.</p>
+<p class="calibre6">If you want to exit the Python console at any point, type <code class="calibre11">exit()</code> or use the shortcut <code class="calibre11">Ctrl + Z</code> for Windows and <code class="calibre11">Ctrl + D</code> for Mac/Linux. Then you won't see <code class="calibre11">&gt;&gt;&gt;</code> any longer.</p>
+<p class="calibre6">For now, we don't want to exit the Python console. We want to learn more about it. Let's start by typing some math, like <code class="calibre11">2 + 3</code> and hitting <code class="calibre11">enter</code>.</p>
+<p class="calibre6"></p><p class="calibre6">command-line</p><p class="calibre6"></p>
+<pre class="calibre13"><code class="calibre11"><span>&gt;&gt;&gt; </span><span>2</span> + <span>3</span>
+<span>5</span>
+</code></pre>
+<p class="calibre6">Nice! See how the answer popped out? Python knows math! You could try other commands like:</p>
+<ul class="calibre9">
+<li class="calibre3"><code class="calibre11">4 * 5</code></li>
+<li class="calibre3"><code class="calibre11">5 - 1</code></li>
+<li class="calibre3"><code class="calibre11">40 / 2</code></li>
+</ul>
+<p class="calibre6">To perform exponential calculation, say 2 to the power 3, we type:
+</p><p class="calibre6">command-line</p><p class="calibre6"></p>
+<pre class="calibre13"><code class="calibre11"><span>&gt;&gt;&gt; </span><span>2</span> ** <span>3</span>
+<span>8</span>
+</code></pre>
+<p class="calibre6">Have fun with this for a little while and then get back here. :)</p>
+<p class="calibre6">As you can see, Python is a great calculator. If you're wondering what else you can do…</p>
+<h2 id="strings" class="calibre7">Strings</h2>
+<p class="calibre6">How about your name? Type your first name in quotes like this:</p>
+<p class="calibre6"></p><p class="calibre6">command-line</p><p class="calibre6"></p>
+<pre class="calibre13"><code class="calibre11"><span>&gt;&gt;&gt; </span><span>"Ola"</span>
+<span>'Ola'</span>
+</code></pre>
+<p class="calibre6">You've now created your first string! It's a sequence of characters that can be processed by a computer. The string must always begin and end with the same character. This may be single (<code class="calibre11">'</code>) or double (<code class="calibre11">"</code>) quotes (there is no difference!) The quotes tell Python that what's inside of them is a string.</p>
+<p class="calibre6">Strings can be strung together. Try this:</p>
+<p class="calibre6"></p><p class="calibre6">command-line</p><p class="calibre6"></p>
+<pre class="calibre13"><code class="calibre11"><span>&gt;&gt;&gt; </span><span>"Hi there "</span> + <span>"Ola"</span>
+<span>'Hi there Ola'</span>
+</code></pre>
+<p class="calibre6">You can also multiply strings with a number:</p>
+<p class="calibre6"></p><p class="calibre6">command-line</p><p class="calibre6"></p>
+<pre class="calibre13"><code class="calibre11"><span>&gt;&gt;&gt; </span><span>"Ola"</span> * <span>3</span>
+<span>'OlaOlaOla'</span>
+</code></pre>
+<p class="calibre6">If you need to put an apostrophe inside your string, you have two ways to do it.</p>
+<p class="calibre6">Using double quotes:</p>
+<p class="calibre6"></p><p class="calibre6">command-line</p><p class="calibre6"></p>
+<pre class="calibre13"><code class="calibre11"><span>&gt;&gt;&gt; </span><span>"Runnin' down the hill"</span>
+<span>"Runnin' down the hill"</span>
+</code></pre>
+<p class="calibre6">or escaping the apostrophe with a backslash (<code class="calibre11">\</code>):</p>
+<p class="calibre6"></p><p class="calibre6">command-line</p><p class="calibre6"></p>
+<pre class="calibre13"><code class="calibre11"><span>&gt;&gt;&gt; </span><span>'Runnin\' down the hill'</span>
+<span>"Runnin' down the hill"</span>
+</code></pre>
+<p class="calibre6">Nice, huh? To see your name in uppercase letters, type:</p>
+<p class="calibre6"></p><p class="calibre6">command-line</p><p class="calibre6"></p>
+<pre class="calibre13"><code class="calibre11"><span>&gt;&gt;&gt; </span><span>"Ola"</span>.upper()
+<span>'OLA'</span>
+</code></pre>
+<p class="calibre6">You just used the <code class="calibre11">upper</code> <strong class="calibre10">method</strong> on your string! A method (like <code class="calibre11">upper()</code>) is a sequence of instructions that Python has to perform on a given object (<code class="calibre11">"Ola"</code>) once you call it.</p>
+<p class="calibre6">If you want to know the number of letters contained in your name, there is a <strong class="calibre10">function</strong> for that too!</p>
+<p class="calibre6"></p><p class="calibre6">command-line</p><p class="calibre6"></p>
+<pre class="calibre13"><code class="calibre11"><span>&gt;&gt;&gt; </span><span>len</span>(<span>"Ola"</span>)
+<span>3</span>
+</code></pre>
+<p class="calibre6">Wonder why sometimes you call functions with a <code class="calibre11">.</code> at the end of a string (like <code class="calibre11">"Ola".upper()</code>) and sometimes you first call a function and place the string in parentheses? Well, in some cases, functions belong to objects, like <code class="calibre11">upper()</code>, which can only be performed on strings. In this case, we call the function a <strong class="calibre10">method</strong>. Other times, functions don't belong to anything specific and can be used on different types of objects, just like <code class="calibre11">len()</code>. That's why we're giving <code class="calibre11">"Ola"</code> as a parameter to the <code class="calibre11">len</code> function.</p>
+<h3 id="summary" class="calibre12">Summary</h3>
+<p class="calibre6">OK, enough of strings. So far you've learned about:</p>
+<ul class="calibre9">
+<li class="calibre3"><strong class="calibre10">the prompt</strong> – typing commands (code) into the Python prompt results in answers in Python</li>
+<li class="calibre3"><strong class="calibre10">numbers and strings</strong> – in Python numbers are used for math and strings for text objects</li>
+<li class="calibre3"><strong class="calibre10">operators</strong> – like <code class="calibre11">+</code> and <code class="calibre11">*</code>, combine values to produce a new one</li>
+<li class="calibre3"><strong class="calibre10">functions</strong> – like <code class="calibre11">upper()</code> and <code class="calibre11">len()</code>, perform actions on objects.</li>
+</ul>
+<p class="calibre6">These are the basics of every programming language you learn. Ready for something harder? We bet you are!</p>
+<h2 id="errors" class="calibre7">Errors</h2>
+<p class="calibre6">Let's try something new. Can we get the length of a number the same way we could find out the length of our name? Type in <code class="calibre11">len(304023)</code> and hit <code class="calibre11">enter</code>:</p>
+<p class="calibre6"></p><p class="calibre6"><span class="glyphicon" aria-hidden="true" data-toggle="tooltip" title="An error is expected when you run this command!"></span> command-line</p><p class="calibre6"></p>
+<pre class="calibre13"><code class="calibre11"><span>&gt;&gt;&gt; </span><span>len</span>(<span>304023</span>)
+Traceback (most recent call last):
+  File <span>"&lt;stdin&gt;"</span>, line <span>1</span>, <span>in</span> &lt;module&gt;
+TypeError: <span>object</span> of <span>type</span> <span>'int'</span> has no <span>len</span>()
+</code></pre>
+<p class="calibre6">We got our first error! The <span class="glyphicon" aria-hidden="true" data-toggle="tooltip" title="An error is expected when you run this command!"></span> icon is our way of giving you a heads up that the code you are about to run won't work as expected. Making mistakes (even intentional ones) are an important part of learning!</p>
+<p class="calibre6"> It says that objects of type "int" (integers, whole numbers) have no length. So what can we do now? Maybe we can write our number as a string? Strings have a length, right?</p>
+<p class="calibre6"></p><p class="calibre6">command-line</p><p class="calibre6"></p>
+<pre class="calibre13"><code class="calibre11"><span>&gt;&gt;&gt; </span><span>len</span>(<span>str</span>(<span>304023</span>))
+<span>6</span>
+</code></pre>
+<p class="calibre6">It worked! We used the <code class="calibre11">str</code> function inside of the <code class="calibre11">len</code> function. <code class="calibre11">str()</code> converts everything to strings.</p>
+<ul class="calibre9">
+<li class="calibre3">The <code class="calibre11">str</code> function converts things into <strong class="calibre10">strings</strong></li>
+<li class="calibre3">The <code class="calibre11">int</code> function converts things into <strong class="calibre10">integers</strong></li>
+</ul>
+<blockquote class="calibre5">
+<p class="calibre6">Important: we can convert numbers into text, but we can't necessarily convert text into numbers – what would <code class="calibre11">int('hello')</code> be anyway?</p>
+</blockquote>
+<h2 id="variables" class="calibre7">Variables</h2>
+<p class="calibre6">An important concept in programming is variables. A variable is nothing more than a name for something so you can use it later. Programmers use these variables to store data, make their code more readable and so they don't have to keep remembering what things are.</p>
+<p class="calibre6">Let's say we want to create a new variable called <code class="calibre11">name</code>:</p>
+<p class="calibre6"></p><p class="calibre6">command-line</p><p class="calibre6"></p>
+<pre class="calibre13"><code class="calibre11"><span>&gt;&gt;&gt; </span>name = <span>"Ola"</span>
+</code></pre>
+<p class="calibre6">We type name equals Ola.</p>
+<p class="calibre6">As you've noticed, your program didn't return anything like it did before. So how do we know that the variable actually exists? Enter <code class="calibre11">name</code> and hit <code class="calibre11">enter</code>:</p>
+<p class="calibre6"></p><p class="calibre6">command-line</p><p class="calibre6"></p>
+<pre class="calibre13"><code class="calibre11"><span>&gt;&gt;&gt; </span>name
+<span>'Ola'</span>
+</code></pre>
+<p class="calibre6">Yippee! Your first variable! :) You can always change what it refers to:</p>
+<p class="calibre6"></p><p class="calibre6">command-line</p><p class="calibre6"></p>
+<pre class="calibre13"><code class="calibre11"><span>&gt;&gt;&gt; </span>name = <span>"Sonja"</span>
+<span>&gt;&gt;&gt; </span>name
+<span>'Sonja'</span>
+</code></pre>
+<p class="calibre6">You can use it in functions too:</p>
+<p class="calibre6"></p><p class="calibre6">command-line</p><p class="calibre6"></p>
+<pre class="calibre13"><code class="calibre11"><span>&gt;&gt;&gt; </span><span>len</span>(name)
+<span>5</span>
+</code></pre>
+<p class="calibre6">Awesome, right? Now, variables can be anything – numbers too! Try this:</p>
+<p class="calibre6"></p><p class="calibre6">command-line</p><p class="calibre6"></p>
+<pre class="calibre13"><code class="calibre11"><span>&gt;&gt;&gt; </span>a = <span>4</span>
+<span>&gt;&gt;&gt; </span>b = <span>6</span>
+<span>&gt;&gt;&gt; </span>a * b
+<span>24</span>
+</code></pre>
+<p class="calibre6">But what if we used the wrong name? Can you guess what would happen? Let's try!</p>
+<p class="calibre6"></p><p class="calibre6"><span class="glyphicon" aria-hidden="true" data-toggle="tooltip" title="An error is expected when you run this command!"></span> command-line</p><p class="calibre6"></p>
+<pre class="calibre13"><code class="calibre11"><span>&gt;&gt;&gt; </span>city = <span>"Tokyo"</span>
+<span>&gt;&gt;&gt; </span>ctiy
+Traceback (most recent call last):
+  File <span>"&lt;stdin&gt;"</span>, line <span>1</span>, <span>in</span> &lt;module&gt;
+NameError: name <span>'ctiy'</span> <span>is</span> <span>not</span> defined
+</code></pre>
+<p class="calibre6">An error! As you can see, Python has different types of errors and this one is called a <strong class="calibre10">NameError</strong>. Python will give you this error if you try to use a variable that hasn't been defined yet. If you encounter this error later, check your code to see if you've mistyped any names.</p>
+<p class="calibre6">Play with this for a while and see what you can do!</p>
+<h2 id="the-print-function" class="calibre7">The print function</h2>
+<p class="calibre6">Try this:</p>
+<p class="calibre6"></p><p class="calibre6">command-line</p><p class="calibre6"></p>
+<pre class="calibre13"><code class="calibre11"><span>&gt;&gt;&gt; </span>name = <span>'Maria'</span>
+<span>&gt;&gt;&gt; </span>name
+<span>'Maria'</span>
+<span>&gt;&gt;&gt; </span><span>print</span>(name)
+Maria
+</code></pre>
+<p class="calibre6">When you just type <code class="calibre11">name</code>, the Python interpreter responds with the string <em class="calibre14">representation</em> of the variable 'name', which is the letters M-a-r-i-a, surrounded by single quotes, ''. When you say <code class="calibre11">print(name)</code>, Python will "print" the contents of the variable to the screen, without the quotes, which is neater.</p>
+<p class="calibre6">As we'll see later, <code class="calibre11">print()</code> is also useful when we want to print things from inside functions, or when we want to print things on multiple lines.</p>
+<h2 id="lists" class="calibre7">Lists</h2>
+<p class="calibre6">Beside strings and integers, Python has all sorts of different types of objects. Now we're going to introduce one called <strong class="calibre10">list</strong>. Lists are exactly what you think they are: objects which are lists of other objects. :)</p>
+<p class="calibre6">Go ahead and create a list:</p>
+<p class="calibre6"></p><p class="calibre6">command-line</p><p class="calibre6"></p>
+<pre class="calibre13"><code class="calibre11"><span>&gt;&gt;&gt; </span>[]
+[]
+</code></pre>
+<p class="calibre6">Yes, this list is empty. Not very useful, right? Let's create a list of lottery numbers. We don't want to repeat ourselves all the time, so we will put it in a variable, too:</p>
+<p class="calibre6"></p><p class="calibre6">command-line</p><p class="calibre6"></p>
+<pre class="calibre13"><code class="calibre11"><span>&gt;&gt;&gt; </span>lottery = [<span>3</span>, <span>42</span>, <span>12</span>, <span>19</span>, <span>30</span>, <span>59</span>]
+</code></pre>
+<p class="calibre6">All right, we have a list! What can we do with it? Let's see how many lottery numbers there are in a list. Do you have any idea which function you should use for that? You know this already!</p>
+<p class="calibre6"></p><p class="calibre6">command-line</p><p class="calibre6"></p>
+<pre class="calibre13"><code class="calibre11"><span>&gt;&gt;&gt; </span><span>len</span>(lottery)
+<span>6</span>
+</code></pre>
+<p class="calibre6">Yes! <code class="calibre11">len()</code> can give you a number of objects in a list. Handy, right? Maybe we will sort it now:</p>
+<p class="calibre6"></p><p class="calibre6">command-line</p><p class="calibre6"></p>
+<pre class="calibre13"><code class="calibre11"><span>&gt;&gt;&gt; </span>lottery.sort()
+</code></pre>
+<p class="calibre6">This doesn't return anything, it just changed the order in which the numbers appear in the list. Let's print it out again and see what happened:</p>
+<p class="calibre6"></p><p class="calibre6">command-line</p><p class="calibre6"></p>
+<pre class="calibre13"><code class="calibre11"><span>&gt;&gt;&gt; </span><span>print</span>(lottery)
+[<span>3</span>, <span>12</span>, <span>19</span>, <span>30</span>, <span>42</span>, <span>59</span>]
+</code></pre>
+<p class="calibre6">As you can see, the numbers in your list are now sorted from the lowest to highest value. Congrats!</p>
+<p class="calibre6">Maybe we want to reverse that order? Let's do that!</p>
+<p class="calibre6"></p><p class="calibre6">command-line</p><p class="calibre6"></p>
+<pre class="calibre13"><code class="calibre11"><span>&gt;&gt;&gt; </span>lottery.reverse()
+<span>&gt;&gt;&gt; </span><span>print</span>(lottery)
+[<span>59</span>, <span>42</span>, <span>30</span>, <span>19</span>, <span>12</span>, <span>3</span>]
+</code></pre>
+<p class="calibre6">If you want to add something to your list, you can do this by typing this command:</p>
+<p class="calibre6"></p><p class="calibre6">command-line</p><p class="calibre6"></p>
+<pre class="calibre13"><code class="calibre11"><span>&gt;&gt;&gt; </span>lottery.append(<span>199</span>)
+<span>&gt;&gt;&gt; </span><span>print</span>(lottery)
+[<span>59</span>, <span>42</span>, <span>30</span>, <span>19</span>, <span>12</span>, <span>3</span>, <span>199</span>]
+</code></pre>
+<p class="calibre6">If you want to show only the first number, you can do this by using <strong class="calibre10">indexes</strong>. An index is the number that says where in a list an item occurs. Programmers prefer to start counting at 0, so the first object in your list is at index 0, the next one is at 1, and so on. Try this:</p>
+<p class="calibre6"></p><p class="calibre6">command-line</p><p class="calibre6"></p>
+<pre class="calibre13"><code class="calibre11"><span>&gt;&gt;&gt; </span><span>print</span>(lottery[<span>0</span>])
+<span>59</span>
+<span>&gt;&gt;&gt; </span><span>print</span>(lottery[<span>1</span>])
+<span>42</span>
+</code></pre>
+<p class="calibre6">As you can see, you can access different objects in your list by using the list's name and the object's index inside of square brackets.</p>
+<p class="calibre6">To delete something from your list you will need to use <strong class="calibre10">indexes</strong> as we learned above and the <code class="calibre11">pop()</code> method. Let's try an example and reinforce what we learned previously; we will be deleting the first number of our list.</p>
+<p class="calibre6"></p><p class="calibre6">command-line</p><p class="calibre6"></p>
+<pre class="calibre13"><code class="calibre11"><span>&gt;&gt;&gt; </span><span>print</span>(lottery)
+[<span>59</span>, <span>42</span>, <span>30</span>, <span>19</span>, <span>12</span>, <span>3</span>, <span>199</span>]
+<span>&gt;&gt;&gt; </span><span>print</span>(lottery[<span>0</span>])
+<span>59</span>
+<span>&gt;&gt;&gt; </span>lottery.pop(<span>0</span>)
+<span>59</span>
+<span>&gt;&gt;&gt; </span><span>print</span>(lottery)
+[<span>42</span>, <span>30</span>, <span>19</span>, <span>12</span>, <span>3</span>, <span>199</span>]
+</code></pre>
+<p class="calibre6">That worked like a charm!</p>
+<p class="calibre6">For extra fun, try some other indexes: 6, 7, 1000, -1, -6 or -1000. See if you can predict the result before trying the command. Do the results make sense?</p>
+<p class="calibre6">You can find a list of all available list methods in this chapter of the Python documentation: <a href="https://docs.python.org/3/tutorial/datastructures.html" target="_blank">https://docs.python.org/3/tutorial/datastructures.html</a></p>
+<h2 id="dictionaries" class="calibre7">Dictionaries</h2>
+<blockquote class="calibre5">
+<p class="calibre6">For readers at home: this part is covered in the <a href="https://www.youtube.com/watch?v=ZX1CVvZLE6c" target="_blank">Python Basics: Dictionaries</a> video.</p>
+</blockquote>
+<p class="calibre6">A dictionary is similar to a list, but you access values by looking up a key instead of a numeric index. A key can be any string or number. The syntax to define an empty dictionary is:</p>
+<p class="calibre6"></p><p class="calibre6">command-line</p><p class="calibre6"></p>
+<pre class="calibre13"><code class="calibre11"><span>&gt;&gt;&gt; </span>{}
+{}
+</code></pre>
+<p class="calibre6">This shows that you just created an empty dictionary. Hurray!</p>
+<p class="calibre6">Now, try writing the following command (try substituting your own information, too):</p>
+<p class="calibre6"></p><p class="calibre6">command-line</p><p class="calibre6"></p>
+<pre class="calibre13"><code class="calibre11"><span>&gt;&gt;&gt; </span>participant = {<span>'name'</span>: <span>'Ola'</span>, <span>'country'</span>: <span>'Poland'</span>, <span>'favorite_numbers'</span>: [<span>7</span>, <span>42</span>, <span>92</span>]}
+</code></pre>
+<p class="calibre6">With this command, you just created a variable named <code class="calibre11">participant</code> with three key–value pairs:</p>
+<ul class="calibre9">
+<li class="calibre3">The key <code class="calibre11">name</code> points to the value <code class="calibre11">'Ola'</code> (a <code class="calibre11">string</code> object),</li>
+<li class="calibre3"><code class="calibre11">country</code> points to <code class="calibre11">'Poland'</code> (another <code class="calibre11">string</code>),</li>
+<li class="calibre3">and <code class="calibre11">favorite_numbers</code> points to <code class="calibre11">[7, 42, 92]</code> (a <code class="calibre11">list</code> with three numbers in it).</li>
+</ul>
+<p class="calibre6">You can check the content of individual keys with this syntax:</p>
+<p class="calibre6"></p><p class="calibre6">command-line</p><p class="calibre6"></p>
+<pre class="calibre13"><code class="calibre11"><span>&gt;&gt;&gt; </span><span>print</span>(participant[<span>'name'</span>])
+Ola
+</code></pre>
+<p class="calibre6">See, it's similar to a list. But you don't need to remember the index – just the name.</p>
+<p class="calibre6">What happens if we ask Python the value of a key that doesn't exist? Can you guess? Let's try it and see!</p>
+<p class="calibre6"></p><p class="calibre6"><span class="glyphicon" aria-hidden="true" data-toggle="tooltip" title="An error is expected when you run this command!"></span> command-line</p><p class="calibre6"></p>
+<pre class="calibre13"><code class="calibre11"><span>&gt;&gt;&gt; </span>participant[<span>'age'</span>]
+Traceback (most recent call last):
+  File <span>"&lt;stdin&gt;"</span>, line <span>1</span>, <span>in</span> &lt;module&gt;
+KeyError: <span>'age'</span>
+</code></pre>
+<p class="calibre6">Look, another error! This one is a <strong class="calibre10">KeyError</strong>. Python is helpful and tells you that the key <code class="calibre11">'age'</code> doesn't exist in this dictionary.</p>
+<p class="calibre6">When should you use a dictionary or a list? Well, that's a good point to ponder. Think about the answer before looking at it in the next line.</p>
+<ul class="calibre9">
+<li class="calibre3">Do you just need an ordered sequence of items? Go for a list.</li>
+<li class="calibre3">Do you need to associate values with keys, so you can look them up efficiently (by key) later on? Use a dictionary.</li>
+</ul>
+<p class="calibre6">Like lists, using the <code class="calibre11">len()</code> function on the dictionaries returns the number of key–value pairs in the dictionary. Go ahead and type in this command:</p>
+<p class="calibre6"></p><p class="calibre6">command-line</p><p class="calibre6"></p>
+<pre class="calibre13"><code class="calibre11"><span>&gt;&gt;&gt; </span><span>len</span>(participant)
+<span>3</span>
+</code></pre>
+<p class="calibre6">Dictionaries, like lists, are <em class="calibre14">mutable</em>, meaning that they can be changed after they are created. You can add new key–value pairs to a dictionary after it is created, like this:</p>
+<p class="calibre6"></p><p class="calibre6">command-line</p><p class="calibre6"></p>
+<pre class="calibre13"><code class="calibre11"><span>&gt;&gt;&gt; </span>participant[<span>'favorite_language'</span>] = <span>'Python'</span>
+</code></pre>
+<p class="calibre6">I hope it makes sense up to now. :) Ready for some more fun with dictionaries? Read on for some amazing things.</p>
+<p class="calibre6">You can use the <code class="calibre11">pop()</code> method to delete an item in the dictionary. Say, if you want to delete the entry corresponding to the key <code class="calibre11">'favorite_numbers'</code>, type in the following command:</p>
+<p class="calibre6"></p><p class="calibre6">command-line</p><p class="calibre6"></p>
+<pre class="calibre13"><code class="calibre11"><span>&gt;&gt;&gt; </span>participant.pop(<span>'favorite_numbers'</span>)
+[<span>7</span>, <span>42</span>, <span>92</span>]
+<span>&gt;&gt;&gt; </span>participant
+{<span>'country'</span>: <span>'Poland'</span>, <span>'favorite_language'</span>: <span>'Python'</span>, <span>'name'</span>: <span>'Ola'</span>}
+</code></pre>
+<p class="calibre6">As you can see from the output, the key–value pair corresponding to the 'favorite_numbers' key has been deleted.</p>
+<p class="calibre6">As well as this, you can also change a value associated with an already-created key in the dictionary. Type this:</p>
+<p class="calibre6"></p><p class="calibre6">command-line</p><p class="calibre6"></p>
+<pre class="calibre13"><code class="calibre11"><span>&gt;&gt;&gt; </span>participant[<span>'country'</span>] = <span>'Germany'</span>
+<span>&gt;&gt;&gt; </span>participant
+{<span>'country'</span>: <span>'Germany'</span>, <span>'favorite_language'</span>: <span>'Python'</span>, <span>'name'</span>: <span>'Ola'</span>}
+</code></pre>
+<p class="calibre6">As you can see, the value of the key <code class="calibre11">'country'</code> has been altered from <code class="calibre11">'Poland'</code> to <code class="calibre11">'Germany'</code>. :) Exciting? Hurrah! You just learned another amazing thing.</p>
+<h3 class="calibre12">Summary</h3>
+<p class="calibre6">Awesome! You know a lot about programming now. In this last part you learned about:</p>
+<ul class="calibre9">
+<li class="calibre3"><strong class="calibre10">errors</strong> – you now know how to read and understand errors that show up if Python doesn't understand a command you've given it</li>
+<li class="calibre3"><strong class="calibre10">variables</strong> – names for objects that allow you to code more easily and to make your code more readable</li>
+<li class="calibre3"><strong class="calibre10">lists</strong> – lists of objects stored in a particular order</li>
+<li class="calibre3"><strong class="calibre10">dictionaries</strong> – objects stored as key–value pairs</li>
+</ul>
+<p class="calibre6">Excited for the next part? :)</p>
+<h2 id="compare-things" class="calibre7">Compare things</h2>
+<blockquote class="calibre5">
+<p class="calibre6">For readers at home: this part is covered in the <a href="https://www.youtube.com/watch?v=7bzxqIKYgf4" target="_blank">Python Basics: Comparisons</a> video.</p>
+</blockquote>
+<p class="calibre6">A big part of programming involves comparing things. What's the easiest thing to compare? Numbers! Let's see how that works:</p>
+<p class="calibre6"></p><p class="calibre6">command-line</p><p class="calibre6"></p>
+<pre class="calibre13"><code class="calibre11"><span>&gt;&gt;&gt; </span><span>5</span> &gt; <span>2</span>
+<span>True</span>
+<span>&gt;&gt;&gt; </span><span>3</span> &lt; <span>1</span>
+<span>False</span>
+<span>&gt;&gt;&gt; </span><span>5</span> &gt; <span>2</span> * <span>2</span>
+<span>True</span>
+<span>&gt;&gt;&gt; </span><span>1</span> == <span>1</span>
+<span>True</span>
+<span>&gt;&gt;&gt; </span><span>5</span> != <span>2</span>
+<span>True</span>
+<span>&gt;&gt;&gt; </span><span>len</span>([<span>1</span>, <span>2</span>, <span>3</span>]) &gt; <span>len</span>([<span>4</span>, <span>5</span>])
+<span>True</span>
+</code></pre>
+<p class="calibre6">We gave Python some numbers to compare. As you can see, not only can Python compare numbers, but it can also compare values of mathematical expressions like <code class="calibre11">2 * 2</code> and function results like the <code class="calibre11">2</code> returned by <code class="calibre11">len([4, 5])</code>. Nice, huh?</p>
+<p class="calibre6">Do you wonder why we put two equal signs <code class="calibre11">==</code> next to each other to compare if numbers are equal? We use a single <code class="calibre11">=</code> for assigning values to variables. You always, <strong class="calibre10">always</strong> need to put two of them – <code class="calibre11">==</code> – if you want to check if things are equal to each other. We can also state that things are unequal to each other. For that, we use the symbol <code class="calibre11">!=</code>, as shown in the example above.</p>
+<p class="calibre6">Give Python two more tasks:</p>
+<p class="calibre6"></p><p class="calibre6">command-line</p><p class="calibre6"></p>
+<pre class="calibre13"><code class="calibre11"><span>&gt;&gt;&gt; </span><span>6</span> &gt;= <span>12</span> / <span>2</span>
+<span>True</span>
+<span>&gt;&gt;&gt; </span><span>3</span> &lt;= <span>2</span>
+<span>False</span>
+</code></pre>
+<p class="calibre6">We've seen <code class="calibre11">&gt;</code> and <code class="calibre11">&lt;</code>, but what do <code class="calibre11">&gt;=</code> and <code class="calibre11">&lt;=</code> mean? Read them like this:</p>
+<ul class="calibre9">
+<li class="calibre3">x <code class="calibre11">&gt;</code> y means: x is greater than y</li>
+<li class="calibre3">x <code class="calibre11">&lt;</code> y means: x is less than y</li>
+<li class="calibre3">x <code class="calibre11">&lt;=</code> y means: x is less than or equal to y</li>
+<li class="calibre3">x <code class="calibre11">&gt;=</code> y means: x is greater than or equal to y</li>
+</ul>
+<p class="calibre6">Awesome! Wanna do one more? Try this:</p>
+<p class="calibre6"></p><p class="calibre6">command-line</p><p class="calibre6"></p>
+<pre class="calibre13"><code class="calibre11"><span>&gt;&gt;&gt; </span><span>6</span> &gt; <span>2</span> <span>and</span> <span>2</span> &lt; <span>3</span>
+<span>True</span>
+<span>&gt;&gt;&gt; </span><span>3</span> &gt; <span>2</span> <span>and</span> <span>2</span> &lt; <span>1</span>
+<span>False</span>
+<span>&gt;&gt;&gt; </span><span>3</span> &gt; <span>2</span> <span>or</span> <span>2</span> &lt; <span>1</span>
+<span>True</span>
+</code></pre>
+<p class="calibre6">You can give Python as many numbers to compare as you want, and it will give you an answer! Pretty smart, right?</p>
+<ul class="calibre9">
+<li class="calibre3"><strong class="calibre10">and</strong> – if you use the <code class="calibre11">and</code> operator, both comparisons have to be True in order for the whole command to be True</li>
+<li class="calibre3"><strong class="calibre10">or</strong> – if you use the <code class="calibre11">or</code> operator, only one of the comparisons has to be True in order for the whole command to be True</li>
+</ul>
+<p class="calibre6">Have you heard of the expression "comparing apples to oranges"? Let's try the Python equivalent:</p>
+<p class="calibre6"></p><p class="calibre6"><span class="glyphicon" aria-hidden="true" data-toggle="tooltip" title="An error is expected when you run this command!"></span> command-line</p><p class="calibre6"></p>
+<pre class="calibre13"><code class="calibre11"><span>&gt;&gt;&gt; </span><span>1</span> &gt; <span>'django'</span>
+Traceback (most recent call last):
+  File <span>"&lt;stdin&gt;"</span>, line <span>1</span>, <span>in</span> &lt;module&gt;
+TypeError: <span>'&gt;'</span> <span>not</span> supported between instances of <span>'int'</span> <span>and</span> <span>'str'</span>
+</code></pre>
+<p class="calibre6">Here you see that just like in the expression, Python is not able to compare a number (<code class="calibre11">int</code>) and a string (<code class="calibre11">str</code>).
+Instead, it shows a <strong class="calibre10">TypeError</strong> and tells us the two types can't be compared together.</p>
+<h2 id="boolean" class="calibre7">Boolean</h2>
+<p class="calibre6">Incidentally, you just learned about a new type of object in Python. It's called <strong class="calibre10">Boolean</strong>.</p>
+<p class="calibre6">There are only two Boolean objects:</p>
+<ul class="calibre9">
+<li class="calibre3">True</li>
+<li class="calibre3">False</li>
+</ul>
+<p class="calibre6">But for Python to understand this, you need to always write it as 'True' (first letter uppercase, with the rest of the letters lowercased). <strong class="calibre10">true, TRUE, and tRUE won't work – only True is correct.</strong> (The same applies to 'False' as well.)</p>
+<p class="calibre6">Booleans can be variables, too! See here:</p>
+<p class="calibre6"></p><p class="calibre6">command-line</p><p class="calibre6"></p>
+<pre class="calibre13"><code class="calibre11"><span>&gt;&gt;&gt; </span>a = <span>True</span>
+<span>&gt;&gt;&gt; </span>a
+<span>True</span>
+</code></pre>
+<p class="calibre6">You can also do it this way:</p>
+<p class="calibre6"></p><p class="calibre6">command-line</p><p class="calibre6"></p>
+<pre class="calibre13"><code class="calibre11"><span>&gt;&gt;&gt; </span>a = <span>2</span> &gt; <span>5</span>
+<span>&gt;&gt;&gt; </span>a
+<span>False</span>
+</code></pre>
+<p class="calibre6">Practice and have fun with Booleans by trying to run the following commands:</p>
+<ul class="calibre9">
+<li class="calibre3"><code class="calibre11">True and True</code></li>
+<li class="calibre3"><code class="calibre11">False and True</code></li>
+<li class="calibre3"><code class="calibre11">True or 1 == 1</code></li>
+<li class="calibre3"><code class="calibre11">1 != 2</code></li>
+</ul>
+<p class="calibre6">Congrats! Booleans are one of the coolest features in programming, and you just learned how to use them!</p>
+<h1 id="save-it" class="calibre1">Save it!</h1>
+<blockquote class="calibre5">
+<p class="calibre6">For readers at home: this part is covered in the <a href="https://www.youtube.com/watch?v=dOAg6QVAxyk" target="_blank">Python Basics: Saving files and "If" statement</a> video.</p>
+</blockquote>
+<p class="calibre6">So far we've been writing all our python code in the interpreter, which limits us to entering one line of code at a time. Normal programs are saved in files and executed by our programming language <strong class="calibre10">interpreter</strong> or <strong class="calibre10">compiler</strong>. So far we've been running our programs one line at a time in the Python <strong class="calibre10">interpreter</strong>. We're going to need more than one line of code for the next few tasks, so we'll quickly need to:</p>
+<ul class="calibre9">
+<li class="calibre3">Exit the Python interpreter</li>
+<li class="calibre3">Open up our code editor of choice</li>
+<li class="calibre3">Save some code into a new python file</li>
+<li class="calibre3">Run it!</li>
+</ul>
+<p class="calibre6">To exit from the Python interpreter that we've been using, type the <code class="calibre11">exit()</code> function</p>
+<p class="calibre6"></p><p class="calibre6">command-line</p><p class="calibre6"></p>
+<pre class="calibre13"><code class="calibre11"><span>&gt;&gt;&gt; </span>exit()
+$
+</code></pre>
+<p class="calibre6">This will put you back into the command prompt.</p>
+<p class="calibre6">Earlier, we picked out a code editor from the <a href="index6.html">code editor</a> section. We'll need to open the editor now and write some code into a new file (or if you're using a Chromebook, create a new file in the cloud IDE and open the file, which will be in the included code editor):</p>
+<p class="calibre6"></p><p class="calibre6">editor</p><p class="calibre6"></p>
+<pre class="calibre13"><code class="calibre11"><span>print</span>(<span>'Hello, Django girls!'</span>)
+</code></pre>
+<p class="calibre6">Obviously, you're a pretty seasoned Python developer now, so feel free to write some code that you've learned today.</p>
+<p class="calibre6">Now we need to save the file and give it a descriptive name. Let's call the file <strong class="calibre10">python_intro.py</strong> and save it to your desktop. We can name the file anything we want, but the important part here is to make sure the file ends in <strong class="calibre10">.py</strong>. The <strong class="calibre10">.py</strong> extension tells our operating system that this is a <strong class="calibre10">Python executable file</strong> and Python can run it.</p>
+<blockquote class="calibre5">
+<p class="calibre6"><strong class="calibre10">Note</strong> You should notice one of the coolest thing about code editors: colors! In the Python console, everything was the same color; now you should see that the <code class="calibre11">print</code> function is a different color from the string. This is called "syntax highlighting", and it's a really useful feature when coding. The color of things will give you hints, such as unclosed strings or a typo in a keyword name (like the <code class="calibre11">def</code> in a function, which we'll see below). This is one of the reasons we use a code editor. :)</p>
+</blockquote>
+<p class="calibre6">With the file saved, it's time to run it! Using the skills you've learned in the command line section, use the terminal to <strong class="calibre10">change directories</strong> to the desktop.</p>
+<sec data-title="Change directory: macOS" data-id="python_OSX" data-collapse="true"><b class="calibre10">Change directory: macOS</b>
+<p class="calibre6">On a Mac, the command will look something like this:</p>
+<p class="calibre6"></p><p class="calibre6">command-line</p><p class="calibre6"></p>
+<pre class="calibre13"><code class="calibre11">$ cd ~/Desktop
+</code></pre></sec>
+<sec data-title="Change directory: Linux" data-id="python_linux" data-collapse="true"><b class="calibre10">Change directory: Linux</b>
+<p class="calibre6">On Linux, it will be like this:</p>
+<p class="calibre6"></p><p class="calibre6">command-line</p><p class="calibre6"></p>
+<pre class="calibre13"><code class="calibre11">$ cd ~/Desktop
+</code></pre><p class="calibre6">(Remember that the word "Desktop" might be translated to your local language.)</p>
+</sec>
+<sec data-title="Change directory: Windows Command Prompt" data-id="python_windows" data-collapse="true"><b class="calibre10">Change directory: Windows Command Prompt</b>
+<p class="calibre6">On Windows Command Prompt, it will be like this:</p>
+<p class="calibre6"></p><p class="calibre6">command-line</p><p class="calibre6"></p>
+<pre class="calibre13"><code class="calibre11">&gt; cd %HomePath%\Desktop
+</code></pre></sec>
+<sec data-title="Change directory: Windows Powershell" data-id="python_windowsPSH" data-collapse="true"><b class="calibre10">Change directory: Windows Powershell</b>
+<p class="calibre6">And on Windows Powershell, it will be like this:</p>
+<p class="calibre6"></p><p class="calibre6">command-line</p><p class="calibre6"></p>
+<pre class="calibre13"><code class="calibre11">&gt; cd $Home\Desktop
+</code></pre></sec>
+<p class="calibre6">If you get stuck, ask for help. That's exactly what the coaches are here for!</p>
+<p class="calibre6">Now use Python to execute the code in the file like this:</p>
+<p class="calibre6"></p><p class="calibre6">command-line</p><p class="calibre6"></p>
+<pre class="calibre13"><code class="calibre11">$ python3 python_intro.py
+Hello, Django girls!
+</code></pre><p class="calibre6">Note: on Windows 'python3' is not recognized as a command. Instead, use 'python' to execute the file:</p>
+<p class="calibre6"></p><p class="calibre6">command-line</p><p class="calibre6"></p>
+<pre class="calibre13"><code class="calibre11">&gt; python python_intro.py
+</code></pre>
+<p class="calibre6">Alright! You just ran your first Python program that was saved to a file. Feel awesome?</p>
+<p class="calibre6">You can now move on to an essential tool in programming:</p>
+<h2 id="if--elif--else" class="calibre7">If … elif … else</h2>
+<p class="calibre6">Lots of things in code should be executed only when given conditions are met. That's why Python has something called <strong class="calibre10">if statements</strong>.</p>
+<p class="calibre6">Replace the code in your <strong class="calibre10">python_intro.py</strong> file with this:</p>
+<p class="calibre6"></p><p class="calibre6">python_intro.py</p><p class="calibre6"></p>
+<pre class="calibre13"><code class="calibre11"><span>if</span> <span>3</span> &gt; <span>2</span>:
+</code></pre>
+<p class="calibre6">If we were to save and run this, we'd see an error like this:</p>
+<p class="calibre6"></p><p class="calibre6"><span class="glyphicon" aria-hidden="true" data-toggle="tooltip" title="An error is expected when you run this command!"></span> command-line</p><p class="calibre6"></p>
+<pre class="calibre13"><code class="calibre11">$ python3 python_intro.py
+File "python_intro.py", line 2
+         ^
+SyntaxError: unexpected EOF while parsing
+</code></pre><p class="calibre6">Python expects us to give further instructions to it which are executed if the condition <code class="calibre11">3 &gt; 2</code> turns out to be true (or <code class="calibre11">True</code> for that matter). Let’s try to make Python print “It works!”. Change your code in your <strong class="calibre10">python_intro.py</strong> file to this:</p>
+<p class="calibre6"></p><p class="calibre6">python_intro.py</p><p class="calibre6"></p>
+<pre class="calibre13"><code class="calibre11"><span>if</span> <span>3</span> &gt; <span>2</span>:
+    <span>print</span>(<span>'It works!'</span>)
+</code></pre>
+<p class="calibre6">Notice how we've indented the next line of code by 4 spaces? We need to do this so Python knows what code to run if the result is true. You can do one space, but nearly all Python programmers do 4 to make things look neat. A single Tab will also count as 4 spaces as long as your text editor is set to do so. When you made your choice, don't change it! If you already indented with 4 spaces, make any future indentation with 4 spaces, too - otherwise you may run into problems.</p>
+<p class="calibre6">Save it and give it another run:</p>
+<p class="calibre6"></p><p class="calibre6">command-line</p><p class="calibre6"></p>
+<pre class="calibre13"><code class="calibre11">$ python3 python_intro.py
+It works!
+</code></pre>
+<p class="calibre6">Note: Remember that on Windows, 'python3' is not recognized as a command. From now on, replace 'python3' with 'python' to execute the file.</p>
+<h3 id="what-if-a-condition-isnt-true" class="calibre12">What if a condition isn't True?</h3>
+<p class="calibre6">In previous examples, code was executed only when the conditions were True. But Python also has <code class="calibre11">elif</code> and <code class="calibre11">else</code> statements:</p>
+<p class="calibre6"></p><p class="calibre6">python_intro.py</p><p class="calibre6"></p>
+<pre class="calibre13"><code class="calibre11"><span>if</span> <span>5</span> &gt; <span>2</span>:
+    <span>print</span>(<span>'5 is indeed greater than 2'</span>)
+<span>else</span>:
+    <span>print</span>(<span>'5 is not greater than 2'</span>)
+</code></pre>
+<p class="calibre6">When this is run it will print out:</p>
+<p class="calibre6"></p><p class="calibre6">command-line</p><p class="calibre6"></p>
+<pre class="calibre13"><code class="calibre11">$ python3 python_intro.py
+5 is indeed greater than 2
+</code></pre><p class="calibre6">If 2 were a greater number than 5, then the second command would be executed. Let's see how <code class="calibre11">elif</code> works:</p>
+<p class="calibre6"></p><p class="calibre6">python_intro.py</p><p class="calibre6"></p>
+<pre class="calibre13"><code class="calibre11">name = <span>'Sonja'</span>
+<span>if</span> name == <span>'Ola'</span>:
+    <span>print</span>(<span>'Hey Ola!'</span>)
+<span>elif</span> name == <span>'Sonja'</span>:
+    <span>print</span>(<span>'Hey Sonja!'</span>)
+<span>else</span>:
+    <span>print</span>(<span>'Hey anonymous!'</span>)
+</code></pre>
+<p class="calibre6">and executed:</p>
+<p class="calibre6"></p><p class="calibre6">command-line</p><p class="calibre6"></p>
+<pre class="calibre13"><code class="calibre11">$ python3 python_intro.py
+Hey Sonja!
+</code></pre><p class="calibre6">See what happened there? <code class="calibre11">elif</code> lets you add extra conditions that run if the previous conditions fail.</p>
+<p class="calibre6">You can add as many <code class="calibre11">elif</code> statements as you like after your initial <code class="calibre11">if</code> statement. For example:</p>
+<p class="calibre6"></p><p class="calibre6">python_intro.py</p><p class="calibre6"></p>
+<pre class="calibre13"><code class="calibre11">volume = <span>57</span>
+<span>if</span> volume &lt; <span>20</span>:
+    <span>print</span>(<span>"It's kinda quiet."</span>)
+<span>elif</span> <span>20</span> &lt;= volume &lt; <span>40</span>:
+    <span>print</span>(<span>"It's nice for background music"</span>)
+<span>elif</span> <span>40</span> &lt;= volume &lt; <span>60</span>:
+    <span>print</span>(<span>"Perfect, I can hear all the details"</span>)
+<span>elif</span> <span>60</span> &lt;= volume &lt; <span>80</span>:
+    <span>print</span>(<span>"Nice for parties"</span>)
+<span>elif</span> <span>80</span> &lt;= volume &lt; <span>100</span>:
+    <span>print</span>(<span>"A bit loud!"</span>)
+<span>else</span>:
+    <span>print</span>(<span>"My ears are hurting! :("</span>)
+</code></pre>
+<p class="calibre6">Python runs through each test in sequence and prints:</p>
+<p class="calibre6"></p><p class="calibre6">command-line</p><p class="calibre6"></p>
+<pre class="calibre13"><code class="calibre11">$ python3 python_intro.py
+Perfect, I can hear all the details
+</code></pre><h2 id="comments" class="calibre7">Comments</h2>
+<p class="calibre6">Comments are lines beginning with <code class="calibre11">#</code>. You can write whatever you want after the <code class="calibre11">#</code> and Python will ignore it. Comments can make your code easier for other people to understand.</p>
+<p class="calibre6">Let's see how that looks:</p>
+<p class="calibre6"></p><p class="calibre6">python_intro.py</p><p class="calibre6"></p>
+<pre class="calibre13"><code class="calibre11"><span># Change the volume if it's too loud or too quiet</span>
+<span>if</span> volume &lt; <span>20</span> <span>or</span> volume &gt; <span>80</span>:
+    volume = <span>50</span>
+    <span>print</span>(<span>"That's better!"</span>)
+</code></pre>
+<p class="calibre6">You don't need to write a comment for every line of code, but they are useful for explaining why your code is doing something, or providing a summary when it's doing something complex.</p>
+<h3 class="calibre12">Summary</h3>
+<p class="calibre6">In the last few exercises you learned about:</p>
+<ul class="calibre9">
+<li class="calibre3"><strong class="calibre10">comparing things</strong> – in Python you can compare things by using <code class="calibre11">&gt;</code>, <code class="calibre11">&gt;=</code>, <code class="calibre11">==</code>, <code class="calibre11">&lt;=</code>, <code class="calibre11">&lt;</code> and the <code class="calibre11">and</code>, <code class="calibre11">or</code> operators</li>
+<li class="calibre3"><strong class="calibre10">Boolean</strong> – a type of object that can only have one of two values: <code class="calibre11">True</code> or <code class="calibre11">False</code></li>
+<li class="calibre3"><strong class="calibre10">Saving files</strong> – storing code in files so you can execute larger programs.</li>
+<li class="calibre3"><strong class="calibre10">if … elif … else</strong> – statements that allow you to execute code only when certain conditions are met.</li>
+<li class="calibre3"><strong class="calibre10">comments</strong> - lines that Python won't run which let you document your code</li>
+</ul>
+<p class="calibre6">Time for the last part of this chapter!</p>
+<h2 id="your-own-functions" class="calibre7">Your own functions!</h2>
+<blockquote class="calibre5">
+<p class="calibre6">For readers at home: this part is covered in the <a href="https://www.youtube.com/watch?v=5owr-6suOl0" target="_blank">Python Basics: Functions</a> video.</p>
+</blockquote>
+<p class="calibre6">Remember functions like <code class="calibre11">len()</code> that you can execute in Python? Well, good news – you will learn how to write your own functions now!</p>
+<p class="calibre6">A function is a sequence of instructions that Python should execute. Each function in Python starts with the keyword <code class="calibre11">def</code>, is given a name, and can have some parameters. Let's give it a go. Replace the code in <strong class="calibre10">python_intro.py</strong> with the following:</p>
+<p class="calibre6"></p><p class="calibre6">python_intro.py</p><p class="calibre6"></p>
+<pre class="calibre13"><code class="calibre11"><span><span>def</span> <span>hi</span>():</span>
+    <span>print</span>(<span>'Hi there!'</span>)
+    <span>print</span>(<span>'How are you?'</span>)
+
+hi()
+</code></pre>
+<p class="calibre6">Okay, our first function is ready!</p>
+<p class="calibre6">You may wonder why we've written the name of the function at the bottom of the file. When we write <code class="calibre11">def hi():</code> and the indented lines following, this is us writing instructions for what the <code class="calibre11">hi()</code> function should do. Python will read and remember these instructions, but won't run the function yet. To tell Python we want to run the function, we have to call the function with <code class="calibre11">hi()</code>. Python reads the file and executes it from top to bottom, so we have to define the function in the file before we call it.</p>
+<p class="calibre6">Let's run this now and see what happens:</p>
+<p class="calibre6"></p><p class="calibre6">command-line</p><p class="calibre6"></p>
+<pre class="calibre13"><code class="calibre11">$ python3 python_intro.py
+Hi there!
+How are you?
+</code></pre><p class="calibre6">Note: if it didn't work, don't panic! The output will help you to figure why:</p>
+<ul class="calibre9">
+<li class="calibre3">If you get a <code class="calibre11">NameError</code>, that probably means you typed something wrong, so you should check that you used the same name when creating the function with <code class="calibre11">def hi():</code> and when calling it with <code class="calibre11">hi()</code>.</li>
+<li class="calibre3">If you get an <code class="calibre11">IndentationError</code>, check that both of the <code class="calibre11">print</code> lines have the same whitespace at the start of a line: python wants all the code inside the function to be neatly aligned.</li>
+<li class="calibre3">If there's no output at all, check that the last <code class="calibre11">hi()</code> <em class="calibre14">isn't</em> indented - if it is, that line will become part of the function too, and it will never get run.</li>
+</ul>
+<p class="calibre6">Let's build our first function with parameters. We will change the previous example – a function that says 'hi' to the person running it – with a name:</p>
+<p class="calibre6"></p><p class="calibre6">python_intro.py</p><p class="calibre6"></p>
+<pre class="calibre13"><code class="calibre11"><span><span>def</span> <span>hi</span>(<span>name</span>):</span>
+</code></pre>
+<p class="calibre6">As you can see, we now gave our function a parameter that we called <code class="calibre11">name</code>:</p>
+<p class="calibre6"></p><p class="calibre6">python_intro.py</p><p class="calibre6"></p>
+<pre class="calibre13"><code class="calibre11"><span><span>def</span> <span>hi</span>(<span>name</span>):</span>
+    <span>if</span> name == <span>'Ola'</span>:
+        <span>print</span>(<span>'Hi Ola!'</span>)
+    <span>elif</span> name == <span>'Sonja'</span>:
+        <span>print</span>(<span>'Hi Sonja!'</span>)
+    <span>else</span>:
+        <span>print</span>(<span>'Hi anonymous!'</span>)
+
+hi()
+</code></pre>
+<p class="calibre6">Remember: The <code class="calibre11">print</code> function is indented four spaces within the <code class="calibre11">if</code> statement. This is because the function runs when the condition is met. Let's see how it works now:</p>
+<p class="calibre6"></p><p class="calibre6"><span class="glyphicon" aria-hidden="true" data-toggle="tooltip" title="An error is expected when you run this command!"></span> command-line</p><p class="calibre6"></p>
+<pre class="calibre13"><code class="calibre11">$ python3 python_intro.py
+Traceback (most recent call last):
+File "python_intro.py", line 10, in &lt;module&gt;
+  hi()
+TypeError: hi() missing 1 required positional argument: 'name'
+</code></pre><p class="calibre6">Oops, an error. Luckily, Python gives us a pretty useful error message.
+It tells us that the function <code class="calibre11">hi()</code> (the one we defined) has one required argument (called <code class="calibre11">name</code>) and that we forgot to pass it when calling the function.
+Let's fix it at the bottom of the file:</p>
+<p class="calibre6"></p><p class="calibre6">python_intro.py</p><p class="calibre6"></p>
+<pre class="calibre13"><code class="calibre11">hi(<span>"Ola"</span>)
+</code></pre>
+<p class="calibre6">And run it again:</p>
+<p class="calibre6"></p><p class="calibre6">command-line</p><p class="calibre6"></p>
+<pre class="calibre13"><code class="calibre11">$ python3 python_intro.py
+Hi Ola!
+</code></pre><p class="calibre6">And if we change the name?</p>
+<p class="calibre6"></p><p class="calibre6">python_intro.py</p><p class="calibre6"></p>
+<pre class="calibre13"><code class="calibre11">hi(<span>"Sonja"</span>)
+</code></pre>
+<p class="calibre6">And run it:</p>
+<p class="calibre6"></p><p class="calibre6">command-line</p><p class="calibre6"></p>
+<pre class="calibre13"><code class="calibre11">$ python3 python_intro.py
+Hi Sonja!
+</code></pre><p class="calibre6">Now, what do you think will happen if you write another name in there? (Not Ola or Sonja.) Give it a try and see if you're right. It should print out this:</p>
+<p class="calibre6"></p><p class="calibre6">command-line</p><p class="calibre6"></p>
+<pre class="calibre13"><code class="calibre11">Hi anonymous!
+</code></pre><p class="calibre6">This is awesome, right? This way you don't have to repeat yourself every time you want to change the name of the person the function is supposed to greet. And that's exactly why we need functions – you never want to repeat your code!</p>
+<p class="calibre6">Let's do something smarter – there are more names than two, and writing a condition for each would be hard, right? Replace the content of your file with the following:</p>
+<p class="calibre6"></p><p class="calibre6">python_intro.py</p><p class="calibre6"></p>
+<pre class="calibre13"><code class="calibre11"><span><span>def</span> <span>hi</span>(<span>name</span>):</span>
+    <span>print</span>(<span>'Hi '</span> + name + <span>'!'</span>)
+
+hi(<span>"Rachel"</span>)
+</code></pre>
+<p class="calibre6">Let's call the code now:</p>
+<p class="calibre6"></p><p class="calibre6">command-line</p><p class="calibre6"></p>
+<pre class="calibre13"><code class="calibre11">$ python3 python_intro.py
+Hi Rachel!
+</code></pre><p class="calibre6">Congratulations! You just learned how to write functions! :)</p>
+<h2 id="loops" class="calibre7">Loops</h2>
+<blockquote class="calibre5">
+<p class="calibre6">For readers at home: this part is covered in the <a href="https://www.youtube.com/watch?v=aEA6Rc86HF0" target="_blank">Python Basics: For Loop</a> video.</p>
+</blockquote>
+<p class="calibre6">This is the last part already. That was quick, right? :)</p>
+<p class="calibre6">Programmers don't like to repeat themselves. Programming is all about automating things, so we don't want to greet every person by their name manually, right? That's where loops come in handy.</p>
+<p class="calibre6">Still remember lists? Let's do a list of girls:</p>
+<p class="calibre6"></p><p class="calibre6">python_intro.py</p><p class="calibre6"></p>
+<pre class="calibre13"><code class="calibre11">girls = [<span>'Rachel'</span>, <span>'Monica'</span>, <span>'Phoebe'</span>, <span>'Ola'</span>, <span>'You'</span>]
+</code></pre>
+<p class="calibre6">We want to greet all of them by their name. We have the <code class="calibre11">hi</code> function to do that, so let's use it in a loop:</p>
+<p class="calibre6"></p><p class="calibre6">python_intro.py</p><p class="calibre6"></p>
+<pre class="calibre13"><code class="calibre11"><span>for</span> name <span>in</span> girls:
+</code></pre>
+<p class="calibre6">The <code class="calibre11">for</code> statement behaves similarly to the <code class="calibre11">if</code> statement; code below both of these need to be indented four spaces.</p>
+<p class="calibre6">Here is the full code that will be in the file:</p>
+<p class="calibre6"></p><p class="calibre6">python_intro.py</p><p class="calibre6"></p>
+<pre class="calibre13"><code class="calibre11"><span><span>def</span> <span>hi</span>(<span>name</span>):</span>
+    <span>print</span>(<span>'Hi '</span> + name + <span>'!'</span>)
+
+girls = [<span>'Rachel'</span>, <span>'Monica'</span>, <span>'Phoebe'</span>, <span>'Ola'</span>, <span>'You'</span>]
+<span>for</span> name <span>in</span> girls:
+    hi(name)
+    <span>print</span>(<span>'Next girl'</span>)
+</code></pre>
+<p class="calibre6">And when we run it:</p>
+<p class="calibre6"></p><p class="calibre6">command-line</p><p class="calibre6"></p>
+<pre class="calibre13"><code class="calibre11">$ python3 python_intro.py
+Hi Rachel!
+Next girl
+Hi Monica!
+Next girl
+Hi Phoebe!
+Next girl
+Hi Ola!
+Next girl
+Hi You!
+Next girl
+</code></pre><p class="calibre6">As you can see, everything you put inside a <code class="calibre11">for</code> statement with an indent will be repeated for every element of the list <code class="calibre11">girls</code>.</p>
+<p class="calibre6">You can also use <code class="calibre11">for</code> on numbers using the <code class="calibre11">range</code> function:</p>
+<p class="calibre6"></p><p class="calibre6">python_intro.py</p><p class="calibre6"></p>
+<pre class="calibre13"><code class="calibre11"><span>for</span> i <span>in</span> <span>range</span>(<span>1</span>, <span>6</span>):
+    <span>print</span>(i)
+</code></pre>
+<p class="calibre6">Which would print:</p>
+<p class="calibre6"></p><p class="calibre6">command-line</p><p class="calibre6"></p>
+<pre class="calibre13"><code class="calibre11">1
+2
+3
+4
+5
+</code></pre><p class="calibre6"><code class="calibre11">range</code> is a function that creates a list of numbers following one after the other (these numbers are provided by you as parameters).</p>
+<p class="calibre6">Note that the second of these two numbers is not included in the list that is output by Python (meaning <code class="calibre11">range(1, 6)</code> counts from 1 to 5, but does not include the number 6). That is because <code class="calibre11">range</code> is half-open, and by that we mean it includes the first value, but not the last.</p>
+<h2 class="calibre7">Summary</h2>
+<p class="calibre6">That's it. <strong class="calibre10">You totally rock!</strong> This was a tricky chapter, so you should feel proud of yourself. We're definitely proud of you for making it this far!</p>
+<p class="calibre6">For official and full python tutorial visit <a href="https://docs.python.org/3/tutorial/" target="_blank">https://docs.python.org/3/tutorial/</a>. This will give you a more thorough and complete study of the language. Cheers! :)</p>
+<p class="calibre6">You might want to briefly do something else – stretch, walk around for a bit, rest your eyes – before going on to the next chapter. :)</p>
+<p class="calibre6"><img src="cupcake.png" alt="Cupcake" class="calibre8"/></p>
+
+        </div>
+    
+</div>
+
+        
+    
+
+
+</body></html>

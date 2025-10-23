@@ -1,0 +1,138 @@
+.calibre {
+  display: block;
+  font-size: 1em;
+  padding-left: 0;
+  padding-right: 0;
+  margin: 0 5pt;
+}
+.calibre1 {
+  display: block;
+  font-size: 2em;
+  font-weight: bold;
+  line-height: 1.2;
+  page-break-before: always;
+  margin: 0.67em 0;
+}
+.calibre2 {
+  display: block;
+  list-style-type: decimal;
+  margin-bottom: 1em;
+  margin-right: 0;
+  margin-top: 1em;
+}
+.calibre3 {
+  display: list-item;
+}
+.calibre4 {
+  display: block;
+  list-style-type: decimal;
+  margin-bottom: 0;
+  margin-right: 0;
+  margin-top: 0;
+}
+.calibre5 {
+  display: block;
+  margin: 1em;
+}
+.calibre6 {
+  display: block;
+  margin: 1em 0;
+}
+.calibre7 {
+  display: block;
+  font-size: 1.41667em;
+  font-weight: bold;
+  line-height: 1.2;
+  page-break-before: always;
+  margin: 0.83em 0;
+}
+.calibre8 {
+  height: auto;
+  width: auto;
+}
+.calibre9 {
+  display: block;
+  list-style-type: disc;
+  margin-bottom: 1em;
+  margin-right: 0;
+  margin-top: 1em;
+}
+.calibre10 {
+  font-weight: bold;
+}
+.calibre11 {
+  font-family: monospace;
+}
+.calibre12 {
+  display: block;
+  font-size: 1.125em;
+  font-weight: bold;
+  line-height: 1.2;
+  margin: 1em 0;
+}
+.calibre13 {
+  display: block;
+  font-family: monospace;
+  white-space: pre-wrap;
+  margin: 1em 0;
+}
+.calibre14 {
+  font-style: italic;
+}
+.calibre15 {
+  color: gray;
+  display: block;
+  height: 2px;
+  margin: 0.5em auto;
+  border: currentColor inset 1px;
+}
+.calibre16 {
+  display: block;
+  font-weight: bold;
+  margin: 1.33em 0;
+}
+.calibre17 {
+  border-collapse: separate;
+  border-spacing: 2px;
+  display: table;
+  margin-bottom: 0;
+  margin-top: 0;
+  text-indent: 0;
+}
+.calibre18 {
+  display: table-header-group;
+  vertical-align: middle;
+}
+.calibre19 {
+  display: table-row;
+  vertical-align: inherit;
+}
+.calibre20 {
+  display: table-cell;
+  font-weight: bold;
+  vertical-align: inherit;
+  padding: 1px;
+}
+.calibre21 {
+  display: table-row-group;
+  vertical-align: middle;
+}
+.calibre22 {
+  display: table-cell;
+  text-align: inherit;
+  vertical-align: inherit;
+  padding: 1px;
+}
+.calibre23 {
+  display: block;
+  font-size: 1.41667em;
+  font-weight: bold;
+  line-height: 1.2;
+  margin: 0.83em 0;
+}
+.glyphicon {
+  color: red;
+}
+.page {
+  display: block;
+}

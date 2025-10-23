@@ -1,16 +1,15 @@
-# Django Girls Mentor Quiz
+# Django Girls Coach Quiz
 
-An **interactive web quiz** inspired by the [Django Girls Tutorial](https://tutorial.djangogirls.org/), designed to help potential mentors evaluate their readiness to become Django Girls coaches.  
+An **interactive web quiz** inspired by the [Django Girls Tutorial](https://tutorial.djangogirls.org/), designed to help potential coaches evaluate their readiness to become Django Girls coaches.  
 This project aims to make self-assessment fun, educational, and aligned with the spirit of open knowledge and community learning.
 
 ---
 
 ## Features
 
-- Interactive, web-based quiz interface  
-- Covers key concepts from the Django Girls tutorial  
-- Provides feedback and learning resources for each question  
-- Built with open-source technologies (Vue, Django, or any framework you prefer)  
+- Static HTML version of the Django Girls tutorial (`docs/tutorial/`)
+- Landing page with quick links to the tutorial and future quiz (`docs/index.html`)
+- Placeholder area for the interactive mentor readiness quiz (`docs/quiz/`)
 - Fully compliant with the [CC BY-SA 4.0 License](https://creativecommons.org/licenses/by-sa/4.0/)
 
 ---
@@ -34,31 +33,24 @@ Read the full license text here:
 
 ---
 
-## Development
+## Regenerate the tutorial HTML
 
-1. Clone this repository:
-   ```bash
-   git clone https://github.com/yourusername/django-girls-mentor-quiz.git
-   cd django-girls-mentor-quiz
-````
+The EPUB distributed with this repository can be re-converted at any time:
 
-2. Install dependencies (depending on your chosen tech stack):
+```bash
+python3 convert_epub.py django-girls-tutorial_en.epub --force
+```
 
-   ```bash
-   npm install
-   # or
-   pip install -r requirements.txt
-   ```
+The converter writes the HTML version of the book to `docs/tutorial/` and updates supporting assets.
 
-3. Run the development server:
+## Publish on GitHub Pages
 
-   ```bash
-   npm run dev
-   # or
-   python manage.py runserver
-   ```
-
-4. Open your browser at [http://localhost:8000](http://localhost:8000)
+1. Commit the `docs/` directory alongside the code and push it to GitHub.
+2. In the repository settings on GitHub, enable **Pages** and select the **Deploy from branch** option with the branch you pushed and the `/docs` folder.
+3. Wait for GitHub Pages to build the site, then visit the published URL.  
+   The landing page will appear at `/` with links to:
+   - `/tutorial/index.html` – the full Django Girls tutorial split into chapters.
+   - `/quiz/index.html` – a “coming soon” placeholder for the coach quiz.
 
 ---
 
@@ -71,26 +63,10 @@ Please make sure any new content or code you add is also shared under the same *
 
 ## Attribution
 
-* Based on the [Django Girls Tutorial](https://tutorial.djangogirls.org/)
-* Licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
-* Created by [Your Name](https://github.com/yourusername)
+- Based on the [Django Girls Tutorial](https://tutorial.djangogirls.org/)
+- Licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
+- Created by [Amir Mojiri](https://github.com/amirmojiry)
 
 ---
 
 **If you find this project useful, please consider starring the repository!**
-
-```
-
----
-
-### **License selection on GitHub**
-
-When you create the repository on GitHub:
-
-1. In the “**Add a license**” section, **choose “Creative Commons Attribution-ShareAlike 4.0 International”** (CC BY-SA 4.0).  
-   GitHub supports it as a recognized open license.  
-2. If you can’t find it directly in the dropdown, you can manually add a file named `LICENSE` with this header:
-```
-
-Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
-[https://creativecommons.org/licenses/by-sa/4.0/](https://creativecommons.org/licenses/by-sa/4.0/)

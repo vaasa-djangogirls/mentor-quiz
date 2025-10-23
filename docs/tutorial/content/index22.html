@@ -1,0 +1,166 @@
+<?xml version='1.0' encoding='utf-8'?>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+  <head>
+    <title>Extend your application</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="description" content=""/>
+    <meta name="generator" content="HonKit 3.7.5"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <link rel="stylesheet" type="text/css" href="stylesheet.css"/>
+<link rel="stylesheet" type="text/css" href="page_styles.css"/>
+</head>
+  <body class="calibre">
+        
+<div class="page">
+    
+        <h1 class="calibre1" id="calibre_toc_23">Extend your application</h1>
+        <div class="page">
+            <h1 id="extend-your-application" class="calibre1">Extend your application</h1>
+<p class="calibre6">We've already completed all the different steps necessary for the creation of our website: we know how to write a model, URL, view and template. We also know how to make our website pretty.</p>
+<p class="calibre6">Time to practice!</p>
+<p class="calibre6">The first thing we need in our blog is, obviously, a page to display one post, right?</p>
+<p class="calibre6">We already have a <code class="calibre11">Post</code> model, so we don't need to add anything to <code class="calibre11">models.py</code>.</p>
+<h2 id="create-a-template-link-to-a-posts-detail" class="calibre7">Create a template link to a post's detail</h2>
+<p class="calibre6">We will start with adding a link inside <code class="calibre11">blog/templates/blog/post_list.html</code> file. Open it in the code editor, and so far it should look like this:
+</p><p class="calibre6">blog/templates/blog/post_list.html</p><p class="calibre6"></p>
+<pre class="calibre13"><code class="calibre11">{% extends 'blog/base.html' %}
+
+{% block content %}
+    {% for post in posts %}
+        <span>&lt;<span>article</span> <span>class</span>=<span>"post"</span>&gt;</span>
+            <span>&lt;<span>time</span> <span>class</span>=<span>"date"</span>&gt;</span>
+                {{ post.published_date }}
+            <span>&lt;/<span>time</span>&gt;</span>
+            <span>&lt;<span>h2</span>&gt;</span><span>&lt;<span>a</span> <span>href</span>=<span>""</span>&gt;</span>{{ post.title }}<span>&lt;/<span>a</span>&gt;</span><span>&lt;/<span>h2</span>&gt;</span>
+            <span>&lt;<span>p</span>&gt;</span>{{ post.text|linebreaksbr }}<span>&lt;/<span>p</span>&gt;</span>
+        <span>&lt;/<span>article</span>&gt;</span>
+    {% endfor %}
+{% endblock %}
+</code></pre>
+<p class="calibre6">We want to have a link from a post's title in the post list to the post's detail page. Let's change <code class="calibre11">&lt;h2&gt;&lt;a href=""&gt;{{ post.title }}&lt;/a&gt;&lt;/h2&gt;</code> so that it links to the post's detail page:</p>
+<p class="calibre6"></p><p class="calibre6"><span class="glyphicon" aria-hidden="true" data-toggle="tooltip" title="An error is expected when you run this code!"></span> blog/templates/blog/post_list.html</p><p class="calibre6"></p>
+<pre class="calibre13"><code class="calibre11"><span>&lt;<span>h2</span>&gt;</span><span>&lt;<span>a</span> <span>href</span>=<span>"{% url 'post_detail' pk=post.pk %}"</span>&gt;</span>{{ post.title }}<span>&lt;/<span>a</span>&gt;</span><span>&lt;/<span>h2</span>&gt;</span>
+</code></pre>
+<p class="calibre6">Time to explain the mysterious <code class="calibre11">{% url 'post_detail' pk=post.pk %}</code>. As you might suspect, the <code class="calibre11">{% %}</code> notation means that we are using Django template tags. This time we will use one that will create a URL for us!</p>
+<p class="calibre6">The <code class="calibre11">post_detail</code> part means that Django will be expecting a URL in <code class="calibre11">blog/urls.py</code> with <code class="calibre11">name=post_detail</code>.</p>
+<p class="calibre6">And how about <code class="calibre11">pk=post.pk</code>? <code class="calibre11">pk</code> is short for primary key, which is a unique identifier for each record in a database. Every Django model has a field which serves as its primary key, and whatever other name it has, it can also be referred to as "pk". Because we didn't specify a primary key in our <code class="calibre11">Post</code> model, Django creates one for us (by default, a field named "id" holding a number that increases for each record, i.e. 1, 2, 3) and adds it as a field to each of our posts. We access the primary key by writing <code class="calibre11">post.pk</code>, the same way we access other fields  (<code class="calibre11">title</code>, <code class="calibre11">author</code>, etc.) in our <code class="calibre11">Post</code> object!</p>
+<p class="calibre6">Now when we go to <a href="http://127.0.0.1:8000/" target="_blank">http://127.0.0.1:8000/</a> we will have an error (as expected, since we do not yet have a URL or a <em class="calibre14">view</em> for <code class="calibre11">post_detail</code>). It will look like this:</p>
+<p class="calibre6"><img src="no_reverse_match2.png" alt="NoReverseMatch error" class="calibre8"/></p>
+<h2 id="create-a-url-to-a-posts-detail" class="calibre7">Create a URL to a post's detail</h2>
+<p class="calibre6">Let's create a URL in <code class="calibre11">urls.py</code> for our <code class="calibre11">post_detail</code> <em class="calibre14">view</em>!</p>
+<p class="calibre6">We want our first post's detail to be displayed at this <strong class="calibre10">URL</strong>: <a href="http://127.0.0.1:8000/post/1/" target="_blank">http://127.0.0.1:8000/post/1/</a></p>
+<p class="calibre6">Let's make a URL in the <code class="calibre11">blog/urls.py</code> file to point Django to a <em class="calibre14">view</em> named <code class="calibre11">post_detail</code>, that will show an entire blog post. Open the <code class="calibre11">blog/urls.py</code> file in the code editor, and add the line <code class="calibre11">path('post/&lt;int:pk&gt;/', views.post_detail, name='post_detail'),</code> so that the file looks like this:</p>
+<p class="calibre6"></p><p class="calibre6"><span class="glyphicon" aria-hidden="true" data-toggle="tooltip" title="An error is expected when you run this code!"></span> blog/urls.py</p><p class="calibre6"></p>
+<pre class="calibre13"><code class="calibre11"><span>from</span> django.urls <span>import</span> path
+<span>from</span> . <span>import</span> views
+
+urlpatterns = [
+    path(<span>''</span>, views.post_list, name=<span>'post_list'</span>),
+    path(<span>'post/&lt;int:pk&gt;/'</span>, views.post_detail, name=<span>'post_detail'</span>),
+]
+</code></pre>
+<p class="calibre6">This part <code class="calibre11">post/&lt;int:pk&gt;/</code> specifies a URL pattern – we will explain it for you:</p>
+<ul class="calibre9">
+<li class="calibre3"><code class="calibre11">post/</code> means that the URL should begin with the word <strong class="calibre10">post</strong> followed by a <strong class="calibre10">/</strong>. So far so good.</li>
+<li class="calibre3"><code class="calibre11">&lt;int:pk&gt;</code> – this part is trickier. It means that Django expects an integer value and will transfer it to a view as a variable called <code class="calibre11">pk</code>.</li>
+<li class="calibre3"><code class="calibre11">/</code> – then we need a <strong class="calibre10">/</strong> again before finishing the URL.</li>
+</ul>
+<p class="calibre6">That means if you enter <code class="calibre11">http://127.0.0.1:8000/post/5/</code> into your browser, Django will understand that you are looking for a <em class="calibre14">view</em> called <code class="calibre11">post_detail</code> and transfer the information that <code class="calibre11">pk</code> equals <code class="calibre11">5</code> to that <em class="calibre14">view</em>.</p>
+<p class="calibre6">OK, we've added a new URL pattern to <code class="calibre11">blog/urls.py</code>! Let's refresh the page: <a href="http://127.0.0.1:8000/" target="_blank">http://127.0.0.1:8000/</a> Boom! The server has stopped running again. Have a look at the console – as expected, there's yet another error!</p>
+<p class="calibre6"></p><p class="calibre6"><span class="glyphicon" aria-hidden="true" data-toggle="tooltip" title="An error is expected when you run this code!"></span> command-line</p><p class="calibre6"></p>
+<pre class="calibre13"><code class="calibre11">    return _bootstrap._gcd_import(name[level:], package, level)
+  File "&lt;frozen importlib._bootstrap&gt;", line 1030, in _gcd_import
+  File "&lt;frozen importlib._bootstrap&gt;", line 1007, in _find_and_load
+  File "&lt;frozen importlib._bootstrap&gt;", line 986, in _find_and_load_unlocked
+  File "&lt;frozen importlib._bootstrap&gt;", line 680, in _load_unlocked
+  File "&lt;frozen importlib._bootstrap_external&gt;", line 850, in exec_module
+  File "&lt;frozen importlib._bootstrap&gt;", line 228, in _call_with_frames_removed
+  File "/Users/ola/djangogirls/blog/urls.py", line 6, in &lt;module&gt;
+    path('post/&lt;int:pk&gt;/', views.post_detail, name='post_detail'),
+AttributeError: module 'blog.views' has no attribute 'post_detail'
+</code></pre><p class="calibre6">Do you remember what the next step is? It's adding a view!</p>
+<h2 id="add-a-posts-detail-view" class="calibre7">Add a post's detail view</h2>
+<p class="calibre6">This time our <em class="calibre14">view</em> is given an extra parameter, <code class="calibre11">pk</code>. Our <em class="calibre14">view</em> needs to catch it, right? So we will define our function as <code class="calibre11">def post_detail(request, pk):</code>. Note that this parameter must have the exact same name as the one we specified in <code class="calibre11">urls</code> (<code class="calibre11">pk</code>). Also note that omitting this variable is incorrect and will result in an error!</p>
+<p class="calibre6">Now, we want to get one and only one blog post. To do this, we can use querysets, like this:</p>
+<p class="calibre6"></p><p class="calibre6"><span class="glyphicon" aria-hidden="true" data-toggle="tooltip" title="An error is expected when you run this code!"></span> blog/views.py</p><p class="calibre6"></p>
+<pre class="calibre13"><code class="calibre11">Post.objects.get(pk=pk)
+</code></pre>
+<p class="calibre6">But this code has a problem. If there is no <code class="calibre11">Post</code> with the given <code class="calibre11">primary key</code> (<code class="calibre11">pk</code>) we will have a super ugly error!</p>
+<p class="calibre6"><img src="does_not_exist2.png" alt="DoesNotExist error" class="calibre8"/></p>
+<p class="calibre6">We don't want that! But luckily Django comes with something that will handle that for us: <code class="calibre11">get_object_or_404</code>. In case there is no <code class="calibre11">Post</code> with the given <code class="calibre11">pk</code>, it will display much nicer page, the <code class="calibre11">Page Not Found 404</code> page.</p>
+<p class="calibre6"><img src="404_2.png" alt="Page not found" class="calibre8"/></p>
+<p class="calibre6">The good news is that you can actually create your own <code class="calibre11">Page not found</code> page and make it as pretty as you want. But it's not super important right now, so we will skip it.</p>
+<p class="calibre6">OK, time to add a <em class="calibre14">view</em> to our <code class="calibre11">views.py</code> file!</p>
+<p class="calibre6">In <code class="calibre11">blog/urls.py</code> we created a URL rule named <code class="calibre11">post_detail</code> that refers to a view called  <code class="calibre11">views.post_detail</code>. This means that Django will be expecting a view function called <code class="calibre11">post_detail</code> inside <code class="calibre11">blog/views.py</code>.</p>
+<p class="calibre6">We should open <code class="calibre11">blog/views.py</code> in the code editor and add the following code near the other <code class="calibre11">from</code> lines:</p>
+<p class="calibre6"></p><p class="calibre6">blog/views.py</p><p class="calibre6"></p>
+<pre class="calibre13"><code class="calibre11"><span>from</span> django.shortcuts <span>import</span> render, get_object_or_404
+</code></pre>
+<p class="calibre6">And at the end of the file we will add our <em class="calibre14">view</em>:</p>
+<p class="calibre6"></p><p class="calibre6">blog/views.py</p><p class="calibre6"></p>
+<pre class="calibre13"><code class="calibre11"><span><span>def</span> <span>post_detail</span>(<span>request, pk</span>):</span>
+    post = get_object_or_404(Post, pk=pk)
+    <span>return</span> render(request, <span>'blog/post_detail.html'</span>, {<span>'post'</span>: post})
+</code></pre>
+<p class="calibre6">Yes. It is time to refresh the page: <a href="http://127.0.0.1:8000/" target="_blank">http://127.0.0.1:8000/</a></p>
+<p class="calibre6"><img src="post_list2.png" alt="Post list view" class="calibre8"/></p>
+<p class="calibre6">It worked! But what happens when you click a link in blog post title?</p>
+<p class="calibre6"><img src="template_does_not_exist2.png" alt="TemplateDoesNotExist error" class="calibre8"/></p>
+<p class="calibre6">Oh no! Another error! But we already know how to deal with it, right? We need to add a template!</p>
+<h2 id="create-a-template-for-the-post-details" class="calibre7">Create a template for the post details</h2>
+<p class="calibre6">We will create a file in <code class="calibre11">blog/templates/blog</code> called <code class="calibre11">post_detail.html</code>, and open it in the code editor.</p>
+<p class="calibre6">Enter the following code:</p>
+<p class="calibre6"></p><p class="calibre6">blog/templates/blog/post_detail.html</p><p class="calibre6"></p>
+<pre class="calibre13"><code class="calibre11">{% extends 'blog/base.html' %}
+
+{% block content %}
+    <span>&lt;<span>article</span> <span>class</span>=<span>"post"</span>&gt;</span>
+        {% if post.published_date %}
+            <span>&lt;<span>time</span> <span>class</span>=<span>"date"</span>&gt;</span>
+                {{ post.published_date }}
+            <span>&lt;/<span>time</span>&gt;</span>
+        {% endif %}
+        <span>&lt;<span>h2</span>&gt;</span>{{ post.title }}<span>&lt;/<span>h2</span>&gt;</span>
+        <span>&lt;<span>p</span>&gt;</span>{{ post.text|linebreaksbr }}<span>&lt;/<span>p</span>&gt;</span>
+    <span>&lt;/<span>article</span>&gt;</span>
+{% endblock %}
+</code></pre>
+<p class="calibre6">Once again we are extending <code class="calibre11">base.html</code>. In the <code class="calibre11">content</code> block we want to display a post's published_date (if it exists), title and text. But we should discuss some important things, right?</p>
+<p class="calibre6"><code class="calibre11">{% if ... %} ... {% endif %}</code> is a template tag we can use when we want to check something. (Remember <code class="calibre11">if ... else ...</code> from <strong class="calibre10">Introduction to Python</strong> chapter?) In this scenario we want to check if a post's <code class="calibre11">published_date</code> is not empty.</p>
+<p class="calibre6">OK, we can refresh our page and see if <code class="calibre11">TemplateDoesNotExist</code> is gone now.</p>
+<p class="calibre6"><img src="post_detail2.png" alt="Post detail page" class="calibre8"/></p>
+<p class="calibre6">Yay! It works!</p>
+<h1 id="deploy-time" class="calibre1">Deploy time!</h1>
+<p class="calibre6">It'd be good to see if your website still works on PythonAnywhere, right? Let's try deploying again.</p>
+<p class="calibre6"></p><p class="calibre6">command-line</p><p class="calibre6"></p>
+<pre class="calibre13"><code class="calibre11">$ git status
+$ git add .
+$ git status
+$ git commit -m "Added view and template for detailed blog post as well as CSS for the site."
+$ git push
+</code></pre><p class="calibre6">Then, in a <a href="https://www.pythonanywhere.com/consoles/" target="_blank">PythonAnywhere Bash console</a>:</p>
+<p class="calibre6"></p><p class="calibre6">PythonAnywhere command-line</p><p class="calibre6"></p>
+<pre class="calibre13"><code class="calibre11">$ cd ~/&lt;your-pythonanywhere-domain&gt;.pythonanywhere.com
+$ git pull
+[...]
+</code></pre><p class="calibre6">(Remember to substitute <code class="calibre11">&lt;your-pythonanywhere-domain&gt;</code> with your actual PythonAnywhere subdomain, without the angle-brackets.)</p>
+<h2 id="updating-the-static-files-on-the-server" class="calibre7">Updating the static files on the server</h2>
+<p class="calibre6">Servers like PythonAnywhere like to treat "static files" (like CSS files) differently from Python files, because they can optimise for them to be loaded faster.  As a result, whenever we make changes to our CSS files, we need to run an extra command on the server to tell it to update them.  The command is called <code class="calibre11">collectstatic</code>.</p>
+<p class="calibre6">Start by activating your virtualenv if it's not still active from earlier (PythonAnywhere uses a command called <code class="calibre11">workon</code> to do this, it's just like the <code class="calibre11">source myenv/bin/activate</code> command you use on your own computer):</p>
+<p class="calibre6"></p><p class="calibre6">PythonAnywhere command-line</p><p class="calibre6"></p>
+<pre class="calibre13"><code class="calibre11">$ workon &lt;your-pythonanywhere-domain&gt;.pythonanywhere.com
+(ola.pythonanywhere.com)$ python manage.py collectstatic
+[...]
+</code></pre><p class="calibre6">The <code class="calibre11">manage.py collectstatic</code> command is a bit like <code class="calibre11">manage.py migrate</code>.  We make some changes to our code, and then we tell Django to <em class="calibre14">apply</em> those changes, either to the server's collection of static files, or to the database.</p>
+<p class="calibre6">In any case, we're now ready to hop on over to the <a href="https://www.pythonanywhere.com/web_app_setup/" target="_blank">"Web" page</a> (from the menu button in the upper right of the console) and hit <strong class="calibre10">Reload</strong>, and then look at the <a href="https://subdomain.pythonanywhere.com" target="_blank">https://subdomain.pythonanywhere.com</a> page to see the result.</p>
+<p class="calibre6">And that should be it. Congrats! :)</p>
+
+        </div>
+    
+</div>
+
+        
+    
+
+
+</body></html>
