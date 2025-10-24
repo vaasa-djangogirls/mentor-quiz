@@ -2,15 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Extend your application</title>
-    <base href="content/" />
     <link rel="stylesheet" href="book.css" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge"></meta>
     <meta name="description" content=""></meta>
     <meta name="generator" content="HonKit 3.7.5"></meta>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta>
-  <link rel="stylesheet" type="text/css" href="stylesheet.css"></link>
-<link rel="stylesheet" type="text/css" href="page_styles.css"></link>
+  <link rel="stylesheet" type="text/css" href="content/stylesheet.css"></link>
+<link rel="stylesheet" type="text/css" href="content/page_styles.css"></link>
 
 </head>
 <body>
@@ -53,7 +53,7 @@
         <p class="calibre6">The <code class="calibre11">post_detail</code> part means that Django will be expecting a URL in <code class="calibre11">blog/urls.py</code> with <code class="calibre11">name=post_detail</code>.</p>
         <p class="calibre6">And how about <code class="calibre11">pk=post.pk</code>? <code class="calibre11">pk</code> is short for primary key, which is a unique identifier for each record in a database. Every Django model has a field which serves as its primary key, and whatever other name it has, it can also be referred to as "pk". Because we didn't specify a primary key in our <code class="calibre11">Post</code> model, Django creates one for us (by default, a field named "id" holding a number that increases for each record, i.e. 1, 2, 3) and adds it as a field to each of our posts. We access the primary key by writing <code class="calibre11">post.pk</code>, the same way we access other fields  (<code class="calibre11">title</code>, <code class="calibre11">author</code>, etc.) in our <code class="calibre11">Post</code> object!</p>
         <p class="calibre6">Now when we go to <a href="http://127.0.0.1:8000/" target="_blank">http://127.0.0.1:8000/</a> we will have an error (as expected, since we do not yet have a URL or a <em class="calibre14">view</em> for <code class="calibre11">post_detail</code>). It will look like this:</p>
-        <p class="calibre6"><img src="no_reverse_match2.png" alt="NoReverseMatch error" class="calibre8"></img></p>
+        <p class="calibre6"><img src="content/no_reverse_match2.png" alt="NoReverseMatch error" class="calibre8"></img></p>
         <h2 id="create-a-url-to-a-posts-detail" class="calibre7">Create a URL to a post's detail</h2>
         <p class="calibre6">Let's create a URL in <code class="calibre11">urls.py</code> for our <code class="calibre11">post_detail</code> <em class="calibre14">view</em>!</p>
         <p class="calibre6">We want our first post's detail to be displayed at this <strong class="calibre10">URL</strong>: <a href="http://127.0.0.1:8000/post/1/" target="_blank">http://127.0.0.1:8000/post/1/</a></p>
@@ -94,9 +94,9 @@
         <pre class="calibre13"><code class="calibre11">Post.objects.get(pk=pk)
         </code></pre>
         <p class="calibre6">But this code has a problem. If there is no <code class="calibre11">Post</code> with the given <code class="calibre11">primary key</code> (<code class="calibre11">pk</code>) we will have a super ugly error!</p>
-        <p class="calibre6"><img src="does_not_exist2.png" alt="DoesNotExist error" class="calibre8"></img></p>
+        <p class="calibre6"><img src="content/does_not_exist2.png" alt="DoesNotExist error" class="calibre8"></img></p>
         <p class="calibre6">We don't want that! But luckily Django comes with something that will handle that for us: <code class="calibre11">get_object_or_404</code>. In case there is no <code class="calibre11">Post</code> with the given <code class="calibre11">pk</code>, it will display much nicer page, the <code class="calibre11">Page Not Found 404</code> page.</p>
-        <p class="calibre6"><img src="404_2.png" alt="Page not found" class="calibre8"></img></p>
+        <p class="calibre6"><img src="content/404_2.png" alt="Page not found" class="calibre8"></img></p>
         <p class="calibre6">The good news is that you can actually create your own <code class="calibre11">Page not found</code> page and make it as pretty as you want. But it's not super important right now, so we will skip it.</p>
         <p class="calibre6">OK, time to add a <em class="calibre14">view</em> to our <code class="calibre11">views.py</code> file!</p>
         <p class="calibre6">In <code class="calibre11">blog/urls.py</code> we created a URL rule named <code class="calibre11">post_detail</code> that refers to a view called  <code class="calibre11">views.post_detail</code>. This means that Django will be expecting a view function called <code class="calibre11">post_detail</code> inside <code class="calibre11">blog/views.py</code>.</p>
@@ -111,9 +111,9 @@
             <span>return</span> render(request, <span>'blog/post_detail.html'</span>, {<span>'post'</span>: post})
         </code></pre>
         <p class="calibre6">Yes. It is time to refresh the page: <a href="http://127.0.0.1:8000/" target="_blank">http://127.0.0.1:8000/</a></p>
-        <p class="calibre6"><img src="post_list2.png" alt="Post list view" class="calibre8"></img></p>
+        <p class="calibre6"><img src="content/post_list2.png" alt="Post list view" class="calibre8"></img></p>
         <p class="calibre6">It worked! But what happens when you click a link in blog post title?</p>
-        <p class="calibre6"><img src="template_does_not_exist2.png" alt="TemplateDoesNotExist error" class="calibre8"></img></p>
+        <p class="calibre6"><img src="content/template_does_not_exist2.png" alt="TemplateDoesNotExist error" class="calibre8"></img></p>
         <p class="calibre6">Oh no! Another error! But we already know how to deal with it, right? We need to add a template!</p>
         <h2 id="create-a-template-for-the-post-details" class="calibre7">Create a template for the post details</h2>
         <p class="calibre6">We will create a file in <code class="calibre11">blog/templates/blog</code> called <code class="calibre11">post_detail.html</code>, and open it in the code editor.</p>
@@ -136,7 +136,7 @@
         <p class="calibre6">Once again we are extending <code class="calibre11">base.html</code>. In the <code class="calibre11">content</code> block we want to display a post's published_date (if it exists), title and text. But we should discuss some important things, right?</p>
         <p class="calibre6"><code class="calibre11">{% if ... %} ... {% endif %}</code> is a template tag we can use when we want to check something. (Remember <code class="calibre11">if ... else ...</code> from <strong class="calibre10">Introduction to Python</strong> chapter?) In this scenario we want to check if a post's <code class="calibre11">published_date</code> is not empty.</p>
         <p class="calibre6">OK, we can refresh our page and see if <code class="calibre11">TemplateDoesNotExist</code> is gone now.</p>
-        <p class="calibre6"><img src="post_detail2.png" alt="Post detail page" class="calibre8"></img></p>
+        <p class="calibre6"><img src="content/post_detail2.png" alt="Post detail page" class="calibre8"></img></p>
         <p class="calibre6">Yay! It works!</p>
         <h1 id="deploy-time" class="calibre1">Deploy time!</h1>
         <p class="calibre6">It'd be good to see if your website still works on PythonAnywhere, right? Let's try deploying again.</p>

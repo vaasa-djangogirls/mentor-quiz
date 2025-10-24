@@ -2,15 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Deploy!</title>
-    <base href="content/" />
     <link rel="stylesheet" href="book.css" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge"></meta>
     <meta name="description" content=""></meta>
     <meta name="generator" content="HonKit 3.7.5"></meta>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta>
-  <link rel="stylesheet" type="text/css" href="stylesheet.css"></link>
-<link rel="stylesheet" type="text/css" href="page_styles.css"></link>
+  <link rel="stylesheet" type="text/css" href="content/stylesheet.css"></link>
+<link rel="stylesheet" type="text/css" href="content/page_styles.css"></link>
 
 </head>
 <body>
@@ -32,10 +32,10 @@
         <p class="calibre6">The other external service we'll be using is <a href="https://www.github.com" target="_blank">GitHub</a>, which is a code hosting service. There are others out there, but almost all programmers have a GitHub account these days, and now so will you!</p>
         <p class="calibre6">These three places will be important to you. Your local computer will be the place where you do development and testing. When you're happy with the changes, you will place a copy of your program on GitHub. Your website will be on PythonAnywhere and you will update it by getting a new copy of your code from GitHub.</p>
         <p class="calibre6">The deployment process can be illustrated as follows:</p>
-        <p class="calibre6"><img src="deployment_local.png" alt="" class="calibre8"></img></p>
+        <p class="calibre6"><img src="content/deployment_local.png" alt="" class="calibre8"></img></p>
         <p class="calibre6">If you’re using a <strong class="calibre10">Chromebook</strong> and <a href="https://github.com/codespaces" target="_blank">GitHub Codespaces</a>, your setup will look a bit different. All code-related changes are made not locally on your <strong class="calibre10">Chromebook</strong>, but in the Cloud Environment provided by GitHub.</p>
         <p class="calibre6">The deployment process on <strong class="calibre10">Chromebook</strong> and Cloud environment can be illustrated as follows:</p>
-        <p class="calibre6"><img src="deployment_cloud.png" alt="" class="calibre8"></img></p>
+        <p class="calibre6"><img src="content/deployment_cloud.png" alt="" class="calibre8"></img></p>
         <h1 id="git" class="calibre1">Git</h1>
         <blockquote class="calibre5">
         <p class="calibre6"><strong class="calibre10">Note</strong> If you already did the <a href="index1.html">installation steps</a>, there's no need to do this again – you can skip to the next section and start creating your Git repository.</p>
@@ -168,12 +168,12 @@
         Leave the "initialize with a README" checkbox unchecked,
         leave the .gitignore option blank (we've done that manually)
         and leave the License as None.</p>
-        <p class="calibre6"><img src="new_github_repo.png" alt="" class="calibre8"></img></p>
+        <p class="calibre6"><img src="content/new_github_repo.png" alt="" class="calibre8"></img></p>
         <blockquote class="calibre5">
         <p class="calibre6"><strong class="calibre10">Note</strong> The name <code class="calibre11">my-first-blog</code> is important – you could choose something else, but it's going to occur lots of times in the instructions below, and you'd have to substitute it each time. It's probably easier to stick with the name <code class="calibre11">my-first-blog</code>.</p>
         </blockquote>
         <p class="calibre6">On the next screen, you'll be shown your repo's clone URL, which you will use in some of the commands that follow:</p>
-        <p class="calibre6"><img src="github_get_repo_url_screenshot.png" alt="" class="calibre8"></img></p>
+        <p class="calibre6"><img src="content/github_get_repo_url_screenshot.png" alt="" class="calibre8"></img></p>
         <p class="calibre6">Now we need to hook up the Git repository on your computer to the one up on GitHub.</p>
         <p class="calibre6">Type the following into your console
         (replace <code class="calibre11">&lt;your-github-username&gt;</code> with the username you entered when you created your GitHub account,
@@ -209,18 +209,18 @@
         <ul class="calibre9">
         <li class="calibre3"><a href="https://www.pythonanywhere.com/" target="_blank">www.pythonanywhere.com</a></li>
         </ul>
-        <p class="calibre6"><img src="pythonanywhere_beginner_account_button.png" alt="The PythonAnywhere signup page showing button to create a free 'Beginner' account" class="calibre8"></img></p>
+        <p class="calibre6"><img src="content/pythonanywhere_beginner_account_button.png" alt="The PythonAnywhere signup page showing button to create a free 'Beginner' account" class="calibre8"></img></p>
         <blockquote class="calibre5">
         <p class="calibre6"><strong class="calibre10">Note</strong> When choosing your username here, bear in mind that your blog's URL will take the form <code class="calibre11">yourusername.pythonanywhere.com</code>, so choose either your own nickname or a name for what your blog is all about. Also, be sure to remember your password (add it to your password manager, if you use one).</p>
         </blockquote>
         <h2 id="creating-a-pythonanywhere-api-token" class="calibre7">Creating a PythonAnywhere API token</h2>
         <p class="calibre6">This is something you only need to do once.  When you've signed up for PythonAnywhere, you'll be taken to your dashboard.  Find the link near the top right to your "Account" page:</p>
-        <p class="calibre6"><img src="pythonanywhere_account.png" alt="Account link on the top right on the page" class="calibre8"></img></p>
+        <p class="calibre6"><img src="content/pythonanywhere_account.png" alt="Account link on the top right on the page" class="calibre8"></img></p>
         <p class="calibre6">then select the tab named "API token", and hit the button that says "Create new API token".</p>
-        <p class="calibre6"><img src="pythonanywhere_create_api_token.png" alt="The API token tab on the Account page" class="calibre8"></img></p>
+        <p class="calibre6"><img src="content/pythonanywhere_create_api_token.png" alt="The API token tab on the Account page" class="calibre8"></img></p>
         <h2 id="configuring-our-site-on-pythonanywhere" class="calibre7">Configuring our site on PythonAnywhere</h2>
         <p class="calibre6">Go back to the main <a href="https://www.pythonanywhere.com/" target="_blank">PythonAnywhere Dashboard</a> by clicking on the logo, and choose the option to start a "Bash" console – that's the PythonAnywhere version of a command line, just like the one on your computer.</p>
-        <p class="calibre6"><img src="pythonanywhere_bash_console.png" alt="The 'New Console' section on the PythonAnywhere web interface, with a button for 'bash'" class="calibre8"></img></p>
+        <p class="calibre6"><img src="content/pythonanywhere_bash_console.png" alt="The 'New Console' section on the PythonAnywhere web interface, with a button for 'bash'" class="calibre8"></img></p>
         <blockquote class="calibre5">
         <p class="calibre6"><strong class="calibre10">Note</strong> PythonAnywhere is based on Linux, so if you're on Windows, the console will look a little different from the one on your computer.
         Deploying a web app on PythonAnywhere involves pulling down your code from GitHub, and then configuring PythonAnywhere to recognise it and start serving it as a web application.  There are manual ways of doing it, but PythonAnywhere provides a helper tool that will do it all for you. Let's install it first:</p>

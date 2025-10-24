@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-"""Convert an EPUB into standalone HTML pages with navigation."""
+"""Convert an EPUB into standalone, mobile-friendly HTML pages with navigation."""
 
 from __future__ import annotations
 
 import argparse
-import os
+import posixpath
 import re
 import shutil
 import textwrap
@@ -20,7 +20,34 @@ NS = {
     "dc": "http://purl.org/dc/elements/1.1/",
     "xhtml": "http://www.w3.org/1999/xhtml",
 }
+
 HTML_NS_ATTR_RE = re.compile(r'\s+xmlns(?::\w+)?="http://www.w3.org/1999/xhtml"')
+RELATIVE_PREFIX_BLOCKLIST = (
+    "#",
+    "?",
+    "/",
+    "//",
+    "http://",
+    "https://",
+    "mailto:",
+    "tel:",
+    "data:",
+    "javascript:",
+)
+
+SRC_TAGS = {"img", "script", "iframe", "audio", "video", "embed"}
+SRCSET_TAGS = {"img", "source"}
+HREF_TAGS = {"link"}
+DATA_TAGS = {"object"}
+
+
+@dataclass
+class PageData:
+    title: str
+    metas_html: str
+    head_html: str
+    body_html: str
+    output_name: str
 
 
 def parse_args() -> argparse.Namespace:
@@ -80,7 +107,6 @@ def parse_opf(zip_file: zipfile.ZipFile, opf_path: str) -> Tuple[Dict[str, Dict[
         raise RuntimeError("EPUB spine is missing.")
 
     spine_ids = [item.attrib["idref"] for item in spine_elem.findall("opf:itemref", NS)]
-
     return manifest, spine_ids
 
 
@@ -90,19 +116,88 @@ def strip_xhtml_namespaces(fragment: str) -> str:
     return fragment
 
 
+def local_tag(tag: str) -> str:
+    """Return the local part of a potentially namespaced tag."""
+    return tag.split("}", 1)[-1]
+
+
+def should_rewrite_path(value: str) -> bool:
+    if not value:
+        return False
+    for prefix in RELATIVE_PREFIX_BLOCKLIST:
+        if value.startswith(prefix):
+            return False
+    if ":" in value.split("/", 1)[0]:
+        # Likely a scheme (e.g. ftp:, about:) we shouldn't modify.
+        return False
+    return True
+
+
+def resolve_resource_path(value: str, parent_dir: str) -> str | None:
+    if not should_rewrite_path(value):
+        return None
+    combined = posixpath.normpath(posixpath.join(parent_dir, value))
+    if combined.startswith("../"):
+        # Outside the EPUB root; leave untouched.
+        return None
+    if combined in (".", ""):
+        result = "content"
+    else:
+        result = f"content/{combined}"
+    if value.endswith("/") and not result.endswith("/"):
+        result = f"{result}/"
+    return result
+
+
+def rewrite_srcset(value: str, parent_dir: str) -> str:
+    rewritten: List[str] = []
+    for entry in value.split(","):
+        entry = entry.strip()
+        if not entry:
+            continue
+        if " " in entry:
+            url, descriptor = entry.split(None, 1)
+        else:
+            url, descriptor = entry, ""
+        new_url = resolve_resource_path(url, parent_dir)
+        if new_url:
+            url = new_url
+        rewritten.append(f"{url} {descriptor}".strip())
+    return ", ".join(rewritten)
+
+
+def adjust_resource_paths(head: ET.Element | None, body: ET.Element | None, parent_dir: str) -> None:
+    for section in filter(None, (head, body)):
+        for node in section.iter():
+            tag_name = local_tag(node.tag)
+            if tag_name in HREF_TAGS and "href" in node.attrib:
+                new_value = resolve_resource_path(node.attrib["href"], parent_dir)
+                if new_value:
+                    node.set("href", new_value)
+            if tag_name in SRC_TAGS and "src" in node.attrib:
+                new_value = resolve_resource_path(node.attrib["src"], parent_dir)
+                if new_value:
+                    node.set("src", new_value)
+            if tag_name in SRCSET_TAGS and "srcset" in node.attrib:
+                node.set("srcset", rewrite_srcset(node.attrib["srcset"], parent_dir))
+            if tag_name in DATA_TAGS and "data" in node.attrib:
+                new_value = resolve_resource_path(node.attrib["data"], parent_dir)
+                if new_value:
+                    node.set("data", new_value)
+
+
 def build_head_chunks(head: ET.Element) -> Tuple[str, str, str]:
     title_text = "Untitled"
     additional_parts: List[str] = []
     metas: List[str] = []
 
     for child in head:
-        tag_name = child.tag.split("}", 1)[-1]
+        tag_name = local_tag(child.tag)
         if tag_name == "title":
             if child.text:
                 title_text = child.text.strip()
             continue
         if tag_name == "base":
-            # We'll inject our own <base>.
             continue
         serialized = ET.tostring(child, encoding="unicode", method="html")
         serialized = strip_xhtml_namespaces(serialized)
@@ -115,7 +210,7 @@ def build_head_chunks(head: ET.Element) -> Tuple[str, str, str]:
 
 
 def extract_body_inner(body: ET.Element) -> str:
-    parts = []
+    parts: List[str] = []
     for child in body:
         serialized = ET.tostring(child, encoding="unicode", method="html")
         parts.append(strip_xhtml_namespaces(serialized))
@@ -135,66 +230,166 @@ def ensure_destination(output_dir: Path, force: bool) -> None:
 def write_css(output_dir: Path) -> None:
     css = textwrap.dedent(
         """
-        body {
-            font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-            margin: 0 auto;
-            padding: 1rem 1.5rem 3rem;
-            max-width: 960px;
-            line-height: 1.6;
-            color: #202124;
-            background: #fafafa;
+        :root {
+            color-scheme: light;
+            font-size: 16px;
         }
-        main {
-            background: #ffffff;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+            color: #202124;
+            background: #f5f7fb;
+            line-height: 1.7;
+            font-size: clamp(1rem, 0.98rem + 0.3vw, 1.1rem);
+            display: flex;
+            flex-direction: column;
+        }
+        body > header,
+        body > nav.book-nav,
+        body > main,
+        body > footer {
+            width: min(960px, 92vw);
+            margin: 0 auto;
+        }
+        body > header,
+        body > footer {
+            padding: clamp(1rem, 3vw, 1.75rem) 0;
+        }
+        header.book-header h1 {
+            margin: 0 0 0.35rem;
+            font-size: clamp(2rem, 4vw, 2.5rem);
+        }
+        header.book-header p {
+            margin: 0;
+            color: #4b5c6b;
         }
         nav.book-nav {
             display: flex;
             flex-wrap: wrap;
             gap: 0.75rem;
-            margin: 1.5rem 0;
+            margin: 0 0 clamp(1.25rem, 4vw, 2rem);
+            padding-bottom: clamp(0.5rem, 2vw, 1rem);
         }
         nav.book-nav a,
         nav.book-nav span {
-            padding: 0.4rem 0.95rem;
+            padding: 0.55rem 1.15rem;
             border-radius: 999px;
             border: 1px solid #3b6b9a;
             text-decoration: none;
             color: #1a4d7a;
             background: #e6f0fb;
             font-weight: 600;
+            transition: background 0.15s ease, box-shadow 0.15s ease;
+            min-width: 9rem;
+            text-align: center;
+            box-shadow: 0 1px 6px rgba(59, 107, 154, 0.15);
         }
         nav.book-nav span {
             color: #7a8699;
             border-color: #c7d3e3;
             background: #eef2f9;
+            box-shadow: none;
         }
-        nav.book-nav a:hover {
+        nav.book-nav a:hover,
+        nav.book-nav a:focus-visible {
             background: #d7e8fb;
+            box-shadow: 0 3px 12px rgba(59, 107, 154, 0.25);
+        }
+        main {
+            flex: 1;
+            background: #ffffff;
+            padding: clamp(1.5rem, 4vw, 2.6rem);
+            border-radius: 12px;
+            box-shadow: 0 16px 40px rgba(15, 23, 42, 0.08);
+            margin-bottom: clamp(1.5rem, 5vw, 2.5rem);
+        }
+        main > :first-child {
+            margin-top: 0;
+        }
+        main > :last-child {
+            margin-bottom: 0;
+        }
+        img,
+        video,
+        iframe {
+            max-width: 100%;
+            height: auto;
+            border-radius: 6px;
+        }
+        pre {
+            overflow-x: auto;
+            background: #0f172a;
+            color: #e2e8f0;
+            padding: 1rem;
+            border-radius: 8px;
+            font-size: 0.95rem;
+        }
+        code {
+            font-family: "Fira Code", "SFMono-Regular", Menlo, Consolas, monospace;
+        }
+        blockquote {
+            border-left: 4px solid #c8d9ee;
+            padding-left: 1rem;
+            margin: 1.5rem 0;
+            color: #475569;
+            background: #f1f6fd;
         }
         .toc-list {
             list-style: none;
             padding: 0;
             margin: 2rem 0;
-        }
-        .toc-list li {
-            margin-bottom: 0.75rem;
+            display: grid;
+            gap: 0.75rem;
         }
         .toc-list a {
             text-decoration: none;
             color: #194877;
             font-weight: 600;
         }
-        header.book-header h1 {
-            margin: 0;
-        }
         footer.book-footer {
-            margin-top: 3rem;
-            font-size: 0.85rem;
+            margin-top: auto;
+            font-size: 0.9rem;
             color: #5f6368;
             text-align: center;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 1.5rem 0;
+        }
+        table,
+        th,
+        td {
+            border: 1px solid #c7d3e3;
+        }
+        th,
+        td {
+            padding: 0.65rem;
+            text-align: left;
+        }
+        @media (max-width: 720px) {
+            nav.book-nav {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            nav.book-nav a,
+            nav.book-nav span {
+                width: 100%;
+                min-width: 0;
+            }
+        }
+        @media (max-width: 600px) {
+            body > header,
+            body > nav.book-nav,
+            body > main,
+            body > footer {
+                width: min(640px, 94vw);
+            }
+            main {
+                padding: clamp(1.1rem, 5vw, 1.6rem);
+                border-radius: 10px;
+            }
         }
         """
     ).strip()
@@ -216,19 +411,8 @@ def build_navigation(prev_link: str | None, next_link: str | None) -> str:
     return "".join(parts)
 
 
-@dataclass
-class PageData:
-    title: str
-    metas_html: str
-    head_html: str
-    body_html: str
-    base_href: str
-    output_name: str
-
-
 def render_page(
     title: str,
-    base_href: str,
     metas_html: str,
     head_html: str,
     body_html: str,
@@ -244,8 +428,8 @@ def render_page(
 <html lang="en">
 <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
-    <base href="{base_href}" />
     <link rel="stylesheet" href="book.css" />
     {metas_html}{head_html}
 </head>
@@ -269,13 +453,13 @@ def render_page(
 
 def render_index(chapters: Sequence[Tuple[str, str]]) -> str:
     items = "\n".join(f'        <li><a href="{output_file}">{title}</a></li>' for title, output_file in chapters)
-    next_link = chapters[0][1] if chapters else None
-    navigation = textwrap.indent(build_navigation(None, next_link), "    ")
+    navigation = textwrap.indent(build_navigation(None, chapters[0][1] if chapters else None), "    ")
     template = f"""\
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Django Girls Tutorial – HTML Edition</title>
     <link rel="stylesheet" href="book.css" />
 </head>
@@ -339,17 +523,15 @@ def convert(epub_path: Path, output_dir: Path, force: bool) -> None:
         if head is None or body is None:
             continue
 
+        parent_posix = Path(source_rel).parent.as_posix()
+        resource_parent = "" if parent_posix in ("", ".") else parent_posix
+        adjust_resource_paths(head, body, resource_parent)
+
         title_text, metas_html, head_html = build_head_chunks(head)
         body_html = extract_body_inner(body)
 
         slug = slugify(title_text or Path(href).stem)
         output_name = f"{index:03d}-{slug}.html"
-
-        parent_posix = Path(source_rel).parent.as_posix()
-        if parent_posix in ("", "."):
-            base_href = "content/"
-        else:
-            base_href = f"content/{parent_posix}/"
 
         pages.append(
             PageData(
@@ -357,7 +539,6 @@ def convert(epub_path: Path, output_dir: Path, force: bool) -> None:
                 metas_html=metas_html,
                 head_html=head_html,
                 body_html=body_html,
-                base_href=base_href,
                 output_name=output_name,
             )
         )
@@ -370,7 +551,6 @@ def convert(epub_path: Path, output_dir: Path, force: bool) -> None:
         next_link = pages[idx + 1].output_name if idx + 1 < len(pages) else None
         html_text = render_page(
             title=page.title,
-            base_href=page.base_href,
             metas_html=page.metas_html,
             head_html=page.head_html,
             body_html=page.body_html,

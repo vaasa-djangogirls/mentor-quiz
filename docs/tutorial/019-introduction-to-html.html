@@ -2,15 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Introduction to HTML</title>
-    <base href="content/" />
     <link rel="stylesheet" href="book.css" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge"></meta>
     <meta name="description" content=""></meta>
     <meta name="generator" content="HonKit 3.7.5"></meta>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta>
-  <link rel="stylesheet" type="text/css" href="stylesheet.css"></link>
-<link rel="stylesheet" type="text/css" href="page_styles.css"></link>
+  <link rel="stylesheet" type="text/css" href="content/stylesheet.css"></link>
+<link rel="stylesheet" type="text/css" href="content/page_styles.css"></link>
 
 </head>
 <body>
@@ -42,7 +42,7 @@
         <blockquote class="calibre5">
         <p class="calibre6">If you still have an error <code class="calibre11">TemplateDoesNotExist</code>, try to restart your server. Go to the command line, stop the server by pressing Ctrl+C (Control and C keys together) and start it again by running a <code class="calibre11">python manage.py runserver</code> command.</p>
         </blockquote>
-        <p class="calibre6"><img src="step1.png" alt="Figure 11.1" class="calibre8"></img></p>
+        <p class="calibre6"><img src="content/step1.png" alt="Figure 11.1" class="calibre8"></img></p>
         <p class="calibre6">No error anymore! Congratulations! :) However, your website isn't actually publishing anything except an empty page, because your template is empty too. We need to fix that.</p>
         <p class="calibre6">Open the new file in the code editor, and add the following:</p>
         <p class="calibre6"></p><p class="calibre6">blog/templates/blog/post_list.html</p><p class="calibre6"></p>
@@ -55,7 +55,7 @@
         <span>&lt;/<span>html</span>&gt;</span>
         </code></pre>
         <p class="calibre6">So how does your website look now? Visit it to find out: <a href="http://127.0.0.1:8000/" target="_blank">http://127.0.0.1:8000/</a></p>
-        <p class="calibre6"><img src="step3.png" alt="Figure 11.2" class="calibre8"></img></p>
+        <p class="calibre6"><img src="content/step3.png" alt="Figure 11.2" class="calibre8"></img></p>
         <p class="calibre6">It worked. Nice work there! :)</p>
         <ul class="calibre9">
         <li class="calibre3">The line <code class="calibre11">&lt;!DOCTYPE html&gt;</code> is not a HTML tag. It only declares the document type. Here, it informs the browser that document type is <a href="https://html.spec.whatwg.org/#the-doctype" target="_blank">HTML5</a>. This is always the beginning of any HTML5 file.</li>
@@ -85,7 +85,7 @@
         <span>&lt;/<span>html</span>&gt;</span>
         </code></pre>
         <p class="calibre6">Save the file and refresh your page.</p>
-        <p class="calibre6"><img src="step4.png" alt="Figure 11.3" class="calibre8"></img></p>
+        <p class="calibre6"><img src="content/step4.png" alt="Figure 11.3" class="calibre8"></img></p>
         <p class="calibre6">Notice how the browser has understood that "Ola's blog" is the title of your page? It has interpreted <code class="calibre11">&lt;title&gt;Ola's blog&lt;/title&gt;</code> and placed the text in the title bar of your browser (it will also be used for bookmarks and so on).</p>
         <p class="calibre6">Probably you have also noticed that each opening tag is matched by a <em class="calibre14">closing tag</em>, with a <code class="calibre11">/</code>, and that elements are <em class="calibre14">nested</em> (i.e. you can't close a particular tag until all the ones that were inside it have been closed too).</p>
         <p class="calibre6">It's like putting things into boxes. You have one big box, <code class="calibre11">&lt;html&gt;&lt;/html&gt;</code>; inside it there is <code class="calibre11">&lt;body&gt;&lt;/body&gt;</code>, and that contains still smaller boxes: <code class="calibre11">&lt;p&gt;&lt;/p&gt;</code>.</p>
@@ -144,7 +144,7 @@
         <li class="calibre3">The two <code class="calibre11">article</code> elements contain our blog posts with a published date in a <code class="calibre11">time</code> element, a <code class="calibre11">h2</code> element with a post title that is clickable and a <code class="calibre11">p</code> (paragraph) element for text of our blog post.</li>
         </ul>
         <p class="calibre6">It gives us this effect:</p>
-        <p class="calibre6"><img src="step6.png" alt="Figure 11.4" class="calibre8"></img></p>
+        <p class="calibre6"><img src="content/step6.png" alt="Figure 11.4" class="calibre8"></img></p>
         <p class="calibre6">Yaaay! But so far, our template only ever displays exactly <strong class="calibre10">the same information</strong> – whereas earlier we were talking about templates as allowing us to display <strong class="calibre10">different</strong> information in the <strong class="calibre10">same format</strong>.</p>
         <p class="calibre6">What we really want to do is display real posts added in our Django admin – and that's where we're going next.</p>
         <h2 id="one-more-thing--deploy" class="calibre7">One more thing:  deploy!</h2>

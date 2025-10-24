@@ -2,15 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Django URLs</title>
-    <base href="content/" />
     <link rel="stylesheet" href="book.css" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge"></meta>
     <meta name="description" content=""></meta>
     <meta name="generator" content="HonKit 3.7.5"></meta>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta>
-  <link rel="stylesheet" type="text/css" href="stylesheet.css"></link>
-<link rel="stylesheet" type="text/css" href="page_styles.css"></link>
+  <link rel="stylesheet" type="text/css" href="content/stylesheet.css"></link>
+<link rel="stylesheet" type="text/css" href="content/page_styles.css"></link>
 
 </head>
 <body>
@@ -27,7 +27,7 @@
         <p class="calibre6">We're about to build our first webpage: a homepage for your blog! But first, let's learn a little bit about Django URLs.</p>
         <h2 id="what-is-a-url" class="calibre7">What is a URL?</h2>
         <p class="calibre6">A URL is a web address. You can see a URL every time you visit a website – it is visible in your browser's address bar. (Yes! <code class="calibre11">127.0.0.1:8000</code> is a URL! And <code class="calibre11">https://djangogirls.org</code> is also a URL.)</p>
-        <p class="calibre6"><img src="url.png" alt="URL" class="calibre8"></img></p>
+        <p class="calibre6"><img src="content/url.png" alt="URL" class="calibre8"></img></p>
         <p class="calibre6">Every page on the Internet needs its own URL. This way your application knows what it should show to a user who opens that URL. In Django, we use something called <code class="calibre11">URLconf</code> (URL configuration). URLconf is a set of patterns that Django will try to match the requested URL to find the correct view.</p>
         <h2 id="how-do-urls-work-in-django" class="calibre7">How do URLs work in Django?</h2>
         <p class="calibre6">Let's open up the <code class="calibre11">mysite/urls.py</code> file in your code editor of choice and see what it looks like:</p>

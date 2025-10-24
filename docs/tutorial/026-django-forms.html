@@ -2,15 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Django Forms</title>
-    <base href="content/" />
     <link rel="stylesheet" href="book.css" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge"></meta>
     <meta name="description" content=""></meta>
     <meta name="generator" content="HonKit 3.7.5"></meta>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta>
-  <link rel="stylesheet" type="text/css" href="stylesheet.css"></link>
-<link rel="stylesheet" type="text/css" href="page_styles.css"></link>
+  <link rel="stylesheet" type="text/css" href="content/stylesheet.css"></link>
+<link rel="stylesheet" type="text/css" href="content/page_styles.css"></link>
 
 </head>
 <body>
@@ -133,7 +133,7 @@
         <li class="calibre3">We need a <code class="calibre11">Save</code> button. We do that with an HTML button: <code class="calibre11">&lt;button type="submit"&gt;Save&lt;/button&gt;</code>.</li>
         <li class="calibre3">And finally, just after the opening <code class="calibre11">&lt;form ...&gt;</code> tag we need to add <code class="calibre11">{% csrf_token %}</code>. This is very important, since it makes your forms secure! If you forget about this bit, Django will complain when you try to save the form:</li>
         </ul>
-        <p class="calibre6"><img src="csrf2.png" alt="CSRF Forbidden page" class="calibre8"></img></p>
+        <p class="calibre6"><img src="content/csrf2.png" alt="CSRF Forbidden page" class="calibre8"></img></p>
         <p class="calibre6">OK, so let's see how the HTML in <code class="calibre11">post_edit.html</code> should look:</p>
         <p class="calibre6"></p><p class="calibre6">blog/templates/blog/post_edit.html</p><p class="calibre6"></p>
         <pre class="calibre13"><code class="calibre11">{% extends 'blog/base.html' %}
@@ -147,7 +147,7 @@
         {% endblock %}
         </code></pre>
         <p class="calibre6">Time to refresh! Yay! Your form is displayed!</p>
-        <p class="calibre6"><img src="new_form2.png" alt="New form" class="calibre8"></img></p>
+        <p class="calibre6"><img src="content/new_form2.png" alt="New form" class="calibre8"></img></p>
         <p class="calibre6">But, wait a minute! When you type something in the <code class="calibre11">title</code> and <code class="calibre11">text</code> fields and try to save it, what will happen?</p>
         <p class="calibre6">Nothing! We are once again on the same page and our text is gone… and no new post is added. So what went wrong?</p>
         <p class="calibre6">The answer is: nothing. We need to do a little bit more work in our <em class="calibre14">view</em>.</p>
@@ -210,11 +210,11 @@
         <blockquote class="calibre5">
         <p class="calibre6">As we have recently used the Django admin interface, the system currently thinks we are still logged in. There are a few situations that could lead to us being logged out (closing the browser, restarting the DB, etc.). If, when creating a post, you find that you are getting errors referring to the lack of a logged-in user, head to the admin page <a href="http://127.0.0.1:8000/admin" target="_blank">http://127.0.0.1:8000/admin</a> and log in again. This will fix the issue temporarily. There is a permanent fix awaiting you in the <strong class="calibre10">Homework: add security to your website!</strong> chapter after the main tutorial.</p>
         </blockquote>
-        <p class="calibre6"><img src="post_create_error.png" alt="Logged in error" class="calibre8"></img></p>
+        <p class="calibre6"><img src="content/post_create_error.png" alt="Logged in error" class="calibre8"></img></p>
         <h2 id="form-validation" class="calibre7">Form validation</h2>
         <p class="calibre6">Now, we will show you how cool Django forms are. A blog post needs to have <code class="calibre11">title</code> and <code class="calibre11">text</code> fields. In our <code class="calibre11">Post</code> model we did not say that these fields (as opposed to <code class="calibre11">published_date</code>) are not required, so Django, by default, expects them to be set.</p>
         <p class="calibre6">Try to save the form without <code class="calibre11">title</code> and <code class="calibre11">text</code>. Guess what will happen!</p>
-        <p class="calibre6"><img src="form_validation2.png" alt="Form validation" class="calibre8"></img></p>
+        <p class="calibre6"><img src="content/form_validation2.png" alt="Form validation" class="calibre8"></img></p>
         <p class="calibre6">Django is taking care to validate that all the fields in our form are correct. Isn't it awesome?</p>
         <h2 id="edit-form" class="calibre7">Edit form</h2>
         <p class="calibre6">Now we know how to add a new post. But what if we want to edit an existing one? This is very similar to what we just did. Let's create some important things quickly. (If you don't understand something, you should ask your coach or look at the previous chapters, since we covered all these steps already.)</p>
@@ -278,9 +278,9 @@
         <pre class="calibre13"><code class="calibre11">form = PostForm(instance=post)
         </code></pre>
         <p class="calibre6">OK, let's test if it works! Let's go to the <code class="calibre11">post_detail</code> page. There should be an edit button in the top-right corner:</p>
-        <p class="calibre6"><img src="edit_button2.png" alt="Edit button" class="calibre8"></img></p>
+        <p class="calibre6"><img src="content/edit_button2.png" alt="Edit button" class="calibre8"></img></p>
         <p class="calibre6">When you click it you will see the form with our blog post:</p>
-        <p class="calibre6"><img src="edit_form2.png" alt="Edit form" class="calibre8"></img></p>
+        <p class="calibre6"><img src="content/edit_form2.png" alt="Edit form" class="calibre8"></img></p>
         <p class="calibre6">Feel free to change the title or the text and save the changes!</p>
         <p class="calibre6">Congratulations! Your application is getting more and more complete!</p>
         <p class="calibre6">If you need more information about Django forms, you should read the documentation: <a href="https://docs.djangoproject.com/en/5.1/topics/forms/" target="_blank">https://docs.djangoproject.com/en/5.1/topics/forms/</a></p>

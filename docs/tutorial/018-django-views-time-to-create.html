@@ -2,15 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Django views – time to create!</title>
-    <base href="content/" />
     <link rel="stylesheet" href="book.css" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge"></meta>
     <meta name="description" content=""></meta>
     <meta name="generator" content="HonKit 3.7.5"></meta>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta>
-  <link rel="stylesheet" type="text/css" href="stylesheet.css"></link>
-<link rel="stylesheet" type="text/css" href="page_styles.css"></link>
+  <link rel="stylesheet" type="text/css" href="content/stylesheet.css"></link>
+<link rel="stylesheet" type="text/css" href="content/page_styles.css"></link>
 
 </head>
 <body>
@@ -50,7 +50,7 @@
         <p class="calibre6">As you can see, we created a function (<code class="calibre11">def</code>) called <code class="calibre11">post_list</code> that takes <code class="calibre11">request</code> and will <code class="calibre11">return</code> the value it gets from calling another function <code class="calibre11">render</code> that will render (put together) our template <code class="calibre11">blog/post_list.html</code>.</p>
         <p class="calibre6">Save the file, go to <a href="http://127.0.0.1:8000/" target="_blank">http://127.0.0.1:8000/</a> and see what we've got.</p>
         <p class="calibre6">Another error! Read what's going on now:</p>
-        <p class="calibre6"><img src="error.png" alt="Error" class="calibre8"></img></p>
+        <p class="calibre6"><img src="content/error.png" alt="Error" class="calibre8"></img></p>
         <p class="calibre6">This shows that the server is running again, at least, but it still doesn't look right, does it? Don't worry, it's just an error page, nothing to be scared of! Just like the error messages in the console, these are actually pretty useful. You can read that the <em class="calibre14">TemplateDoesNotExist</em>. Let's fix this bug and create a template in the next chapter!</p>
         <blockquote class="calibre5">
         <p class="calibre6">Learn more about Django views by reading the official documentation: <a href="https://docs.djangoproject.com/en/5.1/topics/http/views/" target="_blank">https://docs.djangoproject.com/en/5.1/topics/http/views/</a></p>

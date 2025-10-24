@@ -2,15 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Installation</title>
-    <base href="content/" />
     <link rel="stylesheet" href="book.css" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge"></meta>
     <meta name="description" content=""></meta>
     <meta name="generator" content="HonKit 3.7.5"></meta>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta>
-  <link rel="stylesheet" type="text/css" href="stylesheet.css"></link>
-<link rel="stylesheet" type="text/css" href="page_styles.css"></link>
+  <link rel="stylesheet" type="text/css" href="content/stylesheet.css"></link>
+<link rel="stylesheet" type="text/css" href="content/page_styles.css"></link>
 
 </head>
 <body>
@@ -46,18 +46,18 @@
         <li class="calibre3"><p class="calibre6"><strong class="calibre10">Go to <a href="https://github.com" target="_blank">GitHub.com</a></strong> and sign up for a new, free user account. Be sure to remember your password (add it to your password manager, if you use one).</p>
         </li>
         <li class="calibre3"><p class="calibre6"><strong class="calibre10">Create a GitHub project</strong>. Visit <a href="https://github.com/new" target="_blank">this</a> link, use "my-first-blog" name for your project, and make it public (needed for deployment, you can make it private later). Also, add a <code class="calibre11">README.md</code> and <code class="calibre11">.gitignore</code> file.</p>
-        <p class="calibre6"> <img src="create-new-repo.png" alt="" class="calibre8"></img></p>
+        <p class="calibre6"> <img src="content/create-new-repo.png" alt="" class="calibre8"></img></p>
         </li>
         <li class="calibre3"><p class="calibre6"><strong class="calibre10">Start a Codespace</strong>. Go to GitHub <a href="https://github.com/codespaces/new" target="_blank">Codespaces</a> and select the repository you just created. Click "Create Codespace".</p>
-        <p class="calibre6"> <img src="create-new-codespace.png" alt="" class="calibre8"></img></p>
+        <p class="calibre6"> <img src="content/create-new-codespace.png" alt="" class="calibre8"></img></p>
         <p class="calibre6"> Wait a little bit and you'll see something like that:</p>
-        <p class="calibre6"> <img src="codespace-preview.png" alt="" class="calibre8"></img></p>
+        <p class="calibre6"> <img src="content/codespace-preview.png" alt="" class="calibre8"></img></p>
         <p class="calibre6"> The <a href="https://code.visualstudio.com" target="_blank">VSCode</a> editor will open for you automatically. If you see a notification that says "Install Python", please click on it. If not prompted, click the "Extensions" icon on the left sidebar in the Codespace editor. Search for "Python" and click "Install."</p>
-        <p class="calibre6"> <img src="vscode-install-python.png" alt="" class="calibre8"></img></p>
+        <p class="calibre6"> <img src="content/vscode-install-python.png" alt="" class="calibre8"></img></p>
         <p class="calibre6"> The bash terminal (similar to Linux) is at the bottom of the page.</p>
-        <p class="calibre6"> <img src="codespace-preview.png" alt="" class="calibre8"></img></p>
+        <p class="calibre6"> <img src="content/codespace-preview.png" alt="" class="calibre8"></img></p>
         <p class="calibre6"> By default, the GitHub Codespace environment will be deleted after 1 month (this applies only to the environment, not your code). To prevent auto-deletion, you can adjust the settings on the page: <a href="https://github.com/codespaces" target="_blank">https://github.com/codespaces</a> </p>
-        <p class="calibre6"> <img src="codespace-auto-delete-off.png" alt="" class="calibre8"></img></p>
+        <p class="calibre6"> <img src="content/codespace-auto-delete-off.png" alt="" class="calibre8"></img></p>
         </li>
         <li class="calibre3"><p class="calibre6"><strong class="calibre10">Continue with the tutorial</strong>. Follow the next steps from the section <a href="https://tutorial.djangogirls.org/en/installation/#virtualenv" target="_blank">Set up virtual environment and install Django</a>.
          Follow than sections for Ubuntu/Linux. Use the Codespaces command line (terminal), accessible through your browser.</p>
@@ -85,7 +85,7 @@
         <li class="calibre3">Hold the special Windows key on your keyboard and press the "X" key. Choose "Command Prompt" from the pop-up menu.</li>
         <li class="calibre3">Hold the Windows key and press the "R" key to get a "Run" window. Type "cmd" in the box, and click the OK key.</li>
         </ul>
-        <p class="calibre6"><img src="windows-plus-r.png" alt="Type &quot;cmd&quot; in the &quot;Run&quot; window" class="calibre8"></img></p>
+        <p class="calibre6"><img src="content/windows-plus-r.png" alt="Type &quot;cmd&quot; in the &quot;Run&quot; window" class="calibre8"></img></p>
         <p class="calibre6">Later in this tutorial, you will need to have two command windows open at the same time. However, on some versions of Windows, if you already have one command window open and you try to open a second one using the same method, it will instead point you to the command window you already have open. Try it now on your computer and see what happens! If you only get one command window, try one of the other methods in the list above. At least one of them should result in a new command window being opened.</p>
         </sec>
         <h3 id="the-command-line-prompt" class="calibre12">The Command-line Prompt</h3>
@@ -125,7 +125,7 @@
         </ul>
         <p class="calibre6">You can download Python for Windows from the website <a href="https://www.python.org/downloads/windows/" target="_blank">https://www.python.org/downloads/windows/</a>. Click on the "Latest Python 3 Release - Python x.x.x" link. If your computer is running a <strong class="calibre10">64-bit</strong> version of Windows, download the <strong class="calibre10">Windows x86-64 executable installer</strong>. Otherwise, download the <strong class="calibre10">Windows x86 executable installer</strong>. After downloading the installer, you should run it (double-click on it) and follow the instructions there.</p>
         <p class="calibre6">One thing to watch out for: During the installation, you will notice a window marked "Setup". Make sure you tick the "Add Python 3.12 to PATH" or 'Add Python to your environment variables" checkbox and click on "Install Now", as shown here (it may look a bit different if you are installing a different version):</p>
-        <p class="calibre6"><img src="python-installation-options.png" alt="Don't forget to add Python to the Path" class="calibre8"></img></p>
+        <p class="calibre6"><img src="content/python-installation-options.png" alt="Don't forget to add Python to the Path" class="calibre8"></img></p>
         <p class="calibre6">When the installation completes, you may see a dialog box with a link you can follow to learn more about Python or about the version you installed. Close or cancel that dialog -- you'll be learning more in this tutorial!</p>
         <p class="calibre6">Note: If you are using an older version of Windows (7, Vista, or any older version) and the Python 3.12 installer fails with an error, then install all Windows Updates and try to install Python again. If you still have the error, try installing Python version 3.10.13 from <a href="https://www.python.org/downloads/windows/" target="_blank">Python.org</a>.</p>
         <blockquote class="calibre5">
@@ -366,15 +366,15 @@
         <ul class="calibre9">
         <li class="calibre3"><a href="https://www.pythonanywhere.com/" target="_blank">www.pythonanywhere.com</a></li>
         </ul>
-        <p class="calibre6"><img src="pythonanywhere_beginner_account_button.png" alt="The PythonAnywhere signup page showing button to create a free 'Beginner' account" class="calibre8"></img></p>
+        <p class="calibre6"><img src="content/pythonanywhere_beginner_account_button.png" alt="The PythonAnywhere signup page showing button to create a free 'Beginner' account" class="calibre8"></img></p>
         <blockquote class="calibre5">
         <p class="calibre6"><strong class="calibre10">Note</strong> When choosing your username here, bear in mind that your blog's URL will take the form <code class="calibre11">yourusername.pythonanywhere.com</code>, so choose either your own nickname or a name for what your blog is all about. Also, be sure to remember your password (add it to your password manager, if you use one).</p>
         </blockquote>
         <h2 id="creating-a-pythonanywhere-api-token" class="calibre7">Creating a PythonAnywhere API token</h2>
         <p class="calibre6">This is something you only need to do once.  When you've signed up for PythonAnywhere, you'll be taken to your dashboard.  Find the link near the top right to your "Account" page:</p>
-        <p class="calibre6"><img src="pythonanywhere_account.png" alt="Account link on the top right on the page" class="calibre8"></img></p>
+        <p class="calibre6"><img src="content/pythonanywhere_account.png" alt="Account link on the top right on the page" class="calibre8"></img></p>
         <p class="calibre6">then select the tab named "API token", and hit the button that says "Create new API token".</p>
-        <p class="calibre6"><img src="pythonanywhere_create_api_token.png" alt="The API token tab on the Account page" class="calibre8"></img></p>
+        <p class="calibre6"><img src="content/pythonanywhere_create_api_token.png" alt="The API token tab on the Account page" class="calibre8"></img></p>
         <h1 id="start-reading" class="calibre1">Start reading</h1>
         <p class="calibre6">Congratulations, you are all set up and ready to go! If you still have some time before the workshop, it would be useful to start reading a few of the beginning chapters:</p>
         <ul class="calibre9">

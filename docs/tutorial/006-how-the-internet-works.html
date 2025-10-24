@@ -2,15 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>How the Internet works</title>
-    <base href="content/" />
     <link rel="stylesheet" href="book.css" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge"></meta>
     <meta name="description" content=""></meta>
     <meta name="generator" content="HonKit 3.7.5"></meta>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta>
-  <link rel="stylesheet" type="text/css" href="stylesheet.css"></link>
-<link rel="stylesheet" type="text/css" href="page_styles.css"></link>
+  <link rel="stylesheet" type="text/css" href="content/stylesheet.css"></link>
+<link rel="stylesheet" type="text/css" href="content/page_styles.css"></link>
 
 </head>
 <body>
@@ -37,15 +37,15 @@
         a screen, mouse or a keyboard, because their main purpose is to store data and serve it. That's why they're called <em class="calibre14">servers</em> – because they <em class="calibre14">serve</em> you data.</p>
         <p class="calibre6">OK, but you want to know how the Internet looks, right?</p>
         <p class="calibre6">We drew you a picture! It looks like this:</p>
-        <p class="calibre6"><img src="internet_1.png" alt="Figure 1.1" class="calibre8"></img></p>
+        <p class="calibre6"><img src="content/internet_1.png" alt="Figure 1.1" class="calibre8"></img></p>
         <p class="calibre6">Looks like a mess, right? In fact it is a network of connected machines (the above-mentioned <em class="calibre14">servers</em>). Hundreds of thousands of machines! Many, many kilometers of cables around the world! You can visit a Submarine Cable Map website (<a href="https://submarinecablemap.com" target="_blank">https://submarinecablemap.com</a>) to see how complicated the net is. Here is a screenshot from the website:</p>
-        <p class="calibre6"><img src="internet_3.png" alt="Figure 1.2" class="calibre8"></img></p>
+        <p class="calibre6"><img src="content/internet_3.png" alt="Figure 1.2" class="calibre8"></img></p>
         <p class="calibre6">It is fascinating, isn't it? But it is not possible to have a wire between every machine connected to the Internet. So, to reach a machine (for example, the one where <a href="https://djangogirls.org" target="_blank">https://djangogirls.org</a> is saved) we need to pass a request through many, many different machines.</p>
         <p class="calibre6">It looks like this:</p>
-        <p class="calibre6"><img src="internet_2.png" alt="Figure 1.3" class="calibre8"></img></p>
+        <p class="calibre6"><img src="content/internet_2.png" alt="Figure 1.3" class="calibre8"></img></p>
         <p class="calibre6">Imagine that when you type <a href="https://djangogirls.org" target="_blank">https://djangogirls.org</a>, you send a letter that says: "Dear Django Girls, I want to see the djangogirls.org website. Send it to me, please!"</p>
         <p class="calibre6">Your letter goes to the post office closest to you. Then it goes to another that is a bit nearer to your addressee, then to another, and another until it is delivered at its destination. The only unique thing is that if you send many letters (<em class="calibre14">data packets</em>) to the same place, they could go through totally different post offices (<em class="calibre14">routers</em>). This depends on how they are distributed at each office.</p>
-        <p class="calibre6"><img src="internet_4.png" alt="Figure 1.4" class="calibre8"></img></p>
+        <p class="calibre6"><img src="content/internet_4.png" alt="Figure 1.4" class="calibre8"></img></p>
         <p class="calibre6">That's how it works - you send messages and you expect some response. Instead of paper and pen you use bytes of data, but the idea is the same!</p>
         <p class="calibre6">Instead of addresses with a street name, city, zip code and country name, we use IP addresses. Your computer first asks the DNS (Domain Name System) to translate <code class="calibre11">djangogirls.org</code> into an IP address. It works a little bit like old-fashioned phonebooks where you can look up the name of the person you want to contact and find their phone number and address.</p>
         <p class="calibre6">When you send a letter, it needs to have certain features to be delivered correctly: an address, a stamp, etc. You also use a language that the receiver understands, right? The same applies to the <em class="calibre14">data packets</em> you send to see a website. We use a protocol called HTTP (Hypertext Transfer Protocol).</p>

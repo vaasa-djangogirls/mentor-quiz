@@ -2,15 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Django templates</title>
-    <base href="content/" />
     <link rel="stylesheet" href="book.css" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge"></meta>
     <meta name="description" content=""></meta>
     <meta name="generator" content="HonKit 3.7.5"></meta>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta>
-  <link rel="stylesheet" type="text/css" href="stylesheet.css"></link>
-<link rel="stylesheet" type="text/css" href="page_styles.css"></link>
+  <link rel="stylesheet" type="text/css" href="content/stylesheet.css"></link>
+<link rel="stylesheet" type="text/css" href="content/page_styles.css"></link>
 
 </head>
 <body>
@@ -35,7 +35,7 @@
         <pre class="calibre13"><code class="calibre11">{{ posts }}
         </code></pre>
         <p class="calibre6">Try this in your <code class="calibre11">blog/templates/blog/post_list.html</code> template. Open it up in the code editor, and replace the existing <code class="calibre11">&lt;article&gt;</code> elements with <code class="calibre11">{{ posts }}</code>. Save the file, and refresh the page to see the results:</p>
-        <p class="calibre6"><img src="step11.png" alt="Figure 13.1" class="calibre8"></img></p>
+        <p class="calibre6"><img src="content/step11.png" alt="Figure 13.1" class="calibre8"></img></p>
         <p class="calibre6">As you can see, all we've got is this:</p>
         <p class="calibre6"></p><p class="calibre6">blog/templates/blog/post_list.html</p><p class="calibre6"></p>
         <pre class="calibre13"><code class="calibre11">&lt;QuerySet [&lt;Post: My second post&gt;, &lt;Post: My first post&gt;]&gt;
@@ -47,7 +47,7 @@
         {% endfor %}
         </code></pre>
         <p class="calibre6">Try this in your template.</p>
-        <p class="calibre6"><img src="step2.png" alt="Figure 13.2" class="calibre8"></img></p>
+        <p class="calibre6"><img src="content/step2.png" alt="Figure 13.2" class="calibre8"></img></p>
         <p class="calibre6">It works! But we want the posts to be displayed like the static posts we created earlier in the <strong class="calibre10">Introduction to HTML</strong> chapter. You can mix HTML and template tags. Our <code class="calibre11">body</code> will look like this:</p>
         <p class="calibre6"></p><p class="calibre6">blog/templates/blog/post_list.html</p><p class="calibre6"></p>
         <pre class="calibre13"><code class="calibre11"><span>&lt;<span>header</span>&gt;</span>
@@ -63,7 +63,7 @@
         {% endfor %}
         </code></pre>
         <p class="calibre6">Everything you put between <code class="calibre11">{% for %}</code> and <code class="calibre11">{% endfor %}</code> will be repeated for each object in the list. Refresh your page:</p>
-        <p class="calibre6"><img src="step31.png" alt="Figure 13.3" class="calibre8"></img></p>
+        <p class="calibre6"><img src="content/step31.png" alt="Figure 13.3" class="calibre8"></img></p>
         <p class="calibre6">Have you noticed that we used a slightly different notation this time (<code class="calibre11">{{ post.title }}</code> or <code class="calibre11">{{ post.text }}</code>)? We are accessing data in each of the fields defined in our <code class="calibre11">Post</code> model. Also, the <code class="calibre11">|linebreaksbr</code> is piping the posts' text through a filter to convert line-breaks into paragraphs.</p>
         <h2 id="one-more-thing" class="calibre7">One more thing</h2>
         <p class="calibre6">It'd be good to see if your website will still be working on the public Internet, right? Let's try deploying to PythonAnywhere again. Here's a recap of the steps…</p>
@@ -92,7 +92,7 @@
         </ul>
         <p class="calibre6">Congrats! Now go ahead and try adding a new post in your Django admin (remember to add published_date!) Make sure you are in the Django admin for your pythonanywhere site, <a href="https://subdomain.pythonanywhere.com/admin" target="_blank">https://subdomain.pythonanywhere.com/admin</a>. Then refresh your page to see if the post appears there.</p>
         <p class="calibre6">Works like a charm? We're proud! Step away from your computer for a bit – you have earned a break. :)</p>
-        <p class="calibre6"><img src="donut.png" alt="Figure 13.4" class="calibre8"></img></p>
+        <p class="calibre6"><img src="content/donut.png" alt="Figure 13.4" class="calibre8"></img></p>
 
                 </div>
     
