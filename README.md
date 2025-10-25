@@ -10,8 +10,8 @@ This project aims to make self-assessment fun, educational, and aligned with the
 ## Features
 
 - Static HTML version of the Django Girls tutorial (`docs/tutorial/`)
-- Landing page with quick links to the tutorial and future quiz (`docs/index.html`)
-- Placeholder area for the interactive mentor readiness quiz (`docs/quiz/`)
+- Landing page with quick links to the tutorial and quiz (`docs/index.html`)
+- Interactive mentor-readiness quiz with 10 curated questions per chapter (`docs/quiz/`)
 - Fully compliant with the [CC BY-SA 4.0 License](https://creativecommons.org/licenses/by-sa/4.0/)
 
 ---
@@ -45,6 +45,16 @@ python3 convert_epub.py django-girls-tutorial_en.epub --force
 
 The converter writes the HTML version of the book to `docs/tutorial/` and updates supporting assets.
 
+## Regenerate the quiz question bank
+
+The question bank lives in `docs/quiz/questions.json`. It is generated from the data inside `build_question_bank.py`:
+
+```bash
+python3 build_question_bank.py
+```
+
+This produces a fresh `questions.json` with 10 multiple-choice questions per tutorial chapter (except the Chromebook installation).
+
 ## Publish on GitHub Pages
 
 1. Commit the `docs/` directory alongside the code and push it to GitHub.
@@ -52,7 +62,7 @@ The converter writes the HTML version of the book to `docs/tutorial/` and update
 3. Wait for GitHub Pages to build the site, then visit the published URL.  
    The landing page will appear at `/` with links to:
    - `/tutorial/index.html` – the full Django Girls tutorial split into chapters.
-   - `/quiz/index.html` – a “coming soon” placeholder for the coach quiz.
+   - `/quiz/index.html` – the interactive mentor quiz experience.
 
 ---
 

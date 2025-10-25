@@ -3,21 +3,199 @@
  <head>
   <meta charset="utf-8"/>
   <title>
-   Coach Quiz – Coming Soon
+   Coach Quiz
   </title>
   <meta content="width=device-width, initial-scale=1" name="viewport"/>
   <link href="../tutorial/book.css" rel="stylesheet"/>
   <style>
-   main {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 60vh;
-            text-align: center;
-        }
-        .placeholder {
-            max-width: 640px;
-        }
+   body {
+      background: linear-gradient(180deg, #eef2f9 0%, #ffffff 60%);
+    }
+    main {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+    .quiz-card {
+      background: #ffffff;
+      border-radius: 16px;
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
+      padding: clamp(1.8rem, 5vw, 2.6rem);
+      margin: clamp(1rem, 4vw, 2.4rem) 0;
+    }
+    .quiz-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: flex-end;
+      margin-top: 1.5rem;
+    }
+    button {
+      font-family: inherit;
+      font-weight: 600;
+      border: none;
+      border-radius: 999px;
+      padding: 0.75rem 1.75rem;
+      cursor: pointer;
+      transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+    }
+    button.primary {
+      background: linear-gradient(135deg, #2563eb, #1d4ed8);
+      color: #ffffff;
+      box-shadow: 0 10px 20px rgba(37, 99, 235, 0.22);
+    }
+    button.primary:disabled {
+      opacity: 0.55;
+      cursor: not-allowed;
+      box-shadow: none;
+    }
+    .button-like {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      border-radius: 999px;
+      padding: 0.75rem 1.6rem;
+      text-decoration: none;
+      cursor: pointer;
+      transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+    }
+    button.secondary {
+      background: #e6f0fb;
+      color: #1a4d7a;
+      box-shadow: 0 6px 16px rgba(26, 77, 122, 0.18);
+    }
+    .button-like.secondary {
+      background: #e6f0fb;
+      color: #1a4d7a;
+      box-shadow: 0 6px 16px rgba(26, 77, 122, 0.18);
+    }
+    button:hover:not(:disabled) {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 28px rgba(26, 77, 122, 0.28);
+    }
+    .button-like.secondary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 28px rgba(26, 77, 122, 0.28);
+    }
+    button:focus-visible,
+    .button-like:focus-visible {
+      outline: 3px solid #2563eb;
+      outline-offset: 2px;
+    }
+    .question-progress {
+      font-size: 0.95rem;
+      color: #4b5c6b;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+    .question-title {
+      font-size: clamp(1.25rem, 2.6vw, 1.75rem);
+      margin-bottom: 1.25rem;
+      font-weight: 700;
+      color: #132f52;
+    }
+    .question-meta a {
+      color: #1a4d7a;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .question-meta a:hover {
+      text-decoration: underline;
+    }
+    .option-list {
+      display: grid;
+      gap: 0.8rem;
+      margin-top: 1rem;
+    }
+    .option {
+      border: 1px solid #c7d3e3;
+      border-radius: 12px;
+      padding: 0.85rem 1rem;
+      display: flex;
+      gap: 0.75rem;
+      align-items: flex-start;
+      background: #f8fbff;
+      transition: border 0.15s ease, background 0.15s ease;
+    }
+    .option input[type="radio"] {
+      margin-top: 0.35rem;
+    }
+    .option:hover {
+      border-color: #2563eb;
+      background: #edf3ff;
+    }
+    .alert {
+      background: #fef3c7;
+      color: #92400e;
+      padding: 0.85rem 1rem;
+      border-radius: 12px;
+      margin-top: 1rem;
+      display: none;
+    }
+    .score-banner {
+      padding: 1.2rem 1.5rem;
+      border-radius: 14px;
+      margin-bottom: 1.5rem;
+      font-weight: 600;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .score-banner.success {
+      background: #d1fae5;
+      color: #065f46;
+    }
+    .score-banner.mid {
+      background: #fef9c3;
+      color: #92400e;
+    }
+    .score-banner.low {
+      background: #fee2e2;
+      color: #991b1b;
+    }
+    .review-list {
+      display: grid;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .review-item {
+      border: 1px solid #dce5f4;
+      border-radius: 14px;
+      padding: 1.25rem 1.5rem;
+      background: #ffffff;
+    }
+    .review-item.correct {
+      border-color: #a7f3d0;
+      background: #ecfdf5;
+    }
+    .review-item.incorrect {
+      border-color: #fecaca;
+      background: #fef2f2;
+    }
+    .review-item h3 {
+      margin-top: 0;
+      margin-bottom: 0.35rem;
+      font-size: 1.15rem;
+    }
+    .review-item p {
+      margin: 0.4rem 0;
+    }
+    .review-item a {
+      color: #1a4d7a;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    @media (max-width: 640px) {
+      .quiz-actions {
+        justify-content: center;
+      }
+      .score-banner {
+        flex-direction: column;
+        gap: 0.75rem;
+        text-align: center;
+      }
+    }
   </style>
  </head>
  <body>
@@ -26,28 +204,336 @@
     Coach Quiz
    </p>
    <p class="page-subtitle">
-    An interactive self-check for aspiring Django Girls mentors.
+    Check your readiness to support upcoming Django Girls learners.
    </p>
   </header>
   <main>
-   <div class="placeholder">
+   <section class="quiz-card" id="screen-start">
+    <h2>
+     Ready to coach?
+    </h2>
     <p>
-     The quiz experience is under construction.
+     This quiz draws one random question from every chapter of the Django Girls Tutorial (except the Chromebook setup). You'll answer
+     <span id="question-count">
+      0
+     </span>
+     questions with four choices each. Take it at your own pace, and follow the tutorial links whenever you want a refresher.
     </p>
     <p>
-     Check back soon for interactive questions that will help you gauge your readiness to coach!
+     When you reach the end, you'll see your score, tailored feedback, and a detailed review of every answer.
     </p>
-    <p>
-     <a href="../index.html">
-      Return to the home page
+    <div class="quiz-actions">
+     <button class="primary" id="btn-start" type="button">
+      Start the quiz
+     </button>
+     <a class="secondary button-like" href="../index.html" role="button">
+      Back to home
      </a>
+    </div>
+   </section>
+   <section class="quiz-card" id="screen-question" hidden>
+    <div class="question-progress" id="question-progress">
+    </div>
+    <h2 class="question-title" id="question-title">
+    </h2>
+    <div class="question-meta">
+     <a href="#" id="tutorial-link" target="_blank" rel="noopener">
+      Review this chapter
+     </a>
+    </div>
+    <form id="question-form">
+     <fieldset class="option-list" id="option-list">
+     </fieldset>
+     <div class="alert" id="alert-selection">
+      Choose an answer before continuing.
+     </div>
+     <div class="quiz-actions">
+      <button class="secondary" id="btn-quit" type="button">
+       Exit
+      </button>
+      <button class="primary" id="btn-next" type="submit">
+       Next
+      </button>
+     </div>
+    </form>
+   </section>
+   <section class="quiz-card" id="screen-results" hidden>
+    <div class="score-banner" id="score-banner">
+     <span id="score-summary">
+     </span>
+     <span id="score-message">
+     </span>
+    </div>
+    <p>
+     Here's a quick recap of how you did. Use the chapter links to revisit any topics you want to sharpen before coaching.
     </p>
-   </div>
+    <div class="review-list" id="review-list">
+    </div>
+    <div class="quiz-actions" style="margin-top: 2.5rem;">
+     <button class="secondary" id="btn-retake" type="button">
+      Try again
+     </button>
+     <a class="secondary button-like" href="../index.html" role="button">
+      Return home
+     </a>
+    </div>
+   </section>
   </main>
   <footer class="book-footer">
    <p>
-    Want to contribute? Fork the repository and help shape the quiz!
+    Built with ❤️ for future Django Girls coaches. Content © original authors under CC BY-SA 4.0.
    </p>
   </footer>
+  <script>
+   const screens = {
+      start: document.getElementById('screen-start'),
+      question: document.getElementById('screen-question'),
+      results: document.getElementById('screen-results'),
+    };
+
+    const elements = {
+      questionCount: document.getElementById('question-count'),
+      questionProgress: document.getElementById('question-progress'),
+      questionTitle: document.getElementById('question-title'),
+      optionList: document.getElementById('option-list'),
+      tutorialLink: document.getElementById('tutorial-link'),
+      alertSelection: document.getElementById('alert-selection'),
+      btnStart: document.getElementById('btn-start'),
+      btnNext: document.getElementById('btn-next'),
+      btnQuit: document.getElementById('btn-quit'),
+      btnRetake: document.getElementById('btn-retake'),
+      questionForm: document.getElementById('question-form'),
+      reviewList: document.getElementById('review-list'),
+      scoreSummary: document.getElementById('score-summary'),
+      scoreMessage: document.getElementById('score-message'),
+      scoreBanner: document.getElementById('score-banner'),
+    };
+
+    const state = {
+      sections: [],
+      quizQuestions: [],
+      responses: [],
+      currentIndex: 0,
+    };
+
+    elements.btnStart.disabled = true;
+
+    function shuffle(array) {
+      const arr = array.slice();
+      for (let i = arr.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [arr[i], arr[j]] = [arr[j], arr[i]];
+      }
+      return arr;
+    }
+
+    function pickQuestion(section) {
+      const pool = section.questions;
+      const question = pool[Math.floor(Math.random() * pool.length)];
+      const paired = question.options.map((text, idx) => ({
+        text,
+        isCorrect: idx === question.answerIndex,
+      }));
+      const shuffled = shuffle(paired);
+      const answerIndex = shuffled.findIndex((opt) => opt.isCorrect);
+      return {
+        sectionId: section.id,
+        sectionTitle: section.title,
+        tutorialPath: section.tutorialPath,
+        prompt: question.prompt,
+        options: shuffled.map((opt) => opt.text),
+        answerIndex,
+      };
+    }
+
+    function prepareQuiz() {
+      if (!state.sections.length) {
+        return;
+      }
+      state.quizQuestions = state.sections.map(pickQuestion);
+      state.responses = [];
+      state.currentIndex = 0;
+      elements.btnNext.textContent = 'Next';
+      showScreen('question');
+      renderQuestion();
+    }
+
+    function renderQuestion() {
+      const current = state.quizQuestions[state.currentIndex];
+      elements.questionProgress.textContent = `Question ${state.currentIndex + 1} of ${state.quizQuestions.length}`;
+      elements.questionTitle.textContent = current.prompt;
+      elements.tutorialLink.href = current.tutorialPath;
+      elements.tutorialLink.textContent = `Read more in “${current.sectionTitle}”`;
+      elements.optionList.innerHTML = '';
+      elements.alertSelection.style.display = 'none';
+
+      current.options.forEach((option, index) => {
+        const id = `option-${state.currentIndex}-${index}`;
+        const wrapper = document.createElement('label');
+        wrapper.className = 'option';
+        wrapper.setAttribute('for', id);
+
+        const radio = document.createElement('input');
+        radio.type = 'radio';
+        radio.name = 'answer';
+        radio.value = String(index);
+        radio.id = id;
+
+        const span = document.createElement('span');
+        span.textContent = option;
+
+        wrapper.appendChild(radio);
+        wrapper.appendChild(span);
+        elements.optionList.appendChild(wrapper);
+      });
+
+      if (state.currentIndex === state.quizQuestions.length - 1) {
+        elements.btnNext.textContent = 'Finish quiz';
+      } else {
+        elements.btnNext.textContent = 'Next';
+      }
+    }
+
+    function recordResponse(selectedIndex) {
+      const question = state.quizQuestions[state.currentIndex];
+      const isCorrect = Number(selectedIndex) === question.answerIndex;
+      state.responses.push({
+        ...question,
+        selectedIndex: Number(selectedIndex),
+        isCorrect,
+      });
+    }
+
+    function showScreen(target) {
+      screens.start.hidden = target !== 'start';
+      screens.question.hidden = target !== 'question';
+      screens.results.hidden = target !== 'results';
+    }
+
+    function evaluateScore() {
+      const total = state.responses.length;
+      const correct = state.responses.filter((resp) => resp.isCorrect).length;
+      const percentage = Math.round((correct / total) * 100);
+      let message = '';
+      let bannerClass = 'success';
+      if (percentage >= 80) {
+        message = "Fantastic! You're ready to be a coach for this course.";
+        bannerClass = 'success';
+      } else if (percentage >= 50) {
+        message = "You're almost ready—review a few chapters and you'll be confident.";
+        bannerClass = 'mid';
+      } else if (percentage >= 30) {
+        message = "You're on the right path. A little more reading and practice will get you there.";
+        bannerClass = 'mid';
+      } else {
+        message = "Take some extra time with the tutorial to build up your confidence.";
+        bannerClass = 'low';
+      }
+      elements.scoreSummary.textContent = `You answered ${correct} of ${total} questions correctly (${percentage}%).`;
+      elements.scoreMessage.textContent = message;
+      elements.scoreBanner.classList.remove('success', 'mid', 'low');
+      elements.scoreBanner.classList.add(bannerClass);
+      renderReview();
+    }
+
+    function renderReview() {
+      const list = elements.reviewList;
+      list.innerHTML = '';
+      state.responses.forEach((resp, index) => {
+        const item = document.createElement('article');
+        item.className = `review-item ${resp.isCorrect ? 'correct' : 'incorrect'}`;
+
+        const heading = document.createElement('h3');
+        heading.textContent = `Question ${index + 1}: ${resp.sectionTitle}`;
+
+        const prompt = document.createElement('p');
+        prompt.innerHTML = `<strong>Prompt:</strong> ${resp.prompt}`;
+
+        const userAnswer = document.createElement('p');
+        userAnswer.innerHTML = `<strong>Your answer:</strong> ${resp.options[resp.selectedIndex] || 'No answer selected'}`;
+
+        const correctAnswer = document.createElement('p');
+        correctAnswer.innerHTML = `<strong>Correct answer:</strong> ${resp.options[resp.answerIndex]}`;
+
+        const status = document.createElement('p');
+        status.innerHTML = resp.isCorrect
+          ? '✅ Well done!'
+          : '❌ Take another look at this topic.';
+
+        const link = document.createElement('p');
+        const anchor = document.createElement('a');
+        anchor.href = resp.tutorialPath;
+        anchor.target = '_blank';
+        anchor.rel = 'noopener';
+        anchor.textContent = `Review the “${resp.sectionTitle}” chapter`;
+        link.appendChild(anchor);
+
+        item.appendChild(heading);
+        item.appendChild(prompt);
+        item.appendChild(userAnswer);
+        item.appendChild(correctAnswer);
+        item.appendChild(status);
+        item.appendChild(link);
+
+        list.appendChild(item);
+      });
+    }
+
+    function finishQuiz() {
+      showScreen('results');
+      evaluateScore();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    elements.questionForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const data = new FormData(elements.questionForm);
+      const selected = data.get('answer');
+      if (selected === null) {
+        elements.alertSelection.style.display = 'block';
+        return;
+      }
+      elements.alertSelection.style.display = 'none';
+      recordResponse(selected);
+      if (state.currentIndex === state.quizQuestions.length - 1) {
+        finishQuiz();
+      } else {
+        state.currentIndex += 1;
+        renderQuestion();
+      }
+    });
+
+    elements.btnQuit.addEventListener('click', () => {
+      if (confirm('End the quiz and return to the introduction?')) {
+        showScreen('start');
+      }
+    });
+
+    elements.btnRetake.addEventListener('click', () => {
+      prepareQuiz();
+    });
+
+    elements.btnStart.addEventListener('click', () => {
+      prepareQuiz();
+    });
+
+    fetch('questions.json')
+      .then((response) => response.json())
+      .then((data) => {
+        state.sections = data.sections;
+        elements.questionCount.textContent = String(state.sections.length);
+        elements.btnStart.disabled = false;
+      })
+      .catch((error) => {
+        console.error('Failed to load questions.json', error);
+        screens.start.innerHTML = `
+          <h2>Quiz unavailable</h2>
+          <p>We couldn't load the question bank. Please refresh the page or try again later.</p>
+          <div class="quiz-actions">
+            <a class="secondary button-like" href="../index.html" role="button">Return home</a>
+          </div>
+        `;
+      });
+  </script>
  </body>
 </html>
