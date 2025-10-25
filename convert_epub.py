@@ -13,6 +13,7 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Dict, List, Sequence, Tuple
 import xml.etree.ElementTree as ET
+from bs4 import BeautifulSoup, Doctype
 
 NS = {
     "container": "urn:oasis:names:tc:opendocument:xmlns:container",
@@ -256,23 +257,24 @@ def write_css(output_dir: Path) -> None:
         body > footer {
             padding: clamp(1rem, 3vw, 1.75rem) 0;
         }
-        header.book-header h1 {
+        header.book-header .page-title {
             margin: 0 0 0.35rem;
             font-size: clamp(2rem, 4vw, 2.5rem);
+            font-weight: 700;
         }
-        header.book-header p {
+        header.book-header .page-subtitle {
             margin: 0;
             color: #4b5c6b;
         }
-        nav.book-nav {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.75rem;
-            margin: 0 0 clamp(1.25rem, 4vw, 2rem);
-            padding-bottom: clamp(0.5rem, 2vw, 1rem);
-        }
-        nav.book-nav a,
-        nav.book-nav span {
+nav.book-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin: 0 0 clamp(1.25rem, 4vw, 2rem);
+    padding-bottom: clamp(0.5rem, 2vw, 1rem);
+}
+nav.book-nav a,
+nav.book-nav span {
             padding: 0.55rem 1.15rem;
             border-radius: 999px;
             border: 1px solid #3b6b9a;
@@ -285,17 +287,20 @@ def write_css(output_dir: Path) -> None:
             text-align: center;
             box-shadow: 0 1px 6px rgba(59, 107, 154, 0.15);
         }
-        nav.book-nav span {
-            color: #7a8699;
-            border-color: #c7d3e3;
-            background: #eef2f9;
-            box-shadow: none;
-        }
-        nav.book-nav a:hover,
-        nav.book-nav a:focus-visible {
-            background: #d7e8fb;
-            box-shadow: 0 3px 12px rgba(59, 107, 154, 0.25);
-        }
+nav.book-nav span {
+    color: #7a8699;
+    border-color: #c7d3e3;
+    background: #eef2f9;
+    box-shadow: none;
+}
+nav.book-nav.nav-bottom {
+    margin-top: clamp(1.25rem, 4vw, 2rem);
+}
+nav.book-nav a:hover,
+nav.book-nav a:focus-visible {
+    background: #d7e8fb;
+    box-shadow: 0 3px 12px rgba(59, 107, 154, 0.25);
+}
         main {
             flex: 1;
             background: #ffffff;
@@ -396,8 +401,21 @@ def write_css(output_dir: Path) -> None:
     (output_dir / "book.css").write_text(css, encoding="utf-8")
 
 
-def build_navigation(prev_link: str | None, next_link: str | None) -> str:
-    parts = ['<nav class="book-nav">']
+def build_navigation(
+    prev_link: str | None,
+    next_link: str | None,
+    *,
+    include_home: bool,
+    position: str,
+) -> str:
+    classes = ["book-nav"]
+    if position == "top":
+        classes.append("nav-top")
+    elif position == "bottom":
+        classes.append("nav-bottom")
+    parts = [f'<nav class="{" ".join(classes)}">']
+    if include_home:
+        parts.append('<a href="../index.html">Home</a>')
     parts.append('<a href="index.html">Contents</a>')
     if prev_link:
         parts.append(f'<a href="{prev_link}">Previous</a>')
@@ -419,8 +437,12 @@ def render_page(
     prev_link: str | None,
     next_link: str | None,
 ) -> str:
-    navigation_top = textwrap.indent(build_navigation(prev_link, next_link), "    ")
-    navigation_bottom = textwrap.indent(build_navigation(prev_link, next_link), "    ")
+    navigation_top = textwrap.indent(
+        build_navigation(prev_link, next_link, include_home=True, position="top"), "    "
+    )
+    navigation_bottom = textwrap.indent(
+        build_navigation(prev_link, next_link, include_home=True, position="bottom"), "    "
+    )
     body_compact = body_html.strip("\n")
     indented_body = textwrap.indent(body_compact, "        ") if body_compact else ""
     template = f"""\
@@ -435,7 +457,7 @@ def render_page(
 </head>
 <body>
     <header class="book-header">
-        <h1>{title}</h1>
+        <p class="page-title" role="heading" aria-level="1">{title}</p>
     </header>
 {navigation_top}
     <main>
@@ -453,7 +475,10 @@ def render_page(
 
 def render_index(chapters: Sequence[Tuple[str, str]]) -> str:
     items = "\n".join(f'        <li><a href="{output_file}">{title}</a></li>' for title, output_file in chapters)
-    navigation = textwrap.indent(build_navigation(None, chapters[0][1] if chapters else None), "    ")
+    navigation = textwrap.indent(
+        build_navigation(None, chapters[0][1] if chapters else None, include_home=False, position="top"),
+        "    ",
+    )
     template = f"""\
 <!DOCTYPE html>
 <html lang="en">
@@ -465,8 +490,8 @@ def render_index(chapters: Sequence[Tuple[str, str]]) -> str:
 </head>
 <body>
     <header class="book-header">
-        <h1>Django Girls Tutorial</h1>
-        <p>Converted into navigable HTML pages.</p>
+        <p class="page-title" role="heading" aria-level="1">Django Girls Tutorial</p>
+        <p class="page-subtitle">Converted into navigable HTML pages.</p>
     </header>
 {navigation}
     <main>
@@ -482,6 +507,16 @@ def render_index(chapters: Sequence[Tuple[str, str]]) -> str:
 </html>
 """
     return template.strip()
+
+
+def format_html(html_text: str) -> str:
+    soup = BeautifulSoup(html_text, "html.parser")
+    # Preserve existing DOCTYPE if present, otherwise add HTML5 doctype.
+    doctypes = [node for node in soup.contents if isinstance(node, Doctype)]
+    pretty = soup.prettify()
+    if not doctypes and "<!DOCTYPE html>" not in pretty.upper():
+        pretty = "<!DOCTYPE html>\n" + pretty
+    return pretty
 
 
 def convert(epub_path: Path, output_dir: Path, force: bool) -> None:
@@ -557,11 +592,11 @@ def convert(epub_path: Path, output_dir: Path, force: bool) -> None:
             prev_link=prev_link,
             next_link=next_link,
         )
-        (output_dir / page.output_name).write_text(html_text, encoding="utf-8")
+        (output_dir / page.output_name).write_text(format_html(html_text), encoding="utf-8")
 
     chapters_meta = [(page.title, page.output_name) for page in pages]
     index_html = render_index(chapters_meta)
-    (output_dir / "index.html").write_text(index_html, encoding="utf-8")
+    (output_dir / "index.html").write_text(format_html(index_html), encoding="utf-8")
 
 
 def main() -> None:

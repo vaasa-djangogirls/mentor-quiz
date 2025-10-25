@@ -1,405 +1,1499 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Installation</title>
-    <link rel="stylesheet" href="book.css" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"></meta>
-    <meta name="description" content=""></meta>
-    <meta name="generator" content="HonKit 3.7.5"></meta>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta>
-  <link rel="stylesheet" type="text/css" href="content/stylesheet.css"></link>
-<link rel="stylesheet" type="text/css" href="content/page_styles.css"></link>
-
-</head>
-<body>
-    <header class="book-header">
-        <h1>Installation</h1>
-    </header>
-    <nav class="book-nav"><a href="index.html">Contents</a><a href="003-introduction.html">Previous</a><a href="005-installation-chromebook.html">Next</a></nav>
-    <main>
-        <div class="page">
-    
-                <h1 class="calibre1" id="calibre_toc_2">Installation</h1>
-                <div class="page">
-                    <h1 id="if-youre-doing-the-tutorial-at-home" class="calibre1">If you're doing the tutorial at home</h1>
-        <p class="calibre6">If you're doing the tutorial at home, not at one of the <a href="https://djangogirls.org/events/" target="_blank">Django Girls events</a>, you can completely skip this chapter now and go straight to the <a href="index3.html">How the Internet works</a> chapter.</p>
-        <p class="calibre6">This is because we cover installing things as they are needed in the tutorial -- this is just an additional page that gathers all of the installation instructions in one place (which is useful for some workshop formats). You can choose to install everything that is on this page right now if you wish. But if you want to start learning things before installing a bunch of stuff on your computer, skip this chapter and we will explain the installation parts to you later on, as they are needed.</p>
-        <p class="calibre6">Good luck!</p>
-        <h1 id="if-youre-attending-a-workshop" class="calibre1">If you're attending a workshop</h1>
-        <p class="calibre6">If you are attending one of the <a href="https://djangogirls.org/events/" target="_blank">Django Girls events</a>:</p>
-        <ul class="calibre9">
-        <li class="calibre3">Your workshop may have an "installation party" before the main workshop. If you are at an installation party, this page is for you! Follow the instructions here to get everything you need for the workshop installed, with the help of the coaches if needed. Then at the main workshop, you'll be able to skip installation instructions you'll encounter in the main tutorial when you get to them.</li>
-        <li class="calibre3">The organizers of your workshop may have asked you to try at home to install everything on your computer before the workshop starts. If you have been asked to do that, this page is for you! Follow the instructions here, as best you can. Then at the main workshop, when you get to an installation step in the main tutorial, if you were not able to get that piece installed you can get help from your coach.</li>
-        <li class="calibre3">If your workshop does not have an installation party (or you couldn't attend), and if the organizers didn't ask you to try to install everything before you arrived, skip this page and go straight to the <a href="index3.html">How the Internet works</a> chapter. You'll be installing everything you need as you work through the tutorial.</li>
-        </ul>
-        <h1 id="installation" class="calibre1">Installation</h1>
-        <p class="calibre6">In this tutorial you will be building a blog. In order to do that, as you go through the tutorial you'll be instructed on how to
-        install various software on your computer and set up some online accounts as needed (if you are using local desktop environment) or instructed on how to create online accounts only (if you are using cloud development). This page gathers all of the installation and sign-up instructions in one place (which is useful for some workshop formats).</p>
-        <h1 id="chromebook-installation" class="calibre1">Chromebook Installation</h1>
-        <p class="calibre6">To set up your Chromebook, follow the instructions below:</p>
-        <sec data-title="Chromebook setup (if you're using one)" data-id="chromebook_setup" data-collapse="true"><b class="calibre10">Chromebook setup (if you're using one)</b>
-        <p class="calibre6">For people using a Chromebook or those with limited memory on their laptops, we recommend using a cloud IDE environment. This allows you to interact with the command line, Python, and Django directly through your browser, where a code editor is already installed. In case you using this instruction, some steps of the tutorial don't have to be done again ("Deploy/Git" <a href="https://tutorial.djangogirls.org/en/deploy/#installing-git" target="_blank">part</a> ). You’ll find a more detailed explanation in the “Deploy/Git” section.</p>
-        <p class="calibre6">Your installation experience will be a little different.</p>
-        <ol class="calibre2">
-        <li class="calibre3"><p class="calibre6"><strong class="calibre10">Go to <a href="https://github.com" target="_blank">GitHub.com</a></strong> and sign up for a new, free user account. Be sure to remember your password (add it to your password manager, if you use one).</p>
-        </li>
-        <li class="calibre3"><p class="calibre6"><strong class="calibre10">Create a GitHub project</strong>. Visit <a href="https://github.com/new" target="_blank">this</a> link, use "my-first-blog" name for your project, and make it public (needed for deployment, you can make it private later). Also, add a <code class="calibre11">README.md</code> and <code class="calibre11">.gitignore</code> file.</p>
-        <p class="calibre6"> <img src="content/create-new-repo.png" alt="" class="calibre8"></img></p>
-        </li>
-        <li class="calibre3"><p class="calibre6"><strong class="calibre10">Start a Codespace</strong>. Go to GitHub <a href="https://github.com/codespaces/new" target="_blank">Codespaces</a> and select the repository you just created. Click "Create Codespace".</p>
-        <p class="calibre6"> <img src="content/create-new-codespace.png" alt="" class="calibre8"></img></p>
-        <p class="calibre6"> Wait a little bit and you'll see something like that:</p>
-        <p class="calibre6"> <img src="content/codespace-preview.png" alt="" class="calibre8"></img></p>
-        <p class="calibre6"> The <a href="https://code.visualstudio.com" target="_blank">VSCode</a> editor will open for you automatically. If you see a notification that says "Install Python", please click on it. If not prompted, click the "Extensions" icon on the left sidebar in the Codespace editor. Search for "Python" and click "Install."</p>
-        <p class="calibre6"> <img src="content/vscode-install-python.png" alt="" class="calibre8"></img></p>
-        <p class="calibre6"> The bash terminal (similar to Linux) is at the bottom of the page.</p>
-        <p class="calibre6"> <img src="content/codespace-preview.png" alt="" class="calibre8"></img></p>
-        <p class="calibre6"> By default, the GitHub Codespace environment will be deleted after 1 month (this applies only to the environment, not your code). To prevent auto-deletion, you can adjust the settings on the page: <a href="https://github.com/codespaces" target="_blank">https://github.com/codespaces</a> </p>
-        <p class="calibre6"> <img src="content/codespace-auto-delete-off.png" alt="" class="calibre8"></img></p>
-        </li>
-        <li class="calibre3"><p class="calibre6"><strong class="calibre10">Continue with the tutorial</strong>. Follow the next steps from the section <a href="https://tutorial.djangogirls.org/en/installation/#virtualenv" target="_blank">Set up virtual environment and install Django</a>.
-         Follow than sections for Ubuntu/Linux. Use the Codespaces command line (terminal), accessible through your browser.</p>
-        </li>
-        </ol>
-        </sec>
-        <h1 id="macos-windows-linux" class="calibre1">macOS, Windows, Linux Installation </h1>
-        <p class="calibre6">If you are not using a Chromebook, your experience will be a little different as you need to download and install some software locally as well as set up online accounts.</p>
-        <p class="calibre6">To install software on your machine, follow the instructions below:</p>
-        <h2 id="intro-command-line" class="calibre7">Brief intro to the command line </h2>
-        <p class="calibre6">Many of the steps below reference the "console", "terminal", "command window", or "command line" -- these all mean the same thing: a window on your computer where you can enter commands. When you get to the main tutorial, you'll learn more about the command line. For now, the main thing you need to know is how to open a command window and what it looks like:</p>
-        <sec data-title="Opening: macOS" data-id="macOS_prompt" data-collapse="true"><b class="calibre10">Opening: macOS</b>
-        <p class="calibre6">Go to Launchpad → Other → Terminal.</p>
-        </sec>
-        <sec data-title="Opening: Linux" data-id="linux_prompt" data-collapse="true"><b class="calibre10">Opening: Linux</b>
-        <p class="calibre6">It's probably under Applications → Accessories → Terminal, or Applications → System → Terminal, but that may depend on your system. If it's not there, you can try to Google it. :)</p>
-        </sec>
-        <sec data-title="Opening: Windows" data-id="windows_prompt" data-collapse="true"><b class="calibre10">Opening: Windows</b>
-        <p class="calibre6">Depending on your version of Windows and your keyboard, one of the following should open a command window (you may have to experiment a bit, but you don't have to try all of these suggestions):</p>
-        <ul class="calibre9">
-        <li class="calibre3">Go to the Start menu or screen, and enter "Command Prompt" in the search field.</li>
-        <li class="calibre3">Go to Start menu → Windows System → Command Prompt.</li>
-        <li class="calibre3">Go to Start menu → All Programs → Accessories → Command Prompt.</li>
-        <li class="calibre3">Go to the Start screen, hover your mouse in the lower-left corner of the screen, and click the down arrow that appears (on a touch screen, instead flick up from the bottom of the screen). The Apps page should open. Click on Command Prompt in the Windows System section.</li>
-        <li class="calibre3">Hold the special Windows key on your keyboard and press the "X" key. Choose "Command Prompt" from the pop-up menu.</li>
-        <li class="calibre3">Hold the Windows key and press the "R" key to get a "Run" window. Type "cmd" in the box, and click the OK key.</li>
-        </ul>
-        <p class="calibre6"><img src="content/windows-plus-r.png" alt="Type &quot;cmd&quot; in the &quot;Run&quot; window" class="calibre8"></img></p>
-        <p class="calibre6">Later in this tutorial, you will need to have two command windows open at the same time. However, on some versions of Windows, if you already have one command window open and you try to open a second one using the same method, it will instead point you to the command window you already have open. Try it now on your computer and see what happens! If you only get one command window, try one of the other methods in the list above. At least one of them should result in a new command window being opened.</p>
-        </sec>
-        <h3 id="the-command-line-prompt" class="calibre12">The Command-line Prompt</h3>
-        <p class="calibre6">Now you know how to open a command line,
-        we just need to understand what the "prompt" is.</p>
-        <sec data-title="Prompt: macOS and Linux" data-id="OSX_Linux_prompt" data-collapse="true"><b class="calibre10">Prompt: macOS and Linux</b>
-        <p class="calibre6">If you're on Mac or Linux, you probably see a <code class="calibre11">$</code>, like this:</p>
-        <p class="calibre6"></p><p class="calibre6">command-line</p><p class="calibre6"></p>
-        <pre class="calibre13"><code class="calibre11">$
-        </code></pre></sec>
-        <sec data-title="Prompt: Windows" data-id="windows_prompt2" data-collapse="true"><b class="calibre10">Prompt: Windows</b>
-        <p class="calibre6">On Windows, you probably see a <code class="calibre11">&gt;</code>, like this:</p>
-        <p class="calibre6"></p><p class="calibre6">command-line</p><p class="calibre6"></p>
-        <pre class="calibre13"><code class="calibre11">&gt;
-        </code></pre><p class="calibre6">Take a look at the Linux section just above now -- you'll see something more like that when you get to PythonAnywhere later in the tutorial.</p>
-        </sec>
-        <p class="calibre6">Each command will be prepended by a <code class="calibre11">$</code> or <code class="calibre11">&gt;</code> and one space, but you should not type it. Your computer will do it for you. :)</p>
-        <blockquote class="calibre5">
-        <p class="calibre6">Just a small note: in your case there may be something like <code class="calibre11">C:\Users\ola&gt;</code> or <code class="calibre11">Olas-MacBook-Air:~ ola$</code> before the prompt sign, and this is 100% OK.</p>
-        </blockquote>
-        <p class="calibre6">The part up to and including the <code class="calibre11">$</code> or the <code class="calibre11">&gt;</code> is called the <em class="calibre14">command line prompt</em>, or <em class="calibre14">prompt</em> for short. It prompts you to input something there.</p>
-        <p class="calibre6">In the tutorial, when we want you to type in a command, we will include the <code class="calibre11">$</code> or <code class="calibre11">&gt;</code>, and occasionally more to the left. Ignore the left part and only type in the command, which starts after the prompt.</p>
-        <h2 id="python" class="calibre7">Install Python </h2>
-        <blockquote class="calibre5">
-        <p class="calibre6">For readers at home: this chapter is covered in the <a href="https://www.youtube.com/watch?v=pVTaqzKZCdA" target="_blank">Installing Python &amp; Code Editor</a> video.</p>
-        <p class="calibre6">This section is based on a tutorial by Geek Girls Carrots (<a href="https://github.com/ggcarrots/django-carrots" target="_blank">https://github.com/ggcarrots/django-carrots</a>)</p>
-        </blockquote>
-        <p class="calibre6">Django is written in Python. We need Python to do anything in Django. Let's start by installing it! We want you to install the latest version of Python 3, so if you have any earlier version, you will need to upgrade it. If you already have version 3.10 or higher you should be fine.</p>
-        <p class="calibre6">Please install normal Python as follows, even when you have Anaconda installed on your computer.</p>
-        <sec data-title="Install Python: Windows" data-id="python_windows" data-collapse="true"><b class="calibre10">Install Python: Windows</b>
-        <p class="calibre6">First check whether your computer is running a 32-bit version or a 64-bit version of Windows, on the "System type" line of the System Info page. To reach this page, try one of these methods:</p>
-        <ul class="calibre9">
-        <li class="calibre3">Press the Windows key and Pause/Break key at the same time</li>
-        <li class="calibre3">Open your Control Panel from the Windows menu, then navigate to System &amp; Security, then System</li>
-        <li class="calibre3">Press the Windows button, then navigate to Settings &gt; System &gt; About</li>
-        <li class="calibre3">Search the Windows Start menu for "System Information". To do that, click the Start button or press the Windows key, then begin to type <code class="calibre11">System Information</code>. It will start making suggestions as soon as you type. You can select the entry once it shows up.</li>
-        </ul>
-        <p class="calibre6">You can download Python for Windows from the website <a href="https://www.python.org/downloads/windows/" target="_blank">https://www.python.org/downloads/windows/</a>. Click on the "Latest Python 3 Release - Python x.x.x" link. If your computer is running a <strong class="calibre10">64-bit</strong> version of Windows, download the <strong class="calibre10">Windows x86-64 executable installer</strong>. Otherwise, download the <strong class="calibre10">Windows x86 executable installer</strong>. After downloading the installer, you should run it (double-click on it) and follow the instructions there.</p>
-        <p class="calibre6">One thing to watch out for: During the installation, you will notice a window marked "Setup". Make sure you tick the "Add Python 3.12 to PATH" or 'Add Python to your environment variables" checkbox and click on "Install Now", as shown here (it may look a bit different if you are installing a different version):</p>
-        <p class="calibre6"><img src="content/python-installation-options.png" alt="Don't forget to add Python to the Path" class="calibre8"></img></p>
-        <p class="calibre6">When the installation completes, you may see a dialog box with a link you can follow to learn more about Python or about the version you installed. Close or cancel that dialog -- you'll be learning more in this tutorial!</p>
-        <p class="calibre6">Note: If you are using an older version of Windows (7, Vista, or any older version) and the Python 3.12 installer fails with an error, then install all Windows Updates and try to install Python again. If you still have the error, try installing Python version 3.10.13 from <a href="https://www.python.org/downloads/windows/" target="_blank">Python.org</a>.</p>
-        <blockquote class="calibre5">
-        <p class="calibre6">Django 5.1.2 needs Python 3.10 or greater, which does not support Windows XP or earlier versions.</p>
-        </blockquote>
-        </sec>
-        <sec data-title="Install Python: macOS" data-id="python_OSX" data-collapse="true"><b class="calibre10">Install Python: macOS</b>
-        <blockquote class="calibre5">
-        <p class="calibre6"><strong class="calibre10">Note</strong> Before you install Python on macOS, you should ensure your Mac settings allow installing packages that aren't from the App Store. Go to System Preferences (it's in the Applications folder), click "Security &amp; Privacy," and then the "General" tab. If your "Allow apps downloaded from:" is set to "Mac App Store," change it to "Mac App Store and identified developers."</p>
-        </blockquote>
-        <p class="calibre6">You need to go to the website <a href="https://www.python.org/downloads/" target="_blank">https://www.python.org/downloads/</a> and download the latest Python installer:</p>
-        <ul class="calibre9">
-        <li class="calibre3">Download Python 3.12.3,</li>
-        <li class="calibre3">Double click <em class="calibre14">python-3.12.3-macos11.pkg</em> to run the installer.</li>
-        </ul>
-        </sec>
-        <sec data-title="Install Python: Linux" data-id="python_linux" data-collapse="true"><b class="calibre10">Install Python: Linux</b>
-        <p class="calibre6">It is very likely that you already have Python installed out of the box. To check if you have it installed (and which version it is), open a console and type the following command:</p>
-        <p class="calibre6"></p><p class="calibre6">command-line</p><p class="calibre6"></p>
-        <pre class="calibre13"><code class="calibre11">$ python3 --version
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   Installation
+  </title>
+  <link href="book.css" rel="stylesheet"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="" name="description"/>
+  <meta content="HonKit 3.7.5" name="generator"/>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <link href="content/stylesheet.css" rel="stylesheet" type="text/css"/>
+  <link href="content/page_styles.css" rel="stylesheet" type="text/css"/>
+ </head>
+ <body>
+  <header class="book-header">
+   <p aria-level="1" class="page-title" role="heading">
+    Installation
+   </p>
+  </header>
+  <nav class="book-nav nav-top">
+   <a href="../index.html">
+    Home
+   </a>
+   <a href="index.html">
+    Contents
+   </a>
+   <a href="003-introduction.html">
+    Previous
+   </a>
+   <a href="005-installation-chromebook.html">
+    Next
+   </a>
+  </nav>
+  <main>
+   <div class="page">
+    <h1 class="calibre1" id="calibre_toc_2">
+     Installation
+    </h1>
+    <div class="page">
+     <h1 class="calibre1" id="if-youre-doing-the-tutorial-at-home">
+      If you're doing the tutorial at home
+     </h1>
+     <p class="calibre6">
+      If you're doing the tutorial at home, not at one of the
+      <a href="https://djangogirls.org/events/" target="_blank">
+       Django Girls events
+      </a>
+      , you can completely skip this chapter now and go straight to the
+      <a href="index3.html">
+       How the Internet works
+      </a>
+      chapter.
+     </p>
+     <p class="calibre6">
+      This is because we cover installing things as they are needed in the tutorial -- this is just an additional page that gathers all of the installation instructions in one place (which is useful for some workshop formats). You can choose to install everything that is on this page right now if you wish. But if you want to start learning things before installing a bunch of stuff on your computer, skip this chapter and we will explain the installation parts to you later on, as they are needed.
+     </p>
+     <p class="calibre6">
+      Good luck!
+     </p>
+     <h1 class="calibre1" id="if-youre-attending-a-workshop">
+      If you're attending a workshop
+     </h1>
+     <p class="calibre6">
+      If you are attending one of the
+      <a href="https://djangogirls.org/events/" target="_blank">
+       Django Girls events
+      </a>
+      :
+     </p>
+     <ul class="calibre9">
+      <li class="calibre3">
+       Your workshop may have an "installation party" before the main workshop. If you are at an installation party, this page is for you! Follow the instructions here to get everything you need for the workshop installed, with the help of the coaches if needed. Then at the main workshop, you'll be able to skip installation instructions you'll encounter in the main tutorial when you get to them.
+      </li>
+      <li class="calibre3">
+       The organizers of your workshop may have asked you to try at home to install everything on your computer before the workshop starts. If you have been asked to do that, this page is for you! Follow the instructions here, as best you can. Then at the main workshop, when you get to an installation step in the main tutorial, if you were not able to get that piece installed you can get help from your coach.
+      </li>
+      <li class="calibre3">
+       If your workshop does not have an installation party (or you couldn't attend), and if the organizers didn't ask you to try to install everything before you arrived, skip this page and go straight to the
+       <a href="index3.html">
+        How the Internet works
+       </a>
+       chapter. You'll be installing everything you need as you work through the tutorial.
+      </li>
+     </ul>
+     <h1 class="calibre1" id="installation">
+      Installation
+     </h1>
+     <p class="calibre6">
+      In this tutorial you will be building a blog. In order to do that, as you go through the tutorial you'll be instructed on how to
+        install various software on your computer and set up some online accounts as needed (if you are using local desktop environment) or instructed on how to create online accounts only (if you are using cloud development). This page gathers all of the installation and sign-up instructions in one place (which is useful for some workshop formats).
+     </p>
+     <h1 class="calibre1" id="chromebook-installation">
+      Chromebook Installation
+     </h1>
+     <p class="calibre6">
+      To set up your Chromebook, follow the instructions below:
+     </p>
+     <sec data-collapse="true" data-id="chromebook_setup" data-title="Chromebook setup (if you're using one)">
+      <b class="calibre10">
+       Chromebook setup (if you're using one)
+      </b>
+      <p class="calibre6">
+       For people using a Chromebook or those with limited memory on their laptops, we recommend using a cloud IDE environment. This allows you to interact with the command line, Python, and Django directly through your browser, where a code editor is already installed. In case you using this instruction, some steps of the tutorial don't have to be done again ("Deploy/Git"
+       <a href="https://tutorial.djangogirls.org/en/deploy/#installing-git" target="_blank">
+        part
+       </a>
+       ). You’ll find a more detailed explanation in the “Deploy/Git” section.
+      </p>
+      <p class="calibre6">
+       Your installation experience will be a little different.
+      </p>
+      <ol class="calibre2">
+       <li class="calibre3">
+        <p class="calibre6">
+         <strong class="calibre10">
+          Go to
+          <a href="https://github.com" target="_blank">
+           GitHub.com
+          </a>
+         </strong>
+         and sign up for a new, free user account. Be sure to remember your password (add it to your password manager, if you use one).
+        </p>
+       </li>
+       <li class="calibre3">
+        <p class="calibre6">
+         <strong class="calibre10">
+          Create a GitHub project
+         </strong>
+         . Visit
+         <a href="https://github.com/new" target="_blank">
+          this
+         </a>
+         link, use "my-first-blog" name for your project, and make it public (needed for deployment, you can make it private later). Also, add a
+         <code class="calibre11">
+          README.md
+         </code>
+         and
+         <code class="calibre11">
+          .gitignore
+         </code>
+         file.
+        </p>
+        <p class="calibre6">
+         <img alt="" class="calibre8" src="content/create-new-repo.png"/>
+        </p>
+       </li>
+       <li class="calibre3">
+        <p class="calibre6">
+         <strong class="calibre10">
+          Start a Codespace
+         </strong>
+         . Go to GitHub
+         <a href="https://github.com/codespaces/new" target="_blank">
+          Codespaces
+         </a>
+         and select the repository you just created. Click "Create Codespace".
+        </p>
+        <p class="calibre6">
+         <img alt="" class="calibre8" src="content/create-new-codespace.png"/>
+        </p>
+        <p class="calibre6">
+         Wait a little bit and you'll see something like that:
+        </p>
+        <p class="calibre6">
+         <img alt="" class="calibre8" src="content/codespace-preview.png"/>
+        </p>
+        <p class="calibre6">
+         The
+         <a href="https://code.visualstudio.com" target="_blank">
+          VSCode
+         </a>
+         editor will open for you automatically. If you see a notification that says "Install Python", please click on it. If not prompted, click the "Extensions" icon on the left sidebar in the Codespace editor. Search for "Python" and click "Install."
+        </p>
+        <p class="calibre6">
+         <img alt="" class="calibre8" src="content/vscode-install-python.png"/>
+        </p>
+        <p class="calibre6">
+         The bash terminal (similar to Linux) is at the bottom of the page.
+        </p>
+        <p class="calibre6">
+         <img alt="" class="calibre8" src="content/codespace-preview.png"/>
+        </p>
+        <p class="calibre6">
+         By default, the GitHub Codespace environment will be deleted after 1 month (this applies only to the environment, not your code). To prevent auto-deletion, you can adjust the settings on the page:
+         <a href="https://github.com/codespaces" target="_blank">
+          https://github.com/codespaces
+         </a>
+        </p>
+        <p class="calibre6">
+         <img alt="" class="calibre8" src="content/codespace-auto-delete-off.png"/>
+        </p>
+       </li>
+       <li class="calibre3">
+        <p class="calibre6">
+         <strong class="calibre10">
+          Continue with the tutorial
+         </strong>
+         . Follow the next steps from the section
+         <a href="https://tutorial.djangogirls.org/en/installation/#virtualenv" target="_blank">
+          Set up virtual environment and install Django
+         </a>
+         .
+         Follow than sections for Ubuntu/Linux. Use the Codespaces command line (terminal), accessible through your browser.
+        </p>
+       </li>
+      </ol>
+     </sec>
+     <h1 class="calibre1" id="macos-windows-linux">
+      macOS, Windows, Linux Installation
+     </h1>
+     <p class="calibre6">
+      If you are not using a Chromebook, your experience will be a little different as you need to download and install some software locally as well as set up online accounts.
+     </p>
+     <p class="calibre6">
+      To install software on your machine, follow the instructions below:
+     </p>
+     <h2 class="calibre7" id="intro-command-line">
+      Brief intro to the command line
+     </h2>
+     <p class="calibre6">
+      Many of the steps below reference the "console", "terminal", "command window", or "command line" -- these all mean the same thing: a window on your computer where you can enter commands. When you get to the main tutorial, you'll learn more about the command line. For now, the main thing you need to know is how to open a command window and what it looks like:
+     </p>
+     <sec data-collapse="true" data-id="macOS_prompt" data-title="Opening: macOS">
+      <b class="calibre10">
+       Opening: macOS
+      </b>
+      <p class="calibre6">
+       Go to Launchpad → Other → Terminal.
+      </p>
+     </sec>
+     <sec data-collapse="true" data-id="linux_prompt" data-title="Opening: Linux">
+      <b class="calibre10">
+       Opening: Linux
+      </b>
+      <p class="calibre6">
+       It's probably under Applications → Accessories → Terminal, or Applications → System → Terminal, but that may depend on your system. If it's not there, you can try to Google it. :)
+      </p>
+     </sec>
+     <sec data-collapse="true" data-id="windows_prompt" data-title="Opening: Windows">
+      <b class="calibre10">
+       Opening: Windows
+      </b>
+      <p class="calibre6">
+       Depending on your version of Windows and your keyboard, one of the following should open a command window (you may have to experiment a bit, but you don't have to try all of these suggestions):
+      </p>
+      <ul class="calibre9">
+       <li class="calibre3">
+        Go to the Start menu or screen, and enter "Command Prompt" in the search field.
+       </li>
+       <li class="calibre3">
+        Go to Start menu → Windows System → Command Prompt.
+       </li>
+       <li class="calibre3">
+        Go to Start menu → All Programs → Accessories → Command Prompt.
+       </li>
+       <li class="calibre3">
+        Go to the Start screen, hover your mouse in the lower-left corner of the screen, and click the down arrow that appears (on a touch screen, instead flick up from the bottom of the screen). The Apps page should open. Click on Command Prompt in the Windows System section.
+       </li>
+       <li class="calibre3">
+        Hold the special Windows key on your keyboard and press the "X" key. Choose "Command Prompt" from the pop-up menu.
+       </li>
+       <li class="calibre3">
+        Hold the Windows key and press the "R" key to get a "Run" window. Type "cmd" in the box, and click the OK key.
+       </li>
+      </ul>
+      <p class="calibre6">
+       <img alt='Type "cmd" in the "Run" window' class="calibre8" src="content/windows-plus-r.png"/>
+      </p>
+      <p class="calibre6">
+       Later in this tutorial, you will need to have two command windows open at the same time. However, on some versions of Windows, if you already have one command window open and you try to open a second one using the same method, it will instead point you to the command window you already have open. Try it now on your computer and see what happens! If you only get one command window, try one of the other methods in the list above. At least one of them should result in a new command window being opened.
+      </p>
+     </sec>
+     <h3 class="calibre12" id="the-command-line-prompt">
+      The Command-line Prompt
+     </h3>
+     <p class="calibre6">
+      Now you know how to open a command line,
+        we just need to understand what the "prompt" is.
+     </p>
+     <sec data-collapse="true" data-id="OSX_Linux_prompt" data-title="Prompt: macOS and Linux">
+      <b class="calibre10">
+       Prompt: macOS and Linux
+      </b>
+      <p class="calibre6">
+       If you're on Mac or Linux, you probably see a
+       <code class="calibre11">
+        $
+       </code>
+       , like this:
+      </p>
+      <p class="calibre6">
+      </p>
+      <p class="calibre6">
+       command-line
+      </p>
+      <p class="calibre6">
+      </p>
+      <pre class="calibre13"><code class="calibre11">$
+        </code></pre>
+     </sec>
+     <sec data-collapse="true" data-id="windows_prompt2" data-title="Prompt: Windows">
+      <b class="calibre10">
+       Prompt: Windows
+      </b>
+      <p class="calibre6">
+       On Windows, you probably see a
+       <code class="calibre11">
+        &gt;
+       </code>
+       , like this:
+      </p>
+      <p class="calibre6">
+      </p>
+      <p class="calibre6">
+       command-line
+      </p>
+      <p class="calibre6">
+      </p>
+      <pre class="calibre13"><code class="calibre11">&gt;
+        </code></pre>
+      <p class="calibre6">
+       Take a look at the Linux section just above now -- you'll see something more like that when you get to PythonAnywhere later in the tutorial.
+      </p>
+     </sec>
+     <p class="calibre6">
+      Each command will be prepended by a
+      <code class="calibre11">
+       $
+      </code>
+      or
+      <code class="calibre11">
+       &gt;
+      </code>
+      and one space, but you should not type it. Your computer will do it for you. :)
+     </p>
+     <blockquote class="calibre5">
+      <p class="calibre6">
+       Just a small note: in your case there may be something like
+       <code class="calibre11">
+        C:\Users\ola&gt;
+       </code>
+       or
+       <code class="calibre11">
+        Olas-MacBook-Air:~ ola$
+       </code>
+       before the prompt sign, and this is 100% OK.
+      </p>
+     </blockquote>
+     <p class="calibre6">
+      The part up to and including the
+      <code class="calibre11">
+       $
+      </code>
+      or the
+      <code class="calibre11">
+       &gt;
+      </code>
+      is called the
+      <em class="calibre14">
+       command line prompt
+      </em>
+      , or
+      <em class="calibre14">
+       prompt
+      </em>
+      for short. It prompts you to input something there.
+     </p>
+     <p class="calibre6">
+      In the tutorial, when we want you to type in a command, we will include the
+      <code class="calibre11">
+       $
+      </code>
+      or
+      <code class="calibre11">
+       &gt;
+      </code>
+      , and occasionally more to the left. Ignore the left part and only type in the command, which starts after the prompt.
+     </p>
+     <h2 class="calibre7" id="python">
+      Install Python
+     </h2>
+     <blockquote class="calibre5">
+      <p class="calibre6">
+       For readers at home: this chapter is covered in the
+       <a href="https://www.youtube.com/watch?v=pVTaqzKZCdA" target="_blank">
+        Installing Python &amp; Code Editor
+       </a>
+       video.
+      </p>
+      <p class="calibre6">
+       This section is based on a tutorial by Geek Girls Carrots (
+       <a href="https://github.com/ggcarrots/django-carrots" target="_blank">
+        https://github.com/ggcarrots/django-carrots
+       </a>
+       )
+      </p>
+     </blockquote>
+     <p class="calibre6">
+      Django is written in Python. We need Python to do anything in Django. Let's start by installing it! We want you to install the latest version of Python 3, so if you have any earlier version, you will need to upgrade it. If you already have version 3.10 or higher you should be fine.
+     </p>
+     <p class="calibre6">
+      Please install normal Python as follows, even when you have Anaconda installed on your computer.
+     </p>
+     <sec data-collapse="true" data-id="python_windows" data-title="Install Python: Windows">
+      <b class="calibre10">
+       Install Python: Windows
+      </b>
+      <p class="calibre6">
+       First check whether your computer is running a 32-bit version or a 64-bit version of Windows, on the "System type" line of the System Info page. To reach this page, try one of these methods:
+      </p>
+      <ul class="calibre9">
+       <li class="calibre3">
+        Press the Windows key and Pause/Break key at the same time
+       </li>
+       <li class="calibre3">
+        Open your Control Panel from the Windows menu, then navigate to System &amp; Security, then System
+       </li>
+       <li class="calibre3">
+        Press the Windows button, then navigate to Settings &gt; System &gt; About
+       </li>
+       <li class="calibre3">
+        Search the Windows Start menu for "System Information". To do that, click the Start button or press the Windows key, then begin to type
+        <code class="calibre11">
+         System Information
+        </code>
+        . It will start making suggestions as soon as you type. You can select the entry once it shows up.
+       </li>
+      </ul>
+      <p class="calibre6">
+       You can download Python for Windows from the website
+       <a href="https://www.python.org/downloads/windows/" target="_blank">
+        https://www.python.org/downloads/windows/
+       </a>
+       . Click on the "Latest Python 3 Release - Python x.x.x" link. If your computer is running a
+       <strong class="calibre10">
+        64-bit
+       </strong>
+       version of Windows, download the
+       <strong class="calibre10">
+        Windows x86-64 executable installer
+       </strong>
+       . Otherwise, download the
+       <strong class="calibre10">
+        Windows x86 executable installer
+       </strong>
+       . After downloading the installer, you should run it (double-click on it) and follow the instructions there.
+      </p>
+      <p class="calibre6">
+       One thing to watch out for: During the installation, you will notice a window marked "Setup". Make sure you tick the "Add Python 3.12 to PATH" or 'Add Python to your environment variables" checkbox and click on "Install Now", as shown here (it may look a bit different if you are installing a different version):
+      </p>
+      <p class="calibre6">
+       <img alt="Don't forget to add Python to the Path" class="calibre8" src="content/python-installation-options.png"/>
+      </p>
+      <p class="calibre6">
+       When the installation completes, you may see a dialog box with a link you can follow to learn more about Python or about the version you installed. Close or cancel that dialog -- you'll be learning more in this tutorial!
+      </p>
+      <p class="calibre6">
+       Note: If you are using an older version of Windows (7, Vista, or any older version) and the Python 3.12 installer fails with an error, then install all Windows Updates and try to install Python again. If you still have the error, try installing Python version 3.10.13 from
+       <a href="https://www.python.org/downloads/windows/" target="_blank">
+        Python.org
+       </a>
+       .
+      </p>
+      <blockquote class="calibre5">
+       <p class="calibre6">
+        Django 5.1.2 needs Python 3.10 or greater, which does not support Windows XP or earlier versions.
+       </p>
+      </blockquote>
+     </sec>
+     <sec data-collapse="true" data-id="python_OSX" data-title="Install Python: macOS">
+      <b class="calibre10">
+       Install Python: macOS
+      </b>
+      <blockquote class="calibre5">
+       <p class="calibre6">
+        <strong class="calibre10">
+         Note
+        </strong>
+        Before you install Python on macOS, you should ensure your Mac settings allow installing packages that aren't from the App Store. Go to System Preferences (it's in the Applications folder), click "Security &amp; Privacy," and then the "General" tab. If your "Allow apps downloaded from:" is set to "Mac App Store," change it to "Mac App Store and identified developers."
+       </p>
+      </blockquote>
+      <p class="calibre6">
+       You need to go to the website
+       <a href="https://www.python.org/downloads/" target="_blank">
+        https://www.python.org/downloads/
+       </a>
+       and download the latest Python installer:
+      </p>
+      <ul class="calibre9">
+       <li class="calibre3">
+        Download Python 3.12.3,
+       </li>
+       <li class="calibre3">
+        Double click
+        <em class="calibre14">
+         python-3.12.3-macos11.pkg
+        </em>
+        to run the installer.
+       </li>
+      </ul>
+     </sec>
+     <sec data-collapse="true" data-id="python_linux" data-title="Install Python: Linux">
+      <b class="calibre10">
+       Install Python: Linux
+      </b>
+      <p class="calibre6">
+       It is very likely that you already have Python installed out of the box. To check if you have it installed (and which version it is), open a console and type the following command:
+      </p>
+      <p class="calibre6">
+      </p>
+      <p class="calibre6">
+       command-line
+      </p>
+      <p class="calibre6">
+      </p>
+      <pre class="calibre13"><code class="calibre11">$ python3 --version
         Python 3.12.3
-        </code></pre><p class="calibre6">If you have a different version of Python installed, at least 3.10 (e.g. 3.10.13), then you don't have to upgrade. If you don't have Python installed, or if you want a different version, first check which Linux distribution you are using with the following command:</p>
-        <p class="calibre6"></p><p class="calibre6">command-line</p><p class="calibre6"></p>
-        <pre class="calibre13"><code class="calibre11">$ grep '^NAME=' /etc/os-release
-        </code></pre><p class="calibre6">Afterwards, depending on the result, follow one of the following installation guides below this section.</p>
-        </sec>
-        <sec data-title="Install Python: Debian or Ubuntu" data-id="python_debian" data-collapse="true"><b class="calibre10">Install Python: Debian or Ubuntu</b>
-        <p class="calibre6">Type this command into your console:</p>
-        <p class="calibre6"></p><p class="calibre6">command-line</p><p class="calibre6"></p>
-        <pre class="calibre13"><code class="calibre11">$ sudo apt install python3
-        </code></pre></sec>
-        <sec data-title="Install Python: Fedora" data-id="python_fedora" data-collapse="true"><b class="calibre10">Install Python: Fedora</b>
-        <p class="calibre6">Use this command in your console:</p>
-        <p class="calibre6"></p><p class="calibre6">command-line</p><p class="calibre6"></p>
-        <pre class="calibre13"><code class="calibre11">$ sudo dnf install python3
-        </code></pre><p class="calibre6">If you're on older Fedora versions you might get an error that the command <code class="calibre11">dnf</code> is not found. In that case, you need to use <code class="calibre11">yum</code> instead.</p>
-        </sec>
-        <sec data-title="Install Python: openSUSE" data-id="python_openSUSE" data-collapse="true"><b class="calibre10">Install Python: openSUSE</b>
-        <p class="calibre6">Use this command in your console:</p>
-        <p class="calibre6"></p><p class="calibre6">command-line</p><p class="calibre6"></p>
-        <pre class="calibre13"><code class="calibre11">$ sudo zypper install python3
-        </code></pre></sec>
-        <p class="calibre6">Verify the installation was successful by opening a command prompt and running the <code class="calibre11">python3</code> command:</p>
-        <p class="calibre6"></p><p class="calibre6">command-line</p><p class="calibre6"></p>
-        <pre class="calibre13"><code class="calibre11">$ python3 --version
+        </code></pre>
+      <p class="calibre6">
+       If you have a different version of Python installed, at least 3.10 (e.g. 3.10.13), then you don't have to upgrade. If you don't have Python installed, or if you want a different version, first check which Linux distribution you are using with the following command:
+      </p>
+      <p class="calibre6">
+      </p>
+      <p class="calibre6">
+       command-line
+      </p>
+      <p class="calibre6">
+      </p>
+      <pre class="calibre13"><code class="calibre11">$ grep '^NAME=' /etc/os-release
+        </code></pre>
+      <p class="calibre6">
+       Afterwards, depending on the result, follow one of the following installation guides below this section.
+      </p>
+     </sec>
+     <sec data-collapse="true" data-id="python_debian" data-title="Install Python: Debian or Ubuntu">
+      <b class="calibre10">
+       Install Python: Debian or Ubuntu
+      </b>
+      <p class="calibre6">
+       Type this command into your console:
+      </p>
+      <p class="calibre6">
+      </p>
+      <p class="calibre6">
+       command-line
+      </p>
+      <p class="calibre6">
+      </p>
+      <pre class="calibre13"><code class="calibre11">$ sudo apt install python3
+        </code></pre>
+     </sec>
+     <sec data-collapse="true" data-id="python_fedora" data-title="Install Python: Fedora">
+      <b class="calibre10">
+       Install Python: Fedora
+      </b>
+      <p class="calibre6">
+       Use this command in your console:
+      </p>
+      <p class="calibre6">
+      </p>
+      <p class="calibre6">
+       command-line
+      </p>
+      <p class="calibre6">
+      </p>
+      <pre class="calibre13"><code class="calibre11">$ sudo dnf install python3
+        </code></pre>
+      <p class="calibre6">
+       If you're on older Fedora versions you might get an error that the command
+       <code class="calibre11">
+        dnf
+       </code>
+       is not found. In that case, you need to use
+       <code class="calibre11">
+        yum
+       </code>
+       instead.
+      </p>
+     </sec>
+     <sec data-collapse="true" data-id="python_openSUSE" data-title="Install Python: openSUSE">
+      <b class="calibre10">
+       Install Python: openSUSE
+      </b>
+      <p class="calibre6">
+       Use this command in your console:
+      </p>
+      <p class="calibre6">
+      </p>
+      <p class="calibre6">
+       command-line
+      </p>
+      <p class="calibre6">
+      </p>
+      <pre class="calibre13"><code class="calibre11">$ sudo zypper install python3
+        </code></pre>
+     </sec>
+     <p class="calibre6">
+      Verify the installation was successful by opening a command prompt and running the
+      <code class="calibre11">
+       python3
+      </code>
+      command:
+     </p>
+     <p class="calibre6">
+     </p>
+     <p class="calibre6">
+      command-line
+     </p>
+     <p class="calibre6">
+     </p>
+     <pre class="calibre13"><code class="calibre11">$ python3 --version
         Python 3.12.3
-        </code></pre><p class="calibre6">The version shown may be different from 3.12.3 -- it should match the version you installed.</p>
-        <p class="calibre6"><strong class="calibre10">NOTE:</strong> If you're on Windows and you get an error message that <code class="calibre11">python3</code> wasn't found, try using <code class="calibre11">python</code> (without the <code class="calibre11">3</code>) and check if it still might be a version of Python that is 3.10 or higher. If that doesn't work either, you may open a new command prompt and try again; this happens if you use a command prompt that was opened before the Python installation.</p>
-        <hr class="calibre15"></hr>
-        <p class="calibre6">If you have any doubts, or if something went wrong and you have no idea what to do next, please ask your coach! Sometimes things don't go smoothly and it's better to ask for help from someone with more experience.</p>
-        <h2 id="code-editor" class="calibre7">Install a code editor </h2>
-        <p class="calibre6">There are a lot of different editors and it largely boils down to personal preference. Most Python programmers use complex but extremely powerful IDEs (Integrated Development Environments), such as PyCharm. As a beginner, however, that's probably less suitable; our recommendations are equally powerful, but a lot simpler.</p>
-        <p class="calibre6">Our suggestions are below, but feel free to ask your coach what their preferences are – it'll be easier to get help from them.</p>
-        <h2 id="visual-studio-code" class="calibre7">Visual Studio Code</h2>
-        <p class="calibre6">Visual Studio Code is a source code editor developed by Microsoft for Windows, Linux and macOS. It includes support for debugging, embedded Git control, syntax highlighting, intelligent code completion, snippets, and code refactoring.</p>
-        <p class="calibre6"><a href="https://code.visualstudio.com/" target="_blank">Download it here</a></p>
-        <h2 id="gedit" class="calibre7">Gedit</h2>
-        <p class="calibre6">Gedit is an open-source, free editor, available for all operating systems.</p>
-        <p class="calibre6"><a href="https://wiki.gnome.org/Apps/Gedit#Download" target="_blank">Download it here</a></p>
-        <h2 id="sublime-text" class="calibre7">Sublime Text</h2>
-        <p class="calibre6">Sublime Text is a very popular editor with a free evaluation period and it's available for all operating systems.</p>
-        <p class="calibre6"><a href="https://www.sublimetext.com/" target="_blank">Download it here</a></p>
-        <h2 id="why-are-we-installing-a-code-editor" class="calibre7">Why are we installing a code editor?</h2>
-        <p class="calibre6">You might be wondering why we are installing this special code editor software, rather than using something like Word or Notepad.</p>
-        <p class="calibre6">The first reason is that code needs to be <strong class="calibre10">plain text</strong>, and the problem with programs like Word and Textedit is that they don't actually produce plain text, they produce rich text (with fonts and formatting), using custom formats like <a href="https://en.wikipedia.org/wiki/Rich_Text_Format" target="_blank">RTF (Rich Text Format)</a>.</p>
-        <p class="calibre6">The second reason is that code editors are specialized for editing code, so they can provide helpful features like highlighting code with color according to its meaning, or automatically closing quotes for you.</p>
-        <p class="calibre6">We'll see all this in action later. Soon, you'll come to think of your trusty old code editor as one of your favorite tools. :)</p>
-        <h2 id="virtualenv" class="calibre7">Set up virtualenv and install Django </h2>
-        <blockquote class="calibre5">
-        <p class="calibre6">Part of this section is based on tutorials by Geek Girls Carrots (<a href="https://github.com/ggcarrots/django-carrots" target="_blank">https://github.com/ggcarrots/django-carrots</a>).</p>
-        <p class="calibre6">Part of this section is based on the <a href="http://django-marcador.keimlink.de/" target="_blank">django-marcador
-        tutorial</a> licensed under the Creative Commons
+        </code></pre>
+     <p class="calibre6">
+      The version shown may be different from 3.12.3 -- it should match the version you installed.
+     </p>
+     <p class="calibre6">
+      <strong class="calibre10">
+       NOTE:
+      </strong>
+      If you're on Windows and you get an error message that
+      <code class="calibre11">
+       python3
+      </code>
+      wasn't found, try using
+      <code class="calibre11">
+       python
+      </code>
+      (without the
+      <code class="calibre11">
+       3
+      </code>
+      ) and check if it still might be a version of Python that is 3.10 or higher. If that doesn't work either, you may open a new command prompt and try again; this happens if you use a command prompt that was opened before the Python installation.
+     </p>
+     <hr class="calibre15"/>
+     <p class="calibre6">
+      If you have any doubts, or if something went wrong and you have no idea what to do next, please ask your coach! Sometimes things don't go smoothly and it's better to ask for help from someone with more experience.
+     </p>
+     <h2 class="calibre7" id="code-editor">
+      Install a code editor
+     </h2>
+     <p class="calibre6">
+      There are a lot of different editors and it largely boils down to personal preference. Most Python programmers use complex but extremely powerful IDEs (Integrated Development Environments), such as PyCharm. As a beginner, however, that's probably less suitable; our recommendations are equally powerful, but a lot simpler.
+     </p>
+     <p class="calibre6">
+      Our suggestions are below, but feel free to ask your coach what their preferences are – it'll be easier to get help from them.
+     </p>
+     <h2 class="calibre7" id="visual-studio-code">
+      Visual Studio Code
+     </h2>
+     <p class="calibre6">
+      Visual Studio Code is a source code editor developed by Microsoft for Windows, Linux and macOS. It includes support for debugging, embedded Git control, syntax highlighting, intelligent code completion, snippets, and code refactoring.
+     </p>
+     <p class="calibre6">
+      <a href="https://code.visualstudio.com/" target="_blank">
+       Download it here
+      </a>
+     </p>
+     <h2 class="calibre7" id="gedit">
+      Gedit
+     </h2>
+     <p class="calibre6">
+      Gedit is an open-source, free editor, available for all operating systems.
+     </p>
+     <p class="calibre6">
+      <a href="https://wiki.gnome.org/Apps/Gedit#Download" target="_blank">
+       Download it here
+      </a>
+     </p>
+     <h2 class="calibre7" id="sublime-text">
+      Sublime Text
+     </h2>
+     <p class="calibre6">
+      Sublime Text is a very popular editor with a free evaluation period and it's available for all operating systems.
+     </p>
+     <p class="calibre6">
+      <a href="https://www.sublimetext.com/" target="_blank">
+       Download it here
+      </a>
+     </p>
+     <h2 class="calibre7" id="why-are-we-installing-a-code-editor">
+      Why are we installing a code editor?
+     </h2>
+     <p class="calibre6">
+      You might be wondering why we are installing this special code editor software, rather than using something like Word or Notepad.
+     </p>
+     <p class="calibre6">
+      The first reason is that code needs to be
+      <strong class="calibre10">
+       plain text
+      </strong>
+      , and the problem with programs like Word and Textedit is that they don't actually produce plain text, they produce rich text (with fonts and formatting), using custom formats like
+      <a href="https://en.wikipedia.org/wiki/Rich_Text_Format" target="_blank">
+       RTF (Rich Text Format)
+      </a>
+      .
+     </p>
+     <p class="calibre6">
+      The second reason is that code editors are specialized for editing code, so they can provide helpful features like highlighting code with color according to its meaning, or automatically closing quotes for you.
+     </p>
+     <p class="calibre6">
+      We'll see all this in action later. Soon, you'll come to think of your trusty old code editor as one of your favorite tools. :)
+     </p>
+     <h2 class="calibre7" id="virtualenv">
+      Set up virtualenv and install Django
+     </h2>
+     <blockquote class="calibre5">
+      <p class="calibre6">
+       Part of this section is based on tutorials by Geek Girls Carrots (
+       <a href="https://github.com/ggcarrots/django-carrots" target="_blank">
+        https://github.com/ggcarrots/django-carrots
+       </a>
+       ).
+      </p>
+      <p class="calibre6">
+       Part of this section is based on the
+       <a href="http://django-marcador.keimlink.de/" target="_blank">
+        django-marcador
+        tutorial
+       </a>
+       licensed under the Creative Commons
         Attribution-ShareAlike 4.0 International License. The django-marcador tutorial
-        is copyrighted by Markus Zapke-Gründemann et al.</p>
-        </blockquote>
-        <h2 id="virtual-environment" class="calibre7">Virtual environment</h2>
-        <p class="calibre6">Before we install Django we will get you to install an extremely useful tool to help keep your coding environment tidy on your computer. It's possible to skip this step, but it's highly recommended to follow it. Starting with the best possible setup will save you a lot of trouble in the future!</p>
-        <p class="calibre6">So, let's create a <strong class="calibre10">virtual environment</strong> (also called a <em class="calibre14">virtualenv</em>). Virtualenv will isolate your Python/Django setup on a per-project basis. This means that any changes you make to one website won't affect any others you're also developing. Neat, right?</p>
-        <p class="calibre6">All you need to do is find a directory in which you want to create the <code class="calibre11">virtualenv</code>; your home directory, for example. On Windows, it might look like <code class="calibre11">C:\Users\Name\</code> (where <code class="calibre11">Name</code> is the name of your login).</p>
-        <blockquote class="calibre5">
-        <p class="calibre6"><strong class="calibre10">NOTE:</strong> On Windows, make sure that this directory does not contain accented or special characters; if your username contains accented characters, use a different directory, for example, <code class="calibre11">C:\djangogirls</code>.</p>
-        </blockquote>
-        <p class="calibre6">For this tutorial we will be using a new directory <code class="calibre11">djangogirls</code> from your home directory:</p>
-        <p class="calibre6"></p><p class="calibre6">command-line</p><p class="calibre6"></p>
-        <pre class="calibre13"><code class="calibre11">$ mkdir djangogirls
+        is copyrighted by Markus Zapke-Gründemann et al.
+      </p>
+     </blockquote>
+     <h2 class="calibre7" id="virtual-environment">
+      Virtual environment
+     </h2>
+     <p class="calibre6">
+      Before we install Django we will get you to install an extremely useful tool to help keep your coding environment tidy on your computer. It's possible to skip this step, but it's highly recommended to follow it. Starting with the best possible setup will save you a lot of trouble in the future!
+     </p>
+     <p class="calibre6">
+      So, let's create a
+      <strong class="calibre10">
+       virtual environment
+      </strong>
+      (also called a
+      <em class="calibre14">
+       virtualenv
+      </em>
+      ). Virtualenv will isolate your Python/Django setup on a per-project basis. This means that any changes you make to one website won't affect any others you're also developing. Neat, right?
+     </p>
+     <p class="calibre6">
+      All you need to do is find a directory in which you want to create the
+      <code class="calibre11">
+       virtualenv
+      </code>
+      ; your home directory, for example. On Windows, it might look like
+      <code class="calibre11">
+       C:\Users\Name\
+      </code>
+      (where
+      <code class="calibre11">
+       Name
+      </code>
+      is the name of your login).
+     </p>
+     <blockquote class="calibre5">
+      <p class="calibre6">
+       <strong class="calibre10">
+        NOTE:
+       </strong>
+       On Windows, make sure that this directory does not contain accented or special characters; if your username contains accented characters, use a different directory, for example,
+       <code class="calibre11">
+        C:\djangogirls
+       </code>
+       .
+      </p>
+     </blockquote>
+     <p class="calibre6">
+      For this tutorial we will be using a new directory
+      <code class="calibre11">
+       djangogirls
+      </code>
+      from your home directory:
+     </p>
+     <p class="calibre6">
+     </p>
+     <p class="calibre6">
+      command-line
+     </p>
+     <p class="calibre6">
+     </p>
+     <pre class="calibre13"><code class="calibre11">$ mkdir djangogirls
         $ cd djangogirls
-        </code></pre><p class="calibre6">We will make a virtualenv called <code class="calibre11">myvenv</code>. The general command will be in the format:</p>
-        <p class="calibre6"></p><p class="calibre6">command-line</p><p class="calibre6"></p>
-        <pre class="calibre13"><code class="calibre11">$ python3 -m venv myvenv
-        </code></pre><sec data-title="Virtual environment: Windows" data-id="virtualenv_installation_windows" data-collapse="true"><b class="calibre10">Virtual environment: Windows</b>
-        <p class="calibre6">To create a new <code class="calibre11">virtualenv</code>, you need to open the command prompt and run <code class="calibre11">python -m venv myvenv</code>. It will look like this:</p>
-        <p class="calibre6"></p><p class="calibre6">command-line</p><p class="calibre6"></p>
-        <pre class="calibre13"><code class="calibre11">C:\Users\Name\djangogirls&gt; python -m venv myvenv
-        </code></pre><p class="calibre6">Where <code class="calibre11">myvenv</code> is the name of your <code class="calibre11">virtualenv</code>. You can use any other name, but stick to lowercase and use no spaces, accents or special characters. It is also a good idea to keep the name short – you'll be referencing it a lot!</p>
-        </sec>
-        <sec data-title="Virtual environment: Linux and macOS" data-id="virtualenv_installation_linuxosx" data-collapse="true"><b class="calibre10">Virtual environment: Linux and macOS</b>
-        <p class="calibre6">We can create a <code class="calibre11">virtualenv</code> on both Linux and macOS by running <code class="calibre11">python3 -m venv myvenv</code>.
-        It will look like this:</p>
-        <p class="calibre6"></p><p class="calibre6">command-line</p><p class="calibre6"></p>
-        <pre class="calibre13"><code class="calibre11">$ python3 -m venv myvenv
-        </code></pre><p class="calibre6"><code class="calibre11">myvenv</code> is the name of your <code class="calibre11">virtualenv</code>. You can use any other name, but stick to lowercase and use no spaces. It is also a good idea to keep the name short as you'll be referencing it a lot!</p>
-        <blockquote class="calibre5">
-        <p class="calibre6"><strong class="calibre10">NOTE:</strong> On some versions of Debian/Ubuntu you may receive the following error:</p>
-        <p class="calibre6"></p><p class="calibre6">command-line</p><p class="calibre6"></p>
-        <pre class="calibre13"><code class="calibre11">The virtual environment was not created successfully because ensurepip is not available.  On Debian/Ubuntu systems, you need to install the python3-venv package using the following command.
+        </code></pre>
+     <p class="calibre6">
+      We will make a virtualenv called
+      <code class="calibre11">
+       myvenv
+      </code>
+      . The general command will be in the format:
+     </p>
+     <p class="calibre6">
+     </p>
+     <p class="calibre6">
+      command-line
+     </p>
+     <p class="calibre6">
+     </p>
+     <pre class="calibre13"><code class="calibre11">$ python3 -m venv myvenv
+        </code></pre>
+     <sec data-collapse="true" data-id="virtualenv_installation_windows" data-title="Virtual environment: Windows">
+      <b class="calibre10">
+       Virtual environment: Windows
+      </b>
+      <p class="calibre6">
+       To create a new
+       <code class="calibre11">
+        virtualenv
+       </code>
+       , you need to open the command prompt and run
+       <code class="calibre11">
+        python -m venv myvenv
+       </code>
+       . It will look like this:
+      </p>
+      <p class="calibre6">
+      </p>
+      <p class="calibre6">
+       command-line
+      </p>
+      <p class="calibre6">
+      </p>
+      <pre class="calibre13"><code class="calibre11">C:\Users\Name\djangogirls&gt; python -m venv myvenv
+        </code></pre>
+      <p class="calibre6">
+       Where
+       <code class="calibre11">
+        myvenv
+       </code>
+       is the name of your
+       <code class="calibre11">
+        virtualenv
+       </code>
+       . You can use any other name, but stick to lowercase and use no spaces, accents or special characters. It is also a good idea to keep the name short – you'll be referencing it a lot!
+      </p>
+     </sec>
+     <sec data-collapse="true" data-id="virtualenv_installation_linuxosx" data-title="Virtual environment: Linux and macOS">
+      <b class="calibre10">
+       Virtual environment: Linux and macOS
+      </b>
+      <p class="calibre6">
+       We can create a
+       <code class="calibre11">
+        virtualenv
+       </code>
+       on both Linux and macOS by running
+       <code class="calibre11">
+        python3 -m venv myvenv
+       </code>
+       .
+        It will look like this:
+      </p>
+      <p class="calibre6">
+      </p>
+      <p class="calibre6">
+       command-line
+      </p>
+      <p class="calibre6">
+      </p>
+      <pre class="calibre13"><code class="calibre11">$ python3 -m venv myvenv
+        </code></pre>
+      <p class="calibre6">
+       <code class="calibre11">
+        myvenv
+       </code>
+       is the name of your
+       <code class="calibre11">
+        virtualenv
+       </code>
+       . You can use any other name, but stick to lowercase and use no spaces. It is also a good idea to keep the name short as you'll be referencing it a lot!
+      </p>
+      <blockquote class="calibre5">
+       <p class="calibre6">
+        <strong class="calibre10">
+         NOTE:
+        </strong>
+        On some versions of Debian/Ubuntu you may receive the following error:
+       </p>
+       <p class="calibre6">
+       </p>
+       <p class="calibre6">
+        command-line
+       </p>
+       <p class="calibre6">
+       </p>
+       <pre class="calibre13"><code class="calibre11">The virtual environment was not created successfully because ensurepip is not available.  On Debian/Ubuntu systems, you need to install the python3-venv package using the following command.
            apt install python3-venv
         You may need to use sudo with that command.  After installing the python3-venv package, recreate your virtual environment.
-        </code></pre><p class="calibre6">In this case, follow the instructions above and install the <code class="calibre11">python3-venv</code> package:
-        </p><p class="calibre6">command-line</p><p class="calibre6"></p>
-        <pre class="calibre13"><code class="calibre11">$ sudo apt install python3-venv
-        </code></pre><p class="calibre6"><strong class="calibre10">NOTE:</strong> On some versions of Debian/Ubuntu initiating the virtual environment like this currently gives the following error:</p>
-        <p class="calibre6"></p><p class="calibre6">command-line</p><p class="calibre6"></p>
-        <pre class="calibre13"><code class="calibre11">Error: Command '['/home/eddie/Slask/tmp/venv/bin/python3', '-Im', 'ensurepip', '--upgrade', '--default-pip']' returned non-zero exit status 1
-        </code></pre><p class="calibre6">To get around this, use the <code class="calibre11">virtualenv</code> command instead.</p>
-        <p class="calibre6"></p><p class="calibre6">command-line</p><p class="calibre6"></p>
-        <pre class="calibre13"><code class="calibre11">$ sudo apt install python-virtualenv
+        </code></pre>
+       <p class="calibre6">
+        In this case, follow the instructions above and install the
+        <code class="calibre11">
+         python3-venv
+        </code>
+        package:
+       </p>
+       <p class="calibre6">
+        command-line
+       </p>
+       <p class="calibre6">
+       </p>
+       <pre class="calibre13"><code class="calibre11">$ sudo apt install python3-venv
+        </code></pre>
+       <p class="calibre6">
+        <strong class="calibre10">
+         NOTE:
+        </strong>
+        On some versions of Debian/Ubuntu initiating the virtual environment like this currently gives the following error:
+       </p>
+       <p class="calibre6">
+       </p>
+       <p class="calibre6">
+        command-line
+       </p>
+       <p class="calibre6">
+       </p>
+       <pre class="calibre13"><code class="calibre11">Error: Command '['/home/eddie/Slask/tmp/venv/bin/python3', '-Im', 'ensurepip', '--upgrade', '--default-pip']' returned non-zero exit status 1
+        </code></pre>
+       <p class="calibre6">
+        To get around this, use the
+        <code class="calibre11">
+         virtualenv
+        </code>
+        command instead.
+       </p>
+       <p class="calibre6">
+       </p>
+       <p class="calibre6">
+        command-line
+       </p>
+       <p class="calibre6">
+       </p>
+       <pre class="calibre13"><code class="calibre11">$ sudo apt install python-virtualenv
         $ virtualenv --python=python3.12 myvenv
-        </code></pre><p class="calibre6"><strong class="calibre10">NOTE:</strong> If you get an error like</p>
-        <p class="calibre6"></p><p class="calibre6">command-line</p><p class="calibre6"></p>
-        <pre class="calibre13"><code class="calibre11">E: Unable to locate package python3-venv
-        </code></pre><p class="calibre6">then instead run:</p>
-        <p class="calibre6"></p><p class="calibre6">command-line</p><p class="calibre6"></p>
-        <pre class="calibre13"><code class="calibre11">sudo apt install python3.12-venv
-        </code></pre></blockquote>
-        </sec>
-        <h2 id="working-with-virtualenv" class="calibre7">Working with virtualenv</h2>
-        <p class="calibre6">The command above will create a directory called <code class="calibre11">myvenv</code> (or whatever name you chose) that contains our virtual environment (basically a bunch of directories and files).</p>
-        <sec data-title="Working with virtualenv: Windows" data-id="virtualenv_windows" data-collapse="true"><b class="calibre10">Working with virtualenv: Windows</b>
-        <p class="calibre6">Start your virtual environment by running:</p>
-        <p class="calibre6"></p><p class="calibre6">command-line</p><p class="calibre6"></p>
-        <pre class="calibre13"><code class="calibre11">C:\Users\Name\djangogirls&gt; myvenv\Scripts\activate
-        </code></pre><blockquote class="calibre5">
-        <p class="calibre6"><strong class="calibre10">NOTE:</strong> On Windows 10 you might get an error in the Windows PowerShell that says <code class="calibre11">execution of scripts is disabled on this system</code>. In this case, open another Windows PowerShell with the "Run as Administrator" option.  Then try typing the following command before starting your virtual environment:</p>
-        <p class="calibre6"></p><p class="calibre6">command-line</p><p class="calibre6"></p>
-        <pre class="calibre13"><code class="calibre11">C:\WINDOWS\system32&gt; Set-ExecutionPolicy -ExecutionPolicy RemoteSigned
+        </code></pre>
+       <p class="calibre6">
+        <strong class="calibre10">
+         NOTE:
+        </strong>
+        If you get an error like
+       </p>
+       <p class="calibre6">
+       </p>
+       <p class="calibre6">
+        command-line
+       </p>
+       <p class="calibre6">
+       </p>
+       <pre class="calibre13"><code class="calibre11">E: Unable to locate package python3-venv
+        </code></pre>
+       <p class="calibre6">
+        then instead run:
+       </p>
+       <p class="calibre6">
+       </p>
+       <p class="calibre6">
+        command-line
+       </p>
+       <p class="calibre6">
+       </p>
+       <pre class="calibre13"><code class="calibre11">sudo apt install python3.12-venv
+        </code></pre>
+      </blockquote>
+     </sec>
+     <h2 class="calibre7" id="working-with-virtualenv">
+      Working with virtualenv
+     </h2>
+     <p class="calibre6">
+      The command above will create a directory called
+      <code class="calibre11">
+       myvenv
+      </code>
+      (or whatever name you chose) that contains our virtual environment (basically a bunch of directories and files).
+     </p>
+     <sec data-collapse="true" data-id="virtualenv_windows" data-title="Working with virtualenv: Windows">
+      <b class="calibre10">
+       Working with virtualenv: Windows
+      </b>
+      <p class="calibre6">
+       Start your virtual environment by running:
+      </p>
+      <p class="calibre6">
+      </p>
+      <p class="calibre6">
+       command-line
+      </p>
+      <p class="calibre6">
+      </p>
+      <pre class="calibre13"><code class="calibre11">C:\Users\Name\djangogirls&gt; myvenv\Scripts\activate
+        </code></pre>
+      <blockquote class="calibre5">
+       <p class="calibre6">
+        <strong class="calibre10">
+         NOTE:
+        </strong>
+        On Windows 10 you might get an error in the Windows PowerShell that says
+        <code class="calibre11">
+         execution of scripts is disabled on this system
+        </code>
+        . In this case, open another Windows PowerShell with the "Run as Administrator" option.  Then try typing the following command before starting your virtual environment:
+       </p>
+       <p class="calibre6">
+       </p>
+       <p class="calibre6">
+        command-line
+       </p>
+       <p class="calibre6">
+       </p>
+       <pre class="calibre13"><code class="calibre11">C:\WINDOWS\system32&gt; Set-ExecutionPolicy -ExecutionPolicy RemoteSigned
             Execution Policy Change
             The execution policy helps protect you from scripts that you do not trust. Changing the execution policy might expose you to the security risks described in the about_Execution_Policies help topic at https://go.microsoft.com/fwlink/?LinkID=135170. Do you want to change the execution policy? [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"): A
-        </code></pre></blockquote>
-
-        <blockquote class="calibre5">
-        <p class="calibre6"><strong class="calibre10">NOTE:</strong> For users of the popular editor VS Code, which comes with an integrated terminal based off windows PowerShell, if you wish to stick with the integrated terminal, you may run the following command to activate your virtual environment:</p>
-        <pre class="calibre13"><code class="calibre11">$ . myvenv\Scripts\activate.ps1
-        </code></pre><p class="calibre6">The advantage is that you don't have to switch between editor windows and command-line windows</p>
-        </blockquote>
-        </sec>
-        <sec data-title="Working with virtualenv: Linux and macOS" data-id="virtualenv_linuxosx" data-collapse="true"><b class="calibre10">Working with virtualenv: Linux and macOS</b>
-        <p class="calibre6">Start your virtual environment by running:</p>
-        <p class="calibre6"></p><p class="calibre6">command-line</p><p class="calibre6"></p>
-        <pre class="calibre13"><code class="calibre11">$ source myvenv/bin/activate
-        </code></pre><p class="calibre6">Remember to replace <code class="calibre11">myvenv</code> with your chosen <code class="calibre11">virtualenv</code> name!</p>
-        <blockquote class="calibre5">
-        <p class="calibre6"><strong class="calibre10">NOTE:</strong> If the command <code class="calibre11">source</code> is not available, try doing this instead:</p>
-        <p class="calibre6"></p><p class="calibre6">command-line</p><p class="calibre6"></p>
-        <pre class="calibre13"><code class="calibre11">$ . myvenv/bin/activate
-        </code></pre></blockquote>
-        </sec>
-        <p class="calibre6">You will know that you have <code class="calibre11">virtualenv</code> started when you see that the prompt in your console is prefixed with <code class="calibre11">(myvenv)</code>.</p>
-        <p class="calibre6">When working within a virtual environment, <code class="calibre11">python</code> will automatically refer to the correct version so you can use <code class="calibre11">python</code> instead of <code class="calibre11">python3</code>.</p>
-        <p class="calibre6">OK, we have all important dependencies in place. We can finally install Django!</p>
-        <h2 id="django" class="calibre7">Installing Django </h2>
-        <p class="calibre6">Now that you have your <code class="calibre11">virtualenv</code> started, you can install Django.</p>
-        <p class="calibre6">Before we do that, we should make sure we have the latest version of <code class="calibre11">pip</code>, the software that we use to install Django:</p>
-        <p class="calibre6"></p><p class="calibre6">command-line</p><p class="calibre6"></p>
-        <pre class="calibre13"><code class="calibre11">(myvenv) ~$ python -m pip install --upgrade pip
-        </code></pre><h3 id="installing-packages-with-requirements" class="calibre12">Installing packages with requirements</h3>
-        <p class="calibre6">A requirements file keeps a list of dependencies to be installed using
-        <code class="calibre11">pip install</code>:</p>
-        <p class="calibre6">First create a <code class="calibre11">requirements.txt</code> file inside of the <code class="calibre11">djangogirls/</code> folder, using the code editor that you installed earlier. You do this by opening a new file in the code editor and then saving it as <code class="calibre11">requirements.txt</code> in the <code class="calibre11">djangogirls/</code> folder. Your directory will look like this:</p>
-        <pre class="calibre13"><code class="calibre11">djangogirls
+        </code></pre>
+      </blockquote>
+      <blockquote class="calibre5">
+       <p class="calibre6">
+        <strong class="calibre10">
+         NOTE:
+        </strong>
+        For users of the popular editor VS Code, which comes with an integrated terminal based off windows PowerShell, if you wish to stick with the integrated terminal, you may run the following command to activate your virtual environment:
+       </p>
+       <pre class="calibre13"><code class="calibre11">$ . myvenv\Scripts\activate.ps1
+        </code></pre>
+       <p class="calibre6">
+        The advantage is that you don't have to switch between editor windows and command-line windows
+       </p>
+      </blockquote>
+     </sec>
+     <sec data-collapse="true" data-id="virtualenv_linuxosx" data-title="Working with virtualenv: Linux and macOS">
+      <b class="calibre10">
+       Working with virtualenv: Linux and macOS
+      </b>
+      <p class="calibre6">
+       Start your virtual environment by running:
+      </p>
+      <p class="calibre6">
+      </p>
+      <p class="calibre6">
+       command-line
+      </p>
+      <p class="calibre6">
+      </p>
+      <pre class="calibre13"><code class="calibre11">$ source myvenv/bin/activate
+        </code></pre>
+      <p class="calibre6">
+       Remember to replace
+       <code class="calibre11">
+        myvenv
+       </code>
+       with your chosen
+       <code class="calibre11">
+        virtualenv
+       </code>
+       name!
+      </p>
+      <blockquote class="calibre5">
+       <p class="calibre6">
+        <strong class="calibre10">
+         NOTE:
+        </strong>
+        If the command
+        <code class="calibre11">
+         source
+        </code>
+        is not available, try doing this instead:
+       </p>
+       <p class="calibre6">
+       </p>
+       <p class="calibre6">
+        command-line
+       </p>
+       <p class="calibre6">
+       </p>
+       <pre class="calibre13"><code class="calibre11">$ . myvenv/bin/activate
+        </code></pre>
+      </blockquote>
+     </sec>
+     <p class="calibre6">
+      You will know that you have
+      <code class="calibre11">
+       virtualenv
+      </code>
+      started when you see that the prompt in your console is prefixed with
+      <code class="calibre11">
+       (myvenv)
+      </code>
+      .
+     </p>
+     <p class="calibre6">
+      When working within a virtual environment,
+      <code class="calibre11">
+       python
+      </code>
+      will automatically refer to the correct version so you can use
+      <code class="calibre11">
+       python
+      </code>
+      instead of
+      <code class="calibre11">
+       python3
+      </code>
+      .
+     </p>
+     <p class="calibre6">
+      OK, we have all important dependencies in place. We can finally install Django!
+     </p>
+     <h2 class="calibre7" id="django">
+      Installing Django
+     </h2>
+     <p class="calibre6">
+      Now that you have your
+      <code class="calibre11">
+       virtualenv
+      </code>
+      started, you can install Django.
+     </p>
+     <p class="calibre6">
+      Before we do that, we should make sure we have the latest version of
+      <code class="calibre11">
+       pip
+      </code>
+      , the software that we use to install Django:
+     </p>
+     <p class="calibre6">
+     </p>
+     <p class="calibre6">
+      command-line
+     </p>
+     <p class="calibre6">
+     </p>
+     <pre class="calibre13"><code class="calibre11">(myvenv) ~$ python -m pip install --upgrade pip
+        </code></pre>
+     <h3 class="calibre12" id="installing-packages-with-requirements">
+      Installing packages with requirements
+     </h3>
+     <p class="calibre6">
+      A requirements file keeps a list of dependencies to be installed using
+      <code class="calibre11">
+       pip install
+      </code>
+      :
+     </p>
+     <p class="calibre6">
+      First create a
+      <code class="calibre11">
+       requirements.txt
+      </code>
+      file inside of the
+      <code class="calibre11">
+       djangogirls/
+      </code>
+      folder, using the code editor that you installed earlier. You do this by opening a new file in the code editor and then saving it as
+      <code class="calibre11">
+       requirements.txt
+      </code>
+      in the
+      <code class="calibre11">
+       djangogirls/
+      </code>
+      folder. Your directory will look like this:
+     </p>
+     <pre class="calibre13"><code class="calibre11">djangogirls
         ├── myvenv
         │   └── ...
         └───requirements.txt
-        </code></pre><p class="calibre6">In your <code class="calibre11">djangogirls/requirements.txt</code> file you should add the following text:</p>
-        <p class="calibre6"></p><p class="calibre6">djangogirls/requirements.txt</p><p class="calibre6"></p>
-        <pre class="calibre13"><code class="calibre11">Django~=5.1.2
-        </code></pre><p class="calibre6">Now, run <code class="calibre11">pip install -r requirements.txt</code> to install Django.</p>
-        <p class="calibre6"></p><p class="calibre6">command-line</p><p class="calibre6"></p>
-        <pre class="calibre13"><code class="calibre11">(myvenv) ~$ pip install -r requirements.txt
+        </code></pre>
+     <p class="calibre6">
+      In your
+      <code class="calibre11">
+       djangogirls/requirements.txt
+      </code>
+      file you should add the following text:
+     </p>
+     <p class="calibre6">
+     </p>
+     <p class="calibre6">
+      djangogirls/requirements.txt
+     </p>
+     <p class="calibre6">
+     </p>
+     <pre class="calibre13"><code class="calibre11">Django~=5.1.2
+        </code></pre>
+     <p class="calibre6">
+      Now, run
+      <code class="calibre11">
+       pip install -r requirements.txt
+      </code>
+      to install Django.
+     </p>
+     <p class="calibre6">
+     </p>
+     <p class="calibre6">
+      command-line
+     </p>
+     <p class="calibre6">
+     </p>
+     <pre class="calibre13"><code class="calibre11">(myvenv) ~$ pip install -r requirements.txt
         Collecting Django~=5.1.2 (from -r requirements.txt (line 1))
           Downloading Django-5.1.2-py3-none-any.whl (7.9MB)
         Installing collected packages: Django
         Successfully installed Django-5.1.2
-        </code></pre><sec data-title="Installing Django: Windows" data-id="django_err_windows" data-collapse="true"><b class="calibre10">Installing Django: Windows</b>
-        <blockquote class="calibre5">
-        <p class="calibre6">If you get an error when calling pip on Windows, please check if your project pathname contains spaces, accents or special characters (for example, <code class="calibre11">C:\Users\User Name\djangogirls</code>). If it does, please consider using another place without spaces, accents or special characters (suggestion: <code class="calibre11">C:\djangogirls</code>). Create a new virtualenv in the new directory, then delete the old one and try the above command again. (Moving the virtualenv directory won't work since virtualenv uses absolute paths.)</p>
-        </blockquote>
-        </sec>
-        <sec data-title="Installing Django: Windows 8 and Windows 10" data-id="django_err_windows8and10" data-collapse="true"><b class="calibre10">Installing Django: Windows 8 and Windows 10</b>
-        <blockquote class="calibre5">
-        <p class="calibre6">Your command line might freeze when you try to install Django. If this happens, instead of the above command use:</p>
-        <p class="calibre6"></p><p class="calibre6">command-line</p><p class="calibre6"></p>
-        <pre class="calibre13"><code class="calibre11">C:\Users\Name\djangogirls&gt; python -m pip install -r requirements.txt
-        </code></pre></blockquote>
-        </sec>
-        <sec data-title="Installing Django: Linux" data-id="django_err_linux" data-collapse="true"><b class="calibre10">Installing Django: Linux</b>
-        <blockquote class="calibre5">
-        <p class="calibre6">If you get an error when calling pip on Ubuntu 12.04 please run <code class="calibre11">python -m pip install -U --force-reinstall pip</code> to fix the pip installation in the virtualenv.</p>
-        </blockquote>
-        </sec>
-        <p class="calibre6">That's it! You're now (finally) ready to create a Django application!</p>
-        <h2 id="git" class="calibre7">Install Git </h2>
-        <p class="calibre6">Git is a "version control system" used by a lot of programmers. This software can track changes to files over time so that you can recall specific versions later. A bit like the "track changes" feature in word processor programs (e.g., Microsoft Word or LibreOffice Writer), but much more powerful.</p>
-        <h2 id="installing-git" class="calibre7">Installing Git</h2>
-        <sec data-title="Installing Git: Windows" data-id="git_install_windows" data-collapse="true"><b class="calibre10">Installing Git: Windows</b>
-        <p class="calibre6">You can download Git from <a href="https://git-scm.com/" target="_blank">git-scm.com</a>. You can hit "next" on all steps except for two: in the step where it asks to choose your editor, you should pick Nano, and in the step entitled "Adjusting your PATH environment", choose "Use Git and optional Unix tools from the Windows Command Prompt" (the bottom option). Other than that, the defaults are fine. Checkout Windows-style, commit Unix-style line endings is good.</p>
-        <p class="calibre6">Do not forget to restart the command prompt or PowerShell after the installation finished successfully.
-        </p></sec><p class="calibre6"></p>
-        <sec data-title="Installing Git: macOS" data-id="git_install_OSX" data-collapse="true"><b class="calibre10">Installing Git: macOS</b>
-        <p class="calibre6">Download Git from <a href="https://git-scm.com/download/mac" target="_blank">https://git-scm.com/download/mac</a> and follow the instructions.</p>
-        <blockquote class="calibre5">
-        <p class="calibre6"><strong class="calibre10">Note</strong> If you are running OS X 10.6, 10.7, or 10.8, you will need to install the version of git from here: <a href="https://sourceforge.net/projects/git-osx-installer/files/git-2.3.5-intel-universal-snow-leopard.dmg/download" target="_blank">Git installer for OS X Snow Leopard</a></p>
-        <p class="calibre6">It is recommended to install using brew (you may need to install homebrew if you don't already have it): 
-        <code class="calibre11">brew install git</code></p>
-        <p class="calibre6">Please note that some Mac M1/M2/M3 users may have the error <code class="calibre11">zsh: command not found: brew</code>. In that case, please follow <a href="https://stackoverflow.com/a/66019047" target="_blank">this</a> or <a href="https://mac.install.guide/homebrew/zsh-command-not-found-brew" target="_blank">this</a> to fix the error.</p>
-        </blockquote>
-        </sec>
-        <sec data-title="Installing Git: Debian or Ubuntu" data-id="git_install_debian_ubuntu" data-collapse="true"><b class="calibre10">Installing Git: Debian or Ubuntu</b>
-        <p class="calibre6"></p><p class="calibre6">command-line</p><p class="calibre6"></p>
-        <pre class="calibre13"><code class="calibre11">$ sudo apt install git
         </code></pre>
-        </sec>
-        <sec data-title="Installing Git: Fedora" data-id="git_install_fedora" data-collapse="true"><b class="calibre10">Installing Git: Fedora</b>
-        <p class="calibre6"></p><p class="calibre6">command-line</p><p class="calibre6"></p>
-        <pre class="calibre13"><code class="calibre11">$ sudo dnf install git
+     <sec data-collapse="true" data-id="django_err_windows" data-title="Installing Django: Windows">
+      <b class="calibre10">
+       Installing Django: Windows
+      </b>
+      <blockquote class="calibre5">
+       <p class="calibre6">
+        If you get an error when calling pip on Windows, please check if your project pathname contains spaces, accents or special characters (for example,
+        <code class="calibre11">
+         C:\Users\User Name\djangogirls
+        </code>
+        ). If it does, please consider using another place without spaces, accents or special characters (suggestion:
+        <code class="calibre11">
+         C:\djangogirls
+        </code>
+        ). Create a new virtualenv in the new directory, then delete the old one and try the above command again. (Moving the virtualenv directory won't work since virtualenv uses absolute paths.)
+       </p>
+      </blockquote>
+     </sec>
+     <sec data-collapse="true" data-id="django_err_windows8and10" data-title="Installing Django: Windows 8 and Windows 10">
+      <b class="calibre10">
+       Installing Django: Windows 8 and Windows 10
+      </b>
+      <blockquote class="calibre5">
+       <p class="calibre6">
+        Your command line might freeze when you try to install Django. If this happens, instead of the above command use:
+       </p>
+       <p class="calibre6">
+       </p>
+       <p class="calibre6">
+        command-line
+       </p>
+       <p class="calibre6">
+       </p>
+       <pre class="calibre13"><code class="calibre11">C:\Users\Name\djangogirls&gt; python -m pip install -r requirements.txt
         </code></pre>
-        </sec>
-        <sec data-title="Installing Git: openSUSE" data-id="git_install_openSUSE" data-collapse="true"><b class="calibre10">Installing Git: openSUSE</b>
-        <p class="calibre6"></p><p class="calibre6">command-line</p><p class="calibre6"></p>
-        <pre class="calibre13"><code class="calibre11">$ sudo zypper install git
+      </blockquote>
+     </sec>
+     <sec data-collapse="true" data-id="django_err_linux" data-title="Installing Django: Linux">
+      <b class="calibre10">
+       Installing Django: Linux
+      </b>
+      <blockquote class="calibre5">
+       <p class="calibre6">
+        If you get an error when calling pip on Ubuntu 12.04 please run
+        <code class="calibre11">
+         python -m pip install -U --force-reinstall pip
+        </code>
+        to fix the pip installation in the virtualenv.
+       </p>
+      </blockquote>
+     </sec>
+     <p class="calibre6">
+      That's it! You're now (finally) ready to create a Django application!
+     </p>
+     <h2 class="calibre7" id="git">
+      Install Git
+     </h2>
+     <p class="calibre6">
+      Git is a "version control system" used by a lot of programmers. This software can track changes to files over time so that you can recall specific versions later. A bit like the "track changes" feature in word processor programs (e.g., Microsoft Word or LibreOffice Writer), but much more powerful.
+     </p>
+     <h2 class="calibre7" id="installing-git">
+      Installing Git
+     </h2>
+     <sec data-collapse="true" data-id="git_install_windows" data-title="Installing Git: Windows">
+      <b class="calibre10">
+       Installing Git: Windows
+      </b>
+      <p class="calibre6">
+       You can download Git from
+       <a href="https://git-scm.com/" target="_blank">
+        git-scm.com
+       </a>
+       . You can hit "next" on all steps except for two: in the step where it asks to choose your editor, you should pick Nano, and in the step entitled "Adjusting your PATH environment", choose "Use Git and optional Unix tools from the Windows Command Prompt" (the bottom option). Other than that, the defaults are fine. Checkout Windows-style, commit Unix-style line endings is good.
+      </p>
+      <p class="calibre6">
+       Do not forget to restart the command prompt or PowerShell after the installation finished successfully.
+      </p>
+     </sec>
+     <p class="calibre6">
+     </p>
+     <sec data-collapse="true" data-id="git_install_OSX" data-title="Installing Git: macOS">
+      <b class="calibre10">
+       Installing Git: macOS
+      </b>
+      <p class="calibre6">
+       Download Git from
+       <a href="https://git-scm.com/download/mac" target="_blank">
+        https://git-scm.com/download/mac
+       </a>
+       and follow the instructions.
+      </p>
+      <blockquote class="calibre5">
+       <p class="calibre6">
+        <strong class="calibre10">
+         Note
+        </strong>
+        If you are running OS X 10.6, 10.7, or 10.8, you will need to install the version of git from here:
+        <a href="https://sourceforge.net/projects/git-osx-installer/files/git-2.3.5-intel-universal-snow-leopard.dmg/download" target="_blank">
+         Git installer for OS X Snow Leopard
+        </a>
+       </p>
+       <p class="calibre6">
+        It is recommended to install using brew (you may need to install homebrew if you don't already have it):
+        <code class="calibre11">
+         brew install git
+        </code>
+       </p>
+       <p class="calibre6">
+        Please note that some Mac M1/M2/M3 users may have the error
+        <code class="calibre11">
+         zsh: command not found: brew
+        </code>
+        . In that case, please follow
+        <a href="https://stackoverflow.com/a/66019047" target="_blank">
+         this
+        </a>
+        or
+        <a href="https://mac.install.guide/homebrew/zsh-command-not-found-brew" target="_blank">
+         this
+        </a>
+        to fix the error.
+       </p>
+      </blockquote>
+     </sec>
+     <sec data-collapse="true" data-id="git_install_debian_ubuntu" data-title="Installing Git: Debian or Ubuntu">
+      <b class="calibre10">
+       Installing Git: Debian or Ubuntu
+      </b>
+      <p class="calibre6">
+      </p>
+      <p class="calibre6">
+       command-line
+      </p>
+      <p class="calibre6">
+      </p>
+      <pre class="calibre13"><code class="calibre11">$ sudo apt install git
         </code></pre>
-        </sec>
-        <h2 id="github-account" class="calibre7">Create a GitHub account </h2>
-        <p class="calibre6">Go to <a href="https://www.github.com" target="_blank">GitHub.com</a> and sign up for a new, free user account. Be sure to remember your password (add it to your password manager, if you use one).</p>
-        <h2 id="pythonanywhere-account" class="calibre7">Create a PythonAnywhere account </h2>
-        <p class="calibre6">PythonAnywhere is a service for running Python code on servers "in the cloud". We'll use
-        it for hosting our site, live and on the Internet.</p>
-        <p class="calibre6">We will be hosting the blog we're building on PythonAnywhere. Sign up for a "Beginner" account on PythonAnywhere (the free tier is fine, you don't need a credit card).</p>
-        <ul class="calibre9">
-        <li class="calibre3"><a href="https://www.pythonanywhere.com/" target="_blank">www.pythonanywhere.com</a></li>
-        </ul>
-        <p class="calibre6"><img src="content/pythonanywhere_beginner_account_button.png" alt="The PythonAnywhere signup page showing button to create a free 'Beginner' account" class="calibre8"></img></p>
-        <blockquote class="calibre5">
-        <p class="calibre6"><strong class="calibre10">Note</strong> When choosing your username here, bear in mind that your blog's URL will take the form <code class="calibre11">yourusername.pythonanywhere.com</code>, so choose either your own nickname or a name for what your blog is all about. Also, be sure to remember your password (add it to your password manager, if you use one).</p>
-        </blockquote>
-        <h2 id="creating-a-pythonanywhere-api-token" class="calibre7">Creating a PythonAnywhere API token</h2>
-        <p class="calibre6">This is something you only need to do once.  When you've signed up for PythonAnywhere, you'll be taken to your dashboard.  Find the link near the top right to your "Account" page:</p>
-        <p class="calibre6"><img src="content/pythonanywhere_account.png" alt="Account link on the top right on the page" class="calibre8"></img></p>
-        <p class="calibre6">then select the tab named "API token", and hit the button that says "Create new API token".</p>
-        <p class="calibre6"><img src="content/pythonanywhere_create_api_token.png" alt="The API token tab on the Account page" class="calibre8"></img></p>
-        <h1 id="start-reading" class="calibre1">Start reading</h1>
-        <p class="calibre6">Congratulations, you are all set up and ready to go! If you still have some time before the workshop, it would be useful to start reading a few of the beginning chapters:</p>
-        <ul class="calibre9">
-        <li class="calibre3"><p class="calibre6"><a href="index3.html">How the internet works</a></p>
-        </li>
-        <li class="calibre3"><p class="calibre6"><a href="index4.html">Introduction to the command line</a></p>
-        </li>
-        <li class="calibre3"><p class="calibre6"><a href="index7.html">Introduction to Python</a></p>
-        </li>
-        <li class="calibre3"><p class="calibre6"><a href="index8.html">What is Django?</a></p>
-        </li>
-        </ul>
-        <h1 id="enjoy-the-workshop" class="calibre1">Enjoy the workshop!</h1>
-        <p class="calibre6">When you begin the workshop, you'll be able to go straight to <a href="index10.html">Your first Django project!</a> because you already covered the material in the earlier chapters.</p>
-
-                </div>
-    
-        </div>
-
-        
-    
-    </main>
-    <nav class="book-nav"><a href="index.html">Contents</a><a href="003-introduction.html">Previous</a><a href="005-installation-chromebook.html">Next</a></nav>
-    <footer class="book-footer">
-        <p>Generated from the original EPUB. Content © respective authors under CC BY-SA 4.0.</p>
-    </footer>
-</body>
+     </sec>
+     <sec data-collapse="true" data-id="git_install_fedora" data-title="Installing Git: Fedora">
+      <b class="calibre10">
+       Installing Git: Fedora
+      </b>
+      <p class="calibre6">
+      </p>
+      <p class="calibre6">
+       command-line
+      </p>
+      <p class="calibre6">
+      </p>
+      <pre class="calibre13"><code class="calibre11">$ sudo dnf install git
+        </code></pre>
+     </sec>
+     <sec data-collapse="true" data-id="git_install_openSUSE" data-title="Installing Git: openSUSE">
+      <b class="calibre10">
+       Installing Git: openSUSE
+      </b>
+      <p class="calibre6">
+      </p>
+      <p class="calibre6">
+       command-line
+      </p>
+      <p class="calibre6">
+      </p>
+      <pre class="calibre13"><code class="calibre11">$ sudo zypper install git
+        </code></pre>
+     </sec>
+     <h2 class="calibre7" id="github-account">
+      Create a GitHub account
+     </h2>
+     <p class="calibre6">
+      Go to
+      <a href="https://www.github.com" target="_blank">
+       GitHub.com
+      </a>
+      and sign up for a new, free user account. Be sure to remember your password (add it to your password manager, if you use one).
+     </p>
+     <h2 class="calibre7" id="pythonanywhere-account">
+      Create a PythonAnywhere account
+     </h2>
+     <p class="calibre6">
+      PythonAnywhere is a service for running Python code on servers "in the cloud". We'll use
+        it for hosting our site, live and on the Internet.
+     </p>
+     <p class="calibre6">
+      We will be hosting the blog we're building on PythonAnywhere. Sign up for a "Beginner" account on PythonAnywhere (the free tier is fine, you don't need a credit card).
+     </p>
+     <ul class="calibre9">
+      <li class="calibre3">
+       <a href="https://www.pythonanywhere.com/" target="_blank">
+        www.pythonanywhere.com
+       </a>
+      </li>
+     </ul>
+     <p class="calibre6">
+      <img alt="The PythonAnywhere signup page showing button to create a free 'Beginner' account" class="calibre8" src="content/pythonanywhere_beginner_account_button.png"/>
+     </p>
+     <blockquote class="calibre5">
+      <p class="calibre6">
+       <strong class="calibre10">
+        Note
+       </strong>
+       When choosing your username here, bear in mind that your blog's URL will take the form
+       <code class="calibre11">
+        yourusername.pythonanywhere.com
+       </code>
+       , so choose either your own nickname or a name for what your blog is all about. Also, be sure to remember your password (add it to your password manager, if you use one).
+      </p>
+     </blockquote>
+     <h2 class="calibre7" id="creating-a-pythonanywhere-api-token">
+      Creating a PythonAnywhere API token
+     </h2>
+     <p class="calibre6">
+      This is something you only need to do once.  When you've signed up for PythonAnywhere, you'll be taken to your dashboard.  Find the link near the top right to your "Account" page:
+     </p>
+     <p class="calibre6">
+      <img alt="Account link on the top right on the page" class="calibre8" src="content/pythonanywhere_account.png"/>
+     </p>
+     <p class="calibre6">
+      then select the tab named "API token", and hit the button that says "Create new API token".
+     </p>
+     <p class="calibre6">
+      <img alt="The API token tab on the Account page" class="calibre8" src="content/pythonanywhere_create_api_token.png"/>
+     </p>
+     <h1 class="calibre1" id="start-reading">
+      Start reading
+     </h1>
+     <p class="calibre6">
+      Congratulations, you are all set up and ready to go! If you still have some time before the workshop, it would be useful to start reading a few of the beginning chapters:
+     </p>
+     <ul class="calibre9">
+      <li class="calibre3">
+       <p class="calibre6">
+        <a href="index3.html">
+         How the internet works
+        </a>
+       </p>
+      </li>
+      <li class="calibre3">
+       <p class="calibre6">
+        <a href="index4.html">
+         Introduction to the command line
+        </a>
+       </p>
+      </li>
+      <li class="calibre3">
+       <p class="calibre6">
+        <a href="index7.html">
+         Introduction to Python
+        </a>
+       </p>
+      </li>
+      <li class="calibre3">
+       <p class="calibre6">
+        <a href="index8.html">
+         What is Django?
+        </a>
+       </p>
+      </li>
+     </ul>
+     <h1 class="calibre1" id="enjoy-the-workshop">
+      Enjoy the workshop!
+     </h1>
+     <p class="calibre6">
+      When you begin the workshop, you'll be able to go straight to
+      <a href="index10.html">
+       Your first Django project!
+      </a>
+      because you already covered the material in the earlier chapters.
+     </p>
+    </div>
+   </div>
+  </main>
+  <nav class="book-nav nav-bottom">
+   <a href="../index.html">
+    Home
+   </a>
+   <a href="index.html">
+    Contents
+   </a>
+   <a href="003-introduction.html">
+    Previous
+   </a>
+   <a href="005-installation-chromebook.html">
+    Next
+   </a>
+  </nav>
+  <footer class="book-footer">
+   <p>
+    Generated from the original EPUB. Content © respective authors under CC BY-SA 4.0.
+   </p>
+  </footer>
+ </body>
 </html>

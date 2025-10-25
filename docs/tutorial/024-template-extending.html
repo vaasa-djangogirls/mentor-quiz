@@ -1,42 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Template extending</title>
-    <link rel="stylesheet" href="book.css" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"></meta>
-    <meta name="description" content=""></meta>
-    <meta name="generator" content="HonKit 3.7.5"></meta>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta>
-  <link rel="stylesheet" type="text/css" href="content/stylesheet.css"></link>
-<link rel="stylesheet" type="text/css" href="content/page_styles.css"></link>
-
-</head>
-<body>
-    <header class="book-header">
-        <h1>Template extending</h1>
-    </header>
-    <nav class="book-nav"><a href="index.html">Contents</a><a href="023-css-make-it-pretty.html">Previous</a><a href="025-extend-your-application.html">Next</a></nav>
-    <main>
-        <div class="page">
-    
-                <h1 class="calibre1" id="calibre_toc_22">Template extending</h1>
-                <div class="page">
-                    <h1 id="template-extending" class="calibre1">Template extending</h1>
-        <p class="calibre6">Another nice thing Django has for you is <strong class="calibre10">template extending</strong>. What does this mean? It means that you can use the same parts of your HTML for different pages of your website.</p>
-        <p class="calibre6">Templates help when you want to use the same information or layout in more than one place.  You don't have to repeat yourself in every file. And if you want to change something, you don't have to do it in every template, just one!</p>
-        <h2 id="create-a-base-template" class="calibre7">Create a base template</h2>
-        <p class="calibre6">A base template is the most basic template that you extend on every page of your website.</p>
-        <p class="calibre6">Let's create a <code class="calibre11">base.html</code> file in <code class="calibre11">blog/templates/blog/</code>:</p>
-        <pre class="calibre13"><code class="calibre11">blog
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   Template extending
+  </title>
+  <link href="book.css" rel="stylesheet"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="" name="description"/>
+  <meta content="HonKit 3.7.5" name="generator"/>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <link href="content/stylesheet.css" rel="stylesheet" type="text/css"/>
+  <link href="content/page_styles.css" rel="stylesheet" type="text/css"/>
+ </head>
+ <body>
+  <header class="book-header">
+   <p aria-level="1" class="page-title" role="heading">
+    Template extending
+   </p>
+  </header>
+  <nav class="book-nav nav-top">
+   <a href="../index.html">
+    Home
+   </a>
+   <a href="index.html">
+    Contents
+   </a>
+   <a href="023-css-make-it-pretty.html">
+    Previous
+   </a>
+   <a href="025-extend-your-application.html">
+    Next
+   </a>
+  </nav>
+  <main>
+   <div class="page">
+    <h1 class="calibre1" id="calibre_toc_22">
+     Template extending
+    </h1>
+    <div class="page">
+     <h1 class="calibre1" id="template-extending">
+      Template extending
+     </h1>
+     <p class="calibre6">
+      Another nice thing Django has for you is
+      <strong class="calibre10">
+       template extending
+      </strong>
+      . What does this mean? It means that you can use the same parts of your HTML for different pages of your website.
+     </p>
+     <p class="calibre6">
+      Templates help when you want to use the same information or layout in more than one place.  You don't have to repeat yourself in every file. And if you want to change something, you don't have to do it in every template, just one!
+     </p>
+     <h2 class="calibre7" id="create-a-base-template">
+      Create a base template
+     </h2>
+     <p class="calibre6">
+      A base template is the most basic template that you extend on every page of your website.
+     </p>
+     <p class="calibre6">
+      Let's create a
+      <code class="calibre11">
+       base.html
+      </code>
+      file in
+      <code class="calibre11">
+       blog/templates/blog/
+      </code>
+      :
+     </p>
+     <pre class="calibre13"><code class="calibre11">blog
         └───templates
             └───blog
                     base.html
                     post_list.html
-        </code></pre><p class="calibre6">Then open it up in the code editor and copy everything from <code class="calibre11">post_list.html</code> to <code class="calibre11">base.html</code> file, like this:</p>
-        <p class="calibre6"></p><p class="calibre6">blog/templates/blog/base.html</p><p class="calibre6"></p>
-        <pre class="calibre13"><code class="calibre11">{% load static %}
+        </code></pre>
+     <p class="calibre6">
+      Then open it up in the code editor and copy everything from
+      <code class="calibre11">
+       post_list.html
+      </code>
+      to
+      <code class="calibre11">
+       base.html
+      </code>
+      file, like this:
+     </p>
+     <p class="calibre6">
+     </p>
+     <p class="calibre6">
+      blog/templates/blog/base.html
+     </p>
+     <p class="calibre6">
+     </p>
+     <pre class="calibre13"><code class="calibre11">{% load static %}
         <span>&lt;!DOCTYPE <span>html</span>&gt;</span>
         <span>&lt;<span>html</span>&gt;</span>
             <span>&lt;<span>head</span>&gt;</span>
@@ -70,9 +128,33 @@
             <span>&lt;/<span>body</span>&gt;</span>
         <span>&lt;/<span>html</span>&gt;</span>
         </code></pre>
-        <p class="calibre6">Then in <code class="calibre11">base.html</code>, replace your whole <code class="calibre11">&lt;body&gt;</code> (everything between <code class="calibre11">&lt;body&gt;</code> and <code class="calibre11">&lt;/body&gt;</code>) with this:</p>
-        <p class="calibre6"></p><p class="calibre6">blog/templates/blog/base.html</p><p class="calibre6"></p>
-        <pre class="calibre13"><code class="calibre11"><span>&lt;<span>body</span>&gt;</span>
+     <p class="calibre6">
+      Then in
+      <code class="calibre11">
+       base.html
+      </code>
+      , replace your whole
+      <code class="calibre11">
+       &lt;body&gt;
+      </code>
+      (everything between
+      <code class="calibre11">
+       &lt;body&gt;
+      </code>
+      and
+      <code class="calibre11">
+       &lt;/body&gt;
+      </code>
+      ) with this:
+     </p>
+     <p class="calibre6">
+     </p>
+     <p class="calibre6">
+      blog/templates/blog/base.html
+     </p>
+     <p class="calibre6">
+     </p>
+     <pre class="calibre13"><code class="calibre11"><span>&lt;<span>body</span>&gt;</span>
             <span>&lt;<span>header</span> <span>class</span>=<span>"page-header"</span>&gt;</span>
               <span>&lt;<span>div</span> <span>class</span>=<span>"container"</span>&gt;</span>
                   <span>&lt;<span>h1</span>&gt;</span><span>&lt;<span>a</span> <span>href</span>=<span>"/"</span>&gt;</span>Django Girls Blog<span>&lt;/<span>a</span>&gt;</span><span>&lt;/<span>h1</span>&gt;</span>
@@ -88,16 +170,70 @@
             <span>&lt;/<span>main</span>&gt;</span>
         <span>&lt;/<span>body</span>&gt;</span>
         </code></pre>
-        <p class="calibre6">You might notice this replaced everything from <code class="calibre11">{% for post in posts %}</code> to <code class="calibre11">{% endfor %}</code> with: </p>
-        <p class="calibre6"></p><p class="calibre6">blog/templates/blog/base.html</p><p class="calibre6"></p>
-        <pre class="calibre13"><code class="calibre11">{% block content %}
+     <p class="calibre6">
+      You might notice this replaced everything from
+      <code class="calibre11">
+       {% for post in posts %}
+      </code>
+      to
+      <code class="calibre11">
+       {% endfor %}
+      </code>
+      with:
+     </p>
+     <p class="calibre6">
+     </p>
+     <p class="calibre6">
+      blog/templates/blog/base.html
+     </p>
+     <p class="calibre6">
+     </p>
+     <pre class="calibre13"><code class="calibre11">{% block content %}
         {% endblock %}
         </code></pre>
-        <p class="calibre6">But why?  You just created a <code class="calibre11">block</code>!  You used the template tag <code class="calibre11">{% block %}</code> to make an area that will have HTML inserted in it. That HTML will come from another template that extends this template (<code class="calibre11">base.html</code>). We will show you how to do this in a moment.</p>
-        <p class="calibre6">Now save <code class="calibre11">base.html</code> and open your <code class="calibre11">blog/templates/blog/post_list.html</code> again in the code editor.
-        You're going to remove everything above <code class="calibre11">{% for post in posts %}</code> and below <code class="calibre11">{% endfor %}</code>. When you're done, the file will look like this:</p>
-        <p class="calibre6"></p><p class="calibre6">blog/templates/blog/post_list.html</p><p class="calibre6"></p>
-        <pre class="calibre13"><code class="calibre11">{% for post in posts %}
+     <p class="calibre6">
+      But why?  You just created a
+      <code class="calibre11">
+       block
+      </code>
+      !  You used the template tag
+      <code class="calibre11">
+       {% block %}
+      </code>
+      to make an area that will have HTML inserted in it. That HTML will come from another template that extends this template (
+      <code class="calibre11">
+       base.html
+      </code>
+      ). We will show you how to do this in a moment.
+     </p>
+     <p class="calibre6">
+      Now save
+      <code class="calibre11">
+       base.html
+      </code>
+      and open your
+      <code class="calibre11">
+       blog/templates/blog/post_list.html
+      </code>
+      again in the code editor.
+        You're going to remove everything above
+      <code class="calibre11">
+       {% for post in posts %}
+      </code>
+      and below
+      <code class="calibre11">
+       {% endfor %}
+      </code>
+      . When you're done, the file will look like this:
+     </p>
+     <p class="calibre6">
+     </p>
+     <p class="calibre6">
+      blog/templates/blog/post_list.html
+     </p>
+     <p class="calibre6">
+     </p>
+     <pre class="calibre13"><code class="calibre11">{% for post in posts %}
             <span>&lt;<span>article</span> <span>class</span>=<span>"post"</span>&gt;</span>
                 <span>&lt;<span>time</span> <span>class</span>=<span>"date"</span>&gt;</span>
                     {{ post.published_date }}
@@ -107,11 +243,33 @@
             <span>&lt;/<span>article</span>&gt;</span>
         {% endfor %}
         </code></pre>
-        <p class="calibre6">We want to use this as part of our template for all the content blocks.
-        Time to add block tags to this file!</p>
-        <p class="calibre6">You want your block tag to match the tag in your <code class="calibre11">base.html</code> file. You also want it to include all the code that belongs in your content blocks. To do that, put everything between <code class="calibre11">{% block content %}</code> and <code class="calibre11">{% endblock %}</code>. Like this:</p>
-        <p class="calibre6"></p><p class="calibre6">blog/templates/blog/post_list.html</p><p class="calibre6"></p>
-        <pre class="calibre13"><code class="calibre11">{% block content %}
+     <p class="calibre6">
+      We want to use this as part of our template for all the content blocks.
+        Time to add block tags to this file!
+     </p>
+     <p class="calibre6">
+      You want your block tag to match the tag in your
+      <code class="calibre11">
+       base.html
+      </code>
+      file. You also want it to include all the code that belongs in your content blocks. To do that, put everything between
+      <code class="calibre11">
+       {% block content %}
+      </code>
+      and
+      <code class="calibre11">
+       {% endblock %}
+      </code>
+      . Like this:
+     </p>
+     <p class="calibre6">
+     </p>
+     <p class="calibre6">
+      blog/templates/blog/post_list.html
+     </p>
+     <p class="calibre6">
+     </p>
+     <pre class="calibre13"><code class="calibre11">{% block content %}
             {% for post in posts %}
                 <span>&lt;<span>article</span> <span>class</span>=<span>"post"</span>&gt;</span>
                     <span>&lt;<span>time</span> <span>class</span>=<span>"date"</span>&gt;</span>
@@ -123,9 +281,17 @@
             {% endfor %}
         {% endblock %}
         </code></pre>
-        <p class="calibre6">Only one thing left. We need to connect these two templates together.  This is what extending templates is all about!  We'll do this by adding an extends tag to the beginning of the file. Like this:</p>
-        <p class="calibre6"></p><p class="calibre6">blog/templates/blog/post_list.html</p><p class="calibre6"></p>
-        <pre class="calibre13"><code class="calibre11">{% extends 'blog/base.html' %}
+     <p class="calibre6">
+      Only one thing left. We need to connect these two templates together.  This is what extending templates is all about!  We'll do this by adding an extends tag to the beginning of the file. Like this:
+     </p>
+     <p class="calibre6">
+     </p>
+     <p class="calibre6">
+      blog/templates/blog/post_list.html
+     </p>
+     <p class="calibre6">
+     </p>
+     <pre class="calibre13"><code class="calibre11">{% extends 'blog/base.html' %}
 
         {% block content %}
             {% for post in posts %}
@@ -139,21 +305,51 @@
             {% endfor %}
         {% endblock %}
         </code></pre>
-        <p class="calibre6">That's it! Save the file, and check if your website is still working properly. :)</p>
-        <blockquote class="calibre5">
-        <p class="calibre6">If you get the error <code class="calibre11">TemplateDoesNotExist</code>, that means that there is no <code class="calibre11">blog/base.html</code> file and you have <code class="calibre11">runserver</code> running in the console. Try to stop it (by pressing Ctrl+C – the Control and C keys together) and restart it by running a <code class="calibre11">python manage.py runserver</code> command.</p>
-        </blockquote>
-
-                </div>
-    
-        </div>
-
-        
-    
-    </main>
-    <nav class="book-nav"><a href="index.html">Contents</a><a href="023-css-make-it-pretty.html">Previous</a><a href="025-extend-your-application.html">Next</a></nav>
-    <footer class="book-footer">
-        <p>Generated from the original EPUB. Content © respective authors under CC BY-SA 4.0.</p>
-    </footer>
-</body>
+     <p class="calibre6">
+      That's it! Save the file, and check if your website is still working properly. :)
+     </p>
+     <blockquote class="calibre5">
+      <p class="calibre6">
+       If you get the error
+       <code class="calibre11">
+        TemplateDoesNotExist
+       </code>
+       , that means that there is no
+       <code class="calibre11">
+        blog/base.html
+       </code>
+       file and you have
+       <code class="calibre11">
+        runserver
+       </code>
+       running in the console. Try to stop it (by pressing Ctrl+C – the Control and C keys together) and restart it by running a
+       <code class="calibre11">
+        python manage.py runserver
+       </code>
+       command.
+      </p>
+     </blockquote>
+    </div>
+   </div>
+  </main>
+  <nav class="book-nav nav-bottom">
+   <a href="../index.html">
+    Home
+   </a>
+   <a href="index.html">
+    Contents
+   </a>
+   <a href="023-css-make-it-pretty.html">
+    Previous
+   </a>
+   <a href="025-extend-your-application.html">
+    Next
+   </a>
+  </nav>
+  <footer class="book-footer">
+   <p>
+    Generated from the original EPUB. Content © respective authors under CC BY-SA 4.0.
+   </p>
+  </footer>
+ </body>
 </html>
