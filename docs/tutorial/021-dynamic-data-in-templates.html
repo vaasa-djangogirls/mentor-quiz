@@ -1,443 +1,159 @@
 <!DOCTYPE html>
 <html lang="en">
- <head>
-  <meta charset="utf-8"/>
-  <meta content="width=device-width, initial-scale=1" name="viewport"/>
-  <title>
-   Dynamic data in templates
-  </title>
-  <link href="book.css" rel="stylesheet"/>
-  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
-  <meta content="" name="description"/>
-  <meta content="HonKit 3.7.5" name="generator"/>
-  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
-  <link href="content/stylesheet.css" rel="stylesheet" type="text/css"/>
-  <link href="content/page_styles.css" rel="stylesheet" type="text/css"/>
-  <!-- Google tag (gtag.js) -->
-  <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-BN9REN07NH">
-  </script>
-  <script>
-   window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>Dynamic data in templates</title>
+    <link href="book.css" rel="stylesheet" />
+    <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+    <meta content="" name="description" />
+    <meta content="HonKit 3.7.5" name="generator" />
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <link href="content/stylesheet.css" rel="stylesheet" type="text/css" />
+    <link href="content/page_styles.css" rel="stylesheet" type="text/css" />
+    <!-- Google tag (gtag.js) -->
+    <script
+      async=""
+      src="https://www.googletagmanager.com/gtag/js?id=G-BN9REN07NH"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-    gtag('config', 'G-BN9REN07NH');
-  </script>
- </head>
- <body>
-  <header class="book-header">
-   <h1 class="page-title">
-    Dynamic data in templates
-   </h1>
-  </header>
-  <nav class="book-nav" data-chapter="021-dynamic-data-in-templates">
-   <button aria-controls="nav-panel-021-dynamic-data-in-templates" aria-expanded="false" aria-label="Toggle menu" class="nav-toggle" data-target="nav-panel-021-dynamic-data-in-templates" type="button">
-    <span aria-hidden="true" class="icon">
-     ≡
-    </span>
-    <span class="label">
-     Menu
-    </span>
-   </button>
-   <div class="nav-links">
-    <a class="nav-link home" href="../index.html">
-     <span aria-hidden="true" class="icon">
-      ⌂
-     </span>
-     <span class="label">
-      Home
-     </span>
-    </a>
-    <a class="nav-link contents" href="index.html">
-     <span aria-hidden="true" class="icon">
-      ≣
-     </span>
-     <span class="label">
-      Contents
-     </span>
-    </a>
-    <a class="nav-link previous" href="020-django-orm-querysets.html">
-     <span aria-hidden="true" class="icon">
-      ←
-     </span>
-     <span class="label">
-      Previous
-     </span>
-    </a>
-    <a class="nav-link next" href="022-django-templates.html">
-     <span aria-hidden="true" class="icon">
-      →
-     </span>
-     <span class="label">
-      Next
-     </span>
-    </a>
-   </div>
-  </nav>
-  <div aria-hidden="true" class="nav-panel" id="nav-panel-021-dynamic-data-in-templates">
-   <div class="nav-panel__group">
-    <h3 class="nav-panel__title">
-     Shortcuts
-    </h3>
-    <ul class="nav-panel__list">
-     <li>
-      <a class="nav-panel__link" href="../index.html">
-       <span aria-hidden="true" class="icon">
-        ⌂
-       </span>
-       Home
-      </a>
-     </li>
-     <li>
-      <a class="nav-panel__link" href="index.html">
-       <span aria-hidden="true" class="icon">
-        ≣
-       </span>
-       Contents
-      </a>
-     </li>
-     <li>
-      <a class="nav-panel__link" href="020-django-orm-querysets.html">
-       <span aria-hidden="true" class="icon">
-        ←
-       </span>
-       Previous
-      </a>
-     </li>
-     <li>
-      <a class="nav-panel__link" href="022-django-templates.html">
-       <span aria-hidden="true" class="icon">
-        →
-       </span>
-       Next
-      </a>
-     </li>
-    </ul>
-   </div>
-   <div class="nav-panel__group">
-    <h3 class="nav-panel__title">
-     Chapters
-    </h3>
-    <ul class="nav-panel__list">
-     <li>
-      <a class="nav-panel__link" href="001-cover.html">
-       Cover
-      </a>
-     </li>
-     <li>
-      <a class="nav-panel__link" href="003-introduction.html">
-       Introduction
-      </a>
-     </li>
-     <li>
-      <a class="nav-panel__link" href="004-installation.html">
-       Installation
-      </a>
-     </li>
-     <li>
-      <a class="nav-panel__link" href="006-how-the-internet-works.html">
-       How the Internet works
-      </a>
-     </li>
-     <li>
-      <a class="nav-panel__link" href="007-introduction-to-command-line.html">
-       Introduction to command line
-      </a>
-     </li>
-     <li>
-      <a class="nav-panel__link" href="008-python-installation.html">
-       Python installation
-      </a>
-     </li>
-     <li>
-      <a class="nav-panel__link" href="009-code-editor.html">
-       Code editor
-      </a>
-     </li>
-     <li>
-      <a class="nav-panel__link" href="010-introduction-to-python.html">
-       Introduction to Python
-      </a>
-     </li>
-     <li>
-      <a class="nav-panel__link" href="011-what-is-django.html">
-       What is Django?
-      </a>
-     </li>
-     <li>
-      <a class="nav-panel__link" href="012-django-installation.html">
-       Django installation
-      </a>
-     </li>
-     <li>
-      <a class="nav-panel__link" href="013-your-first-django-project.html">
-       Your first Django project!
-      </a>
-     </li>
-     <li>
-      <a class="nav-panel__link" href="014-django-models.html">
-       Django models
-      </a>
-     </li>
-     <li>
-      <a class="nav-panel__link" href="015-django-admin.html">
-       Django admin
-      </a>
-     </li>
-     <li>
-      <a class="nav-panel__link" href="016-deploy.html">
-       Deploy!
-      </a>
-     </li>
-     <li>
-      <a class="nav-panel__link" href="017-django-urls.html">
-       Django URLs
-      </a>
-     </li>
-     <li>
-      <a class="nav-panel__link" href="018-django-views-time-to-create.html">
-       Django views – time to create!
-      </a>
-     </li>
-     <li>
-      <a class="nav-panel__link" href="019-introduction-to-html.html">
-       Introduction to HTML
-      </a>
-     </li>
-     <li>
-      <a class="nav-panel__link" href="020-django-orm-querysets.html">
-       Django ORM (Querysets)
-      </a>
-     </li>
-     <li>
-      <a class="nav-panel__link" href="021-dynamic-data-in-templates.html">
-       Dynamic data in templates
-      </a>
-     </li>
-     <li>
-      <a class="nav-panel__link" href="022-django-templates.html">
-       Django templates
-      </a>
-     </li>
-     <li>
-      <a class="nav-panel__link" href="023-css-make-it-pretty.html">
-       CSS – make it pretty
-      </a>
-     </li>
-     <li>
-      <a class="nav-panel__link" href="024-template-extending.html">
-       Template extending
-      </a>
-     </li>
-     <li>
-      <a class="nav-panel__link" href="025-extend-your-application.html">
-       Extend your application
-      </a>
-     </li>
-     <li>
-      <a class="nav-panel__link" href="026-django-forms.html">
-       Django Forms
-      </a>
-     </li>
-     <li>
-      <a class="nav-panel__link" href="027-what-s-next.html">
-       What's next?
-      </a>
-     </li>
-    </ul>
-   </div>
-  </div>
-  <main>
-   <div class="page">
-    <h2 class="calibre1" id="calibre_toc_19">
-     Dynamic data in templates
-    </h2>
-    <div>
-     <h2 class="calibre1" id="dynamic-data-in-templates">
-      Dynamic data in templates
-     </h2>
-     <p class="calibre6">
-      We have different pieces in place: the
-      <code class="calibre11">
-       Post
-      </code>
-      model is defined in
-      <code class="calibre11">
-       models.py
-      </code>
-      , we have
-      <code class="calibre11">
-       post_list
-      </code>
-      in
-      <code class="calibre11">
-       views.py
-      </code>
-      and the template added. But how will we actually make our posts appear in our HTML template? Because that is what we want to do – take some content (models saved in the database) and display it nicely in our template, right?
-     </p>
-     <p class="calibre6">
-      This is exactly what
-      <em class="calibre14">
-       views
-      </em>
-      are supposed to do: connect models and templates. In our
-      <code class="calibre11">
-       post_list
-      </code>
-      <em class="calibre14">
-       view
-      </em>
-      we will need to take the models we want to display and pass them to the template. In a
-      <em class="calibre14">
-       view
-      </em>
-      we decide what (model) will be displayed in a template.
-     </p>
-     <p class="calibre6">
-      OK, so how will we achieve this?
-     </p>
-     <p class="calibre6">
-      We need to open our
-      <code class="calibre11">
-       blog/views.py
-      </code>
-      in our code editor. So far
-      <code class="calibre11">
-       post_list
-      </code>
-      <em class="calibre14">
-       view
-      </em>
-      looks like this:
-     </p>
-     <p class="calibre6">
-     </p>
-     <p class="calibre6">
-      blog/views.py
-     </p>
-     <p class="calibre6">
-     </p>
-     <pre class="calibre13"><code class="calibre11"><span>from</span> django.shortcuts <span>import</span> render
+      gtag("config", "G-BN9REN07NH");
+    </script>
+  </head>
+  <body data-chapter="021-dynamic-data-in-templates">
+    <header class="book-header">
+      <h1 class="page-title">Dynamic data in templates</h1>
+    </header>
+    <main>
+      <div class="page">
+        <h2 class="calibre1" id="calibre_toc_19">Dynamic data in templates</h2>
+        <p class="calibre6">
+          We have different pieces in place: the
+          <code class="calibre11"> Post </code>
+          model is defined in
+          <code class="calibre11"> models.py </code>
+          , we have
+          <code class="calibre11"> post_list </code>
+          in
+          <code class="calibre11"> views.py </code>
+          and the template added. But how will we actually make our posts appear
+          in our HTML template? Because that is what we want to do – take some
+          content (models saved in the database) and display it nicely in our
+          template, right?
+        </p>
+        <p class="calibre6">
+          This is exactly what
+          <em class="calibre14"> views </em>
+          are supposed to do: connect models and templates. In our
+          <code class="calibre11"> post_list </code>
+          <em class="calibre14"> view </em>
+          we will need to take the models we want to display and pass them to
+          the template. In a
+          <em class="calibre14"> view </em>
+          we decide what (model) will be displayed in a template.
+        </p>
+        <p class="calibre6">OK, so how will we achieve this?</p>
+        <p class="calibre6">
+          We need to open our
+          <code class="calibre11"> blog/views.py </code>
+          in our code editor. So far
+          <code class="calibre11"> post_list </code>
+          <em class="calibre14"> view </em>
+          looks like this:
+        </p>
+        <p class="calibre6"></p>
+        <p class="calibre6">blog/views.py</p>
+        <p class="calibre6"></p>
+        <pre
+          class="calibre13"
+        ><code class="calibre11"><span>from</span> django.shortcuts <span>import</span> render
 
         <span><span>def</span> <span>post_list</span>(<span>request</span>):</span>
             <span>return</span> render(request, <span>'blog/post_list.html'</span>, {})
         </code></pre>
-     <p class="calibre6">
-      Remember when we talked about including code written in different files? Now is the moment when we have to include the model we have written in
-      <code class="calibre11">
-       models.py
-      </code>
-      . We will add the line
-      <code class="calibre11">
-       from .models import Post
-      </code>
-      like this:
-     </p>
-     <p class="calibre6">
-     </p>
-     <p class="calibre6">
-      blog/views.py
-     </p>
-     <p class="calibre6">
-     </p>
-     <pre class="calibre13"><code class="calibre11"><span>from</span> django.shortcuts <span>import</span> render
+        <p class="calibre6">
+          Remember when we talked about including code written in different
+          files? Now is the moment when we have to include the model we have
+          written in
+          <code class="calibre11"> models.py </code>
+          . We will add the line
+          <code class="calibre11"> from .models import Post </code>
+          like this:
+        </p>
+        <p class="calibre6"></p>
+        <p class="calibre6">blog/views.py</p>
+        <p class="calibre6"></p>
+        <pre
+          class="calibre13"
+        ><code class="calibre11"><span>from</span> django.shortcuts <span>import</span> render
         <span>from</span> .models <span>import</span> Post
         </code></pre>
-     <p class="calibre6">
-      The dot before
-      <code class="calibre11">
-       models
-      </code>
-      means
-      <em class="calibre14">
-       current directory
-      </em>
-      or
-      <em class="calibre14">
-       current application
-      </em>
-      . Both
-      <code class="calibre11">
-       views.py
-      </code>
-      and
-      <code class="calibre11">
-       models.py
-      </code>
-      are in the same directory. This means we can use
-      <code class="calibre11">
-       .
-      </code>
-      and the name of the file (without
-      <code class="calibre11">
-       .py
-      </code>
-      ). Then we import the name of the model (
-      <code class="calibre11">
-       Post
-      </code>
-      ).
-     </p>
-     <p class="calibre6">
-      But what's next? To take actual blog posts from the
-      <code class="calibre11">
-       Post
-      </code>
-      model we need something called
-      <code class="calibre11">
-       QuerySet
-      </code>
-      .
-     </p>
-     <h2 class="calibre7" id="queryset">
-      QuerySet
-     </h2>
-     <p class="calibre6">
-      You should already be familiar with how QuerySets work. We talked about them in
-      <a href="index17.html">
-       Django ORM (QuerySets) chapter
-      </a>
-      .
-     </p>
-     <p class="calibre6">
-      So now we want published blog posts sorted by
-      <code class="calibre11">
-       published_date
-      </code>
-      , right? We already did that in QuerySets chapter!
-     </p>
-     <p class="calibre6">
-     </p>
-     <p class="calibre6">
-      blog/views.py
-     </p>
-     <p class="calibre6">
-     </p>
-     <pre class="calibre13"><code class="calibre11">Post.objects.<span>filter</span>(published_date__lte=timezone.now()).order_by(<span>'published_date'</span>)
+        <p class="calibre6">
+          The dot before
+          <code class="calibre11"> models </code>
+          means
+          <em class="calibre14"> current directory </em>
+          or
+          <em class="calibre14"> current application </em>
+          . Both
+          <code class="calibre11"> views.py </code>
+          and
+          <code class="calibre11"> models.py </code>
+          are in the same directory. This means we can use
+          <code class="calibre11"> . </code>
+          and the name of the file (without
+          <code class="calibre11"> .py </code>
+          ). Then we import the name of the model (
+          <code class="calibre11"> Post </code>
+          ).
+        </p>
+        <p class="calibre6">
+          But what's next? To take actual blog posts from the
+          <code class="calibre11"> Post </code>
+          model we need something called
+          <code class="calibre11"> QuerySet </code>
+          .
+        </p>
+        <h2 class="calibre7" id="queryset">QuerySet</h2>
+        <p class="calibre6">
+          You should already be familiar with how QuerySets work. We talked
+          about them in
+          <a href="index17.html"> Django ORM (QuerySets) chapter </a>
+          .
+        </p>
+        <p class="calibre6">
+          So now we want published blog posts sorted by
+          <code class="calibre11"> published_date </code>
+          , right? We already did that in QuerySets chapter!
+        </p>
+        <p class="calibre6"></p>
+        <p class="calibre6">blog/views.py</p>
+        <p class="calibre6"></p>
+        <pre
+          class="calibre13"
+        ><code class="calibre11">Post.objects.<span>filter</span>(published_date__lte=timezone.now()).order_by(<span>'published_date'</span>)
         </code></pre>
-     <p class="calibre6">
-      So, let's open the
-      <code class="calibre11">
-       blog/views.py
-      </code>
-      file in the code editor, and add this piece of code to the function
-      <code class="calibre11">
-       def post_list(request)
-      </code>
-      -- but don't forget to first add
-      <code class="calibre11">
-       from django.utils import timezone
-      </code>
-      :
-     </p>
-     <p class="calibre6">
-     </p>
-     <p class="calibre6">
-      blog/views.py
-     </p>
-     <p class="calibre6">
-     </p>
-     <pre class="calibre13"><code class="calibre11"><span>from</span> django.shortcuts <span>import</span> render
+        <p class="calibre6">
+          So, let's open the
+          <code class="calibre11"> blog/views.py </code>
+          file in the code editor, and add this piece of code to the function
+          <code class="calibre11"> def post_list(request) </code>
+          -- but don't forget to first add
+          <code class="calibre11"> from django.utils import timezone </code>
+          :
+        </p>
+        <p class="calibre6"></p>
+        <p class="calibre6">blog/views.py</p>
+        <p class="calibre6"></p>
+        <pre
+          class="calibre13"
+        ><code class="calibre11"><span>from</span> django.shortcuts <span>import</span> render
         <span>from</span> django.utils <span>import</span> timezone
         <span>from</span> .models <span>import</span> Post
 
@@ -445,90 +161,64 @@
             posts = Post.objects.<span>filter</span>(published_date__lte=timezone.now()).order_by(<span>'published_date'</span>)
             <span>return</span> render(request, <span>'blog/post_list.html'</span>, {})
         </code></pre>
-     <p class="calibre6">
-      To display our QuerySet on our blog's post list, we have two things left to do:
-     </p>
-     <ol class="calibre2">
-      <li class="calibre3">
-       Pass the
-       <code class="calibre11">
-        posts
-       </code>
-       QuerySet to the template context, by changing the
-       <code class="calibre11">
-        render
-       </code>
-       function call. We'll do this now.
-      </li>
-      <li class="calibre3">
-       Modify the template to display the
-       <code class="calibre11">
-        posts
-       </code>
-       QuerySet. We'll cover this in a later chapter.
-      </li>
-     </ol>
-     <p class="calibre6">
-      Please note that we create a
-      <em class="calibre14">
-       variable
-      </em>
-      for our QuerySet:
-      <code class="calibre11">
-       posts
-      </code>
-      . Treat this as the name of our QuerySet. From now on we can refer to it by this name.
-     </p>
-     <p class="calibre6">
-      In the
-      <code class="calibre11">
-       render
-      </code>
-      function we have one parameter
-      <code class="calibre11">
-       request
-      </code>
-      (everything we receive from the user via the Internet) and another giving the template file (
-      <code class="calibre11">
-       'blog/post_list.html'
-      </code>
-      ). The last parameter,
-      <code class="calibre11">
-       {}
-      </code>
-      , is a place in which we can add some things for the template to use. We need to give them names (we will stick to
-      <code class="calibre11">
-       'posts'
-      </code>
-      right now). :)  It should look like this:
-      <code class="calibre11">
-       {'posts': posts}
-      </code>
-      . Please note that the part before
-      <code class="calibre11">
-       :
-      </code>
-      is a string; you need to wrap it with quotes:
-      <code class="calibre11">
-       ''
-      </code>
-      .
-     </p>
-     <p class="calibre6">
-      So finally our
-      <code class="calibre11">
-       blog/views.py
-      </code>
-      file should look like this:
-     </p>
-     <p class="calibre6">
-     </p>
-     <p class="calibre6">
-      blog/views.py
-     </p>
-     <p class="calibre6">
-     </p>
-     <pre class="calibre13"><code class="calibre11"><span>from</span> django.shortcuts <span>import</span> render
+        <p class="calibre6">
+          To display our QuerySet on our blog's post list, we have two things
+          left to do:
+        </p>
+        <ol class="calibre2">
+          <li class="calibre3">
+            Pass the
+            <code class="calibre11"> posts </code>
+            QuerySet to the template context, by changing the
+            <code class="calibre11"> render </code>
+            function call. We'll do this now.
+          </li>
+          <li class="calibre3">
+            Modify the template to display the
+            <code class="calibre11"> posts </code>
+            QuerySet. We'll cover this in a later chapter.
+          </li>
+        </ol>
+        <p class="calibre6">
+          Please note that we create a
+          <em class="calibre14"> variable </em>
+          for our QuerySet:
+          <code class="calibre11"> posts </code>
+          . Treat this as the name of our QuerySet. From now on we can refer to
+          it by this name.
+        </p>
+        <p class="calibre6">
+          In the
+          <code class="calibre11"> render </code>
+          function we have one parameter
+          <code class="calibre11"> request </code>
+          (everything we receive from the user via the Internet) and another
+          giving the template file (
+          <code class="calibre11"> 'blog/post_list.html' </code>
+          ). The last parameter,
+          <code class="calibre11"> {} </code>
+          , is a place in which we can add some things for the template to use.
+          We need to give them names (we will stick to
+          <code class="calibre11"> 'posts' </code>
+          right now). :) It should look like this:
+          <code class="calibre11"> {'posts': posts} </code>
+          . Please note that the part before
+          <code class="calibre11"> : </code>
+          is a string; you need to wrap it with quotes:
+          <code class="calibre11"> '' </code>
+          .
+        </p>
+        <p class="calibre6">
+          So finally our
+          <code class="calibre11"> blog/views.py </code>
+          file should look like this:
+        </p>
+        <p class="calibre6"></p>
+        <p class="calibre6">blog/views.py</p>
+        <p class="calibre6"></p>
+        <pre
+          class="calibre13"
+        ><code class="calibre11"><span>from</span> django.shortcuts <span>import</span> render
         <span>from</span> django.utils <span>import</span> timezone
         <span>from</span> .models <span>import</span> Post
 
@@ -536,68 +226,27 @@
             posts = Post.objects.<span>filter</span>(published_date__lte=timezone.now()).order_by(<span>'published_date'</span>)
             <span>return</span> render(request, <span>'blog/post_list.html'</span>, {<span>'posts'</span>: posts})
         </code></pre>
-     <p class="calibre6">
-      That's it! Time to go back to our template and display this QuerySet!
-     </p>
-     <p class="calibre6">
-      Want to read a little bit more about QuerySets in Django? You should look here:
-      <a href="https://docs.djangoproject.com/en/5.1/ref/models/querysets/" target="_blank">
-       https://docs.djangoproject.com/en/5.1/ref/models/querysets/
-      </a>
-     </p>
-    </div>
-   </div>
-  </main>
-  <footer class="book-footer">
-   <p>
-    Generated from the original EPUB. Content © respective authors under CC BY-SA 4.0.
-   </p>
-  </footer>
-  <script>
-   document.addEventListener('DOMContentLoaded', function () {
-  document.querySelectorAll('.nav-toggle').forEach(function (toggle) {
-    var targetId = toggle.getAttribute('data-target') || toggle.getAttribute('aria-controls');
-    var drawer = document.getElementById(targetId);
-    if (!drawer) {
-      return;
-    }
-    var closeDrawer = function () {
-      drawer.classList.remove('open');
-      drawer.setAttribute('aria-hidden', 'true');
-      toggle.setAttribute('aria-expanded', 'false');
-      document.body.classList.remove('drawer-open');
-    };
-
-    toggle.addEventListener('click', function () {
-      var willOpen = !drawer.classList.contains('open');
-      if (willOpen) {
-        drawer.classList.add('open');
-        drawer.setAttribute('aria-hidden', 'false');
-        toggle.setAttribute('aria-expanded', 'true');
-        document.body.classList.add('drawer-open');
-      } else {
-        closeDrawer();
-      }
-    });
-
-    drawer.querySelectorAll('a').forEach(function (link) {
-      link.addEventListener('click', closeDrawer);
-    });
-
-    document.addEventListener('click', function (event) {
-      if (!drawer.contains(event.target) && event.target !== toggle && !toggle.contains(event.target)) {
-        closeDrawer();
-      }
-    });
-
-    drawer.addEventListener('keydown', function (event) {
-      if (event.key === 'Escape') {
-        closeDrawer();
-        toggle.focus();
-      }
-    });
-  });
-});
-  </script>
- </body>
+        <p class="calibre6">
+          That's it! Time to go back to our template and display this QuerySet!
+        </p>
+        <p class="calibre6">
+          Want to read a little bit more about QuerySets in Django? You should
+          look here:
+          <a
+            href="https://docs.djangoproject.com/en/5.1/ref/models/querysets/"
+            target="_blank"
+          >
+            https://docs.djangoproject.com/en/5.1/ref/models/querysets/
+          </a>
+        </p>
+      </div>
+    </main>
+    <footer class="book-footer">
+      <p>
+        Generated from the original EPUB. Content © respective authors under CC
+        BY-SA 4.0.
+      </p>
+    </footer>
+    <script defer="True" src="nav.js"></script>
+  </body>
 </html>

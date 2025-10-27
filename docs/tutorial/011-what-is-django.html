@@ -1,381 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
- <head>
-  <meta charset="utf-8"/>
-  <meta content="width=device-width, initial-scale=1" name="viewport"/>
-  <title>
-   What is Django?
-  </title>
-  <link href="book.css" rel="stylesheet"/>
-  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
-  <meta content="" name="description"/>
-  <meta content="HonKit 3.7.5" name="generator"/>
-  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
-  <link href="content/stylesheet.css" rel="stylesheet" type="text/css"/>
-  <link href="content/page_styles.css" rel="stylesheet" type="text/css"/>
-  <!-- Google tag (gtag.js) -->
-  <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-BN9REN07NH">
-  </script>
-  <script>
-   window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-BN9REN07NH');
-  </script>
- </head>
- <body>
-  <header class="book-header">
-   <h1 class="page-title">
-    What is Django?
-   </h1>
-  </header>
-  <nav class="book-nav" data-chapter="011-what-is-django">
-   <button aria-controls="nav-panel-011-what-is-django" aria-expanded="false" aria-label="Toggle menu" class="nav-toggle" data-target="nav-panel-011-what-is-django" type="button">
-    <span aria-hidden="true" class="icon">
-     ≡
-    </span>
-    <span class="label">
-     Menu
-    </span>
-   </button>
-   <div class="nav-links">
-    <a class="nav-link home" href="../index.html">
-     <span aria-hidden="true" class="icon">
-      ⌂
-     </span>
-     <span class="label">
-      Home
-     </span>
-    </a>
-    <a class="nav-link contents" href="index.html">
-     <span aria-hidden="true" class="icon">
-      ≣
-     </span>
-     <span class="label">
-      Contents
-     </span>
-    </a>
-    <a class="nav-link previous" href="010-introduction-to-python.html">
-     <span aria-hidden="true" class="icon">
-      ←
-     </span>
-     <span class="label">
-      Previous
-     </span>
-    </a>
-    <a class="nav-link next" href="012-django-installation.html">
-     <span aria-hidden="true" class="icon">
-      →
-     </span>
-     <span class="label">
-      Next
-     </span>
-    </a>
-   </div>
-  </nav>
-  <div aria-hidden="true" class="nav-panel" id="nav-panel-011-what-is-django">
-   <div class="nav-panel__group">
-    <h3 class="nav-panel__title">
-     Shortcuts
-    </h3>
-    <ul class="nav-panel__list">
-     <li>
-      <a class="nav-panel__link" href="../index.html">
-       <span aria-hidden="true" class="icon">
-        ⌂
-       </span>
-       Home
-      </a>
-     </li>
-     <li>
-      <a class="nav-panel__link" href="index.html">
-       <span aria-hidden="true" class="icon">
-        ≣
-       </span>
-       Contents
-      </a>
-     </li>
-     <li>
-      <a class="nav-panel__link" href="010-introduction-to-python.html">
-       <span aria-hidden="true" class="icon">
-        ←
-       </span>
-       Previous
-      </a>
-     </li>
-     <li>
-      <a class="nav-panel__link" href="012-django-installation.html">
-       <span aria-hidden="true" class="icon">
-        →
-       </span>
-       Next
-      </a>
-     </li>
-    </ul>
-   </div>
-   <div class="nav-panel__group">
-    <h3 class="nav-panel__title">
-     Chapters
-    </h3>
-    <ul class="nav-panel__list">
-     <li>
-      <a class="nav-panel__link" href="001-cover.html">
-       Cover
-      </a>
-     </li>
-     <li>
-      <a class="nav-panel__link" href="003-introduction.html">
-       Introduction
-      </a>
-     </li>
-     <li>
-      <a class="nav-panel__link" href="004-installation.html">
-       Installation
-      </a>
-     </li>
-     <li>
-      <a class="nav-panel__link" href="006-how-the-internet-works.html">
-       How the Internet works
-      </a>
-     </li>
-     <li>
-      <a class="nav-panel__link" href="007-introduction-to-command-line.html">
-       Introduction to command line
-      </a>
-     </li>
-     <li>
-      <a class="nav-panel__link" href="008-python-installation.html">
-       Python installation
-      </a>
-     </li>
-     <li>
-      <a class="nav-panel__link" href="009-code-editor.html">
-       Code editor
-      </a>
-     </li>
-     <li>
-      <a class="nav-panel__link" href="010-introduction-to-python.html">
-       Introduction to Python
-      </a>
-     </li>
-     <li>
-      <a class="nav-panel__link" href="011-what-is-django.html">
-       What is Django?
-      </a>
-     </li>
-     <li>
-      <a class="nav-panel__link" href="012-django-installation.html">
-       Django installation
-      </a>
-     </li>
-     <li>
-      <a class="nav-panel__link" href="013-your-first-django-project.html">
-       Your first Django project!
-      </a>
-     </li>
-     <li>
-      <a class="nav-panel__link" href="014-django-models.html">
-       Django models
-      </a>
-     </li>
-     <li>
-      <a class="nav-panel__link" href="015-django-admin.html">
-       Django admin
-      </a>
-     </li>
-     <li>
-      <a class="nav-panel__link" href="016-deploy.html">
-       Deploy!
-      </a>
-     </li>
-     <li>
-      <a class="nav-panel__link" href="017-django-urls.html">
-       Django URLs
-      </a>
-     </li>
-     <li>
-      <a class="nav-panel__link" href="018-django-views-time-to-create.html">
-       Django views – time to create!
-      </a>
-     </li>
-     <li>
-      <a class="nav-panel__link" href="019-introduction-to-html.html">
-       Introduction to HTML
-      </a>
-     </li>
-     <li>
-      <a class="nav-panel__link" href="020-django-orm-querysets.html">
-       Django ORM (Querysets)
-      </a>
-     </li>
-     <li>
-      <a class="nav-panel__link" href="021-dynamic-data-in-templates.html">
-       Dynamic data in templates
-      </a>
-     </li>
-     <li>
-      <a class="nav-panel__link" href="022-django-templates.html">
-       Django templates
-      </a>
-     </li>
-     <li>
-      <a class="nav-panel__link" href="023-css-make-it-pretty.html">
-       CSS – make it pretty
-      </a>
-     </li>
-     <li>
-      <a class="nav-panel__link" href="024-template-extending.html">
-       Template extending
-      </a>
-     </li>
-     <li>
-      <a class="nav-panel__link" href="025-extend-your-application.html">
-       Extend your application
-      </a>
-     </li>
-     <li>
-      <a class="nav-panel__link" href="026-django-forms.html">
-       Django Forms
-      </a>
-     </li>
-     <li>
-      <a class="nav-panel__link" href="027-what-s-next.html">
-       What's next?
-      </a>
-     </li>
-    </ul>
-   </div>
-  </div>
-  <main>
-   <div class="page">
-    <h2 class="calibre1" id="calibre_toc_9">
-     What is Django?
-    </h2>
-    <div>
-     <h2 class="calibre1" id="what-is-django">
-      What is Django?
-     </h2>
-     <p class="calibre6">
-      Django (/ˈdʒæŋɡoʊ/
-      <em class="calibre14">
-       jang-goh
-      </em>
-      ) is a free and open source web application framework, written in Python. A web framework is a set of components that helps you to develop websites faster and easier.
-     </p>
-     <p class="calibre6">
-      When you're building a website, you always need a similar set of components: a way to handle user authentication (signing up, signing in, signing out), a management panel for your website, forms, a way to upload files, etc.
-     </p>
-     <p class="calibre6">
-      Luckily for you, other people long ago noticed that web developers face similar problems when building a new site, so they teamed up and created frameworks (Django being one of them) that give you ready-made components to use.
-     </p>
-     <p class="calibre6">
-      Frameworks exist to save you from having to reinvent the wheel and to help alleviate some of the overhead when you’re building a new site.
-     </p>
-     <h2 class="calibre7" id="why-do-you-need-a-framework">
-      Why do you need a framework?
-     </h2>
-     <p class="calibre6">
-      To understand what Django is actually for, we need to take a closer look at the servers. The first thing is that the server needs to know that you want it to serve you a web page.
-     </p>
-     <p class="calibre6">
-      Imagine a mailbox (port) which is monitored for incoming letters (requests). This is done by a web server. The web server reads the letter and then sends a response with a webpage. But when you want to send something, you need to have some content. And Django is something that helps you create the content.
-     </p>
-     <h2 class="calibre7" id="what-happens-when-someone-requests-a-website-from-your-server">
-      What happens when someone requests a website from your server?
-     </h2>
-     <p class="calibre6">
-      When a request comes to a web server, it's passed to Django which tries to figure out what is actually requested. It takes a web page address first and tries to figure out what to do. This part is done by Django's
-      <strong class="calibre10">
-       urlresolver
-      </strong>
-      (note that a website address is called a URL – Uniform Resource Locator – so the name
-      <em class="calibre14">
-       urlresolver
-      </em>
-      makes sense). It is not very smart – it takes a list of patterns and tries to match the URL. Django checks patterns from top to bottom and if something is matched, then Django passes the request to the associated function (which is called
-      <em class="calibre14">
-       view
-      </em>
-      ).
-     </p>
-     <p class="calibre6">
-      Imagine a mail carrier with a letter. She is walking down the street and checks each house number against the one on the letter. If it matches, she puts the letter there. This is how the urlresolver works!
-     </p>
-     <p class="calibre6">
-      In the
-      <em class="calibre14">
-       view
-      </em>
-      function, all the interesting things are done: we can look at a database to look for some information. Maybe the user asked to change something in the data? Like a letter saying, "Please change the description of my job."  The
-      <em class="calibre14">
-       view
-      </em>
-      can check if you are allowed to do that, then update the job description for you and send back a message: "Done!" Then the
-      <em class="calibre14">
-       view
-      </em>
-      generates a response and Django can send it to the user's web browser.
-     </p>
-     <p class="calibre6">
-      The description above is a little bit simplified, but you don't need to know all the technical things yet. Having a general idea is enough.
-     </p>
-     <p class="calibre6">
-      So instead of diving too much into details, we will start creating something with Django and we will learn all the important parts along the way!
-     </p>
-    </div>
-   </div>
-  </main>
-  <footer class="book-footer">
-   <p>
-    Generated from the original EPUB. Content © respective authors under CC BY-SA 4.0.
-   </p>
-  </footer>
-  <script>
-   document.addEventListener('DOMContentLoaded', function () {
-  document.querySelectorAll('.nav-toggle').forEach(function (toggle) {
-    var targetId = toggle.getAttribute('data-target') || toggle.getAttribute('aria-controls');
-    var drawer = document.getElementById(targetId);
-    if (!drawer) {
-      return;
-    }
-    var closeDrawer = function () {
-      drawer.classList.remove('open');
-      drawer.setAttribute('aria-hidden', 'true');
-      toggle.setAttribute('aria-expanded', 'false');
-      document.body.classList.remove('drawer-open');
-    };
-
-    toggle.addEventListener('click', function () {
-      var willOpen = !drawer.classList.contains('open');
-      if (willOpen) {
-        drawer.classList.add('open');
-        drawer.setAttribute('aria-hidden', 'false');
-        toggle.setAttribute('aria-expanded', 'true');
-        document.body.classList.add('drawer-open');
-      } else {
-        closeDrawer();
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>What is Django?</title>
+    <link href="book.css" rel="stylesheet" />
+    <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+    <meta content="" name="description" />
+    <meta content="HonKit 3.7.5" name="generator" />
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <link href="content/stylesheet.css" rel="stylesheet" type="text/css" />
+    <link href="content/page_styles.css" rel="stylesheet" type="text/css" />
+    <!-- Google tag (gtag.js) -->
+    <script
+      async=""
+      src="https://www.googletagmanager.com/gtag/js?id=G-BN9REN07NH"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
       }
-    });
+      gtag("js", new Date());
 
-    drawer.querySelectorAll('a').forEach(function (link) {
-      link.addEventListener('click', closeDrawer);
-    });
-
-    document.addEventListener('click', function (event) {
-      if (!drawer.contains(event.target) && event.target !== toggle && !toggle.contains(event.target)) {
-        closeDrawer();
-      }
-    });
-
-    drawer.addEventListener('keydown', function (event) {
-      if (event.key === 'Escape') {
-        closeDrawer();
-        toggle.focus();
-      }
-    });
-  });
-});
-  </script>
- </body>
+      gtag("config", "G-BN9REN07NH");
+    </script>
+  </head>
+  <body data-chapter="011-what-is-django">
+    <header class="book-header">
+      <h1 class="page-title">What is Django?</h1>
+    </header>
+    <main>
+      <div class="page">
+        <h2 class="calibre1" id="calibre_toc_9">What is Django?</h2>
+        <p class="calibre6">
+          Django (/ˈdʒæŋɡoʊ/
+          <em class="calibre14"> jang-goh </em>
+          ) is a free and open source web application framework, written in
+          Python. A web framework is a set of components that helps you to
+          develop websites faster and easier.
+        </p>
+        <p class="calibre6">
+          When you're building a website, you always need a similar set of
+          components: a way to handle user authentication (signing up, signing
+          in, signing out), a management panel for your website, forms, a way to
+          upload files, etc.
+        </p>
+        <p class="calibre6">
+          Luckily for you, other people long ago noticed that web developers
+          face similar problems when building a new site, so they teamed up and
+          created frameworks (Django being one of them) that give you ready-made
+          components to use.
+        </p>
+        <p class="calibre6">
+          Frameworks exist to save you from having to reinvent the wheel and to
+          help alleviate some of the overhead when you’re building a new site.
+        </p>
+        <h2 class="calibre7" id="why-do-you-need-a-framework">
+          Why do you need a framework?
+        </h2>
+        <p class="calibre6">
+          To understand what Django is actually for, we need to take a closer
+          look at the servers. The first thing is that the server needs to know
+          that you want it to serve you a web page.
+        </p>
+        <p class="calibre6">
+          Imagine a mailbox (port) which is monitored for incoming letters
+          (requests). This is done by a web server. The web server reads the
+          letter and then sends a response with a webpage. But when you want to
+          send something, you need to have some content. And Django is something
+          that helps you create the content.
+        </p>
+        <h2
+          class="calibre7"
+          id="what-happens-when-someone-requests-a-website-from-your-server"
+        >
+          What happens when someone requests a website from your server?
+        </h2>
+        <p class="calibre6">
+          When a request comes to a web server, it's passed to Django which
+          tries to figure out what is actually requested. It takes a web page
+          address first and tries to figure out what to do. This part is done by
+          Django's
+          <strong class="calibre10"> urlresolver </strong>
+          (note that a website address is called a URL – Uniform Resource
+          Locator – so the name
+          <em class="calibre14"> urlresolver </em>
+          makes sense). It is not very smart – it takes a list of patterns and
+          tries to match the URL. Django checks patterns from top to bottom and
+          if something is matched, then Django passes the request to the
+          associated function (which is called
+          <em class="calibre14"> view </em>
+          ).
+        </p>
+        <p class="calibre6">
+          Imagine a mail carrier with a letter. She is walking down the street
+          and checks each house number against the one on the letter. If it
+          matches, she puts the letter there. This is how the urlresolver works!
+        </p>
+        <p class="calibre6">
+          In the
+          <em class="calibre14"> view </em>
+          function, all the interesting things are done: we can look at a
+          database to look for some information. Maybe the user asked to change
+          something in the data? Like a letter saying, "Please change the
+          description of my job." The
+          <em class="calibre14"> view </em>
+          can check if you are allowed to do that, then update the job
+          description for you and send back a message: "Done!" Then the
+          <em class="calibre14"> view </em>
+          generates a response and Django can send it to the user's web browser.
+        </p>
+        <p class="calibre6">
+          The description above is a little bit simplified, but you don't need
+          to know all the technical things yet. Having a general idea is enough.
+        </p>
+        <p class="calibre6">
+          So instead of diving too much into details, we will start creating
+          something with Django and we will learn all the important parts along
+          the way!
+        </p>
+      </div>
+    </main>
+    <footer class="book-footer">
+      <p>
+        Generated from the original EPUB. Content © respective authors under CC
+        BY-SA 4.0.
+      </p>
+    </footer>
+    <script defer="True" src="nav.js"></script>
+  </body>
 </html>

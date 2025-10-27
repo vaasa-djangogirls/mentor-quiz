@@ -1,314 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
- <head>
-  <meta charset="utf-8"/>
-  <meta content="width=device-width, initial-scale=1" name="viewport"/>
-  <title>
-   Django Forms
-  </title>
-  <link href="book.css" rel="stylesheet"/>
-  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
-  <meta content="" name="description"/>
-  <meta content="HonKit 3.7.5" name="generator"/>
-  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
-  <link href="content/stylesheet.css" rel="stylesheet" type="text/css"/>
-  <link href="content/page_styles.css" rel="stylesheet" type="text/css"/>
-  <!-- Google tag (gtag.js) -->
-  <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-BN9REN07NH">
-  </script>
-  <script>
-   window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>Django Forms</title>
+    <link href="book.css" rel="stylesheet" />
+    <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+    <meta content="" name="description" />
+    <meta content="HonKit 3.7.5" name="generator" />
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <link href="content/stylesheet.css" rel="stylesheet" type="text/css" />
+    <link href="content/page_styles.css" rel="stylesheet" type="text/css" />
+    <!-- Google tag (gtag.js) -->
+    <script
+      async=""
+      src="https://www.googletagmanager.com/gtag/js?id=G-BN9REN07NH"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-    gtag('config', 'G-BN9REN07NH');
-  </script>
- </head>
- <body>
-  <header class="book-header">
-   <h1 class="page-title">
-    Django Forms
-   </h1>
-  </header>
-  <nav class="book-nav" data-chapter="026-django-forms">
-   <button aria-controls="nav-panel-026-django-forms" aria-expanded="false" aria-label="Toggle menu" class="nav-toggle" data-target="nav-panel-026-django-forms" type="button">
-    <span aria-hidden="true" class="icon">
-     ≡
-    </span>
-    <span class="label">
-     Menu
-    </span>
-   </button>
-   <div class="nav-links">
-    <a class="nav-link home" href="../index.html">
-     <span aria-hidden="true" class="icon">
-      ⌂
-     </span>
-     <span class="label">
-      Home
-     </span>
-    </a>
-    <a class="nav-link contents" href="index.html">
-     <span aria-hidden="true" class="icon">
-      ≣
-     </span>
-     <span class="label">
-      Contents
-     </span>
-    </a>
-    <a class="nav-link previous" href="025-extend-your-application.html">
-     <span aria-hidden="true" class="icon">
-      ←
-     </span>
-     <span class="label">
-      Previous
-     </span>
-    </a>
-    <a class="nav-link next" href="027-what-s-next.html">
-     <span aria-hidden="true" class="icon">
-      →
-     </span>
-     <span class="label">
-      Next
-     </span>
-    </a>
-   </div>
-  </nav>
-  <div aria-hidden="true" class="nav-panel" id="nav-panel-026-django-forms">
-   <div class="nav-panel__group">
-    <h3 class="nav-panel__title">
-     Shortcuts
-    </h3>
-    <ul class="nav-panel__list">
-     <li>
-      <a class="nav-panel__link" href="../index.html">
-       <span aria-hidden="true" class="icon">
-        ⌂
-       </span>
-       Home
-      </a>
-     </li>
-     <li>
-      <a class="nav-panel__link" href="index.html">
-       <span aria-hidden="true" class="icon">
-        ≣
-       </span>
-       Contents
-      </a>
-     </li>
-     <li>
-      <a class="nav-panel__link" href="025-extend-your-application.html">
-       <span aria-hidden="true" class="icon">
-        ←
-       </span>
-       Previous
-      </a>
-     </li>
-     <li>
-      <a class="nav-panel__link" href="027-what-s-next.html">
-       <span aria-hidden="true" class="icon">
-        →
-       </span>
-       Next
-      </a>
-     </li>
-    </ul>
-   </div>
-   <div class="nav-panel__group">
-    <h3 class="nav-panel__title">
-     Chapters
-    </h3>
-    <ul class="nav-panel__list">
-     <li>
-      <a class="nav-panel__link" href="001-cover.html">
-       Cover
-      </a>
-     </li>
-     <li>
-      <a class="nav-panel__link" href="003-introduction.html">
-       Introduction
-      </a>
-     </li>
-     <li>
-      <a class="nav-panel__link" href="004-installation.html">
-       Installation
-      </a>
-     </li>
-     <li>
-      <a class="nav-panel__link" href="006-how-the-internet-works.html">
-       How the Internet works
-      </a>
-     </li>
-     <li>
-      <a class="nav-panel__link" href="007-introduction-to-command-line.html">
-       Introduction to command line
-      </a>
-     </li>
-     <li>
-      <a class="nav-panel__link" href="008-python-installation.html">
-       Python installation
-      </a>
-     </li>
-     <li>
-      <a class="nav-panel__link" href="009-code-editor.html">
-       Code editor
-      </a>
-     </li>
-     <li>
-      <a class="nav-panel__link" href="010-introduction-to-python.html">
-       Introduction to Python
-      </a>
-     </li>
-     <li>
-      <a class="nav-panel__link" href="011-what-is-django.html">
-       What is Django?
-      </a>
-     </li>
-     <li>
-      <a class="nav-panel__link" href="012-django-installation.html">
-       Django installation
-      </a>
-     </li>
-     <li>
-      <a class="nav-panel__link" href="013-your-first-django-project.html">
-       Your first Django project!
-      </a>
-     </li>
-     <li>
-      <a class="nav-panel__link" href="014-django-models.html">
-       Django models
-      </a>
-     </li>
-     <li>
-      <a class="nav-panel__link" href="015-django-admin.html">
-       Django admin
-      </a>
-     </li>
-     <li>
-      <a class="nav-panel__link" href="016-deploy.html">
-       Deploy!
-      </a>
-     </li>
-     <li>
-      <a class="nav-panel__link" href="017-django-urls.html">
-       Django URLs
-      </a>
-     </li>
-     <li>
-      <a class="nav-panel__link" href="018-django-views-time-to-create.html">
-       Django views – time to create!
-      </a>
-     </li>
-     <li>
-      <a class="nav-panel__link" href="019-introduction-to-html.html">
-       Introduction to HTML
-      </a>
-     </li>
-     <li>
-      <a class="nav-panel__link" href="020-django-orm-querysets.html">
-       Django ORM (Querysets)
-      </a>
-     </li>
-     <li>
-      <a class="nav-panel__link" href="021-dynamic-data-in-templates.html">
-       Dynamic data in templates
-      </a>
-     </li>
-     <li>
-      <a class="nav-panel__link" href="022-django-templates.html">
-       Django templates
-      </a>
-     </li>
-     <li>
-      <a class="nav-panel__link" href="023-css-make-it-pretty.html">
-       CSS – make it pretty
-      </a>
-     </li>
-     <li>
-      <a class="nav-panel__link" href="024-template-extending.html">
-       Template extending
-      </a>
-     </li>
-     <li>
-      <a class="nav-panel__link" href="025-extend-your-application.html">
-       Extend your application
-      </a>
-     </li>
-     <li>
-      <a class="nav-panel__link" href="026-django-forms.html">
-       Django Forms
-      </a>
-     </li>
-     <li>
-      <a class="nav-panel__link" href="027-what-s-next.html">
-       What's next?
-      </a>
-     </li>
-    </ul>
-   </div>
-  </div>
-  <main>
-   <div class="page">
-    <h2 class="calibre1" id="calibre_toc_24">
-     Django Forms
-    </h2>
-    <div>
-     <h2 class="calibre1" id="django-forms">
-      Django Forms
-     </h2>
-     <p class="calibre6">
-      The final thing we want to do on our website is create a nice way to add and edit blog posts. Django's
-      <code class="calibre11">
-       admin
-      </code>
-      is cool, but it is rather hard to customize and make pretty. With
-      <code class="calibre11">
-       forms
-      </code>
-      we will have absolute power over our interface – we can do almost anything we can imagine!
-     </p>
-     <p class="calibre6">
-      The nice thing about Django forms is that we can either define one from scratch or create a
-      <code class="calibre11">
-       ModelForm
-      </code>
-      which will save the result of the form to the model.
-     </p>
-     <p class="calibre6">
-      This is exactly what we want to do: we will create a form for our
-      <code class="calibre11">
-       Post
-      </code>
-      model.
-     </p>
-     <p class="calibre6">
-      Like every important part of Django, forms have their own file:
-      <code class="calibre11">
-       forms.py
-      </code>
-      .
-     </p>
-     <p class="calibre6">
-      We need to create a file with this name in the
-      <code class="calibre11">
-       blog
-      </code>
-      directory.
-     </p>
-     <pre class="calibre13"><code class="calibre11">blog
+      gtag("config", "G-BN9REN07NH");
+    </script>
+  </head>
+  <body data-chapter="026-django-forms">
+    <header class="book-header">
+      <h1 class="page-title">Django Forms</h1>
+    </header>
+    <main>
+      <div class="page">
+        <h2 class="calibre1" id="calibre_toc_24">Django Forms</h2>
+        <p class="calibre6">
+          The final thing we want to do on our website is create a nice way to
+          add and edit blog posts. Django's
+          <code class="calibre11"> admin </code>
+          is cool, but it is rather hard to customize and make pretty. With
+          <code class="calibre11"> forms </code>
+          we will have absolute power over our interface – we can do almost
+          anything we can imagine!
+        </p>
+        <p class="calibre6">
+          The nice thing about Django forms is that we can either define one
+          from scratch or create a
+          <code class="calibre11"> ModelForm </code>
+          which will save the result of the form to the model.
+        </p>
+        <p class="calibre6">
+          This is exactly what we want to do: we will create a form for our
+          <code class="calibre11"> Post </code>
+          model.
+        </p>
+        <p class="calibre6">
+          Like every important part of Django, forms have their own file:
+          <code class="calibre11"> forms.py </code>
+          .
+        </p>
+        <p class="calibre6">
+          We need to create a file with this name in the
+          <code class="calibre11"> blog </code>
+          directory.
+        </p>
+        <pre class="calibre13"><code class="calibre11">blog
            └── forms.py
         </code></pre>
-     <p class="calibre6">
-      OK, let's open it in the code editor and type the following code:
-     </p>
-     <p class="calibre6">
-     </p>
-     <p class="calibre6">
-      blog/forms.py
-     </p>
-     <p class="calibre6">
-     </p>
-     <pre class="calibre13"><code class="calibre11"><span>from</span> django <span>import</span> forms
+        <p class="calibre6">
+          OK, let's open it in the code editor and type the following code:
+        </p>
+        <p class="calibre6"></p>
+        <p class="calibre6">blog/forms.py</p>
+        <p class="calibre6"></p>
+        <pre
+          class="calibre13"
+        ><code class="calibre11"><span>from</span> django <span>import</span> forms
 
         <span>from</span> .models <span>import</span> Post
 
@@ -318,185 +84,151 @@
                 model = Post
                 fields = (<span>'title'</span>, <span>'text'</span>)
         </code></pre>
-     <p class="calibre6">
-      We need to import Django forms first (
-      <code class="calibre11">
-       from django import forms
-      </code>
-      ) and our
-      <code class="calibre11">
-       Post
-      </code>
-      model (
-      <code class="calibre11">
-       from .models import Post
-      </code>
-      ).
-     </p>
-     <p class="calibre6">
-      <code class="calibre11">
-       PostForm
-      </code>
-      , as you probably suspect, is the name of our form. We need to tell Django that this form is a
-      <code class="calibre11">
-       ModelForm
-      </code>
-      (so Django will do some magic for us) –
-      <code class="calibre11">
-       forms.ModelForm
-      </code>
-      is responsible for that.
-     </p>
-     <p class="calibre6">
-      Next, we have
-      <code class="calibre11">
-       class Meta
-      </code>
-      , where we tell Django which model should be used to create this form (
-      <code class="calibre11">
-       model = Post
-      </code>
-      ).
-     </p>
-     <p class="calibre6">
-      Finally, we can say which field(s) should end up in our form. In this scenario we want only
-      <code class="calibre11">
-       title
-      </code>
-      and
-      <code class="calibre11">
-       text
-      </code>
-      to be exposed –
-      <code class="calibre11">
-       author
-      </code>
-      should be the person who is currently logged in (you!) and
-      <code class="calibre11">
-       created_date
-      </code>
-      should be automatically set when we create a post (i.e. in the code), right?
-     </p>
-     <p class="calibre6">
-      And that's it! All we need to do now is use the form in a
-      <em class="calibre14">
-       view
-      </em>
-      and display it in a template.
-     </p>
-     <p class="calibre6">
-      So once again we will create a link to the page, a URL, a view and a template.
-     </p>
-     <h2 class="calibre7" id="link-to-a-page-with-the-form">
-      Link to a page with the form
-     </h2>
-     <p class="calibre6">
-      Before we add the link, we need some icons to use as buttons for the link. For this tutorial, download
-      <a href="https://raw.githubusercontent.com/twbs/icons/main/icons/file-earmark-plus.svg" target="_blank">
-       file-earmark-plus.svg
-      </a>
-      and save it in the folder
-      <code class="calibre11">
-       blog/templates/blog/icons/
-      </code>
-     </p>
-     <blockquote class="calibre5">
-      <p class="calibre6">
-       Note: To download the SVG image, open the context menu on the link (usually by right-clicking on it) and select "Save link as". In the dialog asking you where to save the file, navigate to the
-       <code class="calibre11">
-        djangogirls
-       </code>
-       directory of your Django project, and within that to subdirectory
-       <code class="calibre11">
-        blog/templates/blog/icons/
-       </code>
-       , and save the file there.
-      </p>
-     </blockquote>
-     <p class="calibre6">
-      It's time to open
-      <code class="calibre11">
-       blog/templates/blog/base.html
-      </code>
-      in the code editor. Now we can use this icon file inside the base template as follows. In the
-      <code class="calibre11">
-       div
-      </code>
-      element inside
-      <code class="calibre11">
-       header
-      </code>
-      section, we will add a link before the
-      <code class="calibre11">
-       h1
-      </code>
-      element:
-     </p>
-     <p class="calibre6">
-     </p>
-     <p class="calibre6">
-      blog/templates/blog/base.html
-     </p>
-     <p class="calibre6">
-     </p>
-     <pre class="calibre13"><code class="calibre11"><span>&lt;<span>a</span> <span>href</span>=<span>"{% url 'post_new' %}"</span> <span>class</span>=<span>"top-menu"</span>&gt;</span>
+        <p class="calibre6">
+          We need to import Django forms first (
+          <code class="calibre11"> from django import forms </code>
+          ) and our
+          <code class="calibre11"> Post </code>
+          model (
+          <code class="calibre11"> from .models import Post </code>
+          ).
+        </p>
+        <p class="calibre6">
+          <code class="calibre11"> PostForm </code>
+          , as you probably suspect, is the name of our form. We need to tell
+          Django that this form is a
+          <code class="calibre11"> ModelForm </code>
+          (so Django will do some magic for us) –
+          <code class="calibre11"> forms.ModelForm </code>
+          is responsible for that.
+        </p>
+        <p class="calibre6">
+          Next, we have
+          <code class="calibre11"> class Meta </code>
+          , where we tell Django which model should be used to create this form
+          (
+          <code class="calibre11"> model = Post </code>
+          ).
+        </p>
+        <p class="calibre6">
+          Finally, we can say which field(s) should end up in our form. In this
+          scenario we want only
+          <code class="calibre11"> title </code>
+          and
+          <code class="calibre11"> text </code>
+          to be exposed –
+          <code class="calibre11"> author </code>
+          should be the person who is currently logged in (you!) and
+          <code class="calibre11"> created_date </code>
+          should be automatically set when we create a post (i.e. in the code),
+          right?
+        </p>
+        <p class="calibre6">
+          And that's it! All we need to do now is use the form in a
+          <em class="calibre14"> view </em>
+          and display it in a template.
+        </p>
+        <p class="calibre6">
+          So once again we will create a link to the page, a URL, a view and a
+          template.
+        </p>
+        <h2 class="calibre7" id="link-to-a-page-with-the-form">
+          Link to a page with the form
+        </h2>
+        <p class="calibre6">
+          Before we add the link, we need some icons to use as buttons for the
+          link. For this tutorial, download
+          <a
+            href="https://raw.githubusercontent.com/twbs/icons/main/icons/file-earmark-plus.svg"
+            target="_blank"
+          >
+            file-earmark-plus.svg
+          </a>
+          and save it in the folder
+          <code class="calibre11"> blog/templates/blog/icons/ </code>
+        </p>
+        <blockquote class="calibre5">
+          <p class="calibre6">
+            Note: To download the SVG image, open the context menu on the link
+            (usually by right-clicking on it) and select "Save link as". In the
+            dialog asking you where to save the file, navigate to the
+            <code class="calibre11"> djangogirls </code>
+            directory of your Django project, and within that to subdirectory
+            <code class="calibre11"> blog/templates/blog/icons/ </code>
+            , and save the file there.
+          </p>
+        </blockquote>
+        <p class="calibre6">
+          It's time to open
+          <code class="calibre11"> blog/templates/blog/base.html </code>
+          in the code editor. Now we can use this icon file inside the base
+          template as follows. In the
+          <code class="calibre11"> div </code>
+          element inside
+          <code class="calibre11"> header </code>
+          section, we will add a link before the
+          <code class="calibre11"> h1 </code>
+          element:
+        </p>
+        <p class="calibre6"></p>
+        <p class="calibre6">blog/templates/blog/base.html</p>
+        <p class="calibre6"></p>
+        <pre
+          class="calibre13"
+        ><code class="calibre11"><span>&lt;<span>a</span> <span>href</span>=<span>"{% url 'post_new' %}"</span> <span>class</span>=<span>"top-menu"</span>&gt;</span>
             {% include './icons/file-earmark-plus.svg' %}
         <span>&lt;/<span>a</span>&gt;</span>
         </code></pre>
-     <p class="calibre6">
-      Note that we want to call our new view
-      <code class="calibre11">
-       post_new
-      </code>
-      . The
-      <a href="https://icons.getbootstrap.com/icons/file-earmark-plus/" target="_blank">
-       SVG icon
-      </a>
-      is provided by the
-      <a href="https://icons.getbootstrap.com/" target="_blank">
-       Bootstrap Icons
-      </a>
-      and it will display a page icon with plus sign. We use a Django template directive called
-      <code class="calibre11">
-       include
-      </code>
-      . This will inject the file's content into the Django template. The web browser knows how to handle this type of content without any further processing.
-     </p>
-     <blockquote class="calibre5">
-      <p class="calibre6">
-       You can download all the Bootstrap icons
-       <a href="https://github.com/twbs/icons/releases/download/v1.11.3/bootstrap-icons-1.11.3.zip" target="_blank">
-        here
-       </a>
-       . Unzip the file and copy all the SVG image files into a new folder inside
-       <code class="calibre11">
-        blog/templates/blog/
-       </code>
-       called
-       <code class="calibre11">
-        icons
-       </code>
-       . That way you can access an icon like
-       <code class="calibre11">
-        pencil-fill.svg
-       </code>
-       using the file path
-       <code class="calibre11">
-        blog/templates/blog/icons/pencil-fill.svg
-       </code>
-      </p>
-     </blockquote>
-     <p class="calibre6">
-      After editing the line, your HTML file should now look like this:
-     </p>
-     <p class="calibre6">
-     </p>
-     <p class="calibre6">
-      blog/templates/blog/base.html
-     </p>
-     <p class="calibre6">
-     </p>
-     <pre class="calibre13"><code class="calibre11">{% load static %}
+        <p class="calibre6">
+          Note that we want to call our new view
+          <code class="calibre11"> post_new </code>
+          . The
+          <a
+            href="https://icons.getbootstrap.com/icons/file-earmark-plus/"
+            target="_blank"
+          >
+            SVG icon
+          </a>
+          is provided by the
+          <a href="https://icons.getbootstrap.com/" target="_blank">
+            Bootstrap Icons
+          </a>
+          and it will display a page icon with plus sign. We use a Django
+          template directive called
+          <code class="calibre11"> include </code>
+          . This will inject the file's content into the Django template. The
+          web browser knows how to handle this type of content without any
+          further processing.
+        </p>
+        <blockquote class="calibre5">
+          <p class="calibre6">
+            You can download all the Bootstrap icons
+            <a
+              href="https://github.com/twbs/icons/releases/download/v1.11.3/bootstrap-icons-1.11.3.zip"
+              target="_blank"
+            >
+              here
+            </a>
+            . Unzip the file and copy all the SVG image files into a new folder
+            inside
+            <code class="calibre11"> blog/templates/blog/ </code>
+            called
+            <code class="calibre11"> icons </code>
+            . That way you can access an icon like
+            <code class="calibre11"> pencil-fill.svg </code>
+            using the file path
+            <code class="calibre11">
+              blog/templates/blog/icons/pencil-fill.svg
+            </code>
+          </p>
+        </blockquote>
+        <p class="calibre6">
+          After editing the line, your HTML file should now look like this:
+        </p>
+        <p class="calibre6"></p>
+        <p class="calibre6">blog/templates/blog/base.html</p>
+        <p class="calibre6"></p>
+        <pre class="calibre13"><code class="calibre11">{% load static %}
         <span>&lt;!DOCTYPE <span>html</span>&gt;</span>
         <span>&lt;<span>html</span>&gt;</span>
             <span>&lt;<span>head</span>&gt;</span>
@@ -525,47 +257,35 @@
             <span>&lt;/<span>body</span>&gt;</span>
         <span>&lt;/<span>html</span>&gt;</span>
         </code></pre>
-     <p class="calibre6">
-      After saving and refreshing the page
-      <a href="http://127.0.0.1:8000" target="_blank">
-       http://127.0.0.1:8000
-      </a>
-      you will see a familiar
-      <code class="calibre11">
-       NoReverseMatch
-      </code>
-      error. Is that the case? Good!
-     </p>
-     <h2 class="calibre7" id="url">
-      URL
-     </h2>
-     <p class="calibre6">
-      We open
-      <code class="calibre11">
-       blog/urls.py
-      </code>
-      in the code editor and add a line:
-     </p>
-     <p class="calibre6">
-     </p>
-     <p class="calibre6">
-      blog/urls.py
-     </p>
-     <p class="calibre6">
-     </p>
-     <pre class="calibre13"><code class="calibre11">path(<span>'post/new/'</span>, views.post_new, name=<span>'post_new'</span>),
+        <p class="calibre6">
+          After saving and refreshing the page
+          <a href="http://127.0.0.1:8000" target="_blank">
+            http://127.0.0.1:8000
+          </a>
+          you will see a familiar
+          <code class="calibre11"> NoReverseMatch </code>
+          error. Is that the case? Good!
+        </p>
+        <h2 class="calibre7" id="url">URL</h2>
+        <p class="calibre6">
+          We open
+          <code class="calibre11"> blog/urls.py </code>
+          in the code editor and add a line:
+        </p>
+        <p class="calibre6"></p>
+        <p class="calibre6">blog/urls.py</p>
+        <p class="calibre6"></p>
+        <pre
+          class="calibre13"
+        ><code class="calibre11">path(<span>'post/new/'</span>, views.post_new, name=<span>'post_new'</span>),
         </code></pre>
-     <p class="calibre6">
-      And the final code will look like this:
-     </p>
-     <p class="calibre6">
-     </p>
-     <p class="calibre6">
-      blog/urls.py
-     </p>
-     <p class="calibre6">
-     </p>
-     <pre class="calibre13"><code class="calibre11"><span>from</span> django.urls <span>import</span> path
+        <p class="calibre6">And the final code will look like this:</p>
+        <p class="calibre6"></p>
+        <p class="calibre6">blog/urls.py</p>
+        <p class="calibre6"></p>
+        <pre
+          class="calibre13"
+        ><code class="calibre11"><span>from</span> django.urls <span>import</span> path
         <span>from</span> . <span>import</span> views
 
         urlpatterns = [
@@ -574,143 +294,111 @@
             path(<span>'post/new/'</span>, views.post_new, name=<span>'post_new'</span>),
         ]
         </code></pre>
-     <p class="calibre6">
-      After refreshing the site, we see an
-      <code class="calibre11">
-       AttributeError
-      </code>
-      , since we don't have the
-      <code class="calibre11">
-       post_new
-      </code>
-      view implemented. Let's add it right now.
-     </p>
-     <h2 class="calibre7" id="postnew-view">
-      post_new view
-     </h2>
-     <p class="calibre6">
-      Time to open the
-      <code class="calibre11">
-       blog/views.py
-      </code>
-      file in the code editor and add the following lines with the rest of the
-      <code class="calibre11">
-       from
-      </code>
-      rows:
-     </p>
-     <p class="calibre6">
-     </p>
-     <p class="calibre6">
-      blog/views.py
-     </p>
-     <p class="calibre6">
-     </p>
-     <pre class="calibre13"><code class="calibre11"><span>from</span> .forms <span>import</span> PostForm
+        <p class="calibre6">
+          After refreshing the site, we see an
+          <code class="calibre11"> AttributeError </code>
+          , since we don't have the
+          <code class="calibre11"> post_new </code>
+          view implemented. Let's add it right now.
+        </p>
+        <h2 class="calibre7" id="postnew-view">post_new view</h2>
+        <p class="calibre6">
+          Time to open the
+          <code class="calibre11"> blog/views.py </code>
+          file in the code editor and add the following lines with the rest of
+          the
+          <code class="calibre11"> from </code>
+          rows:
+        </p>
+        <p class="calibre6"></p>
+        <p class="calibre6">blog/views.py</p>
+        <p class="calibre6"></p>
+        <pre
+          class="calibre13"
+        ><code class="calibre11"><span>from</span> .forms <span>import</span> PostForm
         </code></pre>
-     <p class="calibre6">
-      And then our
-      <em class="calibre14">
-       view
-      </em>
-      :
-     </p>
-     <p class="calibre6">
-     </p>
-     <p class="calibre6">
-      blog/views.py
-     </p>
-     <p class="calibre6">
-     </p>
-     <pre class="calibre13"><code class="calibre11"><span><span>def</span> <span>post_new</span>(<span>request</span>):</span>
+        <p class="calibre6">
+          And then our
+          <em class="calibre14"> view </em>
+          :
+        </p>
+        <p class="calibre6"></p>
+        <p class="calibre6">blog/views.py</p>
+        <p class="calibre6"></p>
+        <pre
+          class="calibre13"
+        ><code class="calibre11"><span><span>def</span> <span>post_new</span>(<span>request</span>):</span>
             form = PostForm()
             <span>return</span> render(request, <span>'blog/post_edit.html'</span>, {<span>'form'</span>: form})
         </code></pre>
-     <p class="calibre6">
-      To create a new
-      <code class="calibre11">
-       Post
-      </code>
-      form, we need to call
-      <code class="calibre11">
-       PostForm()
-      </code>
-      and pass it to the template. We will go back to this
-      <em class="calibre14">
-       view
-      </em>
-      , but for now, let's quickly create a template for the form.
-     </p>
-     <h2 class="calibre7" id="template">
-      Template
-     </h2>
-     <p class="calibre6">
-      We need to create a file
-      <code class="calibre11">
-       post_edit.html
-      </code>
-      in the
-      <code class="calibre11">
-       blog/templates/blog
-      </code>
-      directory, and open it in the code editor. To make a form work we need several things:
-     </p>
-     <ul class="calibre9">
-      <li class="calibre3">
-       We have to display the form. We can do that with (for example)
-       <code class="calibre11">
-        {{ form.as_p }}
-       </code>
-       .
-      </li>
-      <li class="calibre3">
-       The line above needs to be wrapped with an HTML form element:
-       <code class="calibre11">
-        &lt;form method="POST"&gt;...&lt;/form&gt;
-       </code>
-       .
-      </li>
-      <li class="calibre3">
-       We need a
-       <code class="calibre11">
-        Save
-       </code>
-       button. We do that with an HTML button:
-       <code class="calibre11">
-        &lt;button type="submit"&gt;Save&lt;/button&gt;
-       </code>
-       .
-      </li>
-      <li class="calibre3">
-       And finally, just after the opening
-       <code class="calibre11">
-        &lt;form ...&gt;
-       </code>
-       tag we need to add
-       <code class="calibre11">
-        {% csrf_token %}
-       </code>
-       . This is very important, since it makes your forms secure! If you forget about this bit, Django will complain when you try to save the form:
-      </li>
-     </ul>
-     <p class="calibre6">
-      <img alt="CSRF Forbidden page" class="calibre8" src="content/csrf2.png"/>
-     </p>
-     <p class="calibre6">
-      OK, so let's see how the HTML in
-      <code class="calibre11">
-       post_edit.html
-      </code>
-      should look:
-     </p>
-     <p class="calibre6">
-     </p>
-     <p class="calibre6">
-      blog/templates/blog/post_edit.html
-     </p>
-     <p class="calibre6">
-     </p>
-     <pre class="calibre13"><code class="calibre11">{% extends 'blog/base.html' %}
+        <p class="calibre6">
+          To create a new
+          <code class="calibre11"> Post </code>
+          form, we need to call
+          <code class="calibre11"> PostForm() </code>
+          and pass it to the template. We will go back to this
+          <em class="calibre14"> view </em>
+          , but for now, let's quickly create a template for the form.
+        </p>
+        <h2 class="calibre7" id="template">Template</h2>
+        <p class="calibre6">
+          We need to create a file
+          <code class="calibre11"> post_edit.html </code>
+          in the
+          <code class="calibre11"> blog/templates/blog </code>
+          directory, and open it in the code editor. To make a form work we need
+          several things:
+        </p>
+        <ul class="calibre9">
+          <li class="calibre3">
+            We have to display the form. We can do that with (for example)
+            <code class="calibre11"> {{ form.as_p }} </code>
+            .
+          </li>
+          <li class="calibre3">
+            The line above needs to be wrapped with an HTML form element:
+            <code class="calibre11">
+              &lt;form method="POST"&gt;...&lt;/form&gt;
+            </code>
+            .
+          </li>
+          <li class="calibre3">
+            We need a
+            <code class="calibre11"> Save </code>
+            button. We do that with an HTML button:
+            <code class="calibre11">
+              &lt;button type="submit"&gt;Save&lt;/button&gt;
+            </code>
+            .
+          </li>
+          <li class="calibre3">
+            And finally, just after the opening
+            <code class="calibre11"> &lt;form ...&gt; </code>
+            tag we need to add
+            <code class="calibre11"> {% csrf_token %} </code>
+            . This is very important, since it makes your forms secure! If you
+            forget about this bit, Django will complain when you try to save the
+            form:
+          </li>
+        </ul>
+        <p class="calibre6">
+          <img
+            alt="CSRF Forbidden page"
+            class="calibre8"
+            src="content/csrf2.png"
+          />
+        </p>
+        <p class="calibre6">
+          OK, so let's see how the HTML in
+          <code class="calibre11"> post_edit.html </code>
+          should look:
+        </p>
+        <p class="calibre6"></p>
+        <p class="calibre6">blog/templates/blog/post_edit.html</p>
+        <p class="calibre6"></p>
+        <pre
+          class="calibre13"
+        ><code class="calibre11">{% extends 'blog/base.html' %}
 
         {% block content %}
             <span>&lt;<span>h2</span>&gt;</span>New post<span>&lt;/<span>h2</span>&gt;</span>
@@ -720,263 +408,189 @@
             <span>&lt;/<span>form</span>&gt;</span>
         {% endblock %}
         </code></pre>
-     <p class="calibre6">
-      Time to refresh! Yay! Your form is displayed!
-     </p>
-     <p class="calibre6">
-      <img alt="New form" class="calibre8" src="content/new_form2.png"/>
-     </p>
-     <p class="calibre6">
-      But, wait a minute! When you type something in the
-      <code class="calibre11">
-       title
-      </code>
-      and
-      <code class="calibre11">
-       text
-      </code>
-      fields and try to save it, what will happen?
-     </p>
-     <p class="calibre6">
-      Nothing! We are once again on the same page and our text is gone… and no new post is added. So what went wrong?
-     </p>
-     <p class="calibre6">
-      The answer is: nothing. We need to do a little bit more work in our
-      <em class="calibre14">
-       view
-      </em>
-      .
-     </p>
-     <h2 class="calibre7" id="saving-the-form">
-      Saving the form
-     </h2>
-     <p class="calibre6">
-      Open
-      <code class="calibre11">
-       blog/views.py
-      </code>
-      once again in the code editor. Currently all we have in the
-      <code class="calibre11">
-       post_new
-      </code>
-      view is the following:
-     </p>
-     <p class="calibre6">
-     </p>
-     <p class="calibre6">
-      blog/views.py
-     </p>
-     <p class="calibre6">
-     </p>
-     <pre class="calibre13"><code class="calibre11"><span><span>def</span> <span>post_new</span>(<span>request</span>):</span>
+        <p class="calibre6">Time to refresh! Yay! Your form is displayed!</p>
+        <p class="calibre6">
+          <img alt="New form" class="calibre8" src="content/new_form2.png" />
+        </p>
+        <p class="calibre6">
+          But, wait a minute! When you type something in the
+          <code class="calibre11"> title </code>
+          and
+          <code class="calibre11"> text </code>
+          fields and try to save it, what will happen?
+        </p>
+        <p class="calibre6">
+          Nothing! We are once again on the same page and our text is gone… and
+          no new post is added. So what went wrong?
+        </p>
+        <p class="calibre6">
+          The answer is: nothing. We need to do a little bit more work in our
+          <em class="calibre14"> view </em>
+          .
+        </p>
+        <h2 class="calibre7" id="saving-the-form">Saving the form</h2>
+        <p class="calibre6">
+          Open
+          <code class="calibre11"> blog/views.py </code>
+          once again in the code editor. Currently all we have in the
+          <code class="calibre11"> post_new </code>
+          view is the following:
+        </p>
+        <p class="calibre6"></p>
+        <p class="calibre6">blog/views.py</p>
+        <p class="calibre6"></p>
+        <pre
+          class="calibre13"
+        ><code class="calibre11"><span><span>def</span> <span>post_new</span>(<span>request</span>):</span>
             form = PostForm()
             <span>return</span> render(request, <span>'blog/post_edit.html'</span>, {<span>'form'</span>: form})
         </code></pre>
-     <p class="calibre6">
-      When we submit the form, we are brought back to the same view, but this time the
-      <code class="calibre11">
-       request
-      </code>
-      parameter is different. If we look at the
-      <code class="calibre11">
-       request.method
-      </code>
-      it will be
-      <code class="calibre11">
-       "POST"
-      </code>
-      (method for sending forms) instead of
-      <code class="calibre11">
-       "GET"
-      </code>
-      (method for requesting pages) and the
-      <code class="calibre11">
-       request.POST
-      </code>
-      attribute will contain all the fields from the form. The naming has nothing to do with a blog "post"; it's to do with the fact that we're "posting" data.
-     </p>
-     <p class="calibre6">
-      So in our
-      <em class="calibre14">
-       view
-      </em>
-      we have two separate situations to handle: first, when we access the page for the first time and we want a blank form, and second, when we go back to the
-      <em class="calibre14">
-       view
-      </em>
-      with all form data we just typed. So we need to add a condition (we will use
-      <code class="calibre11">
-       if
-      </code>
-      for that):
-     </p>
-     <p class="calibre6">
-     </p>
-     <p class="calibre6">
-      blog/views.py
-     </p>
-     <p class="calibre6">
-     </p>
-     <pre class="calibre13"><code class="calibre11"><span>if</span> request.method == <span>"POST"</span>:
+        <p class="calibre6">
+          When we submit the form, we are brought back to the same view, but
+          this time the
+          <code class="calibre11"> request </code>
+          parameter is different. If we look at the
+          <code class="calibre11"> request.method </code>
+          it will be
+          <code class="calibre11"> "POST" </code>
+          (method for sending forms) instead of
+          <code class="calibre11"> "GET" </code>
+          (method for requesting pages) and the
+          <code class="calibre11"> request.POST </code>
+          attribute will contain all the fields from the form. The naming has
+          nothing to do with a blog "post"; it's to do with the fact that we're
+          "posting" data.
+        </p>
+        <p class="calibre6">
+          So in our
+          <em class="calibre14"> view </em>
+          we have two separate situations to handle: first, when we access the
+          page for the first time and we want a blank form, and second, when we
+          go back to the
+          <em class="calibre14"> view </em>
+          with all form data we just typed. So we need to add a condition (we
+          will use
+          <code class="calibre11"> if </code>
+          for that):
+        </p>
+        <p class="calibre6"></p>
+        <p class="calibre6">blog/views.py</p>
+        <p class="calibre6"></p>
+        <pre
+          class="calibre13"
+        ><code class="calibre11"><span>if</span> request.method == <span>"POST"</span>:
             [...]
         <span>else</span>:
             form = PostForm()
         </code></pre>
-     <p class="calibre6">
-      It's time to fill in the dots
-      <code class="calibre11">
-       [...]
-      </code>
-      . If
-      <code class="calibre11">
-       method
-      </code>
-      is
-      <code class="calibre11">
-       POST
-      </code>
-      then we want to construct the
-      <code class="calibre11">
-       PostForm
-      </code>
-      with data from the form, right? We will do that as follows:
-     </p>
-     <p class="calibre6">
-     </p>
-     <p class="calibre6">
-      blog/views.py
-     </p>
-     <p class="calibre6">
-     </p>
-     <pre class="calibre13"><code class="calibre11">form = PostForm(request.POST)
+        <p class="calibre6">
+          It's time to fill in the dots
+          <code class="calibre11"> [...] </code>
+          . If
+          <code class="calibre11"> method </code>
+          is
+          <code class="calibre11"> POST </code>
+          then we want to construct the
+          <code class="calibre11"> PostForm </code>
+          with data from the form, right? We will do that as follows:
+        </p>
+        <p class="calibre6"></p>
+        <p class="calibre6">blog/views.py</p>
+        <p class="calibre6"></p>
+        <pre
+          class="calibre13"
+        ><code class="calibre11">form = PostForm(request.POST)
         </code></pre>
-     <p class="calibre6">
-      The next thing is to check if the form is correct (all required fields are set and no incorrect values have been submitted). We do that with
-      <code class="calibre11">
-       form.is_valid()
-      </code>
-      .
-     </p>
-     <p class="calibre6">
-      We check if the form is valid and if so, we can save it!
-     </p>
-     <p class="calibre6">
-     </p>
-     <p class="calibre6">
-      blog/views.py
-     </p>
-     <p class="calibre6">
-     </p>
-     <pre class="calibre13"><code class="calibre11"><span>if</span> form.is_valid():
+        <p class="calibre6">
+          The next thing is to check if the form is correct (all required fields
+          are set and no incorrect values have been submitted). We do that with
+          <code class="calibre11"> form.is_valid() </code>
+          .
+        </p>
+        <p class="calibre6">
+          We check if the form is valid and if so, we can save it!
+        </p>
+        <p class="calibre6"></p>
+        <p class="calibre6">blog/views.py</p>
+        <p class="calibre6"></p>
+        <pre
+          class="calibre13"
+        ><code class="calibre11"><span>if</span> form.is_valid():
             post = form.save(commit=<span>False</span>)
             post.author = request.user
             post.published_date = timezone.now()
             post.save()
         </code></pre>
-     <p class="calibre6">
-      Basically, we have two things here: we save the form with
-      <code class="calibre11">
-       form.save
-      </code>
-      and we add an author (since there was no
-      <code class="calibre11">
-       author
-      </code>
-      field in the
-      <code class="calibre11">
-       PostForm
-      </code>
-      and this field is required).
-      <code class="calibre11">
-       commit=False
-      </code>
-      means that we don't want to save the
-      <code class="calibre11">
-       Post
-      </code>
-      model yet – we want to add the author first. Most of the time you will use
-      <code class="calibre11">
-       form.save()
-      </code>
-      without
-      <code class="calibre11">
-       commit=False
-      </code>
-      , but in this case, we need to supply it.
-      <code class="calibre11">
-       post.save()
-      </code>
-      will preserve changes (adding the author) and a new blog post is created!
-     </p>
-     <p class="calibre6">
-      Finally, it would be awesome if we could immediately go to the
-      <code class="calibre11">
-       post_detail
-      </code>
-      page for our newly created blog post, right? To do that we need one more import:
-     </p>
-     <p class="calibre6">
-     </p>
-     <p class="calibre6">
-      blog/views.py
-     </p>
-     <p class="calibre6">
-     </p>
-     <pre class="calibre13"><code class="calibre11"><span>from</span> django.shortcuts <span>import</span> redirect
+        <p class="calibre6">
+          Basically, we have two things here: we save the form with
+          <code class="calibre11"> form.save </code>
+          and we add an author (since there was no
+          <code class="calibre11"> author </code>
+          field in the
+          <code class="calibre11"> PostForm </code>
+          and this field is required).
+          <code class="calibre11"> commit=False </code>
+          means that we don't want to save the
+          <code class="calibre11"> Post </code>
+          model yet – we want to add the author first. Most of the time you will
+          use
+          <code class="calibre11"> form.save() </code>
+          without
+          <code class="calibre11"> commit=False </code>
+          , but in this case, we need to supply it.
+          <code class="calibre11"> post.save() </code>
+          will preserve changes (adding the author) and a new blog post is
+          created!
+        </p>
+        <p class="calibre6">
+          Finally, it would be awesome if we could immediately go to the
+          <code class="calibre11"> post_detail </code>
+          page for our newly created blog post, right? To do that we need one
+          more import:
+        </p>
+        <p class="calibre6"></p>
+        <p class="calibre6">blog/views.py</p>
+        <p class="calibre6"></p>
+        <pre
+          class="calibre13"
+        ><code class="calibre11"><span>from</span> django.shortcuts <span>import</span> redirect
         </code></pre>
-     <p class="calibre6">
-      Add it at the very beginning of your file. And now we can say, "go to the
-      <code class="calibre11">
-       post_detail
-      </code>
-      page for the newly created post":
-     </p>
-     <p class="calibre6">
-     </p>
-     <p class="calibre6">
-      blog/views.py
-     </p>
-     <p class="calibre6">
-     </p>
-     <pre class="calibre13"><code class="calibre11"><span>return</span> redirect(<span>'post_detail'</span>, pk=post.pk)
+        <p class="calibre6">
+          Add it at the very beginning of your file. And now we can say, "go to
+          the
+          <code class="calibre11"> post_detail </code>
+          page for the newly created post":
+        </p>
+        <p class="calibre6"></p>
+        <p class="calibre6">blog/views.py</p>
+        <p class="calibre6"></p>
+        <pre
+          class="calibre13"
+        ><code class="calibre11"><span>return</span> redirect(<span>'post_detail'</span>, pk=post.pk)
         </code></pre>
-     <p class="calibre6">
-      <code class="calibre11">
-       post_detail
-      </code>
-      is the name of the view we want to go to. Remember that this
-      <em class="calibre14">
-       view
-      </em>
-      requires a
-      <code class="calibre11">
-       pk
-      </code>
-      variable? To pass it to the views, we use
-      <code class="calibre11">
-       pk=post.pk
-      </code>
-      , where
-      <code class="calibre11">
-       post
-      </code>
-      is the newly created blog post!
-     </p>
-     <p class="calibre6">
-      OK, we've talked a lot, but we probably want to see what the whole
-      <em class="calibre14">
-       view
-      </em>
-      looks like now, right?
-     </p>
-     <p class="calibre6">
-     </p>
-     <p class="calibre6">
-      blog/views.py
-     </p>
-     <p class="calibre6">
-     </p>
-     <pre class="calibre13"><code class="calibre11"><span><span>def</span> <span>post_new</span>(<span>request</span>):</span>
+        <p class="calibre6">
+          <code class="calibre11"> post_detail </code>
+          is the name of the view we want to go to. Remember that this
+          <em class="calibre14"> view </em>
+          requires a
+          <code class="calibre11"> pk </code>
+          variable? To pass it to the views, we use
+          <code class="calibre11"> pk=post.pk </code>
+          , where
+          <code class="calibre11"> post </code>
+          is the newly created blog post!
+        </p>
+        <p class="calibre6">
+          OK, we've talked a lot, but we probably want to see what the whole
+          <em class="calibre14"> view </em>
+          looks like now, right?
+        </p>
+        <p class="calibre6"></p>
+        <p class="calibre6">blog/views.py</p>
+        <p class="calibre6"></p>
+        <pre
+          class="calibre13"
+        ><code class="calibre11"><span><span>def</span> <span>post_new</span>(<span>request</span>):</span>
             <span>if</span> request.method == <span>"POST"</span>:
                 form = PostForm(request.POST)
                 <span>if</span> form.is_valid():
@@ -989,146 +603,131 @@
                 form = PostForm()
             <span>return</span> render(request, <span>'blog/post_edit.html'</span>, {<span>'form'</span>: form})
         </code></pre>
-     <p class="calibre6">
-      Let's see if it works. Go to the page
-      <a href="http://127.0.0.1:8000/post/new/" target="_blank">
-       http://127.0.0.1:8000/post/new/
-      </a>
-      , add a
-      <code class="calibre11">
-       title
-      </code>
-      and
-      <code class="calibre11">
-       text
-      </code>
-      , save it… and voilà! The new blog post is added and we are redirected to the
-      <code class="calibre11">
-       post_detail
-      </code>
-      page!
-     </p>
-     <p class="calibre6">
-      You might have noticed that we are setting the publish date before saving the post. Later on, we will introduce a
-      <em class="calibre14">
-       publish button
-      </em>
-      in
-      <strong class="calibre10">
-       Django Girls Tutorial: Extensions
-      </strong>
-      .
-     </p>
-     <p class="calibre6">
-      That is awesome!
-     </p>
-     <blockquote class="calibre5">
-      <p class="calibre6">
-       As we have recently used the Django admin interface, the system currently thinks we are still logged in. There are a few situations that could lead to us being logged out (closing the browser, restarting the DB, etc.). If, when creating a post, you find that you are getting errors referring to the lack of a logged-in user, head to the admin page
-       <a href="http://127.0.0.1:8000/admin" target="_blank">
-        http://127.0.0.1:8000/admin
-       </a>
-       and log in again. This will fix the issue temporarily. There is a permanent fix awaiting you in the
-       <strong class="calibre10">
-        Homework: add security to your website!
-       </strong>
-       chapter after the main tutorial.
-      </p>
-     </blockquote>
-     <p class="calibre6">
-      <img alt="Logged in error" class="calibre8" src="content/post_create_error.png"/>
-     </p>
-     <h2 class="calibre7" id="form-validation">
-      Form validation
-     </h2>
-     <p class="calibre6">
-      Now, we will show you how cool Django forms are. A blog post needs to have
-      <code class="calibre11">
-       title
-      </code>
-      and
-      <code class="calibre11">
-       text
-      </code>
-      fields. In our
-      <code class="calibre11">
-       Post
-      </code>
-      model we did not say that these fields (as opposed to
-      <code class="calibre11">
-       published_date
-      </code>
-      ) are not required, so Django, by default, expects them to be set.
-     </p>
-     <p class="calibre6">
-      Try to save the form without
-      <code class="calibre11">
-       title
-      </code>
-      and
-      <code class="calibre11">
-       text
-      </code>
-      . Guess what will happen!
-     </p>
-     <p class="calibre6">
-      <img alt="Form validation" class="calibre8" src="content/form_validation2.png"/>
-     </p>
-     <p class="calibre6">
-      Django is taking care to validate that all the fields in our form are correct. Isn't it awesome?
-     </p>
-     <h2 class="calibre7" id="edit-form">
-      Edit form
-     </h2>
-     <p class="calibre6">
-      Now we know how to add a new post. But what if we want to edit an existing one? This is very similar to what we just did. Let's create some important things quickly. (If you don't understand something, you should ask your coach or look at the previous chapters, since we covered all these steps already.)
-     </p>
-     <p class="calibre6">
-      First, let's save the icon which represents the edit button. Download
-      <a href="https://raw.githubusercontent.com/twbs/icons/main/icons/pencil-fill.svg" target="_blank">
-       pencil-fill.svg
-      </a>
-      and save it to the location
-      <code class="calibre11">
-       blog/templates/blog/icons/
-      </code>
-      .
-     </p>
-     <p class="calibre6">
-      Open
-      <code class="calibre11">
-       blog/templates/blog/post_detail.html
-      </code>
-      in the code editor and add the following code inside
-      <code class="calibre11">
-       article
-      </code>
-      element:
-     </p>
-     <p class="calibre6">
-     </p>
-     <p class="calibre6">
-      blog/templates/blog/post_detail.html
-     </p>
-     <p class="calibre6">
-     </p>
-     <pre class="calibre13"><code class="calibre11"><span>&lt;<span>aside</span> <span>class</span>=<span>"actions"</span>&gt;</span>
+        <p class="calibre6">
+          Let's see if it works. Go to the page
+          <a href="http://127.0.0.1:8000/post/new/" target="_blank">
+            http://127.0.0.1:8000/post/new/
+          </a>
+          , add a
+          <code class="calibre11"> title </code>
+          and
+          <code class="calibre11"> text </code>
+          , save it… and voilà! The new blog post is added and we are redirected
+          to the
+          <code class="calibre11"> post_detail </code>
+          page!
+        </p>
+        <p class="calibre6">
+          You might have noticed that we are setting the publish date before
+          saving the post. Later on, we will introduce a
+          <em class="calibre14"> publish button </em>
+          in
+          <strong class="calibre10"> Django Girls Tutorial: Extensions </strong>
+          .
+        </p>
+        <p class="calibre6">That is awesome!</p>
+        <blockquote class="calibre5">
+          <p class="calibre6">
+            As we have recently used the Django admin interface, the system
+            currently thinks we are still logged in. There are a few situations
+            that could lead to us being logged out (closing the browser,
+            restarting the DB, etc.). If, when creating a post, you find that
+            you are getting errors referring to the lack of a logged-in user,
+            head to the admin page
+            <a href="http://127.0.0.1:8000/admin" target="_blank">
+              http://127.0.0.1:8000/admin
+            </a>
+            and log in again. This will fix the issue temporarily. There is a
+            permanent fix awaiting you in the
+            <strong class="calibre10">
+              Homework: add security to your website!
+            </strong>
+            chapter after the main tutorial.
+          </p>
+        </blockquote>
+        <p class="calibre6">
+          <img
+            alt="Logged in error"
+            class="calibre8"
+            src="content/post_create_error.png"
+          />
+        </p>
+        <h2 class="calibre7" id="form-validation">Form validation</h2>
+        <p class="calibre6">
+          Now, we will show you how cool Django forms are. A blog post needs to
+          have
+          <code class="calibre11"> title </code>
+          and
+          <code class="calibre11"> text </code>
+          fields. In our
+          <code class="calibre11"> Post </code>
+          model we did not say that these fields (as opposed to
+          <code class="calibre11"> published_date </code>
+          ) are not required, so Django, by default, expects them to be set.
+        </p>
+        <p class="calibre6">
+          Try to save the form without
+          <code class="calibre11"> title </code>
+          and
+          <code class="calibre11"> text </code>
+          . Guess what will happen!
+        </p>
+        <p class="calibre6">
+          <img
+            alt="Form validation"
+            class="calibre8"
+            src="content/form_validation2.png"
+          />
+        </p>
+        <p class="calibre6">
+          Django is taking care to validate that all the fields in our form are
+          correct. Isn't it awesome?
+        </p>
+        <h2 class="calibre7" id="edit-form">Edit form</h2>
+        <p class="calibre6">
+          Now we know how to add a new post. But what if we want to edit an
+          existing one? This is very similar to what we just did. Let's create
+          some important things quickly. (If you don't understand something, you
+          should ask your coach or look at the previous chapters, since we
+          covered all these steps already.)
+        </p>
+        <p class="calibre6">
+          First, let's save the icon which represents the edit button. Download
+          <a
+            href="https://raw.githubusercontent.com/twbs/icons/main/icons/pencil-fill.svg"
+            target="_blank"
+          >
+            pencil-fill.svg
+          </a>
+          and save it to the location
+          <code class="calibre11"> blog/templates/blog/icons/ </code>
+          .
+        </p>
+        <p class="calibre6">
+          Open
+          <code class="calibre11"> blog/templates/blog/post_detail.html </code>
+          in the code editor and add the following code inside
+          <code class="calibre11"> article </code>
+          element:
+        </p>
+        <p class="calibre6"></p>
+        <p class="calibre6">blog/templates/blog/post_detail.html</p>
+        <p class="calibre6"></p>
+        <pre
+          class="calibre13"
+        ><code class="calibre11"><span>&lt;<span>aside</span> <span>class</span>=<span>"actions"</span>&gt;</span>
             <span>&lt;<span>a</span> <span>class</span>=<span>"btn btn-secondary"</span> <span>href</span>=<span>"{% url 'post_edit' pk=post.pk %}"</span>&gt;</span>
               {% include './icons/pencil-fill.svg' %}
             <span>&lt;/<span>a</span>&gt;</span>
         <span>&lt;/<span>aside</span>&gt;</span>
         </code></pre>
-     <p class="calibre6">
-      so that the template will look like this:
-     </p>
-     <p class="calibre6">
-     </p>
-     <p class="calibre6">
-      blog/templates/blog/post_detail.html
-     </p>
-     <p class="calibre6">
-     </p>
-     <pre class="calibre13"><code class="calibre11">{% extends 'blog/base.html' %}
+        <p class="calibre6">so that the template will look like this:</p>
+        <p class="calibre6"></p>
+        <p class="calibre6">blog/templates/blog/post_detail.html</p>
+        <p class="calibre6"></p>
+        <pre
+          class="calibre13"
+        ><code class="calibre11">{% extends 'blog/base.html' %}
 
         {% block content %}
             <span>&lt;<span>article</span> <span>class</span>=<span>"post"</span>&gt;</span>
@@ -1147,48 +746,36 @@
             <span>&lt;/<span>article</span>&gt;</span>
         {% endblock %}
         </code></pre>
-     <p class="calibre6">
-      Open
-      <code class="calibre11">
-       blog/urls.py
-      </code>
-      in the code editor, and add this line:
-     </p>
-     <p class="calibre6">
-     </p>
-     <p class="calibre6">
-      blog/urls.py
-     </p>
-     <p class="calibre6">
-     </p>
-     <pre class="calibre13"><code class="calibre11">    path(<span>'post/&lt;int:pk&gt;/edit/'</span>, views.post_edit, name=<span>'post_edit'</span>),
+        <p class="calibre6">
+          Open
+          <code class="calibre11"> blog/urls.py </code>
+          in the code editor, and add this line:
+        </p>
+        <p class="calibre6"></p>
+        <p class="calibre6">blog/urls.py</p>
+        <p class="calibre6"></p>
+        <pre
+          class="calibre13"
+        ><code class="calibre11">    path(<span>'post/&lt;int:pk&gt;/edit/'</span>, views.post_edit, name=<span>'post_edit'</span>),
         </code></pre>
-     <p class="calibre6">
-      We will reuse the template
-      <code class="calibre11">
-       blog/templates/blog/post_edit.html
-      </code>
-      , so the last missing thing is a
-      <em class="calibre14">
-       view
-      </em>
-      .
-     </p>
-     <p class="calibre6">
-      Let's open
-      <code class="calibre11">
-       blog/views.py
-      </code>
-      in the code editor and add this at the very end of the file:
-     </p>
-     <p class="calibre6">
-     </p>
-     <p class="calibre6">
-      blog/views.py
-     </p>
-     <p class="calibre6">
-     </p>
-     <pre class="calibre13"><code class="calibre11"><span><span>def</span> <span>post_edit</span>(<span>request, pk</span>):</span>
+        <p class="calibre6">
+          We will reuse the template
+          <code class="calibre11"> blog/templates/blog/post_edit.html </code>
+          , so the last missing thing is a
+          <em class="calibre14"> view </em>
+          .
+        </p>
+        <p class="calibre6">
+          Let's open
+          <code class="calibre11"> blog/views.py </code>
+          in the code editor and add this at the very end of the file:
+        </p>
+        <p class="calibre6"></p>
+        <p class="calibre6">blog/views.py</p>
+        <p class="calibre6"></p>
+        <pre
+          class="calibre13"
+        ><code class="calibre11"><span><span>def</span> <span>post_edit</span>(<span>request, pk</span>):</span>
             post = get_object_or_404(Post, pk=pk)
             <span>if</span> request.method == <span>"POST"</span>:
                 form = PostForm(request.POST, instance=post)
@@ -1202,309 +789,235 @@
                 form = PostForm(instance=post)
             <span>return</span> render(request, <span>'blog/post_edit.html'</span>, {<span>'form'</span>: form})
         </code></pre>
-     <p class="calibre6">
-      This looks almost exactly the same as our
-      <code class="calibre11">
-       post_new
-      </code>
-      view, right? But not entirely. For one, we pass an extra
-      <code class="calibre11">
-       pk
-      </code>
-      parameter from
-      <code class="calibre11">
-       urls
-      </code>
-      . Next, we get the
-      <code class="calibre11">
-       Post
-      </code>
-      model we want to edit with
-      <code class="calibre11">
-       get_object_or_404(Post, pk=pk)
-      </code>
-      and then, when we create a form, we pass this post as an
-      <code class="calibre11">
-       instance
-      </code>
-      , both when we save the form…
-     </p>
-     <p class="calibre6">
-     </p>
-     <p class="calibre6">
-      blog/views.py
-     </p>
-     <p class="calibre6">
-     </p>
-     <pre class="calibre13"><code class="calibre11">form = PostForm(request.POST, instance=post)
+        <p class="calibre6">
+          This looks almost exactly the same as our
+          <code class="calibre11"> post_new </code>
+          view, right? But not entirely. For one, we pass an extra
+          <code class="calibre11"> pk </code>
+          parameter from
+          <code class="calibre11"> urls </code>
+          . Next, we get the
+          <code class="calibre11"> Post </code>
+          model we want to edit with
+          <code class="calibre11"> get_object_or_404(Post, pk=pk) </code>
+          and then, when we create a form, we pass this post as an
+          <code class="calibre11"> instance </code>
+          , both when we save the form…
+        </p>
+        <p class="calibre6"></p>
+        <p class="calibre6">blog/views.py</p>
+        <p class="calibre6"></p>
+        <pre
+          class="calibre13"
+        ><code class="calibre11">form = PostForm(request.POST, instance=post)
         </code></pre>
-     <p class="calibre6">
-      …and when we've just opened a form with this post to edit:
-     </p>
-     <p class="calibre6">
-     </p>
-     <p class="calibre6">
-      blog/views.py
-     </p>
-     <p class="calibre6">
-     </p>
-     <pre class="calibre13"><code class="calibre11">form = PostForm(instance=post)
+        <p class="calibre6">
+          …and when we've just opened a form with this post to edit:
+        </p>
+        <p class="calibre6"></p>
+        <p class="calibre6">blog/views.py</p>
+        <p class="calibre6"></p>
+        <pre
+          class="calibre13"
+        ><code class="calibre11">form = PostForm(instance=post)
         </code></pre>
-     <p class="calibre6">
-      OK, let's test if it works! Let's go to the
-      <code class="calibre11">
-       post_detail
-      </code>
-      page. There should be an edit button in the top-right corner:
-     </p>
-     <p class="calibre6">
-      <img alt="Edit button" class="calibre8" src="content/edit_button2.png"/>
-     </p>
-     <p class="calibre6">
-      When you click it you will see the form with our blog post:
-     </p>
-     <p class="calibre6">
-      <img alt="Edit form" class="calibre8" src="content/edit_form2.png"/>
-     </p>
-     <p class="calibre6">
-      Feel free to change the title or the text and save the changes!
-     </p>
-     <p class="calibre6">
-      Congratulations! Your application is getting more and more complete!
-     </p>
-     <p class="calibre6">
-      If you need more information about Django forms, you should read the documentation:
-      <a href="https://docs.djangoproject.com/en/5.1/topics/forms/" target="_blank">
-       https://docs.djangoproject.com/en/5.1/topics/forms/
-      </a>
-     </p>
-     <h2 class="calibre7" id="security">
-      Security
-     </h2>
-     <p class="calibre6">
-      Being able to create new posts by clicking a link is awesome! But right now, anyone who visits your site will be able to make a new blog post, and that's probably not something you want. Let's make it so the button shows up for you but not for anyone else.
-     </p>
-     <p class="calibre6">
-      Open
-      <code class="calibre11">
-       blog/templates/blog/base.html
-      </code>
-      in the code editor, find our
-      <code class="calibre11">
-       div
-      </code>
-      inside
-      <code class="calibre11">
-       header
-      </code>
-      and the anchor element you put in there earlier. It should look like this:
-     </p>
-     <p class="calibre6">
-     </p>
-     <p class="calibre6">
-      blog/templates/blog/base.html
-     </p>
-     <p class="calibre6">
-     </p>
-     <pre class="calibre13"><code class="calibre11"><span>&lt;<span>a</span> <span>href</span>=<span>"{% url 'post_new' %}"</span> <span>class</span>=<span>"top-menu"</span>&gt;</span>
+        <p class="calibre6">
+          OK, let's test if it works! Let's go to the
+          <code class="calibre11"> post_detail </code>
+          page. There should be an edit button in the top-right corner:
+        </p>
+        <p class="calibre6">
+          <img
+            alt="Edit button"
+            class="calibre8"
+            src="content/edit_button2.png"
+          />
+        </p>
+        <p class="calibre6">
+          When you click it you will see the form with our blog post:
+        </p>
+        <p class="calibre6">
+          <img alt="Edit form" class="calibre8" src="content/edit_form2.png" />
+        </p>
+        <p class="calibre6">
+          Feel free to change the title or the text and save the changes!
+        </p>
+        <p class="calibre6">
+          Congratulations! Your application is getting more and more complete!
+        </p>
+        <p class="calibre6">
+          If you need more information about Django forms, you should read the
+          documentation:
+          <a
+            href="https://docs.djangoproject.com/en/5.1/topics/forms/"
+            target="_blank"
+          >
+            https://docs.djangoproject.com/en/5.1/topics/forms/
+          </a>
+        </p>
+        <h2 class="calibre7" id="security">Security</h2>
+        <p class="calibre6">
+          Being able to create new posts by clicking a link is awesome! But
+          right now, anyone who visits your site will be able to make a new blog
+          post, and that's probably not something you want. Let's make it so the
+          button shows up for you but not for anyone else.
+        </p>
+        <p class="calibre6">
+          Open
+          <code class="calibre11"> blog/templates/blog/base.html </code>
+          in the code editor, find our
+          <code class="calibre11"> div </code>
+          inside
+          <code class="calibre11"> header </code>
+          and the anchor element you put in there earlier. It should look like
+          this:
+        </p>
+        <p class="calibre6"></p>
+        <p class="calibre6">blog/templates/blog/base.html</p>
+        <p class="calibre6"></p>
+        <pre
+          class="calibre13"
+        ><code class="calibre11"><span>&lt;<span>a</span> <span>href</span>=<span>"{% url 'post_new' %}"</span> <span>class</span>=<span>"top-menu"</span>&gt;</span>
             {% include './icons/file-earmark-plus.svg' %}
         <span>&lt;/<span>a</span>&gt;</span>
         </code></pre>
-     <p class="calibre6">
-      We're going to add another
-      <code class="calibre11">
-       {% if %}
-      </code>
-      tag to this, which will make the link show up only for users who are logged into the admin. Right now, that's just you! Change the
-      <code class="calibre11">
-       &lt;a&gt;
-      </code>
-      element to look like this:
-     </p>
-     <p class="calibre6">
-     </p>
-     <p class="calibre6">
-      blog/templates/blog/base.html
-     </p>
-     <p class="calibre6">
-     </p>
-     <pre class="calibre13"><code class="calibre11">{% if user.is_authenticated %}
+        <p class="calibre6">
+          We're going to add another
+          <code class="calibre11"> {% if %} </code>
+          tag to this, which will make the link show up only for users who are
+          logged into the admin. Right now, that's just you! Change the
+          <code class="calibre11"> &lt;a&gt; </code>
+          element to look like this:
+        </p>
+        <p class="calibre6"></p>
+        <p class="calibre6">blog/templates/blog/base.html</p>
+        <p class="calibre6"></p>
+        <pre
+          class="calibre13"
+        ><code class="calibre11">{% if user.is_authenticated %}
             <span>&lt;<span>a</span> <span>href</span>=<span>"{% url 'post_new' %}"</span> <span>class</span>=<span>"top-menu"</span>&gt;</span>
                 {% include './icons/file-earmark-plus.svg' %}
             <span>&lt;/<span>a</span>&gt;</span>
         {% endif %}
         </code></pre>
-     <p class="calibre6">
-      This
-      <code class="calibre11">
-       {% if %}
-      </code>
-      will cause the link to be sent to the browser only if the user requesting the page is logged in. This doesn't protect the creation of new posts completely, but it's a good first step. We'll cover more security in the extension lessons.
-     </p>
-     <p class="calibre6">
-      Remember the edit icon we just added to our detail page? We also want to add the same change there, so other people won't be able to edit existing posts.
-     </p>
-     <p class="calibre6">
-      Open
-      <code class="calibre11">
-       blog/templates/blog/post_detail.html
-      </code>
-      in the code editor and find this line:
-     </p>
-     <p class="calibre6">
-     </p>
-     <p class="calibre6">
-      blog/templates/blog/post_detail.html
-     </p>
-     <p class="calibre6">
-     </p>
-     <pre class="calibre13"><code class="calibre11"><span>&lt;<span>a</span> <span>class</span>=<span>"btn btn-secondary"</span> <span>href</span>=<span>"{% url 'post_edit' pk=post.pk %}"</span>&gt;</span>
+        <p class="calibre6">
+          This
+          <code class="calibre11"> {% if %} </code>
+          will cause the link to be sent to the browser only if the user
+          requesting the page is logged in. This doesn't protect the creation of
+          new posts completely, but it's a good first step. We'll cover more
+          security in the extension lessons.
+        </p>
+        <p class="calibre6">
+          Remember the edit icon we just added to our detail page? We also want
+          to add the same change there, so other people won't be able to edit
+          existing posts.
+        </p>
+        <p class="calibre6">
+          Open
+          <code class="calibre11"> blog/templates/blog/post_detail.html </code>
+          in the code editor and find this line:
+        </p>
+        <p class="calibre6"></p>
+        <p class="calibre6">blog/templates/blog/post_detail.html</p>
+        <p class="calibre6"></p>
+        <pre
+          class="calibre13"
+        ><code class="calibre11"><span>&lt;<span>a</span> <span>class</span>=<span>"btn btn-secondary"</span> <span>href</span>=<span>"{% url 'post_edit' pk=post.pk %}"</span>&gt;</span>
             {% include './icons/pencil-fill.svg' %}
         <span>&lt;/<span>a</span>&gt;</span>
         </code></pre>
-     <p class="calibre6">
-      Change it to this:
-     </p>
-     <p class="calibre6">
-     </p>
-     <p class="calibre6">
-      blog/templates/blog/post_detail.html
-     </p>
-     <p class="calibre6">
-     </p>
-     <pre class="calibre13"><code class="calibre11">{% if user.is_authenticated %}
+        <p class="calibre6">Change it to this:</p>
+        <p class="calibre6"></p>
+        <p class="calibre6">blog/templates/blog/post_detail.html</p>
+        <p class="calibre6"></p>
+        <pre
+          class="calibre13"
+        ><code class="calibre11">{% if user.is_authenticated %}
              <span>&lt;<span>a</span> <span>class</span>=<span>"btn btn-secondary"</span> <span>href</span>=<span>"{% url 'post_edit' pk=post.pk %}"</span>&gt;</span>
                 {% include './icons/pencil-fill.svg' %}
              <span>&lt;/<span>a</span>&gt;</span>
         {% endif %}
         </code></pre>
-     <p class="calibre6">
-      Since you're likely logged in, if you refresh the page, you won't see anything different. Load the page in a different browser or an incognito window (called "InPrivate" in Windows Edge), though, and you'll see that the link doesn't show up, and the icon doesn't display either!
-     </p>
-     <h2 class="calibre7" id="one-more-thing-deploy-time">
-      One more thing: deploy time!
-     </h2>
-     <p class="calibre6">
-      Let's see if all this works on PythonAnywhere. Time for another deploy!
-     </p>
-     <ul class="calibre9">
-      <li class="calibre3">
-       First, commit your new code, and push it up to GitHub:
-      </li>
-     </ul>
-     <p class="calibre6">
-     </p>
-     <p class="calibre6">
-      command-line
-     </p>
-     <p class="calibre6">
-     </p>
-     <pre class="calibre13"><code class="calibre11">$ git status
+        <p class="calibre6">
+          Since you're likely logged in, if you refresh the page, you won't see
+          anything different. Load the page in a different browser or an
+          incognito window (called "InPrivate" in Windows Edge), though, and
+          you'll see that the link doesn't show up, and the icon doesn't display
+          either!
+        </p>
+        <h2 class="calibre7" id="one-more-thing-deploy-time">
+          One more thing: deploy time!
+        </h2>
+        <p class="calibre6">
+          Let's see if all this works on PythonAnywhere. Time for another
+          deploy!
+        </p>
+        <ul class="calibre9">
+          <li class="calibre3">
+            First, commit your new code, and push it up to GitHub:
+          </li>
+        </ul>
+        <p class="calibre6"></p>
+        <p class="calibre6">command-line</p>
+        <p class="calibre6"></p>
+        <pre class="calibre13"><code class="calibre11">$ git status
         $ git add .
         $ git status
         $ git commit -m "Added views to create/edit blog post inside the site."
         $ git push
         </code></pre>
-     <ul class="calibre9">
-      <li class="calibre3">
-       Then, in a
-       <a href="https://www.pythonanywhere.com/consoles/" target="_blank">
-        PythonAnywhere Bash console
-       </a>
-       :
-      </li>
-     </ul>
-     <p class="calibre6">
-     </p>
-     <p class="calibre6">
-      PythonAnywhere command-line
-     </p>
-     <p class="calibre6">
-     </p>
-     <pre class="calibre13"><code class="calibre11">$ cd ~/&lt;your-pythonanywhere-domain&gt;.pythonanywhere.com
+        <ul class="calibre9">
+          <li class="calibre3">
+            Then, in a
+            <a href="https://www.pythonanywhere.com/consoles/" target="_blank">
+              PythonAnywhere Bash console
+            </a>
+            :
+          </li>
+        </ul>
+        <p class="calibre6"></p>
+        <p class="calibre6">PythonAnywhere command-line</p>
+        <p class="calibre6"></p>
+        <pre
+          class="calibre13"
+        ><code class="calibre11">$ cd ~/&lt;your-pythonanywhere-domain&gt;.pythonanywhere.com
         $ git pull
         [...]
         </code></pre>
-     <p class="calibre6">
-      (Remember to substitute
-      <code class="calibre11">
-       &lt;your-pythonanywhere-domain&gt;
-      </code>
-      with your actual PythonAnywhere subdomain, without the angle-brackets.)
-     </p>
-     <ul class="calibre9">
-      <li class="calibre3">
-       Finally, hop on over to the
-       <a href="https://www.pythonanywhere.com/web_app_setup/" target="_blank">
-        "Web" page
-       </a>
-       (use the menu button in the upper right of the console) and hit
-       <strong class="calibre10">
-        Reload
-       </strong>
-       . Refresh your
-       <a href="https://subdomain.pythonanywhere.com" target="_blank">
-        https://subdomain.pythonanywhere.com
-       </a>
-       blog to see the changes.
-      </li>
-     </ul>
-     <p class="calibre6">
-      And that should be it. Congrats! :)
-     </p>
-    </div>
-   </div>
-  </main>
-  <footer class="book-footer">
-   <p>
-    Generated from the original EPUB. Content © respective authors under CC BY-SA 4.0.
-   </p>
-  </footer>
-  <script>
-   document.addEventListener('DOMContentLoaded', function () {
-  document.querySelectorAll('.nav-toggle').forEach(function (toggle) {
-    var targetId = toggle.getAttribute('data-target') || toggle.getAttribute('aria-controls');
-    var drawer = document.getElementById(targetId);
-    if (!drawer) {
-      return;
-    }
-    var closeDrawer = function () {
-      drawer.classList.remove('open');
-      drawer.setAttribute('aria-hidden', 'true');
-      toggle.setAttribute('aria-expanded', 'false');
-      document.body.classList.remove('drawer-open');
-    };
-
-    toggle.addEventListener('click', function () {
-      var willOpen = !drawer.classList.contains('open');
-      if (willOpen) {
-        drawer.classList.add('open');
-        drawer.setAttribute('aria-hidden', 'false');
-        toggle.setAttribute('aria-expanded', 'true');
-        document.body.classList.add('drawer-open');
-      } else {
-        closeDrawer();
-      }
-    });
-
-    drawer.querySelectorAll('a').forEach(function (link) {
-      link.addEventListener('click', closeDrawer);
-    });
-
-    document.addEventListener('click', function (event) {
-      if (!drawer.contains(event.target) && event.target !== toggle && !toggle.contains(event.target)) {
-        closeDrawer();
-      }
-    });
-
-    drawer.addEventListener('keydown', function (event) {
-      if (event.key === 'Escape') {
-        closeDrawer();
-        toggle.focus();
-      }
-    });
-  });
-});
-  </script>
- </body>
+        <p class="calibre6">
+          (Remember to substitute
+          <code class="calibre11"> &lt;your-pythonanywhere-domain&gt; </code>
+          with your actual PythonAnywhere subdomain, without the
+          angle-brackets.)
+        </p>
+        <ul class="calibre9">
+          <li class="calibre3">
+            Finally, hop on over to the
+            <a
+              href="https://www.pythonanywhere.com/web_app_setup/"
+              target="_blank"
+            >
+              "Web" page
+            </a>
+            (use the menu button in the upper right of the console) and hit
+            <strong class="calibre10"> Reload </strong>
+            . Refresh your
+            <a href="https://subdomain.pythonanywhere.com" target="_blank">
+              https://subdomain.pythonanywhere.com
+            </a>
+            blog to see the changes.
+          </li>
+        </ul>
+        <p class="calibre6">And that should be it. Congrats! :)</p>
+      </div>
+    </main>
+    <footer class="book-footer">
+      <p>
+        Generated from the original EPUB. Content © respective authors under CC
+        BY-SA 4.0.
+      </p>
+    </footer>
+    <script defer="True" src="nav.js"></script>
+  </body>
 </html>

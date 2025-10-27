@@ -1,476 +1,175 @@
 <!DOCTYPE html>
 <html lang="en">
- <head>
-  <meta charset="utf-8"/>
-  <meta content="width=device-width, initial-scale=1" name="viewport"/>
-  <title>
-   Django views – time to create!
-  </title>
-  <link href="book.css" rel="stylesheet"/>
-  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
-  <meta content="" name="description"/>
-  <meta content="HonKit 3.7.5" name="generator"/>
-  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
-  <link href="content/stylesheet.css" rel="stylesheet" type="text/css"/>
-  <link href="content/page_styles.css" rel="stylesheet" type="text/css"/>
-  <!-- Google tag (gtag.js) -->
-  <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-BN9REN07NH">
-  </script>
-  <script>
-   window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>Django views – time to create!</title>
+    <link href="book.css" rel="stylesheet" />
+    <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+    <meta content="" name="description" />
+    <meta content="HonKit 3.7.5" name="generator" />
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <link href="content/stylesheet.css" rel="stylesheet" type="text/css" />
+    <link href="content/page_styles.css" rel="stylesheet" type="text/css" />
+    <!-- Google tag (gtag.js) -->
+    <script
+      async=""
+      src="https://www.googletagmanager.com/gtag/js?id=G-BN9REN07NH"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-    gtag('config', 'G-BN9REN07NH');
-  </script>
- </head>
- <body>
-  <header class="book-header">
-   <h1 class="page-title">
-    Django views – time to create!
-   </h1>
-  </header>
-  <nav class="book-nav" data-chapter="018-django-views-time-to-create">
-   <button aria-controls="nav-panel-018-django-views-time-to-create" aria-expanded="false" aria-label="Toggle menu" class="nav-toggle" data-target="nav-panel-018-django-views-time-to-create" type="button">
-    <span aria-hidden="true" class="icon">
-     ≡
-    </span>
-    <span class="label">
-     Menu
-    </span>
-   </button>
-   <div class="nav-links">
-    <a class="nav-link home" href="../index.html">
-     <span aria-hidden="true" class="icon">
-      ⌂
-     </span>
-     <span class="label">
-      Home
-     </span>
-    </a>
-    <a class="nav-link contents" href="index.html">
-     <span aria-hidden="true" class="icon">
-      ≣
-     </span>
-     <span class="label">
-      Contents
-     </span>
-    </a>
-    <a class="nav-link previous" href="017-django-urls.html">
-     <span aria-hidden="true" class="icon">
-      ←
-     </span>
-     <span class="label">
-      Previous
-     </span>
-    </a>
-    <a class="nav-link next" href="019-introduction-to-html.html">
-     <span aria-hidden="true" class="icon">
-      →
-     </span>
-     <span class="label">
-      Next
-     </span>
-    </a>
-   </div>
-  </nav>
-  <div aria-hidden="true" class="nav-panel" id="nav-panel-018-django-views-time-to-create">
-   <div class="nav-panel__group">
-    <h3 class="nav-panel__title">
-     Shortcuts
-    </h3>
-    <ul class="nav-panel__list">
-     <li>
-      <a class="nav-panel__link" href="../index.html">
-       <span aria-hidden="true" class="icon">
-        ⌂
-       </span>
-       Home
-      </a>
-     </li>
-     <li>
-      <a class="nav-panel__link" href="index.html">
-       <span aria-hidden="true" class="icon">
-        ≣
-       </span>
-       Contents
-      </a>
-     </li>
-     <li>
-      <a class="nav-panel__link" href="017-django-urls.html">
-       <span aria-hidden="true" class="icon">
-        ←
-       </span>
-       Previous
-      </a>
-     </li>
-     <li>
-      <a class="nav-panel__link" href="019-introduction-to-html.html">
-       <span aria-hidden="true" class="icon">
-        →
-       </span>
-       Next
-      </a>
-     </li>
-    </ul>
-   </div>
-   <div class="nav-panel__group">
-    <h3 class="nav-panel__title">
-     Chapters
-    </h3>
-    <ul class="nav-panel__list">
-     <li>
-      <a class="nav-panel__link" href="001-cover.html">
-       Cover
-      </a>
-     </li>
-     <li>
-      <a class="nav-panel__link" href="003-introduction.html">
-       Introduction
-      </a>
-     </li>
-     <li>
-      <a class="nav-panel__link" href="004-installation.html">
-       Installation
-      </a>
-     </li>
-     <li>
-      <a class="nav-panel__link" href="006-how-the-internet-works.html">
-       How the Internet works
-      </a>
-     </li>
-     <li>
-      <a class="nav-panel__link" href="007-introduction-to-command-line.html">
-       Introduction to command line
-      </a>
-     </li>
-     <li>
-      <a class="nav-panel__link" href="008-python-installation.html">
-       Python installation
-      </a>
-     </li>
-     <li>
-      <a class="nav-panel__link" href="009-code-editor.html">
-       Code editor
-      </a>
-     </li>
-     <li>
-      <a class="nav-panel__link" href="010-introduction-to-python.html">
-       Introduction to Python
-      </a>
-     </li>
-     <li>
-      <a class="nav-panel__link" href="011-what-is-django.html">
-       What is Django?
-      </a>
-     </li>
-     <li>
-      <a class="nav-panel__link" href="012-django-installation.html">
-       Django installation
-      </a>
-     </li>
-     <li>
-      <a class="nav-panel__link" href="013-your-first-django-project.html">
-       Your first Django project!
-      </a>
-     </li>
-     <li>
-      <a class="nav-panel__link" href="014-django-models.html">
-       Django models
-      </a>
-     </li>
-     <li>
-      <a class="nav-panel__link" href="015-django-admin.html">
-       Django admin
-      </a>
-     </li>
-     <li>
-      <a class="nav-panel__link" href="016-deploy.html">
-       Deploy!
-      </a>
-     </li>
-     <li>
-      <a class="nav-panel__link" href="017-django-urls.html">
-       Django URLs
-      </a>
-     </li>
-     <li>
-      <a class="nav-panel__link" href="018-django-views-time-to-create.html">
-       Django views – time to create!
-      </a>
-     </li>
-     <li>
-      <a class="nav-panel__link" href="019-introduction-to-html.html">
-       Introduction to HTML
-      </a>
-     </li>
-     <li>
-      <a class="nav-panel__link" href="020-django-orm-querysets.html">
-       Django ORM (Querysets)
-      </a>
-     </li>
-     <li>
-      <a class="nav-panel__link" href="021-dynamic-data-in-templates.html">
-       Dynamic data in templates
-      </a>
-     </li>
-     <li>
-      <a class="nav-panel__link" href="022-django-templates.html">
-       Django templates
-      </a>
-     </li>
-     <li>
-      <a class="nav-panel__link" href="023-css-make-it-pretty.html">
-       CSS – make it pretty
-      </a>
-     </li>
-     <li>
-      <a class="nav-panel__link" href="024-template-extending.html">
-       Template extending
-      </a>
-     </li>
-     <li>
-      <a class="nav-panel__link" href="025-extend-your-application.html">
-       Extend your application
-      </a>
-     </li>
-     <li>
-      <a class="nav-panel__link" href="026-django-forms.html">
-       Django Forms
-      </a>
-     </li>
-     <li>
-      <a class="nav-panel__link" href="027-what-s-next.html">
-       What's next?
-      </a>
-     </li>
-    </ul>
-   </div>
-  </div>
-  <main>
-   <div class="page">
-    <h2 class="calibre1" id="calibre_toc_16">
-     Django views – time to create!
-    </h2>
-    <div>
-     <h2 class="calibre1" id="django-views-–-time-to-create">
-      Django views – time to create!
-     </h2>
-     <p class="calibre6">
-      Time to get rid of the bug we created in the last chapter! :)
-     </p>
-     <p class="calibre6">
-      A
-      <em class="calibre14">
-       view
-      </em>
-      is a place where we put the "logic" of our application. The views do the following:
-     </p>
-     <ol class="calibre2">
-      <li class="calibre3">
-       Receive the
-       <code class="calibre11">
-        request
-       </code>
-       information (current user session and other stuff) as well as parameters parsed from the url (for example, the id of a blog post)
-      </li>
-      <li class="calibre3">
-       Fetch the information from the
-       <code class="calibre11">
-        model
-       </code>
-       , probably adding some logic (like filtering logic to show only the published posts)
-      </li>
-      <li class="calibre3">
-       Create a response by filling a
-       <code class="calibre11">
-        template
-       </code>
-       with the fetched info
-      </li>
-     </ol>
-     <p class="calibre6">
-      We'll create a template in the next chapter. Now we'll create a view. Technically, views are Python functions, exactly like the ones we wrote in the
-      <strong class="calibre10">
-       Introduction to Python
-      </strong>
-      chapter. These functions take
-      <code class="calibre11">
-       request
-      </code>
-      as a parameter and return
-      <code class="calibre11">
-       HttpResponse
-      </code>
-      . You shouldn't worry about the type of the return value because another function from the Django framework will construct it for us.
-     </p>
-     <p class="calibre6">
-      Views are placed in the
-      <code class="calibre11">
-       views.py
-      </code>
-      file. We will add our
-      <em class="calibre14">
-       views
-      </em>
-      to the
-      <code class="calibre11">
-       blog/views.py
-      </code>
-      file.
-     </p>
-     <h2 class="calibre7" id="blogviewspy">
-      blog/views.py
-     </h2>
-     <p class="calibre6">
-      OK, let's open up this file in our code editor and see what's in there:
-     </p>
-     <p class="calibre6">
-     </p>
-     <p class="calibre6">
-      blog/views.py
-     </p>
-     <p class="calibre6">
-     </p>
-     <pre class="calibre13"><code class="calibre11"><span>from</span> django.shortcuts <span>import</span> render
+      gtag("config", "G-BN9REN07NH");
+    </script>
+  </head>
+  <body data-chapter="018-django-views-time-to-create">
+    <header class="book-header">
+      <h1 class="page-title">Django views – time to create!</h1>
+    </header>
+    <main>
+      <div class="page">
+        <h2 class="calibre1" id="calibre_toc_16">
+          Django views – time to create!
+        </h2>
+        <p class="calibre6">
+          Time to get rid of the bug we created in the last chapter! :)
+        </p>
+        <p class="calibre6">
+          A
+          <em class="calibre14"> view </em>
+          is a place where we put the "logic" of our application. The views do
+          the following:
+        </p>
+        <ol class="calibre2">
+          <li class="calibre3">
+            Receive the
+            <code class="calibre11"> request </code>
+            information (current user session and other stuff) as well as
+            parameters parsed from the url (for example, the id of a blog post)
+          </li>
+          <li class="calibre3">
+            Fetch the information from the
+            <code class="calibre11"> model </code>
+            , probably adding some logic (like filtering logic to show only the
+            published posts)
+          </li>
+          <li class="calibre3">
+            Create a response by filling a
+            <code class="calibre11"> template </code>
+            with the fetched info
+          </li>
+        </ol>
+        <p class="calibre6">
+          We'll create a template in the next chapter. Now we'll create a view.
+          Technically, views are Python functions, exactly like the ones we
+          wrote in the
+          <strong class="calibre10"> Introduction to Python </strong>
+          chapter. These functions take
+          <code class="calibre11"> request </code>
+          as a parameter and return
+          <code class="calibre11"> HttpResponse </code>
+          . You shouldn't worry about the type of the return value because
+          another function from the Django framework will construct it for us.
+        </p>
+        <p class="calibre6">
+          Views are placed in the
+          <code class="calibre11"> views.py </code>
+          file. We will add our
+          <em class="calibre14"> views </em>
+          to the
+          <code class="calibre11"> blog/views.py </code>
+          file.
+        </p>
+        <h2 class="calibre7" id="blogviewspy">blog/views.py</h2>
+        <p class="calibre6">
+          OK, let's open up this file in our code editor and see what's in
+          there:
+        </p>
+        <p class="calibre6"></p>
+        <p class="calibre6">blog/views.py</p>
+        <p class="calibre6"></p>
+        <pre
+          class="calibre13"
+        ><code class="calibre11"><span>from</span> django.shortcuts <span>import</span> render
 
         <span># Create your views here.</span>
         </code></pre>
-     <p class="calibre6">
-      Not too much stuff here yet.
-     </p>
-     <p class="calibre6">
-      Remember that lines starting with
-      <code class="calibre11">
-       #
-      </code>
-      are comments – this means that those lines won't be run by Python.
-     </p>
-     <p class="calibre6">
-      Let's create a
-      <em class="calibre14">
-       view
-      </em>
-      as the comment suggests. Add the following minimal view below it:
-     </p>
-     <p class="calibre6">
-     </p>
-     <p class="calibre6">
-      blog/views.py
-     </p>
-     <p class="calibre6">
-     </p>
-     <pre class="calibre13"><code class="calibre11"><span><span>def</span> <span>post_list</span>(<span>request</span>):</span>
+        <p class="calibre6">Not too much stuff here yet.</p>
+        <p class="calibre6">
+          Remember that lines starting with
+          <code class="calibre11"> # </code>
+          are comments – this means that those lines won't be run by Python.
+        </p>
+        <p class="calibre6">
+          Let's create a
+          <em class="calibre14"> view </em>
+          as the comment suggests. Add the following minimal view below it:
+        </p>
+        <p class="calibre6"></p>
+        <p class="calibre6">blog/views.py</p>
+        <p class="calibre6"></p>
+        <pre
+          class="calibre13"
+        ><code class="calibre11"><span><span>def</span> <span>post_list</span>(<span>request</span>):</span>
             <span>return</span> render(request, <span>'blog/post_list.html'</span>, {})
         </code></pre>
-     <p class="calibre6">
-      As you can see, we created a function (
-      <code class="calibre11">
-       def
-      </code>
-      ) called
-      <code class="calibre11">
-       post_list
-      </code>
-      that takes
-      <code class="calibre11">
-       request
-      </code>
-      and will
-      <code class="calibre11">
-       return
-      </code>
-      the value it gets from calling another function
-      <code class="calibre11">
-       render
-      </code>
-      that will render (put together) our template
-      <code class="calibre11">
-       blog/post_list.html
-      </code>
-      .
-     </p>
-     <p class="calibre6">
-      Save the file, go to
-      <a href="http://127.0.0.1:8000/" target="_blank">
-       http://127.0.0.1:8000/
-      </a>
-      and see what we've got.
-     </p>
-     <p class="calibre6">
-      Another error! Read what's going on now:
-     </p>
-     <p class="calibre6">
-      <img alt="Error" class="calibre8" src="content/error.png"/>
-     </p>
-     <p class="calibre6">
-      This shows that the server is running again, at least, but it still doesn't look right, does it? Don't worry, it's just an error page, nothing to be scared of! Just like the error messages in the console, these are actually pretty useful. You can read that the
-      <em class="calibre14">
-       TemplateDoesNotExist
-      </em>
-      . Let's fix this bug and create a template in the next chapter!
-     </p>
-     <blockquote class="calibre5">
-      <p class="calibre6">
-       Learn more about Django views by reading the official documentation:
-       <a href="https://docs.djangoproject.com/en/5.1/topics/http/views/" target="_blank">
-        https://docs.djangoproject.com/en/5.1/topics/http/views/
-       </a>
+        <p class="calibre6">
+          As you can see, we created a function (
+          <code class="calibre11"> def </code>
+          ) called
+          <code class="calibre11"> post_list </code>
+          that takes
+          <code class="calibre11"> request </code>
+          and will
+          <code class="calibre11"> return </code>
+          the value it gets from calling another function
+          <code class="calibre11"> render </code>
+          that will render (put together) our template
+          <code class="calibre11"> blog/post_list.html </code>
+          .
+        </p>
+        <p class="calibre6">
+          Save the file, go to
+          <a href="http://127.0.0.1:8000/" target="_blank">
+            http://127.0.0.1:8000/
+          </a>
+          and see what we've got.
+        </p>
+        <p class="calibre6">Another error! Read what's going on now:</p>
+        <p class="calibre6">
+          <img alt="Error" class="calibre8" src="content/error.png" />
+        </p>
+        <p class="calibre6">
+          This shows that the server is running again, at least, but it still
+          doesn't look right, does it? Don't worry, it's just an error page,
+          nothing to be scared of! Just like the error messages in the console,
+          these are actually pretty useful. You can read that the
+          <em class="calibre14"> TemplateDoesNotExist </em>
+          . Let's fix this bug and create a template in the next chapter!
+        </p>
+        <blockquote class="calibre5">
+          <p class="calibre6">
+            Learn more about Django views by reading the official documentation:
+            <a
+              href="https://docs.djangoproject.com/en/5.1/topics/http/views/"
+              target="_blank"
+            >
+              https://docs.djangoproject.com/en/5.1/topics/http/views/
+            </a>
+          </p>
+        </blockquote>
+      </div>
+    </main>
+    <footer class="book-footer">
+      <p>
+        Generated from the original EPUB. Content © respective authors under CC
+        BY-SA 4.0.
       </p>
-     </blockquote>
-    </div>
-   </div>
-  </main>
-  <footer class="book-footer">
-   <p>
-    Generated from the original EPUB. Content © respective authors under CC BY-SA 4.0.
-   </p>
-  </footer>
-  <script>
-   document.addEventListener('DOMContentLoaded', function () {
-  document.querySelectorAll('.nav-toggle').forEach(function (toggle) {
-    var targetId = toggle.getAttribute('data-target') || toggle.getAttribute('aria-controls');
-    var drawer = document.getElementById(targetId);
-    if (!drawer) {
-      return;
-    }
-    var closeDrawer = function () {
-      drawer.classList.remove('open');
-      drawer.setAttribute('aria-hidden', 'true');
-      toggle.setAttribute('aria-expanded', 'false');
-      document.body.classList.remove('drawer-open');
-    };
-
-    toggle.addEventListener('click', function () {
-      var willOpen = !drawer.classList.contains('open');
-      if (willOpen) {
-        drawer.classList.add('open');
-        drawer.setAttribute('aria-hidden', 'false');
-        toggle.setAttribute('aria-expanded', 'true');
-        document.body.classList.add('drawer-open');
-      } else {
-        closeDrawer();
-      }
-    });
-
-    drawer.querySelectorAll('a').forEach(function (link) {
-      link.addEventListener('click', closeDrawer);
-    });
-
-    document.addEventListener('click', function (event) {
-      if (!drawer.contains(event.target) && event.target !== toggle && !toggle.contains(event.target)) {
-        closeDrawer();
-      }
-    });
-
-    drawer.addEventListener('keydown', function (event) {
-      if (event.key === 'Escape') {
-        closeDrawer();
-        toggle.focus();
-      }
-    });
-  });
-});
-  </script>
- </body>
+    </footer>
+    <script defer="True" src="nav.js"></script>
+  </body>
 </html>
