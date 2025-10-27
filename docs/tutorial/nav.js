@@ -1,5 +1,6 @@
 (function () {
   const chapters = [
+    { slug: 'index', file: 'index.html', title: 'Contents' },
     { slug: '001-cover', file: '001-cover.html', title: 'Cover' },
     { slug: '003-introduction', file: '003-introduction.html', title: 'Introduction' },
     { slug: '004-installation', file: '004-installation.html', title: 'Installation' },
@@ -66,6 +67,7 @@
     }
 
     const chapter = chapters[index];
+    const isContentsPage = chapter.slug === 'index';
     const prev = chapters[index - 1] || null;
     const next = chapters[index + 1] || null;
 
@@ -96,13 +98,17 @@
         createElement('span', { className: 'label', text: label })
       ];
       if (!href) {
-        return createElement('span', { className: `nav-link disabled ${extraClass}`.trim() }, commonChildren);
+        return createElement('span', {
+          className: `nav-link disabled ${extraClass}`.trim(),
+          'aria-disabled': 'true'
+        }, commonChildren);
       }
       return createElement('a', { className: `nav-link ${extraClass}`.trim(), href }, commonChildren);
     }
 
     links.appendChild(navLink('../index.html', 'Home', icons.home, 'home'));
-    links.appendChild(navLink('index.html', 'Contents', icons.contents, 'contents'));
+    const contentsHref = isContentsPage ? null : 'index.html';
+    links.appendChild(navLink(contentsHref, 'Contents', icons.contents, 'contents'));
     links.appendChild(navLink(prev ? prev.file : null, 'Previous', icons.prev, 'previous'));
     links.appendChild(navLink(next ? next.file : null, 'Next', icons.next, 'next'));
 
@@ -112,7 +118,7 @@
       'aria-hidden': 'true'
     });
 
-    function buildGroup(title, items) {
+    function buildGroup(title, items, currentFile) {
       const ul = createElement('ul', { className: 'nav-panel__list' });
       items.forEach(({ href, label, icon }) => {
         const children = [];
@@ -120,7 +126,16 @@
           children.push(createElement('span', { className: 'icon', 'aria-hidden': 'true', text: icon }));
         }
         children.push(label);
-        const link = createElement('a', { className: 'nav-panel__link', href }, children);
+        const isCurrent = href && href === currentFile;
+        let link;
+        if (!href) {
+          link = createElement('span', { className: 'nav-panel__link disabled', 'aria-disabled': 'true' }, children);
+        } else {
+          link = createElement('a', {
+            className: `nav-panel__link${isCurrent ? ' is-active' : ''}`,
+            href
+          }, children);
+        }
         const item = createElement('li', {}, [link]);
         ul.appendChild(item);
       });
@@ -133,7 +148,7 @@
 
     const shortcuts = [
       { href: '../index.html', label: 'Home', icon: icons.home },
-      { href: 'index.html', label: 'Contents', icon: icons.contents }
+      { href: contentsHref, label: 'Contents', icon: icons.contents }
     ];
     if (prev) {
       shortcuts.push({ href: prev.file, label: 'Previous', icon: icons.prev });
@@ -142,8 +157,8 @@
       shortcuts.push({ href: next.file, label: 'Next', icon: icons.next });
     }
 
-    panel.appendChild(buildGroup('Shortcuts', shortcuts));
-    panel.appendChild(buildGroup('Chapters', chapters.map((ch) => ({ href: ch.file, label: ch.title }))));
+    panel.appendChild(buildGroup('Shortcuts', shortcuts, chapter.file));
+    panel.appendChild(buildGroup('Chapters', chapters.map((ch) => ({ href: ch.file, label: ch.title })), chapter.file));
 
     nav.appendChild(toggle);
     nav.appendChild(links);

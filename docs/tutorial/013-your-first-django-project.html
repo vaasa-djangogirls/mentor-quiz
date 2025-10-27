@@ -1,183 +1,220 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1" name="viewport" />
-    <title>Your first Django project!</title>
-    <link href="book.css" rel="stylesheet" />
-    <meta content="IE=edge" http-equiv="X-UA-Compatible" />
-    <meta content="" name="description" />
-    <meta content="HonKit 3.7.5" name="generator" />
-    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
-    <link href="content/stylesheet.css" rel="stylesheet" type="text/css" />
-    <link href="content/page_styles.css" rel="stylesheet" type="text/css" />
-    <!-- Google tag (gtag.js) -->
-    <script
-      async=""
-      src="https://www.googletagmanager.com/gtag/js?id=G-BN9REN07NH"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   Your first Django project!
+  </title>
+  <link href="book.css" rel="stylesheet"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="" name="description"/>
+  <meta content="HonKit 3.7.5" name="generator"/>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <link href="content/stylesheet.css" rel="stylesheet" type="text/css"/>
+  <link href="content/page_styles.css" rel="stylesheet" type="text/css"/>
+  <!-- Google tag (gtag.js) -->
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-BN9REN07NH">
+  </script>
+  <script>
+   window.dataLayer = window.dataLayer || [];
       function gtag() {
         dataLayer.push(arguments);
       }
       gtag("js", new Date());
 
       gtag("config", "G-BN9REN07NH");
-    </script>
-  </head>
-  <body data-chapter="013-your-first-django-project">
-    <header class="book-header">
-      <h1 class="page-title">Your first Django project!</h1>
-    </header>
-    <main>
-      <div class="page">
-        <h2 class="calibre1" id="calibre_toc_11">Your first Django project!</h2>
-        <blockquote class="calibre5">
-          <p class="calibre6">
-            Part of this chapter is based on tutorials by Geek Girls Carrots (
-            <a
-              href="https://github.com/ggcarrots/django-carrots"
-              target="_blank"
-            >
-              https://github.com/ggcarrots/django-carrots
-            </a>
-            ).
-          </p>
-          <p class="calibre6">
-            Parts of this chapter are based on the
-            <a href="http://django-marcador.keimlink.de/" target="_blank">
-              django-marcador tutorial
-            </a>
-            licensed under the Creative Commons Attribution-ShareAlike 4.0
+  </script>
+ </head>
+ <body data-chapter="013-your-first-django-project">
+  <header class="book-header">
+   <h1 class="page-title">
+    Your first Django project!
+   </h1>
+  </header>
+  <main>
+   <div class="page">
+    <h2 class="calibre1" id="calibre_toc_11">
+     Your first Django project!
+    </h2>
+    <blockquote class="calibre5">
+     <p class="calibre6">
+      Part of this chapter is based on tutorials by Geek Girls Carrots (
+      <a href="https://github.com/ggcarrots/django-carrots" target="_blank">
+       https://github.com/ggcarrots/django-carrots
+      </a>
+      ).
+     </p>
+     <p class="calibre6">
+      Parts of this chapter are based on the
+      <a href="http://django-marcador.keimlink.de/" target="_blank">
+       django-marcador tutorial
+      </a>
+      licensed under the Creative Commons Attribution-ShareAlike 4.0
             International License. The django-marcador tutorial is copyrighted
             by Markus Zapke-Gründemann et al.
-          </p>
-        </blockquote>
-        <p class="calibre6">We're going to create a small blog!</p>
-        <p class="calibre6">
-          The first step is to start a new Django project. Basically, this means
+     </p>
+    </blockquote>
+    <p class="calibre6">
+     We're going to create a small blog!
+    </p>
+    <p class="calibre6">
+     The first step is to start a new Django project. Basically, this means
           that we'll run some scripts provided by Django that will create the
           skeleton of a Django project for us. This is just a bunch of
           directories and files that we will use later.
-        </p>
-        <p class="calibre6">
-          The names of some files and directories are very important for Django.
+    </p>
+    <p class="calibre6">
+     The names of some files and directories are very important for Django.
           You should not rename the files that we are about to create. Moving
           them to a different place is also not a good idea. Django needs to
           maintain a certain structure to be able to find important things.
-        </p>
-        <blockquote class="calibre5">
-          <p class="calibre6">
-            Remember to run everything in the virtualenv. If you don't see a
+    </p>
+    <blockquote class="calibre5">
+     <p class="calibre6">
+      Remember to run everything in the virtualenv. If you don't see a
             prefix
-            <code class="calibre11"> (myvenv) </code>
-            in your console, you need to activate your virtualenv. We explained
+      <code class="calibre11">
+       (myvenv)
+      </code>
+      in your console, you need to activate your virtualenv. We explained
             how to do that in the
-            <strong class="calibre10"> Django installation </strong>
-            chapter in the
-            <strong class="calibre10"> Working with virtualenv </strong>
-            part. Typing
-            <code class="calibre11"> myvenv\Scripts\activate </code>
-            on Windows or
-            <code class="calibre11"> source myvenv/bin/activate </code>
-            on macOS or Linux will do this for you.
-          </p>
-        </blockquote>
-        <sec
-          data-collapse="true"
-          data-id="django_start_project_OSX_Linux"
-          data-title="Create project: macOS or Linux"
-        >
-          <b class="calibre10"> Create project: macOS or Linux </b>
-          <p class="calibre6">
-            In your macOS or Linux console, you should run the following
+      <strong class="calibre10">
+       Django installation
+      </strong>
+      chapter in the
+      <strong class="calibre10">
+       Working with virtualenv
+      </strong>
+      part. Typing
+      <code class="calibre11">
+       myvenv\Scripts\activate
+      </code>
+      on Windows or
+      <code class="calibre11">
+       source myvenv/bin/activate
+      </code>
+      on macOS or Linux will do this for you.
+     </p>
+    </blockquote>
+    <sec data-collapse="true" data-id="django_start_project_OSX_Linux" data-title="Create project: macOS or Linux">
+     <b class="calibre10">
+      Create project: macOS or Linux
+     </b>
+     <p class="calibre6">
+      In your macOS or Linux console, you should run the following
             command.
-            <strong class="calibre10">
-              Don't forget to add the period (or dot)
-              <code class="calibre11"> . </code>
-              at the end!
-            </strong>
-          </p>
-          <p class="calibre6"></p>
-          <p class="calibre6">command-line</p>
-          <p class="calibre6"></p>
-          <pre
-            class="calibre13"
-          ><code class="calibre11">(myvenv) ~/djangogirls$ django-admin startproject mysite .
+      <strong class="calibre10">
+       Don't forget to add the period (or dot)
+       <code class="calibre11">
+        .
+       </code>
+       at the end!
+      </strong>
+     </p>
+     <p class="calibre6">
+     </p>
+     <p class="calibre6">
+      command-line
+     </p>
+     <p class="calibre6">
+     </p>
+     <pre class="calibre13"><code class="calibre11">(myvenv) ~/djangogirls$ django-admin startproject mysite .
         </code></pre>
-          <blockquote class="calibre5">
-            <p class="calibre6">
-              The period
-              <code class="calibre11"> . </code>
-              is crucial because it tells the script to install Django in your
+     <blockquote class="calibre5">
+      <p class="calibre6">
+       The period
+       <code class="calibre11">
+        .
+       </code>
+       is crucial because it tells the script to install Django in your
               current directory (for which the period
-              <code class="calibre11"> . </code>
-              is a short-hand reference).
-            </p>
-            <p class="calibre6">
-              <strong class="calibre10"> Note </strong>
-              When typing the command above, remember that you only type the
+       <code class="calibre11">
+        .
+       </code>
+       is a short-hand reference).
+      </p>
+      <p class="calibre6">
+       <strong class="calibre10">
+        Note
+       </strong>
+       When typing the command above, remember that you only type the
               part which starts by
-              <code class="calibre11"> django-admin </code>
-              . The
-              <code class="calibre11"> (myvenv) ~/djangogirls$ </code>
-              part shown here is just example of the prompt that will be
+       <code class="calibre11">
+        django-admin
+       </code>
+       . The
+       <code class="calibre11">
+        (myvenv) ~/djangogirls$
+       </code>
+       part shown here is just example of the prompt that will be
               inviting your input on your command line.
-            </p>
-          </blockquote>
-        </sec>
-        <sec
-          data-collapse="true"
-          data-id="django_start_project_windows"
-          data-title="Create project: Windows"
-        >
-          <b class="calibre10"> Create project: Windows </b>
-          <p class="calibre6">
-            On Windows you should run the following command.
-            <strong class="calibre10">
-              (Don't forget to add the period (or dot)
-              <code class="calibre11"> . </code>
-              at the end)
-            </strong>
-            :
-          </p>
-          <p class="calibre6"></p>
-          <p class="calibre6">command-line</p>
-          <p class="calibre6"></p>
-          <pre
-            class="calibre13"
-          ><code class="calibre11">(myvenv) C:\Users\Name\djangogirls&gt; django-admin.exe startproject mysite .
+      </p>
+     </blockquote>
+    </sec>
+    <sec data-collapse="true" data-id="django_start_project_windows" data-title="Create project: Windows">
+     <b class="calibre10">
+      Create project: Windows
+     </b>
+     <p class="calibre6">
+      On Windows you should run the following command.
+      <strong class="calibre10">
+       (Don't forget to add the period (or dot)
+       <code class="calibre11">
+        .
+       </code>
+       at the end)
+      </strong>
+      :
+     </p>
+     <p class="calibre6">
+     </p>
+     <p class="calibre6">
+      command-line
+     </p>
+     <p class="calibre6">
+     </p>
+     <pre class="calibre13"><code class="calibre11">(myvenv) C:\Users\Name\djangogirls&gt; django-admin.exe startproject mysite .
         </code></pre>
-          <blockquote class="calibre5">
-            <p class="calibre6">
-              The period
-              <code class="calibre11"> . </code>
-              is crucial because it tells the script to install Django in your
+     <blockquote class="calibre5">
+      <p class="calibre6">
+       The period
+       <code class="calibre11">
+        .
+       </code>
+       is crucial because it tells the script to install Django in your
               current directory (for which the period
-              <code class="calibre11"> . </code>
-              is a short-hand reference).
-            </p>
-            <p class="calibre6">
-              <strong class="calibre10"> Note </strong>
-              When typing the command above, remember that you only type the
+       <code class="calibre11">
+        .
+       </code>
+       is a short-hand reference).
+      </p>
+      <p class="calibre6">
+       <strong class="calibre10">
+        Note
+       </strong>
+       When typing the command above, remember that you only type the
               part which starts by
-              <code class="calibre11"> django-admin.exe </code>
-              . The
-              <code class="calibre11">
-                (myvenv) C:\Users\Name\djangogirls&gt;
-              </code>
-              part shown here is just example of the prompt that will be
+       <code class="calibre11">
+        django-admin.exe
+       </code>
+       . The
+       <code class="calibre11">
+        (myvenv) C:\Users\Name\djangogirls&gt;
+       </code>
+       part shown here is just example of the prompt that will be
               inviting your input on your command line.
-            </p>
-          </blockquote>
-        </sec>
-        <p class="calibre6">
-          <code class="calibre11"> django-admin.py </code>
-          is a script that will create the directories and files for you. You
+      </p>
+     </blockquote>
+    </sec>
+    <p class="calibre6">
+     <code class="calibre11">
+      django-admin.py
+     </code>
+     is a script that will create the directories and files for you. You
           should now have a directory structure which looks like this:
-        </p>
-        <pre class="calibre13"><code class="calibre11">djangogirls
+    </p>
+    <pre class="calibre13"><code class="calibre11">djangogirls
         ├── manage.py
         ├── mysite
         │   ├── asgi.py
@@ -189,304 +226,402 @@
         │   └── ...
         └── requirements.txt
         </code></pre>
-        <blockquote class="calibre5">
-          <p class="calibre6">
-            <strong class="calibre10"> Note </strong>
-            : in your directory structure, you will also see your
-            <code class="calibre11"> myvenv </code>
-            directory that we created before.
-          </p>
-        </blockquote>
-        <p class="calibre6">
-          <code class="calibre11"> manage.py </code>
-          is a script that helps with management of the site. With it we will be
+    <blockquote class="calibre5">
+     <p class="calibre6">
+      <strong class="calibre10">
+       Note
+      </strong>
+      : in your directory structure, you will also see your
+      <code class="calibre11">
+       myvenv
+      </code>
+      directory that we created before.
+     </p>
+    </blockquote>
+    <p class="calibre6">
+     <code class="calibre11">
+      manage.py
+     </code>
+     is a script that helps with management of the site. With it we will be
           able (among other things) to start a web server on our computer
           without installing anything else.
-        </p>
-        <p class="calibre6">
-          The
-          <code class="calibre11"> settings.py </code>
-          file contains the configuration of your website.
-        </p>
-        <p class="calibre6">
-          Remember when we talked about a mail carrier checking where to deliver
+    </p>
+    <p class="calibre6">
+     The
+     <code class="calibre11">
+      settings.py
+     </code>
+     file contains the configuration of your website.
+    </p>
+    <p class="calibre6">
+     Remember when we talked about a mail carrier checking where to deliver
           a letter?
-          <code class="calibre11"> urls.py </code>
-          file contains a list of patterns used by
-          <code class="calibre11"> urlresolver </code>
-          .
-        </p>
-        <p class="calibre6">
-          Let's ignore the other files for now as we won't change them. The only
+     <code class="calibre11">
+      urls.py
+     </code>
+     file contains a list of patterns used by
+     <code class="calibre11">
+      urlresolver
+     </code>
+     .
+    </p>
+    <p class="calibre6">
+     Let's ignore the other files for now as we won't change them. The only
           thing to remember is not to delete them by accident!
-        </p>
-        <h2 class="calibre7" id="changing-settings">Changing settings</h2>
-        <p class="calibre6">
-          Let's make some changes in
-          <code class="calibre11"> mysite/settings.py </code>
-          . Open the file using the code editor you installed earlier.
-        </p>
-        <p class="calibre6">
-          <strong class="calibre10"> Note </strong>
-          : Keep in mind that
-          <code class="calibre11"> settings.py </code>
-          is a regular file, like any other. You can open it from inside the
+    </p>
+    <h2 class="calibre7" id="changing-settings">
+     Changing settings
+    </h2>
+    <p class="calibre6">
+     Let's make some changes in
+     <code class="calibre11">
+      mysite/settings.py
+     </code>
+     . Open the file using the code editor you installed earlier.
+    </p>
+    <p class="calibre6">
+     <strong class="calibre10">
+      Note
+     </strong>
+     : Keep in mind that
+     <code class="calibre11">
+      settings.py
+     </code>
+     is a regular file, like any other. You can open it from inside the
           code editor, using the "File -&gt; Open" menu action. This should get
           you the usual window in which you can navigate to your
-          <code class="calibre11"> settings.py </code>
-          file and select it. Alternatively, you can open the file by navigating
+     <code class="calibre11">
+      settings.py
+     </code>
+     file and select it. Alternatively, you can open the file by navigating
           to the
-          <code class="calibre11"> djangogirls/ </code>
-          folder on your desktop and right-clicking on it. Then, select your
+     <code class="calibre11">
+      djangogirls/
+     </code>
+     folder on your desktop and right-clicking on it. Then, select your
           code editor from the list. Selecting the editor is important as you
           might have other programs installed that can open the file but will
           not let you edit it.
-        </p>
-        <h4 class="calibre16" id="changing-the-timezone">
-          Changing the Timezone
-        </h4>
-        <p class="calibre6">
-          It would be nice to have the correct time on our website. Go to
-          <a
-            href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones"
-            target="_blank"
-          >
-            Wikipedia's list of time zones
-          </a>
-          and copy your relevant time zone (TZ) (e.g.
-          <code class="calibre11"> Europe/Berlin </code>
-          ).
-        </p>
-        <p class="calibre6">
-          In
-          <code class="calibre11"> settings.py </code>
-          , find the line that contains
-          <code class="calibre11"> TIME_ZONE </code>
-          and modify it to choose your own timezone. For example:
-        </p>
-        <p class="calibre6"></p>
-        <p class="calibre6">mysite/settings.py</p>
-        <p class="calibre6"></p>
-        <pre
-          class="calibre13"
-        ><code class="calibre11">TIME_ZONE = <span>'Europe/Berlin'</span>
+    </p>
+    <h4 class="calibre16" id="changing-the-timezone">
+     Changing the Timezone
+    </h4>
+    <p class="calibre6">
+     It would be nice to have the correct time on our website. Go to
+     <a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones" target="_blank">
+      Wikipedia's list of time zones
+     </a>
+     and copy your relevant time zone (TZ) (e.g.
+     <code class="calibre11">
+      Europe/Berlin
+     </code>
+     ).
+    </p>
+    <p class="calibre6">
+     In
+     <code class="calibre11">
+      settings.py
+     </code>
+     , find the line that contains
+     <code class="calibre11">
+      TIME_ZONE
+     </code>
+     and modify it to choose your own timezone. For example:
+    </p>
+    <p class="calibre6">
+    </p>
+    <p class="calibre6">
+     mysite/settings.py
+    </p>
+    <p class="calibre6">
+    </p>
+    <pre class="calibre13"><code class="calibre11">TIME_ZONE = <span>'Europe/Berlin'</span>
         </code></pre>
-        <blockquote class="calibre5">
-          <p class="calibre6">
-            <strong class="calibre10"> Note </strong>
-            : Timezones should be in the Region/City format, so eg "EDT" is not
+    <blockquote class="calibre5">
+     <p class="calibre6">
+      <strong class="calibre10">
+       Note
+      </strong>
+      : Timezones should be in the Region/City format, so eg "EDT" is not
             valid, but "America/Detroit" is.
-          </p>
-        </blockquote>
-        <h4 class="calibre16" id="changing-the-language">
-          Changing the Language
-        </h4>
-        <p class="calibre6">
-          A language code consist of the language, e.g.
-          <code class="calibre11"> en </code>
-          for English or
-          <code class="calibre11"> de </code>
-          for German, and the country code, e.g.
-          <code class="calibre11"> de </code>
-          for Germany or
-          <code class="calibre11"> ch </code>
-          for Switzerland. If English is not your native language, you can add
+     </p>
+    </blockquote>
+    <h4 class="calibre16" id="changing-the-language">
+     Changing the Language
+    </h4>
+    <p class="calibre6">
+     A language code consist of the language, e.g.
+     <code class="calibre11">
+      en
+     </code>
+     for English or
+     <code class="calibre11">
+      de
+     </code>
+     for German, and the country code, e.g.
+     <code class="calibre11">
+      de
+     </code>
+     for Germany or
+     <code class="calibre11">
+      ch
+     </code>
+     for Switzerland. If English is not your native language, you can add
           this to change the default buttons and notifications from Django to be
           in your language. So you would have "Cancel" button translated into
           the language you defined here.
-          <a
-            href="https://docs.djangoproject.com/en/5.1/ref/settings/#language-code"
-            target="_blank"
-          >
-            Django comes with a lot of prepared translations
-          </a>
-          .
-        </p>
-        <p class="calibre6">
-          If you want a different language, change the language code by changing
+     <a href="https://docs.djangoproject.com/en/5.1/ref/settings/#language-code" target="_blank">
+      Django comes with a lot of prepared translations
+     </a>
+     .
+    </p>
+    <p class="calibre6">
+     If you want a different language, change the language code by changing
           the following line:
-        </p>
-        <p class="calibre6"></p>
-        <p class="calibre6">mysite/settings.py</p>
-        <p class="calibre6"></p>
-        <pre
-          class="calibre13"
-        ><code class="calibre11">LANGUAGE_CODE = <span>'de-ch'</span>
+    </p>
+    <p class="calibre6">
+    </p>
+    <p class="calibre6">
+     mysite/settings.py
+    </p>
+    <p class="calibre6">
+    </p>
+    <pre class="calibre13"><code class="calibre11">LANGUAGE_CODE = <span>'de-ch'</span>
         </code></pre>
-        <h4 class="calibre16" id="other-settings">Other settings</h4>
-        <p class="calibre6">
-          We'll also need to add a path for static files. (We'll find out all
+    <h4 class="calibre16" id="other-settings">
+     Other settings
+    </h4>
+    <p class="calibre6">
+     We'll also need to add a path for static files. (We'll find out all
           about static files and CSS later in the tutorial.) Go down to the
-          <em class="calibre14"> end </em>
-          of the file, and just underneath the
-          <code class="calibre11"> STATIC_URL </code>
-          entry, add a new one called
-          <code class="calibre11"> STATIC_ROOT </code>
-          :
-        </p>
-        <p class="calibre6"></p>
-        <p class="calibre6">mysite/settings.py</p>
-        <p class="calibre6"></p>
-        <pre
-          class="calibre13"
-        ><code class="calibre11">STATIC_URL = <span>'static/'</span>
+     <em class="calibre14">
+      end
+     </em>
+     of the file, and just underneath the
+     <code class="calibre11">
+      STATIC_URL
+     </code>
+     entry, add a new one called
+     <code class="calibre11">
+      STATIC_ROOT
+     </code>
+     :
+    </p>
+    <p class="calibre6">
+    </p>
+    <p class="calibre6">
+     mysite/settings.py
+    </p>
+    <p class="calibre6">
+    </p>
+    <pre class="calibre13"><code class="calibre11">STATIC_URL = <span>'static/'</span>
         STATIC_ROOT = BASE_DIR / <span>'static'</span>
         </code></pre>
-        <p class="calibre6">
-          When
-          <code class="calibre11"> DEBUG </code>
-          is
-          <code class="calibre11"> True </code>
-          and
-          <code class="calibre11"> ALLOWED_HOSTS </code>
-          is empty, the host is validated against
-          <code class="calibre11"> ['localhost', '127.0.0.1', '[::1]'] </code>
-          . This won't match our hostname on PythonAnywhere once we deploy our
+    <p class="calibre6">
+     When
+     <code class="calibre11">
+      DEBUG
+     </code>
+     is
+     <code class="calibre11">
+      True
+     </code>
+     and
+     <code class="calibre11">
+      ALLOWED_HOSTS
+     </code>
+     is empty, the host is validated against
+     <code class="calibre11">
+      ['localhost', '127.0.0.1', '[::1]']
+     </code>
+     . This won't match our hostname on PythonAnywhere once we deploy our
           application so we will change the following setting:
-        </p>
-        <p class="calibre6"></p>
-        <p class="calibre6">mysite/settings.py</p>
-        <p class="calibre6"></p>
-        <pre
-          class="calibre13"
-        ><code class="calibre11">ALLOWED_HOSTS = [<span>'localhost'</span>, <span>'127.0.0.1'</span>, <span>'.pythonanywhere.com'</span>]
+    </p>
+    <p class="calibre6">
+    </p>
+    <p class="calibre6">
+     mysite/settings.py
+    </p>
+    <p class="calibre6">
+    </p>
+    <pre class="calibre13"><code class="calibre11">ALLOWED_HOSTS = [<span>'localhost'</span>, <span>'127.0.0.1'</span>, <span>'.pythonanywhere.com'</span>]
         </code></pre>
-        <blockquote class="calibre5">
-          <p class="calibre6">
-            <strong class="calibre10"> Note </strong>
-            : If you're using a Chromebook, add this line at the bottom of your
+    <blockquote class="calibre5">
+     <p class="calibre6">
+      <strong class="calibre10">
+       Note
+      </strong>
+      : If you're using a Chromebook, add this line at the bottom of your
             settings.py file:
-            <code class="calibre11">
-              MESSAGE_STORAGE =
+      <code class="calibre11">
+       MESSAGE_STORAGE =
               'django.contrib.messages.storage.session.SessionStorage'
-            </code>
-          </p>
-          <p class="calibre6">
-            Also add
-            <code class="calibre11"> .amazonaws.com </code>
-            to the
-            <code class="calibre11"> ALLOWED_HOSTS </code>
-            if you are using cloud9
-          </p>
-          <p class="calibre6">
-            If you are hosting your project on
-            <code class="calibre11"> Glitch.com </code>
-            , let us protect the Django secret key that needs to remain
+      </code>
+     </p>
+     <p class="calibre6">
+      Also add
+      <code class="calibre11">
+       .amazonaws.com
+      </code>
+      to the
+      <code class="calibre11">
+       ALLOWED_HOSTS
+      </code>
+      if you are using cloud9
+     </p>
+     <p class="calibre6">
+      If you are hosting your project on
+      <code class="calibre11">
+       Glitch.com
+      </code>
+      , let us protect the Django secret key that needs to remain
             confidential (otherwise, anyone remixing your project could see it):
-          </p>
-          <ul class="calibre9">
-            <li class="calibre3">
-              <p class="calibre6">
-                First, we are going to create a random secret key. Open the
+     </p>
+     <ul class="calibre9">
+      <li class="calibre3">
+       <p class="calibre6">
+        First, we are going to create a random secret key. Open the
                 Glitch terminal again, and type the following command:
-              </p>
-              <p class="calibre6"></p>
-              <p class="calibre6">command-line</p>
-              <p class="calibre6"></p>
-              <pre
-                class="calibre13"
-              ><code class="calibre11">python -c <span>'from django.core.management.utils import get_random_secret_key; \
+       </p>
+       <p class="calibre6">
+       </p>
+       <p class="calibre6">
+        command-line
+       </p>
+       <p class="calibre6">
+       </p>
+       <pre class="calibre13"><code class="calibre11">python -c <span>'from django.core.management.utils import get_random_secret_key; \
               print(get_random_secret_key())'</span>
         </code></pre>
-              <p class="calibre6">
-                This should display a long random string, perfect to use as a
+       <p class="calibre6">
+        This should display a long random string, perfect to use as a
                 secret key for your brand new Django web site. We will now paste
                 this key into a
-                <code class="calibre11"> .env </code>
-                file that Glitch will only show you if you are the owner of the
+        <code class="calibre11">
+         .env
+        </code>
+        file that Glitch will only show you if you are the owner of the
                 web site.
-              </p>
-            </li>
-            <li class="calibre3">
-              <p class="calibre6">
-                Create a file
-                <code class="calibre11"> .env </code>
-                at the root of your project and add the following property in
+       </p>
+      </li>
+      <li class="calibre3">
+       <p class="calibre6">
+        Create a file
+        <code class="calibre11">
+         .env
+        </code>
+        at the root of your project and add the following property in
                 it:
-              </p>
-              <p class="calibre6"></p>
-              <p class="calibre6">.env</p>
-              <p class="calibre6"></p>
-              <pre
-                class="calibre13"
-              ><code class="calibre11"><span># Here, inside the single quotes, you can cut and paste the random key generated above</span>
+       </p>
+       <p class="calibre6">
+       </p>
+       <p class="calibre6">
+        .env
+       </p>
+       <p class="calibre6">
+       </p>
+       <pre class="calibre13"><code class="calibre11"><span># Here, inside the single quotes, you can cut and paste the random key generated above</span>
         SECRET=<span>'3!0k#7ds5mp^-x$lqs2%le6v97h#@xopab&amp;oj5y7d=hxe511jl'</span>
         </code></pre>
-            </li>
-            <li class="calibre3">
-              <p class="calibre6">
-                Then update the Django settings file to inject this secret value
+      </li>
+      <li class="calibre3">
+       <p class="calibre6">
+        Then update the Django settings file to inject this secret value
                 and set the Django web site name:
-              </p>
-              <p class="calibre6"></p>
-              <p class="calibre6">mysite/settings.py</p>
-              <p class="calibre6"></p>
-              <pre
-                class="calibre13"
-              ><code class="calibre11"><span>import</span> os
+       </p>
+       <p class="calibre6">
+       </p>
+       <p class="calibre6">
+        mysite/settings.py
+       </p>
+       <p class="calibre6">
+       </p>
+       <pre class="calibre13"><code class="calibre11"><span>import</span> os
 
         SECRET_KEY = os.getenv(<span>'SECRET'</span>)
         </code></pre>
-            </li>
-            <li class="calibre3">
-              <p class="calibre6">
-                And a little further down in the same file, we inject the name
+      </li>
+      <li class="calibre3">
+       <p class="calibre6">
+        And a little further down in the same file, we inject the name
                 of your new Glitch website:
-              </p>
-              <p class="calibre6"></p>
-              <p class="calibre6">mysite/settings.py</p>
-              <p class="calibre6"></p>
-              <pre
-                class="calibre13"
-              ><code class="calibre11">ALLOWED_HOSTS = [os.getenv(<span>'PROJECT_DOMAIN'</span>) + <span>".glitch.me"</span>]
+       </p>
+       <p class="calibre6">
+       </p>
+       <p class="calibre6">
+        mysite/settings.py
+       </p>
+       <p class="calibre6">
+       </p>
+       <pre class="calibre13"><code class="calibre11">ALLOWED_HOSTS = [os.getenv(<span>'PROJECT_DOMAIN'</span>) + <span>".glitch.me"</span>]
         </code></pre>
-              <p class="calibre6">
-                The
-                <code class="calibre11"> PROJECT_DOMAIN </code>
-                value is automatically generated by Glitch. It will correspond
+       <p class="calibre6">
+        The
+        <code class="calibre11">
+         PROJECT_DOMAIN
+        </code>
+        value is automatically generated by Glitch. It will correspond
                 to the name of your project.
-              </p>
-            </li>
-          </ul>
-        </blockquote>
-        <h2 class="calibre7" id="set-up-a-database">Set up a database</h2>
-        <p class="calibre6">
-          There's a lot of different database software that can store data for
+       </p>
+      </li>
+     </ul>
+    </blockquote>
+    <h2 class="calibre7" id="set-up-a-database">
+     Set up a database
+    </h2>
+    <p class="calibre6">
+     There's a lot of different database software that can store data for
           your site. We'll use the default one,
-          <code class="calibre11"> sqlite3 </code>
-          .
-        </p>
-        <p class="calibre6">
-          This is already set up in this part of your
-          <code class="calibre11"> mysite/settings.py </code>
-          file:
-        </p>
-        <p class="calibre6"></p>
-        <p class="calibre6">mysite/settings.py</p>
-        <p class="calibre6"></p>
-        <pre class="calibre13"><code class="calibre11">DATABASES = {
+     <code class="calibre11">
+      sqlite3
+     </code>
+     .
+    </p>
+    <p class="calibre6">
+     This is already set up in this part of your
+     <code class="calibre11">
+      mysite/settings.py
+     </code>
+     file:
+    </p>
+    <p class="calibre6">
+    </p>
+    <p class="calibre6">
+     mysite/settings.py
+    </p>
+    <p class="calibre6">
+    </p>
+    <pre class="calibre13"><code class="calibre11">DATABASES = {
             <span>'default'</span>: {
                 <span>'ENGINE'</span>: <span>'django.db.backends.sqlite3'</span>,
                 <span>'NAME'</span>: BASE_DIR / <span>'db.sqlite3'</span>,
             }
         }
         </code></pre>
-        <p class="calibre6">
-          To create a database for our blog, let's run the following in the
+    <p class="calibre6">
+     To create a database for our blog, let's run the following in the
           console:
-          <code class="calibre11"> python manage.py migrate </code>
-          (we need to be in the
-          <code class="calibre11"> djangogirls </code>
-          directory that contains the
-          <code class="calibre11"> manage.py </code>
-          file). If that goes well, you should see something like this:
-        </p>
-        <p class="calibre6"></p>
-        <p class="calibre6">command-line</p>
-        <p class="calibre6"></p>
-        <pre
-          class="calibre13"
-        ><code class="calibre11">(myvenv) ~/djangogirls$ python manage.py migrate
+     <code class="calibre11">
+      python manage.py migrate
+     </code>
+     (we need to be in the
+     <code class="calibre11">
+      djangogirls
+     </code>
+     directory that contains the
+     <code class="calibre11">
+      manage.py
+     </code>
+     file). If that goes well, you should see something like this:
+    </p>
+    <p class="calibre6">
+    </p>
+    <p class="calibre6">
+     command-line
+    </p>
+    <p class="calibre6">
+    </p>
+    <pre class="calibre13"><code class="calibre11">(myvenv) ~/djangogirls$ python manage.py migrate
         Operations to perform:
           Apply all migrations: admin, auth, contenttypes, sessions
         Running migrations:
@@ -509,134 +644,163 @@
           Applying auth.0012_alter_user_first_name_max_length... OK
           Applying sessions.0001_initial... OK
         </code></pre>
-        <p class="calibre6">
-          And we're done! Time to start the web server and see if our website is
+    <p class="calibre6">
+     And we're done! Time to start the web server and see if our website is
           working!
-        </p>
-        <h2 class="calibre7" id="starting-the-web-server">
-          Starting the web server
-        </h2>
-        <p class="calibre6">
-          You need to be in the directory that contains the
-          <code class="calibre11"> manage.py </code>
-          file (the
-          <code class="calibre11"> djangogirls </code>
-          directory). In the console, we can start the web server by running
-          <code class="calibre11"> python manage.py runserver </code>
-          :
-        </p>
-        <p class="calibre6"></p>
-        <p class="calibre6">command-line</p>
-        <p class="calibre6"></p>
-        <pre
-          class="calibre13"
-        ><code class="calibre11">(myvenv) ~/djangogirls$ python manage.py runserver
+    </p>
+    <h2 class="calibre7" id="starting-the-web-server">
+     Starting the web server
+    </h2>
+    <p class="calibre6">
+     You need to be in the directory that contains the
+     <code class="calibre11">
+      manage.py
+     </code>
+     file (the
+     <code class="calibre11">
+      djangogirls
+     </code>
+     directory). In the console, we can start the web server by running
+     <code class="calibre11">
+      python manage.py runserver
+     </code>
+     :
+    </p>
+    <p class="calibre6">
+    </p>
+    <p class="calibre6">
+     command-line
+    </p>
+    <p class="calibre6">
+    </p>
+    <pre class="calibre13"><code class="calibre11">(myvenv) ~/djangogirls$ python manage.py runserver
         </code></pre>
-        <p class="calibre6">
-          If you are on a Chromebook, use this command instead:
-        </p>
-        <p class="calibre6"></p>
-        <p class="calibre6">Cloud 9</p>
-        <p class="calibre6"></p>
-        <pre
-          class="calibre13"
-        ><code class="calibre11">(myvenv) ~/djangogirls$ python manage.py runserver 0.0.0.0:8080
+    <p class="calibre6">
+     If you are on a Chromebook, use this command instead:
+    </p>
+    <p class="calibre6">
+    </p>
+    <p class="calibre6">
+     Cloud 9
+    </p>
+    <p class="calibre6">
+    </p>
+    <pre class="calibre13"><code class="calibre11">(myvenv) ~/djangogirls$ python manage.py runserver 0.0.0.0:8080
         </code></pre>
-        <p class="calibre6">or this one if you are using Glitch:</p>
-        <p class="calibre6"></p>
-        <p class="calibre6">Glitch.com terminal</p>
-        <p class="calibre6"></p>
-        <pre class="calibre13"><code class="calibre11">$ refresh
+    <p class="calibre6">
+     or this one if you are using Glitch:
+    </p>
+    <p class="calibre6">
+    </p>
+    <p class="calibre6">
+     Glitch.com terminal
+    </p>
+    <p class="calibre6">
+    </p>
+    <pre class="calibre13"><code class="calibre11">$ refresh
         </code></pre>
-        <p class="calibre6">
-          If you are on Windows and this fails with
-          <code class="calibre11"> UnicodeDecodeError </code>
-          , use this command instead:
-        </p>
-        <p class="calibre6"></p>
-        <p class="calibre6">command-line</p>
-        <p class="calibre6"></p>
-        <pre
-          class="calibre13"
-        ><code class="calibre11">(myvenv) ~/djangogirls$ python manage.py runserver 0:8000
+    <p class="calibre6">
+     If you are on Windows and this fails with
+     <code class="calibre11">
+      UnicodeDecodeError
+     </code>
+     , use this command instead:
+    </p>
+    <p class="calibre6">
+    </p>
+    <p class="calibre6">
+     command-line
+    </p>
+    <p class="calibre6">
+    </p>
+    <pre class="calibre13"><code class="calibre11">(myvenv) ~/djangogirls$ python manage.py runserver 0:8000
         </code></pre>
-        <p class="calibre6">
-          Now you need to check that your website is running. Open your browser
+    <p class="calibre6">
+     Now you need to check that your website is running. Open your browser
           (Firefox, Chrome, Safari, Internet Explorer or whatever you use) and
           enter this address:
-        </p>
-        <p class="calibre6"></p>
-        <p class="calibre6">browser</p>
-        <p class="calibre6"></p>
-        <pre class="calibre13"><code class="calibre11">http://127.0.0.1:8000/
+    </p>
+    <p class="calibre6">
+    </p>
+    <p class="calibre6">
+     browser
+    </p>
+    <p class="calibre6">
+    </p>
+    <pre class="calibre13"><code class="calibre11">http://127.0.0.1:8000/
         </code></pre>
-        <p class="calibre6">
-          If you're using a Chromebook and Cloud9, instead click the URL in the
+    <p class="calibre6">
+     If you're using a Chromebook and Cloud9, instead click the URL in the
           pop-up window that should have appeared in the upper right corner of
           the command window where the web server is running. The URL will look
           something like:
-        </p>
-        <p class="calibre6"></p>
-        <p class="calibre6">browser</p>
-        <p class="calibre6"></p>
-        <pre
-          class="calibre13"
-        ><code class="calibre11">https://&lt;a bunch of letters and numbers&gt;.vfs.cloud9.us-west-2.amazonaws.com
+    </p>
+    <p class="calibre6">
+    </p>
+    <p class="calibre6">
+     browser
+    </p>
+    <p class="calibre6">
+    </p>
+    <pre class="calibre13"><code class="calibre11">https://&lt;a bunch of letters and numbers&gt;.vfs.cloud9.us-west-2.amazonaws.com
         </code></pre>
-        <p class="calibre6">or on Glitch:</p>
-        <pre
-          class="calibre13"
-        ><code class="calibre11">https://name-of-your-glitch-project.glitch.me
+    <p class="calibre6">
+     or on Glitch:
+    </p>
+    <pre class="calibre13"><code class="calibre11">https://name-of-your-glitch-project.glitch.me
         </code></pre>
-        <p class="calibre6">
-          You can open this in another browser window and you should see the
+    <p class="calibre6">
+     You can open this in another browser window and you should see the
           Django install worked page.
-        </p>
-        <p class="calibre6">
-          Congratulations! You've just created your first website and run it
+    </p>
+    <p class="calibre6">
+     Congratulations! You've just created your first website and run it
           using a web server! Isn't that awesome?
-        </p>
-        <p class="calibre6">
-          <img
-            alt="Install worked!"
-            class="calibre8"
-            src="content/install_worked.png"
-          />
-        </p>
-        <p class="calibre6">
-          Note that a command window can only run one thing at a time, and the
+    </p>
+    <p class="calibre6">
+     <img alt="Install worked!" class="calibre8" src="content/install_worked.png"/>
+    </p>
+    <p class="calibre6">
+     Note that a command window can only run one thing at a time, and the
           command window you opened earlier is running the web server. As long
           as the web server is running and waiting for additional incoming
           requests, the terminal will accept new text but will not execute new
           commands.
-        </p>
-        <blockquote class="calibre5">
-          <p class="calibre6">
-            We reviewed how web servers work in the
-            <b class="calibre10"> How the Internet works </b>
-            chapter.
-          </p>
-        </blockquote>
-        <p class="calibre6">
-          To type additional commands while the web server is running, open a
+    </p>
+    <blockquote class="calibre5">
+     <p class="calibre6">
+      We reviewed how web servers work in the
+      <b class="calibre10">
+       How the Internet works
+      </b>
+      chapter.
+     </p>
+    </blockquote>
+    <p class="calibre6">
+     To type additional commands while the web server is running, open a
           new terminal window and activate your virtualenv -- to review
           instructions on how to open a second terminal window, see
-          <a href="index4.html"> Introduction to the command line </a>
-          . To stop the web server, switch back to the window in which it's
+     <a href="index4.html">
+      Introduction to the command line
+     </a>
+     . To stop the web server, switch back to the window in which it's
           running and press CTRL+C - Control and C keys together (on Windows,
           you might have to press Ctrl+Break).
-        </p>
-        <p class="calibre6">
-          Ready for the next step? It's time to create some content!
-        </p>
-      </div>
-    </main>
-    <footer class="book-footer">
-      <p>
-        Generated from the original EPUB. Content © respective authors under CC
+    </p>
+    <p class="calibre6">
+     Ready for the next step? It's time to create some content!
+    </p>
+   </div>
+  </main>
+  <footer class="book-footer">
+   <p>
+    Generated from the original EPUB. Content © respective authors under CC
         BY-SA 4.0.
-      </p>
-    </footer>
-    <script defer="True" src="nav.js"></script>
-  </body>
+   </p>
+  </footer>
+  <script defer="" src="toc.js">
+  </script>
+  <script defer="" src="nav.js">
+  </script>
+ </body>
 </html>

@@ -141,8 +141,9 @@ nav.book-nav .nav-links {
     padding: 0 0.5rem;
     box-sizing: border-box;
     align-items: center;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     gap: 0.6rem;
+    overflow-x: auto;
 }
 nav.book-nav .nav-toggle,
 nav.book-nav .nav-link {
@@ -185,7 +186,7 @@ nav.book-nav .nav-link:focus-visible {
     background: #ffffff;
     border-right: 1px solid #dce5f4;
     box-shadow: 12px 0 40px rgba(15, 23, 42, 0.18);
-    padding: 1.2rem 1.1rem 2rem;
+    padding: 1.2rem 1.1rem 3.5rem;
     display: flex;
     flex-direction: column;
     gap: 1.6rem;
@@ -193,13 +194,15 @@ nav.book-nav .nav-link:focus-visible {
     transition: transform 0.25s ease;
     z-index: 60;
     overflow-y: auto;
-    padding: 1.2rem 1.1rem 2rem;
 }
 .nav-panel.open {
     transform: translateX(0);
 }
 .nav-panel__group {
     margin: 0;
+}
+.nav-panel__group:last-child {
+    padding-bottom: 1rem;
 }
 .nav-panel__title {
     margin: 0 0 0.85rem;
@@ -215,15 +218,104 @@ nav.book-nav .nav-link:focus-visible {
     display: grid;
     gap: 0.65rem;
 }
-.nav-panel__link {
+.nav-panel__link,
+.nav-panel__link.disabled {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
     color: #223a5d;
     text-decoration: none;
     font-weight: 600;
     line-height: 1.25;
 }
+.nav-panel__link.disabled {
+    color: #9aa6bf;
+    cursor: default;
+    pointer-events: none;
+}
+.nav-panel__link.is-active {
+    color: #0f326e;
+    font-weight: 700;
+}
 .nav-panel__link:hover,
 .nav-panel__link:focus-visible {
     text-decoration: underline;
+}
+.page-toc {
+    border: 1px solid #dce5f4;
+    background: #ffffff;
+    border-radius: 12px;
+    margin-bottom: clamp(1.5rem, 4vw, 2.4rem);
+    box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
+    overflow: hidden;
+}
+.page-toc__toggle {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.6rem;
+    padding: 0.65rem 0.95rem;
+    border: none;
+    background: transparent;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: #1f3d63;
+    cursor: pointer;
+}
+.page-toc__toggle .icon {
+    transition: transform 0.18s ease;
+}
+.page-toc.open .page-toc__toggle .icon {
+    transform: rotate(90deg);
+}
+.page-toc__panel {
+    display: none;
+    padding: 0 1.1rem 1.1rem;
+}
+.page-toc.open .page-toc__panel {
+    display: block;
+}
+.page-toc__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 0.55rem;
+}
+.page-toc__list > li > a,
+.page-toc__list > li > span {
+    color: #1f3d63;
+    text-decoration: none;
+    font-weight: 600;
+}
+.page-toc__list > li > a:hover,
+.page-toc__list > li > a:focus-visible {
+    text-decoration: underline;
+}
+.page-toc__sublist {
+    list-style: none;
+    margin: 0.4rem 0 0 0.8rem;
+    padding: 0 0 0 0.9rem;
+    border-left: 1px solid #e2e9f6;
+    display: grid;
+    gap: 0.45rem;
+}
+.page-toc__sublist a {
+    color: #34507a;
+    text-decoration: none;
+    font-weight: 500;
+}
+.page-toc__sublist a:hover,
+.page-toc__sublist a:focus-visible {
+    text-decoration: underline;
+}
+.page-toc .toc-level-2 > .page-toc__sublist {
+    margin-top: 0.35rem;
+}
+.page-toc .toc-level-5,
+.page-toc .toc-level-6 {
+    display: none;
 }
 @media (max-width: 720px) {
     nav.book-nav .nav-toggle,

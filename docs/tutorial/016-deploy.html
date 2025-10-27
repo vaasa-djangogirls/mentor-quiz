@@ -1,296 +1,353 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1" name="viewport" />
-    <title>Deploy!</title>
-    <link href="book.css" rel="stylesheet" />
-    <meta content="IE=edge" http-equiv="X-UA-Compatible" />
-    <meta content="" name="description" />
-    <meta content="HonKit 3.7.5" name="generator" />
-    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
-    <link href="content/stylesheet.css" rel="stylesheet" type="text/css" />
-    <link href="content/page_styles.css" rel="stylesheet" type="text/css" />
-    <!-- Google tag (gtag.js) -->
-    <script
-      async=""
-      src="https://www.googletagmanager.com/gtag/js?id=G-BN9REN07NH"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   Deploy!
+  </title>
+  <link href="book.css" rel="stylesheet"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="" name="description"/>
+  <meta content="HonKit 3.7.5" name="generator"/>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <link href="content/stylesheet.css" rel="stylesheet" type="text/css"/>
+  <link href="content/page_styles.css" rel="stylesheet" type="text/css"/>
+  <!-- Google tag (gtag.js) -->
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-BN9REN07NH">
+  </script>
+  <script>
+   window.dataLayer = window.dataLayer || [];
       function gtag() {
         dataLayer.push(arguments);
       }
       gtag("js", new Date());
 
       gtag("config", "G-BN9REN07NH");
-    </script>
-  </head>
-  <body data-chapter="016-deploy">
-    <header class="book-header">
-      <h1 class="page-title">Deploy!</h1>
-    </header>
-    <main>
-      <div class="page">
-        <h2 class="calibre1" id="deploy">Deploy!</h2>
-        <blockquote class="calibre5">
-          <p class="calibre6">
-            <strong class="calibre10"> Note </strong>
-            The following chapter can be sometimes a bit hard to get through.
+  </script>
+ </head>
+ <body data-chapter="016-deploy">
+  <header class="book-header">
+   <h1 class="page-title">
+    Deploy!
+   </h1>
+  </header>
+  <main>
+   <div class="page">
+    <h2 class="calibre1" id="deploy">
+     Deploy!
+    </h2>
+    <blockquote class="calibre5">
+     <p class="calibre6">
+      <strong class="calibre10">
+       Note
+      </strong>
+      The following chapter can be sometimes a bit hard to get through.
             Persist and finish it; deployment is an important part of the
             website development process. This chapter is placed in the middle of
             the tutorial so that your mentor can help with the slightly trickier
             process of getting your website online. This means you can still
             finish the tutorial on your own if you run out of time.
-          </p>
-        </blockquote>
-        <p class="calibre6">
-          Until now, your website was only available on your computer. Now you
+     </p>
+    </blockquote>
+    <p class="calibre6">
+     Until now, your website was only available on your computer. Now you
           will learn how to deploy it! Deploying is the process of publishing
           your application on the Internet so people can finally go and see your
           app. :)
-        </p>
-        <p class="calibre6">
-          As you learned, a website has to be located on a server. There are a
+    </p>
+    <p class="calibre6">
+     As you learned, a website has to be located on a server. There are a
           lot of server providers available on the internet, we're going to use
-          <a href="https://www.pythonanywhere.com/" target="_blank">
-            PythonAnywhere
-          </a>
-          . PythonAnywhere is free for small applications that don't have too
+     <a href="https://www.pythonanywhere.com/" target="_blank">
+      PythonAnywhere
+     </a>
+     . PythonAnywhere is free for small applications that don't have too
           many visitors so it'll definitely be enough for you now.
-        </p>
-        <p class="calibre6">
-          The other external service we'll be using is
-          <a href="https://www.github.com" target="_blank"> GitHub </a>
-          , which is a code hosting service. There are others out there, but
+    </p>
+    <p class="calibre6">
+     The other external service we'll be using is
+     <a href="https://www.github.com" target="_blank">
+      GitHub
+     </a>
+     , which is a code hosting service. There are others out there, but
           almost all programmers have a GitHub account these days, and now so
           will you!
-        </p>
-        <p class="calibre6">
-          These three places will be important to you. Your local computer will
+    </p>
+    <p class="calibre6">
+     These three places will be important to you. Your local computer will
           be the place where you do development and testing. When you're happy
           with the changes, you will place a copy of your program on GitHub.
           Your website will be on PythonAnywhere and you will update it by
           getting a new copy of your code from GitHub.
-        </p>
-        <p class="calibre6">
-          The deployment process can be illustrated as follows:
-        </p>
-        <p class="calibre6">
-          <img alt="" class="calibre8" src="content/deployment_local.png" />
-        </p>
-        <p class="calibre6">
-          If you’re using a
-          <strong class="calibre10"> Chromebook </strong>
-          and
-          <a href="https://github.com/codespaces" target="_blank">
-            GitHub Codespaces
-          </a>
-          , your setup will look a bit different. All code-related changes are
+    </p>
+    <p class="calibre6">
+     The deployment process can be illustrated as follows:
+    </p>
+    <p class="calibre6">
+     <img alt="" class="calibre8" src="content/deployment_local.png"/>
+    </p>
+    <p class="calibre6">
+     If you’re using a
+     <strong class="calibre10">
+      Chromebook
+     </strong>
+     and
+     <a href="https://github.com/codespaces" target="_blank">
+      GitHub Codespaces
+     </a>
+     , your setup will look a bit different. All code-related changes are
           made not locally on your
-          <strong class="calibre10"> Chromebook </strong>
-          , but in the Cloud Environment provided by GitHub.
-        </p>
-        <p class="calibre6">
-          The deployment process on
-          <strong class="calibre10"> Chromebook </strong>
-          and Cloud environment can be illustrated as follows:
-        </p>
-        <p class="calibre6">
-          <img alt="" class="calibre8" src="content/deployment_cloud.png" />
-        </p>
-        <h2 class="calibre1" id="git">Git</h2>
-        <blockquote class="calibre5">
-          <p class="calibre6">
-            <strong class="calibre10"> Note </strong>
-            If you already did the
-            <a href="index1.html"> installation steps </a>
-            , there's no need to do this again – you can skip to the next
+     <strong class="calibre10">
+      Chromebook
+     </strong>
+     , but in the Cloud Environment provided by GitHub.
+    </p>
+    <p class="calibre6">
+     The deployment process on
+     <strong class="calibre10">
+      Chromebook
+     </strong>
+     and Cloud environment can be illustrated as follows:
+    </p>
+    <p class="calibre6">
+     <img alt="" class="calibre8" src="content/deployment_cloud.png"/>
+    </p>
+    <h2 class="calibre1" id="git">
+     Git
+    </h2>
+    <blockquote class="calibre5">
+     <p class="calibre6">
+      <strong class="calibre10">
+       Note
+      </strong>
+      If you already did the
+      <a href="index1.html">
+       installation steps
+      </a>
+      , there's no need to do this again – you can skip to the next
             section and start creating your Git repository.
-          </p>
-        </blockquote>
-        <p class="calibre6">
-          Git is a "version control system" used by a lot of programmers. This
+     </p>
+    </blockquote>
+    <p class="calibre6">
+     Git is a "version control system" used by a lot of programmers. This
           software can track changes to files over time so that you can recall
           specific versions later. A bit like the "track changes" feature in
           word processor programs (e.g., Microsoft Word or LibreOffice Writer),
           but much more powerful.
-        </p>
-        <h2 class="calibre7" id="installing-git">Installing Git</h2>
-        <sec
-          data-collapse="true"
-          data-id="git_install_windows"
-          data-title="Installing Git: Windows"
-        >
-          <b class="calibre10"> Installing Git: Windows </b>
-          <p class="calibre6">
-            You can download Git from
-            <a href="https://git-scm.com/" target="_blank"> git-scm.com </a>
-            . You can hit "next" on all steps except for two: in the step where
+    </p>
+    <h2 class="calibre7" id="installing-git">
+     Installing Git
+    </h2>
+    <sec data-collapse="true" data-id="git_install_windows" data-title="Installing Git: Windows">
+     <b class="calibre10">
+      Installing Git: Windows
+     </b>
+     <p class="calibre6">
+      You can download Git from
+      <a href="https://git-scm.com/" target="_blank">
+       git-scm.com
+      </a>
+      . You can hit "next" on all steps except for two: in the step where
             it asks to choose your editor, you should pick Nano, and in the step
             entitled "Adjusting your PATH environment", choose "Use Git and
             optional Unix tools from the Windows Command Prompt" (the bottom
             option). Other than that, the defaults are fine. Checkout
             Windows-style, commit Unix-style line endings is good.
-          </p>
-          <p class="calibre6">
-            Do not forget to restart the command prompt or PowerShell after the
+     </p>
+     <p class="calibre6">
+      Do not forget to restart the command prompt or PowerShell after the
             installation finished successfully.
-          </p>
-        </sec>
-        <p class="calibre6"></p>
-        <sec
-          data-collapse="true"
-          data-id="git_install_OSX"
-          data-title="Installing Git: macOS"
-        >
-          <b class="calibre10"> Installing Git: macOS </b>
-          <p class="calibre6">
-            Download Git from
-            <a href="https://git-scm.com/download/mac" target="_blank">
-              https://git-scm.com/download/mac
-            </a>
-            and follow the instructions.
-          </p>
-          <blockquote class="calibre5">
-            <p class="calibre6">
-              <strong class="calibre10"> Note </strong>
-              If you are running OS X 10.6, 10.7, or 10.8, you will need to
+     </p>
+    </sec>
+    <p class="calibre6">
+    </p>
+    <sec data-collapse="true" data-id="git_install_OSX" data-title="Installing Git: macOS">
+     <b class="calibre10">
+      Installing Git: macOS
+     </b>
+     <p class="calibre6">
+      Download Git from
+      <a href="https://git-scm.com/download/mac" target="_blank">
+       https://git-scm.com/download/mac
+      </a>
+      and follow the instructions.
+     </p>
+     <blockquote class="calibre5">
+      <p class="calibre6">
+       <strong class="calibre10">
+        Note
+       </strong>
+       If you are running OS X 10.6, 10.7, or 10.8, you will need to
               install the version of git from here:
-              <a
-                href="https://sourceforge.net/projects/git-osx-installer/files/git-2.3.5-intel-universal-snow-leopard.dmg/download"
-                target="_blank"
-              >
-                Git installer for OS X Snow Leopard
-              </a>
-            </p>
-            <p class="calibre6">
-              It is recommended to install using brew (you may need to install
+       <a href="https://sourceforge.net/projects/git-osx-installer/files/git-2.3.5-intel-universal-snow-leopard.dmg/download" target="_blank">
+        Git installer for OS X Snow Leopard
+       </a>
+      </p>
+      <p class="calibre6">
+       It is recommended to install using brew (you may need to install
               homebrew if you don't already have it):
-              <code class="calibre11"> brew install git </code>
-            </p>
-            <p class="calibre6">
-              Please note that some Mac M1/M2/M3 users may have the error
-              <code class="calibre11"> zsh: command not found: brew </code>
-              . In that case, please follow
-              <a href="https://stackoverflow.com/a/66019047" target="_blank">
-                this
-              </a>
-              or
-              <a
-                href="https://mac.install.guide/homebrew/zsh-command-not-found-brew"
-                target="_blank"
-              >
-                this
-              </a>
-              to fix the error.
-            </p>
-          </blockquote>
-        </sec>
-        <sec
-          data-collapse="true"
-          data-id="git_install_debian_ubuntu"
-          data-title="Installing Git: Debian or Ubuntu"
-        >
-          <b class="calibre10"> Installing Git: Debian or Ubuntu </b>
-          <p class="calibre6"></p>
-          <p class="calibre6">command-line</p>
-          <p class="calibre6"></p>
-          <pre class="calibre13"><code class="calibre11">$ sudo apt install git
+       <code class="calibre11">
+        brew install git
+       </code>
+      </p>
+      <p class="calibre6">
+       Please note that some Mac M1/M2/M3 users may have the error
+       <code class="calibre11">
+        zsh: command not found: brew
+       </code>
+       . In that case, please follow
+       <a href="https://stackoverflow.com/a/66019047" target="_blank">
+        this
+       </a>
+       or
+       <a href="https://mac.install.guide/homebrew/zsh-command-not-found-brew" target="_blank">
+        this
+       </a>
+       to fix the error.
+      </p>
+     </blockquote>
+    </sec>
+    <sec data-collapse="true" data-id="git_install_debian_ubuntu" data-title="Installing Git: Debian or Ubuntu">
+     <b class="calibre10">
+      Installing Git: Debian or Ubuntu
+     </b>
+     <p class="calibre6">
+     </p>
+     <p class="calibre6">
+      command-line
+     </p>
+     <p class="calibre6">
+     </p>
+     <pre class="calibre13"><code class="calibre11">$ sudo apt install git
         </code></pre>
-        </sec>
-        <sec
-          data-collapse="true"
-          data-id="git_install_fedora"
-          data-title="Installing Git: Fedora"
-        >
-          <b class="calibre10"> Installing Git: Fedora </b>
-          <p class="calibre6"></p>
-          <p class="calibre6">command-line</p>
-          <p class="calibre6"></p>
-          <pre class="calibre13"><code class="calibre11">$ sudo dnf install git
+    </sec>
+    <sec data-collapse="true" data-id="git_install_fedora" data-title="Installing Git: Fedora">
+     <b class="calibre10">
+      Installing Git: Fedora
+     </b>
+     <p class="calibre6">
+     </p>
+     <p class="calibre6">
+      command-line
+     </p>
+     <p class="calibre6">
+     </p>
+     <pre class="calibre13"><code class="calibre11">$ sudo dnf install git
         </code></pre>
-        </sec>
-        <sec
-          data-collapse="true"
-          data-id="git_install_openSUSE"
-          data-title="Installing Git: openSUSE"
-        >
-          <b class="calibre10"> Installing Git: openSUSE </b>
-          <p class="calibre6"></p>
-          <p class="calibre6">command-line</p>
-          <p class="calibre6"></p>
-          <pre
-            class="calibre13"
-          ><code class="calibre11">$ sudo zypper install git
+    </sec>
+    <sec data-collapse="true" data-id="git_install_openSUSE" data-title="Installing Git: openSUSE">
+     <b class="calibre10">
+      Installing Git: openSUSE
+     </b>
+     <p class="calibre6">
+     </p>
+     <p class="calibre6">
+      command-line
+     </p>
+     <p class="calibre6">
+     </p>
+     <pre class="calibre13"><code class="calibre11">$ sudo zypper install git
         </code></pre>
-        </sec>
-        <blockquote class="calibre5">
-          <p class="calibre6">
-            <strong class="calibre10"> Note </strong>
-            If you're using a
-            <strong class="calibre10"> Chromebook </strong>
-            and have already completed the
-            <strong class="calibre10"> Chromebook </strong>
-            Installation
-            <a href="index2.html"> part </a>
-            , you've already created the repository and can
-            <strong class="calibre10"> skip </strong>
-            all commands from the "Starting our Git repository" and "Ignoring
+    </sec>
+    <blockquote class="calibre5">
+     <p class="calibre6">
+      <strong class="calibre10">
+       Note
+      </strong>
+      If you're using a
+      <strong class="calibre10">
+       Chromebook
+      </strong>
+      and have already completed the
+      <strong class="calibre10">
+       Chromebook
+      </strong>
+      Installation
+      <a href="index2.html">
+       part
+      </a>
+      , you've already created the repository and can
+      <strong class="calibre10">
+       skip
+      </strong>
+      all commands from the "Starting our Git repository" and "Ignoring
             files" chapters. You can continue from the "First Git commands"
             chapter. While you’re welcome to read these chapters, the Terminal
             commands can be skipped.
-          </p>
-        </blockquote>
-        <h2 class="calibre7" id="starting-our-git-repository">
-          Starting our Git repository
-        </h2>
-        <p class="calibre6">
-          Git tracks changes to a particular set of files in what's called a
+     </p>
+    </blockquote>
+    <h2 class="calibre7" id="starting-our-git-repository">
+     Starting our Git repository
+    </h2>
+    <p class="calibre6">
+     Git tracks changes to a particular set of files in what's called a
           code repository (or "repo" for short). Let's start one for our
           project. Open up your console and run these commands, in the
-          <code class="calibre11"> djangogirls </code>
-          directory:
-        </p>
-        <blockquote class="calibre5">
-          <p class="calibre6">
-            <strong class="calibre10"> Note </strong>
-            Check your current working directory with a
-            <code class="calibre11"> pwd </code>
-            (macOS/Linux) or
-            <code class="calibre11"> cd </code>
-            (Windows) command before initializing the repository. You should be
+     <code class="calibre11">
+      djangogirls
+     </code>
+     directory:
+    </p>
+    <blockquote class="calibre5">
+     <p class="calibre6">
+      <strong class="calibre10">
+       Note
+      </strong>
+      Check your current working directory with a
+      <code class="calibre11">
+       pwd
+      </code>
+      (macOS/Linux) or
+      <code class="calibre11">
+       cd
+      </code>
+      (Windows) command before initializing the repository. You should be
             in the
-            <code class="calibre11"> djangogirls </code>
-            folder.
-          </p>
-        </blockquote>
-        <p class="calibre6"></p>
-        <p class="calibre6">command-line</p>
-        <p class="calibre6"></p>
-        <pre class="calibre13"><code class="calibre11">$ git init
+      <code class="calibre11">
+       djangogirls
+      </code>
+      folder.
+     </p>
+    </blockquote>
+    <p class="calibre6">
+    </p>
+    <p class="calibre6">
+     command-line
+    </p>
+    <p class="calibre6">
+    </p>
+    <pre class="calibre13"><code class="calibre11">$ git init
         Initialized empty Git repository in ~/djangogirls/.git/
         $ git config --global user.name "Your Name"
         $ git config --global user.email you@example.com
         </code></pre>
-        <p class="calibre6">
-          Initializing the git repository is something we need to do only once
+    <p class="calibre6">
+     Initializing the git repository is something we need to do only once
           per project (and you won't have to re-enter the username and email
           ever again).
-        </p>
-        <h3 class="calibre12" id="ignoring-files">Ignoring files</h3>
-        <p class="calibre6">
-          Git will track changes to all the files and folders in this directory,
+    </p>
+    <h3 class="calibre12" id="ignoring-files">
+     Ignoring files
+    </h3>
+    <p class="calibre6">
+     Git will track changes to all the files and folders in this directory,
           but there are some files we want it to ignore. We do this by creating
           a file called
-          <code class="calibre11"> .gitignore </code>
-          in the base directory. Open up your editor and create a new file with
+     <code class="calibre11">
+      .gitignore
+     </code>
+     in the base directory. Open up your editor and create a new file with
           the following contents:
-        </p>
-        <p class="calibre6"></p>
-        <p class="calibre6">.gitignore</p>
-        <p class="calibre6"></p>
-        <pre class="calibre13"><code class="calibre11"># Python
+    </p>
+    <p class="calibre6">
+    </p>
+    <p class="calibre6">
+     .gitignore
+    </p>
+    <p class="calibre6">
+    </p>
+    <pre class="calibre13"><code class="calibre11"># Python
         *.pyc
         *~
         __pycache__
@@ -323,44 +380,70 @@
         .history/
         *.code-workspace
         </code></pre>
-        <p class="calibre6">
-          And save it as
-          <code class="calibre11"> .gitignore </code>
-          in the "djangogirls" folder.
-        </p>
-        <blockquote class="calibre5">
-          <p class="calibre6">
-            <strong class="calibre10"> Note </strong>
-            The dot at the beginning of the file name is important! If you're
+    <p class="calibre6">
+     And save it as
+     <code class="calibre11">
+      .gitignore
+     </code>
+     in the "djangogirls" folder.
+    </p>
+    <blockquote class="calibre5">
+     <p class="calibre6">
+      <strong class="calibre10">
+       Note
+      </strong>
+      The dot at the beginning of the file name is important! If you're
             having any difficulty creating it (Macs don't like you to create
             files that begin with a dot via the Finder, for example), then use
             the "Save As" feature in your editor; it's bulletproof. And be sure
             not to add
-            <code class="calibre11"> .txt </code>
-            ,
-            <code class="calibre11"> .py </code>
-            , or any other extension to the file name -- it will only be
+      <code class="calibre11">
+       .txt
+      </code>
+      ,
+      <code class="calibre11">
+       .py
+      </code>
+      , or any other extension to the file name -- it will only be
             recognized by Git if the name is just
-            <code class="calibre11"> .gitignore </code>
-            . Linux and MacOS treat files with a name that starts with
-            <code class="calibre11"> . </code>
-            (such as
-            <code class="calibre11"> .gitignore </code>
-            ) as hidden and the normal
-            <code class="calibre11"> ls </code>
-            command won't show these files. Instead use
-            <code class="calibre11"> ls -a </code>
-            to see the
-            <code class="calibre11"> .gitignore </code>
-            file.
-          </p>
-          <p class="calibre6">
-            <strong class="calibre10"> Note </strong>
-            One of the files you specified in your
-            <code class="calibre11"> .gitignore </code>
-            file is
-            <code class="calibre11"> db.sqlite3 </code>
-            . That file is your local database, where all of your users and
+      <code class="calibre11">
+       .gitignore
+      </code>
+      . Linux and MacOS treat files with a name that starts with
+      <code class="calibre11">
+       .
+      </code>
+      (such as
+      <code class="calibre11">
+       .gitignore
+      </code>
+      ) as hidden and the normal
+      <code class="calibre11">
+       ls
+      </code>
+      command won't show these files. Instead use
+      <code class="calibre11">
+       ls -a
+      </code>
+      to see the
+      <code class="calibre11">
+       .gitignore
+      </code>
+      file.
+     </p>
+     <p class="calibre6">
+      <strong class="calibre10">
+       Note
+      </strong>
+      One of the files you specified in your
+      <code class="calibre11">
+       .gitignore
+      </code>
+      file is
+      <code class="calibre11">
+       db.sqlite3
+      </code>
+      . That file is your local database, where all of your users and
             posts are stored. We'll follow standard web programming practice,
             meaning that we'll use separate databases for your local testing
             site and your live website on PythonAnywhere. The PythonAnywhere
@@ -373,26 +456,38 @@
             your local database as a good playground where you can test
             different things and not be afraid that you're going to delete your
             real posts from your blog.
-          </p>
-        </blockquote>
-        <h3 class="calibre12" id="first-git-commands">First Git commands</h3>
-        <p class="calibre6">
-          It's a good idea to use a
-          <code class="calibre11"> git status </code>
-          command before
-          <code class="calibre11"> git add </code>
-          or whenever you find yourself unsure of what has changed. This will
+     </p>
+    </blockquote>
+    <h3 class="calibre12" id="first-git-commands">
+     First Git commands
+    </h3>
+    <p class="calibre6">
+     It's a good idea to use a
+     <code class="calibre11">
+      git status
+     </code>
+     command before
+     <code class="calibre11">
+      git add
+     </code>
+     or whenever you find yourself unsure of what has changed. This will
           help prevent any surprises from happening, such as wrong files being
           added or committed. The
-          <code class="calibre11"> git status </code>
-          command returns information about any untracked/modified/staged files,
+     <code class="calibre11">
+      git status
+     </code>
+     command returns information about any untracked/modified/staged files,
           the branch status, and much more. The output should be similar to the
           following:
-        </p>
-        <p class="calibre6"></p>
-        <p class="calibre6">command-line</p>
-        <p class="calibre6"></p>
-        <pre class="calibre13"><code class="calibre11">$ git status
+    </p>
+    <p class="calibre6">
+    </p>
+    <p class="calibre6">
+     command-line
+    </p>
+    <p class="calibre6">
+    </p>
+    <pre class="calibre13"><code class="calibre11">$ git status
         On branch main
 
         No commits yet
@@ -408,14 +503,18 @@
 
         nothing added to commit but untracked files present (use "git add" to track)
         </code></pre>
-        <p class="calibre6">
-          And finally we save our changes. Go to your console and run these
+    <p class="calibre6">
+     And finally we save our changes. Go to your console and run these
           commands:
-        </p>
-        <p class="calibre6"></p>
-        <p class="calibre6">command-line</p>
-        <p class="calibre6"></p>
-        <pre class="calibre13"><code class="calibre11">$ git add .
+    </p>
+    <p class="calibre6">
+    </p>
+    <p class="calibre6">
+     command-line
+    </p>
+    <p class="calibre6">
+    </p>
+    <pre class="calibre13"><code class="calibre11">$ git add .
         $ git commit -m "My Django Girls app, first commit"
          [...]
          13 files changed, 200 insertions(+)
@@ -423,430 +522,465 @@
          [...]
          create mode 100644 mysite/wsgi.py
         </code></pre>
-        <h2 class="calibre7" id="pushing-your-code-to-github">
-          Pushing your code to GitHub
-        </h2>
-        <p class="calibre6">
-          Go to
-          <a href="https://www.github.com" target="_blank"> GitHub.com </a>
-          and sign up for a new, free user account. (If you already did that in
+    <h2 class="calibre7" id="pushing-your-code-to-github">
+     Pushing your code to GitHub
+    </h2>
+    <p class="calibre6">
+     Go to
+     <a href="https://www.github.com" target="_blank">
+      GitHub.com
+     </a>
+     and sign up for a new, free user account. (If you already did that in
           the workshop prep, that is great!) Be sure to remember your password
           (add it to your password manager, if you use one).
-        </p>
-        <h3 class="calibre12" id="creating-a-personal-access-token">
-          Creating a Personal Access Token
-        </h3>
-        <p class="calibre6">
-          Now follow the instructions from GitHub to
-          <a
-            href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-personal-access-token-classic"
-            target="_blank"
-          >
-            create a personal access token
-          </a>
-          . The token should have the 'repo' scope. Copy the value of the token,
+    </p>
+    <h3 class="calibre12" id="creating-a-personal-access-token">
+     Creating a Personal Access Token
+    </h3>
+    <p class="calibre6">
+     Now follow the instructions from GitHub to
+     <a href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-personal-access-token-classic" target="_blank">
+      create a personal access token
+     </a>
+     . The token should have the 'repo' scope. Copy the value of the token,
           and save it somewhere safe (like a password manager).
-        </p>
-        <h3 class="calibre12" id="creating-a-new-repository">
-          Creating a new repository
-        </h3>
-        <p class="calibre6">
-          Back on the GitHub homepage, create a new repository, giving it the
+    </p>
+    <h3 class="calibre12" id="creating-a-new-repository">
+     Creating a new repository
+    </h3>
+    <p class="calibre6">
+     Back on the GitHub homepage, create a new repository, giving it the
           name "my-first-blog". Leave the "initialize with a README" checkbox
           unchecked, leave the .gitignore option blank (we've done that
           manually) and leave the License as None.
-        </p>
-        <p class="calibre6">
-          <img alt="" class="calibre8" src="content/new_github_repo.png" />
-        </p>
-        <blockquote class="calibre5">
-          <p class="calibre6">
-            <strong class="calibre10"> Note </strong>
-            The name
-            <code class="calibre11"> my-first-blog </code>
-            is important – you could choose something else, but it's going to
+    </p>
+    <p class="calibre6">
+     <img alt="" class="calibre8" src="content/new_github_repo.png"/>
+    </p>
+    <blockquote class="calibre5">
+     <p class="calibre6">
+      <strong class="calibre10">
+       Note
+      </strong>
+      The name
+      <code class="calibre11">
+       my-first-blog
+      </code>
+      is important – you could choose something else, but it's going to
             occur lots of times in the instructions below, and you'd have to
             substitute it each time. It's probably easier to stick with the name
-            <code class="calibre11"> my-first-blog </code>
-            .
-          </p>
-        </blockquote>
-        <p class="calibre6">
-          On the next screen, you'll be shown your repo's clone URL, which you
+      <code class="calibre11">
+       my-first-blog
+      </code>
+      .
+     </p>
+    </blockquote>
+    <p class="calibre6">
+     On the next screen, you'll be shown your repo's clone URL, which you
           will use in some of the commands that follow:
-        </p>
-        <p class="calibre6">
-          <img
-            alt=""
-            class="calibre8"
-            src="content/github_get_repo_url_screenshot.png"
-          />
-        </p>
-        <p class="calibre6">
-          Now we need to hook up the Git repository on your computer to the one
+    </p>
+    <p class="calibre6">
+     <img alt="" class="calibre8" src="content/github_get_repo_url_screenshot.png"/>
+    </p>
+    <p class="calibre6">
+     Now we need to hook up the Git repository on your computer to the one
           up on GitHub.
-        </p>
-        <p class="calibre6">
-          Type the following into your console (replace
-          <code class="calibre11"> &lt;your-github-username&gt; </code>
-          with the username you entered when you created your GitHub account,
+    </p>
+    <p class="calibre6">
+     Type the following into your console (replace
+     <code class="calibre11">
+      &lt;your-github-username&gt;
+     </code>
+     with the username you entered when you created your GitHub account,
           but without the angle-brackets -- the URL should match the clone URL
           you just saw).
-        </p>
-        <p class="calibre6"></p>
-        <p class="calibre6">command-line</p>
-        <p class="calibre6"></p>
-        <pre
-          class="calibre13"
-        ><code class="calibre11">$ git remote add origin https://github.com/&lt;your-github-username&gt;/my-first-blog.git
+    </p>
+    <p class="calibre6">
+    </p>
+    <p class="calibre6">
+     command-line
+    </p>
+    <p class="calibre6">
+    </p>
+    <pre class="calibre13"><code class="calibre11">$ git remote add origin https://github.com/&lt;your-github-username&gt;/my-first-blog.git
         $ git push -u origin HEAD
         </code></pre>
-        <p class="calibre6">
-          When you push to GitHub, you'll be asked for your GitHub username and
+    <p class="calibre6">
+     When you push to GitHub, you'll be asked for your GitHub username and
           password (either right there in the command-line window or in a pop-up
           window). Use the Personal Access Token you created earlier, not your
           account password.
-        </p>
-        <p class="calibre6">
-          After entering credentials you should see something like this:
-        </p>
-        <p class="calibre6"></p>
-        <p class="calibre6">command-line</p>
-        <p class="calibre6"></p>
-        <pre
-          class="calibre13"
-        ><code class="calibre11">Counting objects: 6, done.
+    </p>
+    <p class="calibre6">
+     After entering credentials you should see something like this:
+    </p>
+    <p class="calibre6">
+    </p>
+    <p class="calibre6">
+     command-line
+    </p>
+    <p class="calibre6">
+    </p>
+    <pre class="calibre13"><code class="calibre11">Counting objects: 6, done.
         Writing objects: 100% (6/6), 200 bytes | 0 bytes/s, done.
         Total 3 (delta 0), reused 0 (delta 0)
         To https://github.com/ola/my-first-blog.git
          * [new branch]      main -&gt; main
         Branch main set up to track remote branch main from origin.
         </code></pre>
-        <p class="calibre6">
-          Your code is now on GitHub. Go and check it out! You'll find it's in
+    <p class="calibre6">
+     Your code is now on GitHub. Go and check it out! You'll find it's in
           fine company –
-          <a href="https://github.com/django/django" target="_blank">
-            Django
-          </a>
-          , the
-          <a href="https://github.com/DjangoGirls/tutorial" target="_blank">
-            Django Girls Tutorial
-          </a>
-          , and many other great open source software projects also host their
+     <a href="https://github.com/django/django" target="_blank">
+      Django
+     </a>
+     , the
+     <a href="https://github.com/DjangoGirls/tutorial" target="_blank">
+      Django Girls Tutorial
+     </a>
+     , and many other great open source software projects also host their
           code on GitHub. :)
-        </p>
-        <h2 class="calibre1" id="setting-up-our-blog-on-pythonanywhere">
-          Setting up our blog on PythonAnywhere
-        </h2>
-        <h2 class="calibre23" id="sign-up-for-a-pythonanywhere-account">
-          Sign up for a PythonAnywhere account
-        </h2>
-        <blockquote class="calibre5">
-          <p class="calibre6">
-            <strong class="calibre10"> Note </strong>
-            You might have already created a PythonAnywhere account earlier
+    </p>
+    <h2 class="calibre1" id="setting-up-our-blog-on-pythonanywhere">
+     Setting up our blog on PythonAnywhere
+    </h2>
+    <h2 class="calibre23" id="sign-up-for-a-pythonanywhere-account">
+     Sign up for a PythonAnywhere account
+    </h2>
+    <blockquote class="calibre5">
+     <p class="calibre6">
+      <strong class="calibre10">
+       Note
+      </strong>
+      You might have already created a PythonAnywhere account earlier
             during the install steps – if so, no need to do it again.
             PythonAnywhere is a service for running Python code on servers "in
             the cloud". We'll use it for hosting our site, live and on the
             Internet.
-          </p>
-        </blockquote>
-        <p class="calibre6">
-          We will be hosting the blog we're building on PythonAnywhere. Sign up
+     </p>
+    </blockquote>
+    <p class="calibre6">
+     We will be hosting the blog we're building on PythonAnywhere. Sign up
           for a "Beginner" account on PythonAnywhere (the free tier is fine, you
           don't need a credit card).
-        </p>
-        <ul class="calibre9">
-          <li class="calibre3">
-            <a href="https://www.pythonanywhere.com/" target="_blank">
-              www.pythonanywhere.com
-            </a>
-          </li>
-        </ul>
-        <p class="calibre6">
-          <img
-            alt="The PythonAnywhere signup page showing button to create a free 'Beginner' account"
-            class="calibre8"
-            src="content/pythonanywhere_beginner_account_button.png"
-          />
-        </p>
-        <blockquote class="calibre5">
-          <p class="calibre6">
-            <strong class="calibre10"> Note </strong>
-            When choosing your username here, bear in mind that your blog's URL
+    </p>
+    <ul class="calibre9">
+     <li class="calibre3">
+      <a href="https://www.pythonanywhere.com/" target="_blank">
+       www.pythonanywhere.com
+      </a>
+     </li>
+    </ul>
+    <p class="calibre6">
+     <img alt="The PythonAnywhere signup page showing button to create a free 'Beginner' account" class="calibre8" src="content/pythonanywhere_beginner_account_button.png"/>
+    </p>
+    <blockquote class="calibre5">
+     <p class="calibre6">
+      <strong class="calibre10">
+       Note
+      </strong>
+      When choosing your username here, bear in mind that your blog's URL
             will take the form
-            <code class="calibre11"> yourusername.pythonanywhere.com </code>
-            , so choose either your own nickname or a name for what your blog is
+      <code class="calibre11">
+       yourusername.pythonanywhere.com
+      </code>
+      , so choose either your own nickname or a name for what your blog is
             all about. Also, be sure to remember your password (add it to your
             password manager, if you use one).
-          </p>
-        </blockquote>
-        <h2 class="calibre7" id="creating-a-pythonanywhere-api-token">
-          Creating a PythonAnywhere API token
-        </h2>
-        <p class="calibre6">
-          This is something you only need to do once. When you've signed up for
+     </p>
+    </blockquote>
+    <h2 class="calibre7" id="creating-a-pythonanywhere-api-token">
+     Creating a PythonAnywhere API token
+    </h2>
+    <p class="calibre6">
+     This is something you only need to do once. When you've signed up for
           PythonAnywhere, you'll be taken to your dashboard. Find the link near
           the top right to your "Account" page:
-        </p>
-        <p class="calibre6">
-          <img
-            alt="Account link on the top right on the page"
-            class="calibre8"
-            src="content/pythonanywhere_account.png"
-          />
-        </p>
-        <p class="calibre6">
-          then select the tab named "API token", and hit the button that says
+    </p>
+    <p class="calibre6">
+     <img alt="Account link on the top right on the page" class="calibre8" src="content/pythonanywhere_account.png"/>
+    </p>
+    <p class="calibre6">
+     then select the tab named "API token", and hit the button that says
           "Create new API token".
-        </p>
-        <p class="calibre6">
-          <img
-            alt="The API token tab on the Account page"
-            class="calibre8"
-            src="content/pythonanywhere_create_api_token.png"
-          />
-        </p>
-        <h2 class="calibre7" id="configuring-our-site-on-pythonanywhere">
-          Configuring our site on PythonAnywhere
-        </h2>
-        <p class="calibre6">
-          Go back to the main
-          <a href="https://www.pythonanywhere.com/" target="_blank">
-            PythonAnywhere Dashboard
-          </a>
-          by clicking on the logo, and choose the option to start a "Bash"
+    </p>
+    <p class="calibre6">
+     <img alt="The API token tab on the Account page" class="calibre8" src="content/pythonanywhere_create_api_token.png"/>
+    </p>
+    <h2 class="calibre7" id="configuring-our-site-on-pythonanywhere">
+     Configuring our site on PythonAnywhere
+    </h2>
+    <p class="calibre6">
+     Go back to the main
+     <a href="https://www.pythonanywhere.com/" target="_blank">
+      PythonAnywhere Dashboard
+     </a>
+     by clicking on the logo, and choose the option to start a "Bash"
           console – that's the PythonAnywhere version of a command line, just
           like the one on your computer.
-        </p>
-        <p class="calibre6">
-          <img
-            alt="The 'New Console' section on the PythonAnywhere web interface, with a button for 'bash'"
-            class="calibre8"
-            src="content/pythonanywhere_bash_console.png"
-          />
-        </p>
-        <blockquote class="calibre5">
-          <p class="calibre6">
-            <strong class="calibre10"> Note </strong>
-            PythonAnywhere is based on Linux, so if you're on Windows, the
+    </p>
+    <p class="calibre6">
+     <img alt="The 'New Console' section on the PythonAnywhere web interface, with a button for 'bash'" class="calibre8" src="content/pythonanywhere_bash_console.png"/>
+    </p>
+    <blockquote class="calibre5">
+     <p class="calibre6">
+      <strong class="calibre10">
+       Note
+      </strong>
+      PythonAnywhere is based on Linux, so if you're on Windows, the
             console will look a little different from the one on your computer.
             Deploying a web app on PythonAnywhere involves pulling down your
             code from GitHub, and then configuring PythonAnywhere to recognise
             it and start serving it as a web application. There are manual ways
             of doing it, but PythonAnywhere provides a helper tool that will do
             it all for you. Let's install it first:
-          </p>
-        </blockquote>
-        <p class="calibre6"></p>
-        <p class="calibre6">PythonAnywhere command-line</p>
-        <p class="calibre6"></p>
-        <pre
-          class="calibre13"
-        ><code class="calibre11">$ pip3.10 install --user pythonanywhere
+     </p>
+    </blockquote>
+    <p class="calibre6">
+    </p>
+    <p class="calibre6">
+     PythonAnywhere command-line
+    </p>
+    <p class="calibre6">
+    </p>
+    <pre class="calibre13"><code class="calibre11">$ pip3.10 install --user pythonanywhere
         </code></pre>
-        <p class="calibre6">
-          That should print out some things like
-          <code class="calibre11"> Collecting pythonanywhere </code>
-          , and eventually end with a line saying
-          <code class="calibre11">
-            Successfully installed (...) pythonanywhere- (...)
-          </code>
-          .
-        </p>
-        <p class="calibre6">
-          Now we run the helper to automatically configure our app from GitHub.
+    <p class="calibre6">
+     That should print out some things like
+     <code class="calibre11">
+      Collecting pythonanywhere
+     </code>
+     , and eventually end with a line saying
+     <code class="calibre11">
+      Successfully installed (...) pythonanywhere- (...)
+     </code>
+     .
+    </p>
+    <p class="calibre6">
+     Now we run the helper to automatically configure our app from GitHub.
           Type the following into the console on PythonAnywhere (don't forget to
           use your GitHub username in place of
-          <code class="calibre11"> &lt;your-github-username&gt; </code>
-          , so that the URL matches the clone URL from GitHub):
-        </p>
-        <p class="calibre6"></p>
-        <p class="calibre6">PythonAnywhere command-line</p>
-        <p class="calibre6"></p>
-        <pre
-          class="calibre13"
-        ><code class="calibre11">$ pa_autoconfigure_django.py --python=3.10 https://github.com/&lt;your-github-username&gt;/my-first-blog.git
+     <code class="calibre11">
+      &lt;your-github-username&gt;
+     </code>
+     , so that the URL matches the clone URL from GitHub):
+    </p>
+    <p class="calibre6">
+    </p>
+    <p class="calibre6">
+     PythonAnywhere command-line
+    </p>
+    <p class="calibre6">
+    </p>
+    <pre class="calibre13"><code class="calibre11">$ pa_autoconfigure_django.py --python=3.10 https://github.com/&lt;your-github-username&gt;/my-first-blog.git
         </code></pre>
-        <p class="calibre6">
-          As you watch that running, you'll be able to see what it's doing:
-        </p>
-        <ul class="calibre9">
-          <li class="calibre3">Downloading your code from GitHub</li>
-          <li class="calibre3">
-            Creating a virtualenv on PythonAnywhere, just like the one on your
+    <p class="calibre6">
+     As you watch that running, you'll be able to see what it's doing:
+    </p>
+    <ul class="calibre9">
+     <li class="calibre3">
+      Downloading your code from GitHub
+     </li>
+     <li class="calibre3">
+      Creating a virtualenv on PythonAnywhere, just like the one on your
             own computer
-          </li>
-          <li class="calibre3">
-            Updating your settings file with some deployment settings
-          </li>
-          <li class="calibre3">
-            Setting up a database on PythonAnywhere using the
-            <code class="calibre11"> manage.py migrate </code>
-            command
-          </li>
-          <li class="calibre3">
-            Setting up your static files (we'll learn about these later)
-          </li>
-          <li class="calibre3">
-            And configuring PythonAnywhere to serve your web app via its API
-          </li>
-        </ul>
-        <p class="calibre6">
-          On PythonAnywhere all those steps are automated, but they're the same
+     </li>
+     <li class="calibre3">
+      Updating your settings file with some deployment settings
+     </li>
+     <li class="calibre3">
+      Setting up a database on PythonAnywhere using the
+      <code class="calibre11">
+       manage.py migrate
+      </code>
+      command
+     </li>
+     <li class="calibre3">
+      Setting up your static files (we'll learn about these later)
+     </li>
+     <li class="calibre3">
+      And configuring PythonAnywhere to serve your web app via its API
+     </li>
+    </ul>
+    <p class="calibre6">
+     On PythonAnywhere all those steps are automated, but they're the same
           steps you would have to go through with any other server provider.
-        </p>
-        <p class="calibre6">
-          The main thing to notice right now is that your database on
+    </p>
+    <p class="calibre6">
+     The main thing to notice right now is that your database on
           PythonAnywhere is actually totally separate from your database on your
           own computer, so it can have different posts and admin accounts. As a
           result, just as we did on your own computer, we need to initialize the
           admin account with
-          <code class="calibre11"> createsuperuser </code>
-          . PythonAnywhere has automatically activated your virtualenv for you,
+     <code class="calibre11">
+      createsuperuser
+     </code>
+     . PythonAnywhere has automatically activated your virtualenv for you,
           so all you need to do is run:
-        </p>
-        <p class="calibre6"></p>
-        <p class="calibre6">PythonAnywhere command-line</p>
-        <p class="calibre6"></p>
-        <pre
-          class="calibre13"
-        ><code class="calibre11">(ola.pythonanywhere.com) $ python manage.py createsuperuser
+    </p>
+    <p class="calibre6">
+    </p>
+    <p class="calibre6">
+     PythonAnywhere command-line
+    </p>
+    <p class="calibre6">
+    </p>
+    <pre class="calibre13"><code class="calibre11">(ola.pythonanywhere.com) $ python manage.py createsuperuser
         </code></pre>
-        <p class="calibre6">
-          Type in the details for your admin user. Best to use the same ones as
+    <p class="calibre6">
+     Type in the details for your admin user. Best to use the same ones as
           you're using on your own computer to avoid any confusion, unless you
           want to make the password on PythonAnywhere more secure.
-        </p>
-        <p class="calibre6">
-          Now, if you like, you can also take a look at your code on
+    </p>
+    <p class="calibre6">
+     Now, if you like, you can also take a look at your code on
           PythonAnywhere using
-          <code class="calibre11"> ls </code>
-          :
-        </p>
-        <p class="calibre6"></p>
-        <p class="calibre6">PythonAnywhere command-line</p>
-        <p class="calibre6"></p>
-        <pre
-          class="calibre13"
-        ><code class="calibre11">(ola.pythonanywhere.com) $ ls
+     <code class="calibre11">
+      ls
+     </code>
+     :
+    </p>
+    <p class="calibre6">
+    </p>
+    <p class="calibre6">
+     PythonAnywhere command-line
+    </p>
+    <p class="calibre6">
+    </p>
+    <pre class="calibre13"><code class="calibre11">(ola.pythonanywhere.com) $ ls
         blog  db.sqlite3  manage.py  mysite requirements.txt static
         (ola.pythonanywhere.com) $ ls blog/
         __init__.py  __pycache__  admin.py  apps.py  migrations  models.py
         tests.py  views.py
         </code></pre>
-        <p class="calibre6">
-          You can also go to the "Files" page and navigate around using
+    <p class="calibre6">
+     You can also go to the "Files" page and navigate around using
           PythonAnywhere's built-in file browser. (From the Console page, you
           can get to other PythonAnywhere pages from the menu button in the
           upper right corner. Once you're on one of the pages, there are links
           to the other ones near the top.)
-        </p>
-        <h2 class="calibre7" id="you-are-now-live">You are now live!</h2>
-        <p class="calibre6">
-          Your site should now be live on the public Internet! Click through to
+    </p>
+    <h2 class="calibre7" id="you-are-now-live">
+     You are now live!
+    </h2>
+    <p class="calibre6">
+     Your site should now be live on the public Internet! Click through to
           the PythonAnywhere "Web" page to get a link to it. You can share this
           with anyone you want. :)
-        </p>
-        <blockquote class="calibre5">
-          <p class="calibre6">
-            <strong class="calibre10"> Note </strong>
-            This is a beginners' tutorial, and in deploying this site we've
+    </p>
+    <blockquote class="calibre5">
+     <p class="calibre6">
+      <strong class="calibre10">
+       Note
+      </strong>
+      This is a beginners' tutorial, and in deploying this site we've
             taken a few shortcuts which aren't ideal from a security point of
             view. If and when you decide to build on this project, or start a
             new project, you should review the
-            <a
-              href="https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/"
-              target="_blank"
-            >
-              Django deployment checklist
-            </a>
-            for some tips on securing your site.
-          </p>
-        </blockquote>
-        <h2 class="calibre7" id="debugging-tips">Debugging tips</h2>
-        <p class="calibre6">
-          If you see an error while running the
-          <code class="calibre11"> pa_autoconfigure_django.py </code>
-          script, here are a few common causes:
-        </p>
-        <ul class="calibre9">
-          <li class="calibre3">
-            Forgetting to create your PythonAnywhere API token.
-          </li>
-          <li class="calibre3">Making a mistake in your GitHub URL</li>
-          <li class="calibre3">
-            If you see an error saying
-            <em class="calibre14"> "Could not find your settings.py" </em>
-            , it's probably because you didn't manage to add all your files to
+      <a href="https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/" target="_blank">
+       Django deployment checklist
+      </a>
+      for some tips on securing your site.
+     </p>
+    </blockquote>
+    <h2 class="calibre7" id="debugging-tips">
+     Debugging tips
+    </h2>
+    <p class="calibre6">
+     If you see an error while running the
+     <code class="calibre11">
+      pa_autoconfigure_django.py
+     </code>
+     script, here are a few common causes:
+    </p>
+    <ul class="calibre9">
+     <li class="calibre3">
+      Forgetting to create your PythonAnywhere API token.
+     </li>
+     <li class="calibre3">
+      Making a mistake in your GitHub URL
+     </li>
+     <li class="calibre3">
+      If you see an error saying
+      <em class="calibre14">
+       "Could not find your settings.py"
+      </em>
+      , it's probably because you didn't manage to add all your files to
             Git, and/or you didn't push them up to GitHub successfully. Have
             another look at the Git section above
-          </li>
-          <li class="calibre3">
-            If you previously signed up for a PythonAnywhere account and had an
+     </li>
+     <li class="calibre3">
+      If you previously signed up for a PythonAnywhere account and had an
             error with collectstatic, you probably have an older version of
             SQLite (eg 3.8.2) for your account. In that case, sign up for a new
             account and try the commands in the PythonAnywhere section above.
-          </li>
-        </ul>
-        <p class="calibre6">
-          If you see an error when you try to visit your site, the first place
+     </li>
+    </ul>
+    <p class="calibre6">
+     If you see an error when you try to visit your site, the first place
           to look for some debugging info is in your
-          <strong class="calibre10"> error log </strong>
-          . You'll find a link to this on the PythonAnywhere
-          <a
-            href="https://www.pythonanywhere.com/web_app_setup/"
-            target="_blank"
-          >
-            "Web" page
-          </a>
-          . See if there are any error messages in there; the most recent ones
+     <strong class="calibre10">
+      error log
+     </strong>
+     . You'll find a link to this on the PythonAnywhere
+     <a href="https://www.pythonanywhere.com/web_app_setup/" target="_blank">
+      "Web" page
+     </a>
+     . See if there are any error messages in there; the most recent ones
           are at the bottom.
-        </p>
-        <p class="calibre6">
-          There are also some
-          <a
-            href="https://help.pythonanywhere.com/pages/DebuggingImportError"
-            target="_blank"
-          >
-            general debugging tips on the PythonAnywhere help site
-          </a>
-          .
-        </p>
-        <p class="calibre6">And remember, your coach is here to help!</p>
-        <h2 class="calibre1" id="check-out-your-site">Check out your site!</h2>
-        <p class="calibre6">
-          The default page for your site should say "It worked!", just like it
+    </p>
+    <p class="calibre6">
+     There are also some
+     <a href="https://help.pythonanywhere.com/pages/DebuggingImportError" target="_blank">
+      general debugging tips on the PythonAnywhere help site
+     </a>
+     .
+    </p>
+    <p class="calibre6">
+     And remember, your coach is here to help!
+    </p>
+    <h2 class="calibre1" id="check-out-your-site">
+     Check out your site!
+    </h2>
+    <p class="calibre6">
+     The default page for your site should say "It worked!", just like it
           does on your local computer. Try adding
-          <code class="calibre11"> /admin/ </code>
-          to the end of the URL, and you'll be taken to the admin site. Log in
+     <code class="calibre11">
+      /admin/
+     </code>
+     to the end of the URL, and you'll be taken to the admin site. Log in
           with the username and password, and you'll see you can add new Posts
           on the server -- remember, the posts from your local test database
           were not sent to your live blog.
-        </p>
-        <p class="calibre6">
-          Once you have a few posts created, you can go back to your local setup
+    </p>
+    <p class="calibre6">
+     Once you have a few posts created, you can go back to your local setup
           (not PythonAnywhere). From here you should work on your local setup to
           make changes. This is a common workflow in web development – make
           changes locally, push those changes to GitHub, and pull your changes
           down to your live Web server. This allows you to work and experiment
           without breaking your live Web site. Pretty cool, huh?
-        </p>
-        <p class="calibre6">
-          Give yourself a
-          <em class="calibre14"> HUGE </em>
-          pat on the back! Server deployments are one of the trickiest parts of
+    </p>
+    <p class="calibre6">
+     Give yourself a
+     <em class="calibre14">
+      HUGE
+     </em>
+     pat on the back! Server deployments are one of the trickiest parts of
           web development and it often takes people several days before they get
           them working. But you've got your site live, on the real Internet!
-        </p>
-      </div>
-    </main>
-    <footer class="book-footer">
-      <p>
-        Generated from the original EPUB. Content © respective authors under CC
+    </p>
+   </div>
+  </main>
+  <footer class="book-footer">
+   <p>
+    Generated from the original EPUB. Content © respective authors under CC
         BY-SA 4.0.
-      </p>
-    </footer>
-    <script defer="True" src="nav.js"></script>
-  </body>
+   </p>
+  </footer>
+  <script defer="" src="toc.js">
+  </script>
+  <script defer="" src="nav.js">
+  </script>
+ </body>
 </html>

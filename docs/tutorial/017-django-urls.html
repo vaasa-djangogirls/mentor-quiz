@@ -1,76 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1" name="viewport" />
-    <title>Django URLs</title>
-    <link href="book.css" rel="stylesheet" />
-    <meta content="IE=edge" http-equiv="X-UA-Compatible" />
-    <meta content="" name="description" />
-    <meta content="HonKit 3.7.5" name="generator" />
-    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
-    <link href="content/stylesheet.css" rel="stylesheet" type="text/css" />
-    <link href="content/page_styles.css" rel="stylesheet" type="text/css" />
-    <!-- Google tag (gtag.js) -->
-    <script
-      async=""
-      src="https://www.googletagmanager.com/gtag/js?id=G-BN9REN07NH"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   Django URLs
+  </title>
+  <link href="book.css" rel="stylesheet"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="" name="description"/>
+  <meta content="HonKit 3.7.5" name="generator"/>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <link href="content/stylesheet.css" rel="stylesheet" type="text/css"/>
+  <link href="content/page_styles.css" rel="stylesheet" type="text/css"/>
+  <!-- Google tag (gtag.js) -->
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-BN9REN07NH">
+  </script>
+  <script>
+   window.dataLayer = window.dataLayer || [];
       function gtag() {
         dataLayer.push(arguments);
       }
       gtag("js", new Date());
 
       gtag("config", "G-BN9REN07NH");
-    </script>
-  </head>
-  <body data-chapter="017-django-urls">
-    <header class="book-header">
-      <h1 class="page-title">Django URLs</h1>
-    </header>
-    <main>
-      <div class="page">
-        <h2 class="calibre1" id="django-urls">Django URLs</h2>
-        <p class="calibre6">
-          We're about to build our first webpage: a homepage for your blog! But
+  </script>
+ </head>
+ <body data-chapter="017-django-urls">
+  <header class="book-header">
+   <h1 class="page-title">
+    Django URLs
+   </h1>
+  </header>
+  <main>
+   <div class="page">
+    <h2 class="calibre1" id="django-urls">
+     Django URLs
+    </h2>
+    <p class="calibre6">
+     We're about to build our first webpage: a homepage for your blog! But
           first, let's learn a little bit about Django URLs.
-        </p>
-        <h2 class="calibre7" id="what-is-a-url">What is a URL?</h2>
-        <p class="calibre6">
-          A URL is a web address. You can see a URL every time you visit a
+    </p>
+    <h2 class="calibre7" id="what-is-a-url">
+     What is a URL?
+    </h2>
+    <p class="calibre6">
+     A URL is a web address. You can see a URL every time you visit a
           website – it is visible in your browser's address bar. (Yes!
-          <code class="calibre11"> 127.0.0.1:8000 </code>
-          is a URL! And
-          <code class="calibre11"> https://djangogirls.org </code>
-          is also a URL.)
-        </p>
-        <p class="calibre6">
-          <img alt="URL" class="calibre8" src="content/url.png" />
-        </p>
-        <p class="calibre6">
-          Every page on the Internet needs its own URL. This way your
+     <code class="calibre11">
+      127.0.0.1:8000
+     </code>
+     is a URL! And
+     <code class="calibre11">
+      https://djangogirls.org
+     </code>
+     is also a URL.)
+    </p>
+    <p class="calibre6">
+     <img alt="URL" class="calibre8" src="content/url.png"/>
+    </p>
+    <p class="calibre6">
+     Every page on the Internet needs its own URL. This way your
           application knows what it should show to a user who opens that URL. In
           Django, we use something called
-          <code class="calibre11"> URLconf </code>
-          (URL configuration). URLconf is a set of patterns that Django will try
+     <code class="calibre11">
+      URLconf
+     </code>
+     (URL configuration). URLconf is a set of patterns that Django will try
           to match the requested URL to find the correct view.
-        </p>
-        <h2 class="calibre7" id="how-do-urls-work-in-django">
-          How do URLs work in Django?
-        </h2>
-        <p class="calibre6">
-          Let's open up the
-          <code class="calibre11"> mysite/urls.py </code>
-          file in your code editor of choice and see what it looks like:
-        </p>
-        <p class="calibre6"></p>
-        <p class="calibre6">mysite/urls.py</p>
-        <p class="calibre6"></p>
-        <pre
-          class="calibre13"
-        ><code class="calibre11"><span>"""mysite URL Configuration
+    </p>
+    <h2 class="calibre7" id="how-do-urls-work-in-django">
+     How do URLs work in Django?
+    </h2>
+    <p class="calibre6">
+     Let's open up the
+     <code class="calibre11">
+      mysite/urls.py
+     </code>
+     file in your code editor of choice and see what it looks like:
+    </p>
+    <p class="calibre6">
+    </p>
+    <p class="calibre6">
+     mysite/urls.py
+    </p>
+    <p class="calibre6">
+    </p>
+    <pre class="calibre13"><code class="calibre11"><span>"""mysite URL Configuration
 
         [...]
         """</span>
@@ -81,75 +97,101 @@
             path(<span>'admin/'</span>, admin.site.urls),
         ]
         </code></pre>
-        <p class="calibre6">
-          As you can see, Django has already put something here for us.
-        </p>
-        <p class="calibre6">
-          Lines between triple quotes (
-          <code class="calibre11"> ''' </code>
-          or
-          <code class="calibre11"> """ </code>
-          ) are called docstrings – you can write them at the top of a file,
+    <p class="calibre6">
+     As you can see, Django has already put something here for us.
+    </p>
+    <p class="calibre6">
+     Lines between triple quotes (
+     <code class="calibre11">
+      '''
+     </code>
+     or
+     <code class="calibre11">
+      """
+     </code>
+     ) are called docstrings – you can write them at the top of a file,
           class or method to describe what it does. They won't be run by Python.
-        </p>
-        <p class="calibre6">
-          The admin URL, which you visited in the previous chapter, is already
+    </p>
+    <p class="calibre6">
+     The admin URL, which you visited in the previous chapter, is already
           here:
-        </p>
-        <p class="calibre6"></p>
-        <p class="calibre6">mysite/urls.py</p>
-        <p class="calibre6"></p>
-        <pre
-          class="calibre13"
-        ><code class="calibre11">    path(<span>'admin/'</span>, admin.site.urls),
+    </p>
+    <p class="calibre6">
+    </p>
+    <p class="calibre6">
+     mysite/urls.py
+    </p>
+    <p class="calibre6">
+    </p>
+    <pre class="calibre13"><code class="calibre11">    path(<span>'admin/'</span>, admin.site.urls),
         </code></pre>
-        <p class="calibre6">
-          This line means that for every URL that starts with
-          <code class="calibre11"> admin/ </code>
-          , Django will find a corresponding
-          <em class="calibre14"> view </em>
-          . In this case, we're including a lot of admin URLs so it isn't all
+    <p class="calibre6">
+     This line means that for every URL that starts with
+     <code class="calibre11">
+      admin/
+     </code>
+     , Django will find a corresponding
+     <em class="calibre14">
+      view
+     </em>
+     . In this case, we're including a lot of admin URLs so it isn't all
           packed into this small file – it's more readable and cleaner.
-        </p>
-        <h2 class="calibre7" id="your-first-django-url">
-          Your first Django URL!
-        </h2>
-        <p class="calibre6">
-          Time to create our first URL! We want '
-          <a href="http://127.0.0.1:8000/" target="_blank">
-            http://127.0.0.1:8000/
-          </a>
-          ' to be the home page of our blog and to display a list of posts.
-        </p>
-        <p class="calibre6">
-          We also want to keep the
-          <code class="calibre11"> mysite/urls.py </code>
-          file clean, so we will import URLs from our
-          <code class="calibre11"> blog </code>
-          application to the main
-          <code class="calibre11"> mysite/urls.py </code>
-          file.
-        </p>
-        <p class="calibre6">
-          Go ahead, add a line that will import
-          <code class="calibre11"> blog.urls </code>
-          . You will also need to change the
-          <code class="calibre11"> from django.urls… </code>
-          line because we are using the
-          <code class="calibre11"> include </code>
-          function here, so you will need to add that import to the line.
-        </p>
-        <p class="calibre6">
-          Your
-          <code class="calibre11"> mysite/urls.py </code>
-          file should now look like this:
-        </p>
-        <p class="calibre6"></p>
-        <p class="calibre6">mysite/urls.py</p>
-        <p class="calibre6"></p>
-        <pre
-          class="calibre13"
-        ><code class="calibre11"><span>from</span> django.contrib <span>import</span> admin
+    </p>
+    <h2 class="calibre7" id="your-first-django-url">
+     Your first Django URL!
+    </h2>
+    <p class="calibre6">
+     Time to create our first URL! We want '
+     <a href="http://127.0.0.1:8000/" target="_blank">
+      http://127.0.0.1:8000/
+     </a>
+     ' to be the home page of our blog and to display a list of posts.
+    </p>
+    <p class="calibre6">
+     We also want to keep the
+     <code class="calibre11">
+      mysite/urls.py
+     </code>
+     file clean, so we will import URLs from our
+     <code class="calibre11">
+      blog
+     </code>
+     application to the main
+     <code class="calibre11">
+      mysite/urls.py
+     </code>
+     file.
+    </p>
+    <p class="calibre6">
+     Go ahead, add a line that will import
+     <code class="calibre11">
+      blog.urls
+     </code>
+     . You will also need to change the
+     <code class="calibre11">
+      from django.urls…
+     </code>
+     line because we are using the
+     <code class="calibre11">
+      include
+     </code>
+     function here, so you will need to add that import to the line.
+    </p>
+    <p class="calibre6">
+     Your
+     <code class="calibre11">
+      mysite/urls.py
+     </code>
+     file should now look like this:
+    </p>
+    <p class="calibre6">
+    </p>
+    <p class="calibre6">
+     mysite/urls.py
+    </p>
+    <p class="calibre6">
+    </p>
+    <pre class="calibre13"><code class="calibre11"><span>from</span> django.contrib <span>import</span> admin
         <span>from</span> django.urls <span>import</span> path, include
 
         urlpatterns = [
@@ -157,94 +199,128 @@
             path(<span>''</span>, include(<span>'blog.urls'</span>)),
         ]
         </code></pre>
-        <p class="calibre6">
-          Django will now redirect everything that comes into '
-          <a href="http://127.0.0.1:8000/" target="_blank">
-            http://127.0.0.1:8000/
-          </a>
-          ' to
-          <code class="calibre11"> blog.urls </code>
-          and looks for further instructions there.
-        </p>
-        <h2 class="calibre7" id="blogurls">blog.urls</h2>
-        <p class="calibre6">
-          Create a new empty file named
-          <code class="calibre11"> urls.py </code>
-          in the
-          <code class="calibre11"> blog </code>
-          directory, and open it in the code editor. All right! Add these first
+    <p class="calibre6">
+     Django will now redirect everything that comes into '
+     <a href="http://127.0.0.1:8000/" target="_blank">
+      http://127.0.0.1:8000/
+     </a>
+     ' to
+     <code class="calibre11">
+      blog.urls
+     </code>
+     and looks for further instructions there.
+    </p>
+    <h2 class="calibre7" id="blogurls">
+     blog.urls
+    </h2>
+    <p class="calibre6">
+     Create a new empty file named
+     <code class="calibre11">
+      urls.py
+     </code>
+     in the
+     <code class="calibre11">
+      blog
+     </code>
+     directory, and open it in the code editor. All right! Add these first
           two lines:
-        </p>
-        <p class="calibre6"></p>
-        <p class="calibre6">blog/urls.py</p>
-        <p class="calibre6"></p>
-        <pre
-          class="calibre13"
-        ><code class="calibre11"><span>from</span> django.urls <span>import</span> path
+    </p>
+    <p class="calibre6">
+    </p>
+    <p class="calibre6">
+     blog/urls.py
+    </p>
+    <p class="calibre6">
+    </p>
+    <pre class="calibre13"><code class="calibre11"><span>from</span> django.urls <span>import</span> path
         <span>from</span> . <span>import</span> views
         </code></pre>
-        <p class="calibre6">
-          Here we're importing Django's function
-          <code class="calibre11"> path </code>
-          and all of our
-          <code class="calibre11"> views </code>
-          from the
-          <code class="calibre11"> blog </code>
-          application. (We don't have any yet, but we will get to that in a
+    <p class="calibre6">
+     Here we're importing Django's function
+     <code class="calibre11">
+      path
+     </code>
+     and all of our
+     <code class="calibre11">
+      views
+     </code>
+     from the
+     <code class="calibre11">
+      blog
+     </code>
+     application. (We don't have any yet, but we will get to that in a
           minute!)
-        </p>
-        <p class="calibre6">After that, we can add our first URL pattern:</p>
-        <p class="calibre6"></p>
-        <p class="calibre6">blog/urls.py</p>
-        <p class="calibre6"></p>
-        <pre class="calibre13"><code class="calibre11">urlpatterns = [
+    </p>
+    <p class="calibre6">
+     After that, we can add our first URL pattern:
+    </p>
+    <p class="calibre6">
+    </p>
+    <p class="calibre6">
+     blog/urls.py
+    </p>
+    <p class="calibre6">
+    </p>
+    <pre class="calibre13"><code class="calibre11">urlpatterns = [
             path(<span>''</span>, views.post_list, name=<span>'post_list'</span>),
         ]
         </code></pre>
-        <p class="calibre6">
-          As you can see, we're now assigning a
-          <code class="calibre11"> view </code>
-          called
-          <code class="calibre11"> post_list </code>
-          to the root URL. This URL pattern will match an empty string and the
+    <p class="calibre6">
+     As you can see, we're now assigning a
+     <code class="calibre11">
+      view
+     </code>
+     called
+     <code class="calibre11">
+      post_list
+     </code>
+     to the root URL. This URL pattern will match an empty string and the
           Django URL resolver will ignore the domain name (i.e.,
-          <a href="http://127.0.0.1:8000/" target="_blank">
-            http://127.0.0.1:8000/
-          </a>
-          ) that prefixes the full URL path. This pattern will tell Django that
-          <code class="calibre11"> views.post_list </code>
-          is the right place to go if someone enters your website at the '
-          <a href="http://127.0.0.1:8000/" target="_blank">
-            http://127.0.0.1:8000/
-          </a>
-          ' address.
-        </p>
-        <p class="calibre6">
-          The last part,
-          <code class="calibre11"> name='post_list' </code>
-          , is the name of the URL that will be used to identify the view. This
+     <a href="http://127.0.0.1:8000/" target="_blank">
+      http://127.0.0.1:8000/
+     </a>
+     ) that prefixes the full URL path. This pattern will tell Django that
+     <code class="calibre11">
+      views.post_list
+     </code>
+     is the right place to go if someone enters your website at the '
+     <a href="http://127.0.0.1:8000/" target="_blank">
+      http://127.0.0.1:8000/
+     </a>
+     ' address.
+    </p>
+    <p class="calibre6">
+     The last part,
+     <code class="calibre11">
+      name='post_list'
+     </code>
+     , is the name of the URL that will be used to identify the view. This
           can be the same as the name of the view but it can also be something
           completely different. We will be using the named URLs later in the
           project, so it is important to name each URL in the app. We should
           also try to keep the names of URLs unique and easy to remember.
-        </p>
-        <p class="calibre6">
-          If you try to visit
-          <a href="http://127.0.0.1:8000/" target="_blank">
-            http://127.0.0.1:8000/
-          </a>
-          now, then you'll find some sort of 'web page not available' message.
+    </p>
+    <p class="calibre6">
+     If you try to visit
+     <a href="http://127.0.0.1:8000/" target="_blank">
+      http://127.0.0.1:8000/
+     </a>
+     now, then you'll find some sort of 'web page not available' message.
           This is because the server (remember typing
-          <code class="calibre11"> runserver </code>
-          ?) is no longer running. Take a look at your server console window to
+     <code class="calibre11">
+      runserver
+     </code>
+     ?) is no longer running. Take a look at your server console window to
           find out why.
-        </p>
-        <p class="calibre6"></p>
-        <p class="calibre6">command-line</p>
-        <p class="calibre6"></p>
-        <pre
-          class="calibre13"
-        ><code class="calibre11">    return _bootstrap._gcd_import(name[level:], package, level)
+    </p>
+    <p class="calibre6">
+    </p>
+    <p class="calibre6">
+     command-line
+    </p>
+    <p class="calibre6">
+    </p>
+    <pre class="calibre13"><code class="calibre11">    return _bootstrap._gcd_import(name[level:], package, level)
           File "&lt;frozen importlib._bootstrap&gt;", line 1030, in _gcd_import
           File "&lt;frozen importlib._bootstrap&gt;", line 1007, in _find_and_load
           File "&lt;frozen importlib._bootstrap&gt;", line 986, in _find_and_load_unlocked
@@ -255,44 +331,52 @@
             path('', views.post_list, name='post_list'),
         AttributeError: module 'blog.views' has no attribute 'post_list'
         </code></pre>
-        <p class="calibre6">
-          Your console is showing an error, but don't worry – it's actually
+    <p class="calibre6">
+     Your console is showing an error, but don't worry – it's actually
           pretty useful: It's telling you that there is
-          <strong class="calibre10"> no attribute 'post_list' </strong>
-          . That's the name of the
-          <em class="calibre14"> view </em>
-          that Django is trying to find and use, but we haven't created it yet.
+     <strong class="calibre10">
+      no attribute 'post_list'
+     </strong>
+     . That's the name of the
+     <em class="calibre14">
+      view
+     </em>
+     that Django is trying to find and use, but we haven't created it yet.
           At this stage, your
-          <code class="calibre11"> /admin/ </code>
-          will also not work. No worries – we will get there. If you see a
+     <code class="calibre11">
+      /admin/
+     </code>
+     will also not work. No worries – we will get there. If you see a
           different error message, try restarting your web server. To do that,
           in the console window that is running the web server, stop it by
           pressing Ctrl+C (the Control and C keys together). On Windows, you
           might have to press Ctrl+Break. Then you need to restart the web
           server by running a
-          <code class="calibre11"> python manage.py runserver </code>
-          command.
-        </p>
-        <blockquote class="calibre5">
-          <p class="calibre6">
-            If you want to know more about Django URLconfs, look at the official
+     <code class="calibre11">
+      python manage.py runserver
+     </code>
+     command.
+    </p>
+    <blockquote class="calibre5">
+     <p class="calibre6">
+      If you want to know more about Django URLconfs, look at the official
             documentation:
-            <a
-              href="https://docs.djangoproject.com/en/5.1/topics/http/urls/"
-              target="_blank"
-            >
-              https://docs.djangoproject.com/en/5.1/topics/http/urls/
-            </a>
-          </p>
-        </blockquote>
-      </div>
-    </main>
-    <footer class="book-footer">
-      <p>
-        Generated from the original EPUB. Content © respective authors under CC
+      <a href="https://docs.djangoproject.com/en/5.1/topics/http/urls/" target="_blank">
+       https://docs.djangoproject.com/en/5.1/topics/http/urls/
+      </a>
+     </p>
+    </blockquote>
+   </div>
+  </main>
+  <footer class="book-footer">
+   <p>
+    Generated from the original EPUB. Content © respective authors under CC
         BY-SA 4.0.
-      </p>
-    </footer>
-    <script defer="True" src="nav.js"></script>
-  </body>
+   </p>
+  </footer>
+  <script defer="" src="toc.js">
+  </script>
+  <script defer="" src="nav.js">
+  </script>
+ </body>
 </html>
