@@ -60,6 +60,33 @@
     return el;
   }
 
+
+  function attachBackToTop() {
+    if (document.querySelector('.back-to-top')) {
+      return;
+    }
+    const button = createElement('button', {
+      className: 'back-to-top',
+      type: 'button',
+      'aria-label': 'Back to top'
+    }, [
+      createElement('span', { className: 'icon', 'aria-hidden': 'true', text: '↑' })
+    ]);
+    button.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+    const handleScroll = () => {
+      if (window.scrollY > 280) {
+        button.classList.add('visible');
+      } else {
+        button.classList.remove('visible');
+      }
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+    document.body.appendChild(button);
+  }
+
   function buildNav(chapterSlug) {
     const index = chapters.findIndex((ch) => ch.slug === chapterSlug);
     if (index === -1) {

@@ -1,4 +1,8 @@
 (function () {
+  if (document.body.dataset.chapter === 'index') {
+    return;
+  }
+
   const slugCache = new Set();
 
   function slugify(text) {
@@ -48,6 +52,7 @@
     toggle.type = 'button';
     toggle.setAttribute('aria-expanded', 'false');
     toggle.setAttribute('aria-controls', panelId);
+    toggle.setAttribute('aria-label', 'Toggle page outline');
     toggle.innerHTML = '<span class="icon" aria-hidden="true">▸</span><span class="label">On this page</span>';
 
     const panel = document.createElement('div');
@@ -79,7 +84,6 @@
       stack.push({ level, list: subList });
     });
 
-    // remove empty nested lists
     list.querySelectorAll('ul').forEach((subList) => {
       if (!subList.children.length) {
         subList.remove();
@@ -90,7 +94,7 @@
     toc.appendChild(toggle);
     toc.appendChild(panel);
 
-    const insertionPoint = main.querySelector('.page') || main.firstElementChild;
+    const insertionPoint = main.querySelector('.page');
     if (insertionPoint) {
       main.insertBefore(toc, insertionPoint);
     } else {
