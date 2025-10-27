@@ -1,188 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
- <head>
-  <meta charset="utf-8"/>
-  <meta content="width=device-width, initial-scale=1" name="viewport"/>
-  <title>
-   Django Girls Tutorial – HTML Edition
-  </title>
-  <link href="book.css" rel="stylesheet"/>
-   <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BN9REN07NH"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>Django Girls Tutorial – HTML Edition</title>
+    <link href="book.css" rel="stylesheet" />
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BN9REN07NH"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-    gtag('config', 'G-BN9REN07NH');
-  </script>
-</head>
- <body>
-  <header class="book-header">
-   <p aria-level="1" class="page-title" role="heading">
-    Django Girls Tutorial
-   </p>
-   <p class="page-subtitle">
-    Converted into navigable HTML pages.
-   </p>
-  </header>
-  <nav class="book-nav nav-top">
-   <a href="index.html">
-    Contents
-   </a>
-   <span>
-    Previous
-   </span>
-   <a href="001-cover.html">
-    Next
-   </a>
-  </nav>
-  <main>
-   <h2>
-    Table of Contents
-   </h2>
-   <ul class="toc-list">
-    <li>
-     <a href="001-cover.html">
-      Cover
-     </a>
-    </li>
-    <li>
-     <a href="002-table-of-contents.html">
-      Table of Contents
-     </a>
-    </li>
-    <li>
-     <a href="003-introduction.html">
-      Introduction
-     </a>
-    </li>
-    <li>
-     <a href="004-installation.html">
-      Installation
-     </a>
-    </li>
-    <li>
-     <a href="005-installation-chromebook.html">
-      Installation (Chromebook)
-     </a>
-    </li>
-    <li>
-     <a href="006-how-the-internet-works.html">
-      How the Internet works
-     </a>
-    </li>
-    <li>
-     <a href="007-introduction-to-command-line.html">
-      Introduction to command line
-     </a>
-    </li>
-    <li>
-     <a href="008-python-installation.html">
-      Python installation
-     </a>
-    </li>
-    <li>
-     <a href="009-code-editor.html">
-      Code editor
-     </a>
-    </li>
-    <li>
-     <a href="010-introduction-to-python.html">
-      Introduction to Python
-     </a>
-    </li>
-    <li>
-     <a href="011-what-is-django.html">
-      What is Django?
-     </a>
-    </li>
-    <li>
-     <a href="012-django-installation.html">
-      Django installation
-     </a>
-    </li>
-    <li>
-     <a href="013-your-first-django-project.html">
-      Your first Django project!
-     </a>
-    </li>
-    <li>
-     <a href="014-django-models.html">
-      Django models
-     </a>
-    </li>
-    <li>
-     <a href="015-django-admin.html">
-      Django admin
-     </a>
-    </li>
-    <li>
-     <a href="016-deploy.html">
-      Deploy!
-     </a>
-    </li>
-    <li>
-     <a href="017-django-urls.html">
-      Django URLs
-     </a>
-    </li>
-    <li>
-     <a href="018-django-views-time-to-create.html">
-      Django views – time to create!
-     </a>
-    </li>
-    <li>
-     <a href="019-introduction-to-html.html">
-      Introduction to HTML
-     </a>
-    </li>
-    <li>
-     <a href="020-django-orm-querysets.html">
-      Django ORM (Querysets)
-     </a>
-    </li>
-    <li>
-     <a href="021-dynamic-data-in-templates.html">
-      Dynamic data in templates
-     </a>
-    </li>
-    <li>
-     <a href="022-django-templates.html">
-      Django templates
-     </a>
-    </li>
-    <li>
-     <a href="023-css-make-it-pretty.html">
-      CSS – make it pretty
-     </a>
-    </li>
-    <li>
-     <a href="024-template-extending.html">
-      Template extending
-     </a>
-    </li>
-    <li>
-     <a href="025-extend-your-application.html">
-      Extend your application
-     </a>
-    </li>
-    <li>
-     <a href="026-django-forms.html">
-      Django Forms
-     </a>
-    </li>
-    <li>
-     <a href="027-what-s-next.html">
-      What's next?
-     </a>
-    </li>
-   </ul>
-  </main>
-  <footer class="book-footer">
-   <p>
-    Generated from the original EPUB. Content © respective authors under CC BY-SA 4.0.
-   </p>
-  </footer>
- </body>
+      gtag("config", "G-BN9REN07NH");
+    </script>
+  </head>
+  <body>
+    <header class="book-header">
+      <div class="site-header">
+        <a class="brand" href="../index.html">Django Girls Coach Quiz</a>
+        <nav class="site-links">
+          <a href="../index.html">Home</a>
+          <a href="../quiz/index.html">Quiz</a>
+        </nav>
+        <div class="toc-drawer" id="tocDrawer">
+          <button
+            class="nav-toggle"
+            id="tocToggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="tocPanel"
+            aria-label="Toggle table of contents"
+          >
+            ☰
+          </button>
+          <nav id="tocPanel" aria-label="Chapters">
+            <div class="toc-group">
+              <h3>Tutorial chapters</h3>
+              <ul class="toc-list">
+                <li><a href="001-cover.html">Cover</a></li>
+                <li><a href="003-introduction.html">Introduction</a></li>
+                <li><a href="004-installation.html">Installation</a></li>
+                <li><a href="006-how-the-internet-works.html">How the Internet works</a></li>
+                <li><a href="007-introduction-to-command-line.html">Introduction to command line</a></li>
+                <li><a href="008-python-installation.html">Python installation</a></li>
+                <li><a href="009-code-editor.html">Code editor</a></li>
+                <li><a href="010-introduction-to-python.html">Introduction to Python</a></li>
+                <li><a href="011-what-is-django.html">What is Django?</a></li>
+                <li><a href="012-django-installation.html">Django installation</a></li>
+                <li><a href="013-your-first-django-project.html">Your first Django project!</a></li>
+                <li><a href="014-django-models.html">Django models</a></li>
+                <li><a href="015-django-admin.html">Django admin</a></li>
+                <li><a href="016-deploy.html">Deploy!</a></li>
+                <li><a href="017-django-urls.html">Django URLs</a></li>
+                <li><a href="018-django-views-time-to-create.html">Django views – time to create!</a></li>
+                <li><a href="019-introduction-to-html.html">Introduction to HTML</a></li>
+                <li><a href="020-django-orm-querysets.html">Django ORM (Querysets)</a></li>
+                <li><a href="021-dynamic-data-in-templates.html">Dynamic data in templates</a></li>
+                <li><a href="022-django-templates.html">Django templates</a></li>
+                <li><a href="023-css-make-it-pretty.html">CSS – make it pretty</a></li>
+                <li><a href="024-template-extending.html">Template extending</a></li>
+                <li><a href="025-extend-your-application.html">Extend your application</a></li>
+                <li><a href="026-django-forms.html">Django Forms</a></li>
+                <li><a href="027-what-s-next.html">What's next?</a></li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </div>
+      <p class="page-subtitle">Converted into navigable HTML pages.</p>
+    </header>
+
+    <main>
+      <h2>Table of Contents</h2>
+      <ul class="toc-list">
+        <li><a href="001-cover.html">Cover</a></li>
+        <li><a href="003-introduction.html">Introduction</a></li>
+        <li><a href="004-installation.html">Installation</a></li>
+        <li><a href="006-how-the-internet-works.html">How the Internet works</a></li>
+        <li><a href="007-introduction-to-command-line.html">Introduction to command line</a></li>
+        <li><a href="008-python-installation.html">Python installation</a></li>
+        <li><a href="009-code-editor.html">Code editor</a></li>
+        <li><a href="010-introduction-to-python.html">Introduction to Python</a></li>
+        <li><a href="011-what-is-django.html">What is Django?</a></li>
+        <li><a href="012-django-installation.html">Django installation</a></li>
+        <li><a href="013-your-first-django-project.html">Your first Django project!</a></li>
+        <li><a href="014-django-models.html">Django models</a></li>
+        <li><a href="015-django-admin.html">Django admin</a></li>
+        <li><a href="016-deploy.html">Deploy!</a></li>
+        <li><a href="017-django-urls.html">Django URLs</a></li>
+        <li><a href="018-django-views-time-to-create.html">Django views – time to create!</a></li>
+        <li><a href="019-introduction-to-html.html">Introduction to HTML</a></li>
+        <li><a href="020-django-orm-querysets.html">Django ORM (Querysets)</a></li>
+        <li><a href="021-dynamic-data-in-templates.html">Dynamic data in templates</a></li>
+        <li><a href="022-django-templates.html">Django templates</a></li>
+        <li><a href="023-css-make-it-pretty.html">CSS – make it pretty</a></li>
+        <li><a href="024-template-extending.html">Template extending</a></li>
+        <li><a href="025-extend-your-application.html">Extend your application</a></li>
+        <li><a href="026-django-forms.html">Django Forms</a></li>
+        <li><a href="027-what-s-next.html">What's next?</a></li>
+      </ul>
+    </main>
+
+    <footer class="book-footer">
+      <p>Generated from the original EPUB. Content © respective authors under CC BY-SA 4.0.</p>
+    </footer>
+
+    <script>
+      (function () {
+        const drawer = document.getElementById("tocDrawer");
+        const toggle = document.getElementById("tocToggle");
+        if (!drawer || !toggle) {
+          return;
+        }
+        const links = drawer.querySelectorAll("a");
+
+        function closeDrawer() {
+          drawer.classList.remove("open");
+          toggle.setAttribute("aria-expanded", "false");
+        }
+
+        toggle.addEventListener("click", () => {
+          const isOpen = drawer.classList.toggle("open");
+          toggle.setAttribute("aria-expanded", String(isOpen));
+        });
+
+        document.addEventListener("click", (event) => {
+          if (!drawer.contains(event.target) && event.target !== toggle) {
+            closeDrawer();
+          }
+        });
+
+        links.forEach((link) =>
+          link.addEventListener("click", () => {
+            closeDrawer();
+          })
+        );
+      })();
+    </script>
+  </body>
 </html>

@@ -1,492 +1,652 @@
 <!DOCTYPE html>
 <html lang="en">
- <head>
-  <meta charset="utf-8"/>
-  <meta content="width=device-width, initial-scale=1" name="viewport"/>
-  <title>
-   Introduction to command line
-  </title>
-  <link href="book.css" rel="stylesheet"/>
-  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
-  <meta content="" name="description"/>
-  <meta content="HonKit 3.7.5" name="generator"/>
-  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
-  <link href="content/stylesheet.css" rel="stylesheet" type="text/css"/>
-  <link href="content/page_styles.css" rel="stylesheet" type="text/css"/>
-   <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BN9REN07NH"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>Introduction to command line</title>
+    <link href="book.css" rel="stylesheet" />
+    <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+    <meta content="" name="description" />
+    <meta content="HonKit 3.7.5" name="generator" />
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <link href="content/stylesheet.css" rel="stylesheet" type="text/css" />
+    <link href="content/page_styles.css" rel="stylesheet" type="text/css" />
+    <!-- Google tag (gtag.js) -->
+    <script
+      async=""
+      src="https://www.googletagmanager.com/gtag/js?id=G-BN9REN07NH"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-    gtag('config', 'G-BN9REN07NH');
-  </script>
-</head>
- <body>
-  <header class="book-header">
-   <p aria-level="1" class="page-title" role="heading">
-    Introduction to command line
-   </p>
-  </header>
-  <nav class="book-nav nav-top">
-   <a href="../index.html">
-    Home
-   </a>
-   <a href="index.html">
-    Contents
-   </a>
-   <a href="006-how-the-internet-works.html">
-    Previous
-   </a>
-   <a href="008-python-installation.html">
-    Next
-   </a>
-  </nav>
-  <main>
-   <div class="page">
-    <h1 class="calibre1" id="calibre_toc_5">
-     Introduction to command line
-    </h1>
-    <div class="page">
-     <h1 class="calibre1" id="introduction-to-the-command-line-interface">
-      Introduction to the command-line interface
-     </h1>
-     <blockquote class="calibre5">
-      <p class="calibre6">
-       For readers at home: this chapter is covered in the
-       <a href="https://www.youtube.com/watch?v=jvZLWhkzX-8" target="_blank">
-        Your new friend: Command Line
-       </a>
-       video.
-      </p>
-     </blockquote>
-     <p class="calibre6">
-      It's exciting, right?! You'll write your first line of code in just a few minutes! :)
-     </p>
-     <p class="calibre6">
-      <strong class="calibre10">
-       Let us introduce you to your first new friend: the command line!
-      </strong>
-     </p>
-     <p class="calibre6">
-      The following steps will show you how to use the black window all hackers use. It might look a bit scary at first but really it's just a prompt waiting for commands from you.
-     </p>
-     <blockquote class="calibre5">
-      <p class="calibre6">
-       <strong class="calibre10">
-        Note
-       </strong>
-       Please note that throughout this book we use the terms 'directory' and 'folder' interchangeably but they are one and the same thing.
-      </p>
-     </blockquote>
-     <h2 class="calibre7" id="what-is-the-command-line">
-      What is the command line?
-     </h2>
-     <p class="calibre6">
-      The window, which is usually called the
-      <strong class="calibre10">
-       command line
-      </strong>
-      or
-      <strong class="calibre10">
-       command-line interface
-      </strong>
-      , is a text-based application for viewing, handling, and manipulating files on your computer. It's much like Windows Explorer or Finder on the Mac, but without the graphical interface. Other names for the command line are:
-      <em class="calibre14">
-       cmd
-      </em>
-      ,
-      <em class="calibre14">
-       CLI
-      </em>
-      ,
-      <em class="calibre14">
-       prompt
-      </em>
-      ,
-      <em class="calibre14">
-       console
-      </em>
-      or
-      <em class="calibre14">
-       terminal
-      </em>
-      .
-     </p>
-     <h2 class="calibre7" id="open-the-command-line-interface">
-      Open the command-line interface
-     </h2>
-     <p class="calibre6">
-      To start some experiments we need to open our command-line interface first.
-     </p>
-     <sec data-collapse="true" data-id="macOS_prompt" data-title="Opening: macOS">
-      <b class="calibre10">
-       Opening: macOS
-      </b>
-      <p class="calibre6">
-       Go to Launchpad → Other → Terminal.
-      </p>
-     </sec>
-     <sec data-collapse="true" data-id="linux_prompt" data-title="Opening: Linux">
-      <b class="calibre10">
-       Opening: Linux
-      </b>
-      <p class="calibre6">
-       It's probably under Applications → Accessories → Terminal, or Applications → System → Terminal, but that may depend on your system. If it's not there, you can try to Google it. :)
-      </p>
-     </sec>
-     <sec data-collapse="true" data-id="windows_prompt" data-title="Opening: Windows">
-      <b class="calibre10">
-       Opening: Windows
-      </b>
-      <p class="calibre6">
-       Depending on your version of Windows and your keyboard, one of the following should open a command window (you may have to experiment a bit, but you don't have to try all of these suggestions):
-      </p>
-      <ul class="calibre9">
-       <li class="calibre3">
-        Go to the Start menu or screen, and enter "Command Prompt" in the search field.
-       </li>
-       <li class="calibre3">
-        Go to Start menu → Windows System → Command Prompt.
-       </li>
-       <li class="calibre3">
-        Go to Start menu → All Programs → Accessories → Command Prompt.
-       </li>
-       <li class="calibre3">
-        Go to the Start screen, hover your mouse in the lower-left corner of the screen, and click the down arrow that appears (on a touch screen, instead flick up from the bottom of the screen). The Apps page should open. Click on Command Prompt in the Windows System section.
-       </li>
-       <li class="calibre3">
-        Hold the special Windows key on your keyboard and press the "X" key. Choose "Command Prompt" from the pop-up menu.
-       </li>
-       <li class="calibre3">
-        Hold the Windows key and press the "R" key to get a "Run" window. Type "cmd" in the box, and click the OK key.
-       </li>
-      </ul>
-      <p class="calibre6">
-       <img alt='Type "cmd" in the "Run" window' class="calibre8" src="content/windows-plus-r.png"/>
-      </p>
-      <p class="calibre6">
-       Later in this tutorial, you will need to have two command windows open at the same time. However, on some versions of Windows, if you already have one command window open and you try to open a second one using the same method, it will instead point you to the command window you already have open. Try it now on your computer and see what happens! If you only get one command window, try one of the other methods in the list above. At least one of them should result in a new command window being opened.
-      </p>
-     </sec>
-     <p class="calibre6">
-      You now should see a white or black window that is waiting for your commands.
-     </p>
-     <h3 class="calibre12" id="the-command-line-prompt">
-      The command-line Prompt
-     </h3>
-     <sec data-collapse="true" data-id="OSX_Linux_prompt" data-title="Prompt: macOS and Linux">
-      <b class="calibre10">
-       Prompt: macOS and Linux
-      </b>
-      <p class="calibre6">
-       If you're on Mac or Linux, you probably see a
-       <code class="calibre11">
-        $
-       </code>
-       , like this:
-      </p>
-      <p class="calibre6">
-      </p>
-      <p class="calibre6">
-       command-line
-      </p>
-      <p class="calibre6">
-      </p>
-      <pre class="calibre13"><code class="calibre11">$
+      gtag("config", "G-BN9REN07NH");
+    </script>
+  </head>
+  <body>
+    <header class="book-header">
+      <h1 class="page-title">Introduction to command line</h1>
+    </header>
+    <nav class="book-nav" data-chapter="007-introduction-to-command-line">
+      <button
+        aria-controls="nav-panel-007-introduction-to-command-line"
+        aria-expanded="false"
+        aria-label="Toggle menu"
+        class="nav-toggle"
+        data-target="nav-panel-007-introduction-to-command-line"
+        type="button"
+      >
+        <span aria-hidden="true" class="icon"> ≡ </span>
+        <span class="label"> Menu </span>
+      </button>
+      <div class="nav-links">
+        <a class="nav-link home" href="../index.html">
+          <span aria-hidden="true" class="icon"> ⌂ </span>
+          <span class="label"> Home </span>
+        </a>
+        <a class="nav-link contents" href="index.html">
+          <span aria-hidden="true" class="icon"> ≣ </span>
+          <span class="label"> Contents </span>
+        </a>
+        <a class="nav-link previous" href="006-how-the-internet-works.html">
+          <span aria-hidden="true" class="icon"> ← </span>
+          <span class="label"> Previous </span>
+        </a>
+        <a class="nav-link next" href="008-python-installation.html">
+          <span aria-hidden="true" class="icon"> → </span>
+          <span class="label"> Next </span>
+        </a>
+      </div>
+    </nav>
+    <div
+      aria-hidden="true"
+      class="nav-panel"
+      id="nav-panel-007-introduction-to-command-line"
+    >
+      <div class="nav-panel__group">
+        <h3 class="nav-panel__title">Shortcuts</h3>
+        <ul class="nav-panel__list">
+          <li>
+            <a class="nav-panel__link" href="../index.html">
+              <span aria-hidden="true" class="icon"> ⌂ </span>
+              Home
+            </a>
+          </li>
+          <li>
+            <a class="nav-panel__link" href="index.html">
+              <span aria-hidden="true" class="icon"> ≣ </span>
+              Contents
+            </a>
+          </li>
+          <li>
+            <a class="nav-panel__link" href="006-how-the-internet-works.html">
+              <span aria-hidden="true" class="icon"> ← </span>
+              Previous
+            </a>
+          </li>
+          <li>
+            <a class="nav-panel__link" href="008-python-installation.html">
+              <span aria-hidden="true" class="icon"> → </span>
+              Next
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="nav-panel__group">
+        <h3 class="nav-panel__title">Chapters</h3>
+        <ul class="nav-panel__list">
+          <li>
+            <a class="nav-panel__link" href="001-cover.html"> Cover </a>
+          </li>
+          <li>
+            <a class="nav-panel__link" href="003-introduction.html">
+              Introduction
+            </a>
+          </li>
+          <li>
+            <a class="nav-panel__link" href="004-installation.html">
+              Installation
+            </a>
+          </li>
+          <li>
+            <a class="nav-panel__link" href="006-how-the-internet-works.html">
+              How the Internet works
+            </a>
+          </li>
+          <li>
+            <a
+              class="nav-panel__link"
+              href="007-introduction-to-command-line.html"
+            >
+              Introduction to command line
+            </a>
+          </li>
+          <li>
+            <a class="nav-panel__link" href="008-python-installation.html">
+              Python installation
+            </a>
+          </li>
+          <li>
+            <a class="nav-panel__link" href="009-code-editor.html">
+              Code editor
+            </a>
+          </li>
+          <li>
+            <a class="nav-panel__link" href="010-introduction-to-python.html">
+              Introduction to Python
+            </a>
+          </li>
+          <li>
+            <a class="nav-panel__link" href="011-what-is-django.html">
+              What is Django?
+            </a>
+          </li>
+          <li>
+            <a class="nav-panel__link" href="012-django-installation.html">
+              Django installation
+            </a>
+          </li>
+          <li>
+            <a
+              class="nav-panel__link"
+              href="013-your-first-django-project.html"
+            >
+              Your first Django project!
+            </a>
+          </li>
+          <li>
+            <a class="nav-panel__link" href="014-django-models.html">
+              Django models
+            </a>
+          </li>
+          <li>
+            <a class="nav-panel__link" href="015-django-admin.html">
+              Django admin
+            </a>
+          </li>
+          <li>
+            <a class="nav-panel__link" href="016-deploy.html"> Deploy! </a>
+          </li>
+          <li>
+            <a class="nav-panel__link" href="017-django-urls.html">
+              Django URLs
+            </a>
+          </li>
+          <li>
+            <a
+              class="nav-panel__link"
+              href="018-django-views-time-to-create.html"
+            >
+              Django views – time to create!
+            </a>
+          </li>
+          <li>
+            <a class="nav-panel__link" href="019-introduction-to-html.html">
+              Introduction to HTML
+            </a>
+          </li>
+          <li>
+            <a class="nav-panel__link" href="020-django-orm-querysets.html">
+              Django ORM (Querysets)
+            </a>
+          </li>
+          <li>
+            <a
+              class="nav-panel__link"
+              href="021-dynamic-data-in-templates.html"
+            >
+              Dynamic data in templates
+            </a>
+          </li>
+          <li>
+            <a class="nav-panel__link" href="022-django-templates.html">
+              Django templates
+            </a>
+          </li>
+          <li>
+            <a class="nav-panel__link" href="023-css-make-it-pretty.html">
+              CSS – make it pretty
+            </a>
+          </li>
+          <li>
+            <a class="nav-panel__link" href="024-template-extending.html">
+              Template extending
+            </a>
+          </li>
+          <li>
+            <a class="nav-panel__link" href="025-extend-your-application.html">
+              Extend your application
+            </a>
+          </li>
+          <li>
+            <a class="nav-panel__link" href="026-django-forms.html">
+              Django Forms
+            </a>
+          </li>
+          <li>
+            <a class="nav-panel__link" href="027-what-s-next.html">
+              What's next?
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <main>
+      <div class="page">
+        <h2 class="calibre1" id="calibre_toc_5">
+          Introduction to command line
+        </h2>
+        <blockquote class="calibre5">
+          <p class="calibre6">
+            For readers at home: this chapter is covered in the
+            <a
+              href="https://www.youtube.com/watch?v=jvZLWhkzX-8"
+              target="_blank"
+            >
+              Your new friend: Command Line
+            </a>
+            video.
+          </p>
+        </blockquote>
+        <p class="calibre6">
+          It's exciting, right?! You'll write your first line of code in just a
+          few minutes! :)
+        </p>
+        <p class="calibre6">
+          <strong class="calibre10">
+            Let us introduce you to your first new friend: the command line!
+          </strong>
+        </p>
+        <p class="calibre6">
+          The following steps will show you how to use the black window all
+          hackers use. It might look a bit scary at first but really it's just a
+          prompt waiting for commands from you.
+        </p>
+        <blockquote class="calibre5">
+          <p class="calibre6">
+            <strong class="calibre10"> Note </strong>
+            Please note that throughout this book we use the terms 'directory'
+            and 'folder' interchangeably but they are one and the same thing.
+          </p>
+        </blockquote>
+        <h2 class="calibre7" id="what-is-the-command-line">
+          What is the command line?
+        </h2>
+        <p class="calibre6">
+          The window, which is usually called the
+          <strong class="calibre10"> command line </strong>
+          or
+          <strong class="calibre10"> command-line interface </strong>
+          , is a text-based application for viewing, handling, and manipulating
+          files on your computer. It's much like Windows Explorer or Finder on
+          the Mac, but without the graphical interface. Other names for the
+          command line are:
+          <em class="calibre14"> cmd </em>
+          ,
+          <em class="calibre14"> CLI </em>
+          ,
+          <em class="calibre14"> prompt </em>
+          ,
+          <em class="calibre14"> console </em>
+          or
+          <em class="calibre14"> terminal </em>
+          .
+        </p>
+        <h2 class="calibre7" id="open-the-command-line-interface">
+          Open the command-line interface
+        </h2>
+        <p class="calibre6">
+          To start some experiments we need to open our command-line interface
+          first.
+        </p>
+        <sec
+          data-collapse="true"
+          data-id="macOS_prompt"
+          data-title="Opening: macOS"
+        >
+          <b class="calibre10"> Opening: macOS </b>
+          <p class="calibre6">Go to Launchpad → Other → Terminal.</p>
+        </sec>
+        <sec
+          data-collapse="true"
+          data-id="linux_prompt"
+          data-title="Opening: Linux"
+        >
+          <b class="calibre10"> Opening: Linux </b>
+          <p class="calibre6">
+            It's probably under Applications → Accessories → Terminal, or
+            Applications → System → Terminal, but that may depend on your
+            system. If it's not there, you can try to Google it. :)
+          </p>
+        </sec>
+        <sec
+          data-collapse="true"
+          data-id="windows_prompt"
+          data-title="Opening: Windows"
+        >
+          <b class="calibre10"> Opening: Windows </b>
+          <p class="calibre6">
+            Depending on your version of Windows and your keyboard, one of the
+            following should open a command window (you may have to experiment a
+            bit, but you don't have to try all of these suggestions):
+          </p>
+          <ul class="calibre9">
+            <li class="calibre3">
+              Go to the Start menu or screen, and enter "Command Prompt" in the
+              search field.
+            </li>
+            <li class="calibre3">
+              Go to Start menu → Windows System → Command Prompt.
+            </li>
+            <li class="calibre3">
+              Go to Start menu → All Programs → Accessories → Command Prompt.
+            </li>
+            <li class="calibre3">
+              Go to the Start screen, hover your mouse in the lower-left corner
+              of the screen, and click the down arrow that appears (on a touch
+              screen, instead flick up from the bottom of the screen). The Apps
+              page should open. Click on Command Prompt in the Windows System
+              section.
+            </li>
+            <li class="calibre3">
+              Hold the special Windows key on your keyboard and press the "X"
+              key. Choose "Command Prompt" from the pop-up menu.
+            </li>
+            <li class="calibre3">
+              Hold the Windows key and press the "R" key to get a "Run" window.
+              Type "cmd" in the box, and click the OK key.
+            </li>
+          </ul>
+          <p class="calibre6">
+            <img
+              alt='Type "cmd" in the "Run" window'
+              class="calibre8"
+              src="content/windows-plus-r.png"
+            />
+          </p>
+          <p class="calibre6">
+            Later in this tutorial, you will need to have two command windows
+            open at the same time. However, on some versions of Windows, if you
+            already have one command window open and you try to open a second
+            one using the same method, it will instead point you to the command
+            window you already have open. Try it now on your computer and see
+            what happens! If you only get one command window, try one of the
+            other methods in the list above. At least one of them should result
+            in a new command window being opened.
+          </p>
+        </sec>
+        <p class="calibre6">
+          You now should see a white or black window that is waiting for your
+          commands.
+        </p>
+        <h3 class="calibre12" id="the-command-line-prompt">
+          The command-line Prompt
+        </h3>
+        <sec
+          data-collapse="true"
+          data-id="OSX_Linux_prompt"
+          data-title="Prompt: macOS and Linux"
+        >
+          <b class="calibre10"> Prompt: macOS and Linux </b>
+          <p class="calibre6">
+            If you're on Mac or Linux, you probably see a
+            <code class="calibre11"> $ </code>
+            , like this:
+          </p>
+          <p class="calibre6"></p>
+          <p class="calibre6">command-line</p>
+          <p class="calibre6"></p>
+          <pre class="calibre13"><code class="calibre11">$
         </code></pre>
-     </sec>
-     <sec data-collapse="true" data-id="windows_prompt2" data-title="Prompt: Windows">
-      <b class="calibre10">
-       Prompt: Windows
-      </b>
-      <p class="calibre6">
-       On Windows, you probably see a
-       <code class="calibre11">
-        &gt;
-       </code>
-       , like this:
-      </p>
-      <p class="calibre6">
-      </p>
-      <p class="calibre6">
-       command-line
-      </p>
-      <p class="calibre6">
-      </p>
-      <pre class="calibre13"><code class="calibre11">&gt;
+        </sec>
+        <sec
+          data-collapse="true"
+          data-id="windows_prompt2"
+          data-title="Prompt: Windows"
+        >
+          <b class="calibre10"> Prompt: Windows </b>
+          <p class="calibre6">
+            On Windows, you probably see a
+            <code class="calibre11"> &gt; </code>
+            , like this:
+          </p>
+          <p class="calibre6"></p>
+          <p class="calibre6">command-line</p>
+          <p class="calibre6"></p>
+          <pre class="calibre13"><code class="calibre11">&gt;
         </code></pre>
-      <p class="calibre6">
-       Take a look at the Linux section just above now -- you'll see something more like that when you get to PythonAnywhere later in the tutorial.
-      </p>
-     </sec>
-     <p class="calibre6">
-      Each command will be prepended by a
-      <code class="calibre11">
-       $
-      </code>
-      or
-      <code class="calibre11">
-       &gt;
-      </code>
-      and one space, but you should not type it. Your computer will do it for you. :)
-     </p>
-     <blockquote class="calibre5">
-      <p class="calibre6">
-       Just a small note: in your case there may be something like
-       <code class="calibre11">
-        C:\Users\ola&gt;
-       </code>
-       or
-       <code class="calibre11">
-        Olas-MacBook-Air:~ ola$
-       </code>
-       before the prompt sign, and this is 100% OK.
-      </p>
-     </blockquote>
-     <p class="calibre6">
-      The part up to and including the
-      <code class="calibre11">
-       $
-      </code>
-      or the
-      <code class="calibre11">
-       &gt;
-      </code>
-      is called the
-      <em class="calibre14">
-       command line prompt
-      </em>
-      , or
-      <em class="calibre14">
-       prompt
-      </em>
-      for short. It prompts you to input something there.
-     </p>
-     <p class="calibre6">
-      In the tutorial, when we want you to type in a command, we will include the
-      <code class="calibre11">
-       $
-      </code>
-      or
-      <code class="calibre11">
-       &gt;
-      </code>
-      , and occasionally more to the left. Ignore the left part and only type in the command, which starts after the prompt.
-     </p>
-     <h2 class="calibre7" id="your-first-command-yay">
-      Your first command (YAY!)
-     </h2>
-     <p class="calibre6">
-      Let's start by typing this command:
-     </p>
-     <sec data-collapse="true" data-id="OSX_Linux_whoami" data-title="Your first command: macOS and Linux">
-      <b class="calibre10">
-       Your first command: macOS and Linux
-      </b>
-      <p class="calibre6">
-      </p>
-      <p class="calibre6">
-       command-line
-      </p>
-      <p class="calibre6">
-      </p>
-      <pre class="calibre13"><code class="calibre11">$ whoami
+          <p class="calibre6">
+            Take a look at the Linux section just above now -- you'll see
+            something more like that when you get to PythonAnywhere later in the
+            tutorial.
+          </p>
+        </sec>
+        <p class="calibre6">
+          Each command will be prepended by a
+          <code class="calibre11"> $ </code>
+          or
+          <code class="calibre11"> &gt; </code>
+          and one space, but you should not type it. Your computer will do it
+          for you. :)
+        </p>
+        <blockquote class="calibre5">
+          <p class="calibre6">
+            Just a small note: in your case there may be something like
+            <code class="calibre11"> C:\Users\ola&gt; </code>
+            or
+            <code class="calibre11"> Olas-MacBook-Air:~ ola$ </code>
+            before the prompt sign, and this is 100% OK.
+          </p>
+        </blockquote>
+        <p class="calibre6">
+          The part up to and including the
+          <code class="calibre11"> $ </code>
+          or the
+          <code class="calibre11"> &gt; </code>
+          is called the
+          <em class="calibre14"> command line prompt </em>
+          , or
+          <em class="calibre14"> prompt </em>
+          for short. It prompts you to input something there.
+        </p>
+        <p class="calibre6">
+          In the tutorial, when we want you to type in a command, we will
+          include the
+          <code class="calibre11"> $ </code>
+          or
+          <code class="calibre11"> &gt; </code>
+          , and occasionally more to the left. Ignore the left part and only
+          type in the command, which starts after the prompt.
+        </p>
+        <h2 class="calibre7" id="your-first-command-yay">
+          Your first command (YAY!)
+        </h2>
+        <p class="calibre6">Let's start by typing this command:</p>
+        <sec
+          data-collapse="true"
+          data-id="OSX_Linux_whoami"
+          data-title="Your first command: macOS and Linux"
+        >
+          <b class="calibre10"> Your first command: macOS and Linux </b>
+          <p class="calibre6"></p>
+          <p class="calibre6">command-line</p>
+          <p class="calibre6"></p>
+          <pre class="calibre13"><code class="calibre11">$ whoami
         </code></pre>
-     </sec>
-     <sec data-collapse="true" data-id="windows_whoami" data-title="Your first command: Windows">
-      <b class="calibre10">
-       Your first command: Windows
-      </b>
-      <p class="calibre6">
-      </p>
-      <p class="calibre6">
-       command-line
-      </p>
-      <p class="calibre6">
-      </p>
-      <pre class="calibre13"><code class="calibre11">&gt; whoami
+        </sec>
+        <sec
+          data-collapse="true"
+          data-id="windows_whoami"
+          data-title="Your first command: Windows"
+        >
+          <b class="calibre10"> Your first command: Windows </b>
+          <p class="calibre6"></p>
+          <p class="calibre6">command-line</p>
+          <p class="calibre6"></p>
+          <pre class="calibre13"><code class="calibre11">&gt; whoami
         </code></pre>
-     </sec>
-     <p class="calibre6">
-      And then hit
-      <code class="calibre11">
-       enter
-      </code>
-      . This is our result:
-     </p>
-     <p class="calibre6">
-     </p>
-     <p class="calibre6">
-      command-line
-     </p>
-     <p class="calibre6">
-     </p>
-     <pre class="calibre13"><code class="calibre11">$ whoami
+        </sec>
+        <p class="calibre6">
+          And then hit
+          <code class="calibre11"> enter </code>
+          . This is our result:
+        </p>
+        <p class="calibre6"></p>
+        <p class="calibre6">command-line</p>
+        <p class="calibre6"></p>
+        <pre class="calibre13"><code class="calibre11">$ whoami
         olasitarska
         </code></pre>
-     <p class="calibre6">
-      As you can see, the computer has just printed your username. Neat, huh? :)
-     </p>
-     <blockquote class="calibre5">
-      <p class="calibre6">
-       Try to type each command; do not copy-paste. You'll remember more this way!
-      </p>
-     </blockquote>
-     <h2 class="calibre7" id="basics">
-      Basics
-     </h2>
-     <p class="calibre6">
-      Each operating system has a slightly different set of commands for the command line, so make sure to follow instructions for your operating system.
-     </p>
-     <p class="calibre6">
-      If you make a typo, you can use the left and right arrow keys to move your cursor, backspace and delete to edit the command. Most command lines don't support using the mouse to move the cursor.
-     </p>
-     <p class="calibre6">
-      Let's try this, shall we?
-     </p>
-     <h3 class="calibre12" id="current-directory">
-      Current directory
-     </h3>
-     <p class="calibre6">
-      It'd be nice to know where are we now, right? Let's see. Type this command and hit
-      <code class="calibre11">
-       enter
-      </code>
-      :
-     </p>
-     <sec data-collapse="true" data-id="OSX_Linux_pwd" data-title="Current directory: macOS and Linux">
-      <b class="calibre10">
-       Current directory: macOS and Linux
-      </b>
-      <p class="calibre6">
-      </p>
-      <p class="calibre6">
-       command-line
-      </p>
-      <p class="calibre6">
-      </p>
-      <pre class="calibre13"><code class="calibre11">$ pwd
+        <p class="calibre6">
+          As you can see, the computer has just printed your username. Neat,
+          huh? :)
+        </p>
+        <blockquote class="calibre5">
+          <p class="calibre6">
+            Try to type each command; do not copy-paste. You'll remember more
+            this way!
+          </p>
+        </blockquote>
+        <h2 class="calibre7" id="basics">Basics</h2>
+        <p class="calibre6">
+          Each operating system has a slightly different set of commands for the
+          command line, so make sure to follow instructions for your operating
+          system.
+        </p>
+        <p class="calibre6">
+          If you make a typo, you can use the left and right arrow keys to move
+          your cursor, backspace and delete to edit the command. Most command
+          lines don't support using the mouse to move the cursor.
+        </p>
+        <p class="calibre6">Let's try this, shall we?</p>
+        <h3 class="calibre12" id="current-directory">Current directory</h3>
+        <p class="calibre6">
+          It'd be nice to know where are we now, right? Let's see. Type this
+          command and hit
+          <code class="calibre11"> enter </code>
+          :
+        </p>
+        <sec
+          data-collapse="true"
+          data-id="OSX_Linux_pwd"
+          data-title="Current directory: macOS and Linux"
+        >
+          <b class="calibre10"> Current directory: macOS and Linux </b>
+          <p class="calibre6"></p>
+          <p class="calibre6">command-line</p>
+          <p class="calibre6"></p>
+          <pre class="calibre13"><code class="calibre11">$ pwd
         /Users/olasitarska
         </code></pre>
-      <blockquote class="calibre5">
-       <p class="calibre6">
-        Note: 'pwd' stands for 'print working directory'.
-       </p>
-      </blockquote>
-     </sec>
-     <sec data-collapse="true" data-id="windows_cd" data-title="Current directory: Windows">
-      <b class="calibre10">
-       Current directory: Windows
-      </b>
-      <p class="calibre6">
-      </p>
-      <p class="calibre6">
-       command-line
-      </p>
-      <p class="calibre6">
-      </p>
-      <pre class="calibre13"><code class="calibre11">&gt; cd
+          <blockquote class="calibre5">
+            <p class="calibre6">
+              Note: 'pwd' stands for 'print working directory'.
+            </p>
+          </blockquote>
+        </sec>
+        <sec
+          data-collapse="true"
+          data-id="windows_cd"
+          data-title="Current directory: Windows"
+        >
+          <b class="calibre10"> Current directory: Windows </b>
+          <p class="calibre6"></p>
+          <p class="calibre6">command-line</p>
+          <p class="calibre6"></p>
+          <pre class="calibre13"><code class="calibre11">&gt; cd
         C:\Users\olasitarska
         </code></pre>
-      <blockquote class="calibre5">
-       <p class="calibre6">
-        Note: 'cd' stands for 'change directory'. With PowerShell you can use pwd just like on Linux or macOS.
-       </p>
-      </blockquote>
-     </sec>
-     <p class="calibre6">
-      You'll probably see something similar on your machine. Once you open the command line you usually start at your user's home directory.
-     </p>
-     <hr class="calibre15"/>
-     <h3 class="calibre12" id="learn-more-about-a-command">
-      Learn more about a command
-     </h3>
-     <p class="calibre6">
-      Many commands you can type at the command prompt have built-in help that you can display and read! For example, to learn more about the current directory command:
-     </p>
-     <sec data-collapse="true" data-id="OSX_Linux_man" data-title="Command help: macOS and Linux">
-      <b class="calibre10">
-       Command help: macOS and Linux
-      </b>
-      <p class="calibre6">
-       macOS and Linux have a
-       <code class="calibre11">
-        man
-       </code>
-       command, which gives you help on commands. Try
-       <code class="calibre11">
-        man pwd
-       </code>
-       and see what it says, or put
-       <code class="calibre11">
-        man
-       </code>
-       before other commands to see their help. The output of
-       <code class="calibre11">
-        man
-       </code>
-       is normally paged. Use the space bar to move to the next page, and
-       <code class="calibre11">
-        q
-       </code>
-       to quit looking at the help.
-      </p>
-     </sec>
-     <sec data-collapse="true" data-id="windows_help" data-title="Command Help: Windows">
-      <b class="calibre10">
-       Command Help: Windows
-      </b>
-      <p class="calibre6">
-       Adding a
-       <code class="calibre11">
-        /?
-       </code>
-       suffix to most commands will print the help page. You may need to scroll your command window up to see it all. Try
-       <code class="calibre11">
-        cd /?
-       </code>
-       .
-      </p>
-     </sec>
-     <h3 class="calibre12" id="list-files-and-directories">
-      List files and directories
-     </h3>
-     <p class="calibre6">
-      So what's in it? It'd be cool to find out. Let's see:
-     </p>
-     <sec data-collapse="true" data-id="OSX_Linux_ls" data-title="List files and directories: macOS and Linux">
-      <b class="calibre10">
-       List files and directories: macOS and Linux
-      </b>
-      <p class="calibre6">
-      </p>
-      <p class="calibre6">
-       command-line
-      </p>
-      <p class="calibre6">
-      </p>
-      <pre class="calibre13"><code class="calibre11">$ ls
+          <blockquote class="calibre5">
+            <p class="calibre6">
+              Note: 'cd' stands for 'change directory'. With PowerShell you can
+              use pwd just like on Linux or macOS.
+            </p>
+          </blockquote>
+        </sec>
+        <p class="calibre6">
+          You'll probably see something similar on your machine. Once you open
+          the command line you usually start at your user's home directory.
+        </p>
+        <hr class="calibre15" />
+        <h3 class="calibre12" id="learn-more-about-a-command">
+          Learn more about a command
+        </h3>
+        <p class="calibre6">
+          Many commands you can type at the command prompt have built-in help
+          that you can display and read! For example, to learn more about the
+          current directory command:
+        </p>
+        <sec
+          data-collapse="true"
+          data-id="OSX_Linux_man"
+          data-title="Command help: macOS and Linux"
+        >
+          <b class="calibre10"> Command help: macOS and Linux </b>
+          <p class="calibre6">
+            macOS and Linux have a
+            <code class="calibre11"> man </code>
+            command, which gives you help on commands. Try
+            <code class="calibre11"> man pwd </code>
+            and see what it says, or put
+            <code class="calibre11"> man </code>
+            before other commands to see their help. The output of
+            <code class="calibre11"> man </code>
+            is normally paged. Use the space bar to move to the next page, and
+            <code class="calibre11"> q </code>
+            to quit looking at the help.
+          </p>
+        </sec>
+        <sec
+          data-collapse="true"
+          data-id="windows_help"
+          data-title="Command Help: Windows"
+        >
+          <b class="calibre10"> Command Help: Windows </b>
+          <p class="calibre6">
+            Adding a
+            <code class="calibre11"> /? </code>
+            suffix to most commands will print the help page. You may need to
+            scroll your command window up to see it all. Try
+            <code class="calibre11"> cd /? </code>
+            .
+          </p>
+        </sec>
+        <h3 class="calibre12" id="list-files-and-directories">
+          List files and directories
+        </h3>
+        <p class="calibre6">
+          So what's in it? It'd be cool to find out. Let's see:
+        </p>
+        <sec
+          data-collapse="true"
+          data-id="OSX_Linux_ls"
+          data-title="List files and directories: macOS and Linux"
+        >
+          <b class="calibre10"> List files and directories: macOS and Linux </b>
+          <p class="calibre6"></p>
+          <p class="calibre6">command-line</p>
+          <p class="calibre6"></p>
+          <pre class="calibre13"><code class="calibre11">$ ls
         Applications
         Desktop
         Downloads
         Music
         ...
         </code></pre>
-     </sec>
-     <sec data-collapse="true" data-id="windows_dir" data-title="List files and directories: Windows">
-      <b class="calibre10">
-       List files and directories: Windows
-      </b>
-      <p class="calibre6">
-      </p>
-      <p class="calibre6">
-       command-line
-      </p>
-      <p class="calibre6">
-      </p>
-      <pre class="calibre13"><code class="calibre11">&gt; dir
+        </sec>
+        <sec
+          data-collapse="true"
+          data-id="windows_dir"
+          data-title="List files and directories: Windows"
+        >
+          <b class="calibre10"> List files and directories: Windows </b>
+          <p class="calibre6"></p>
+          <p class="calibre6">command-line</p>
+          <p class="calibre6"></p>
+          <pre class="calibre13"><code class="calibre11">&gt; dir
          Directory of C:\Users\olasitarska
         05/08/2020 07:28 PM &lt;DIR&gt;      Applications
         05/08/2020 07:28 PM &lt;DIR&gt;      Desktop
@@ -494,700 +654,542 @@
         05/08/2020 07:28 PM &lt;DIR&gt;      Music
         ...
         </code></pre>
-      <blockquote class="calibre5">
-       <p class="calibre6">
-        Note: In PowerShell you can also use 'ls' like on Linux and macOS.
-       </p>
-      </blockquote>
-     </sec>
-     <p class="calibre6">
-     </p>
-     <hr class="calibre15"/>
-     <h3 class="calibre12" id="change-current-directory">
-      Change current directory
-     </h3>
-     <p class="calibre6">
-      Now, let's go to our Desktop directory:
-     </p>
-     <sec data-collapse="true" data-id="OSX_move_to" data-title="Change current directory: macOS">
-      <b class="calibre10">
-       Change current directory: macOS
-      </b>
-      <p class="calibre6">
-      </p>
-      <p class="calibre6">
-       command-line
-      </p>
-      <p class="calibre6">
-      </p>
-      <pre class="calibre13"><code class="calibre11">$ cd Desktop
+          <blockquote class="calibre5">
+            <p class="calibre6">
+              Note: In PowerShell you can also use 'ls' like on Linux and macOS.
+            </p>
+          </blockquote>
+        </sec>
+        <p class="calibre6"></p>
+        <hr class="calibre15" />
+        <h3 class="calibre12" id="change-current-directory">
+          Change current directory
+        </h3>
+        <p class="calibre6">Now, let's go to our Desktop directory:</p>
+        <sec
+          data-collapse="true"
+          data-id="OSX_move_to"
+          data-title="Change current directory: macOS"
+        >
+          <b class="calibre10"> Change current directory: macOS </b>
+          <p class="calibre6"></p>
+          <p class="calibre6">command-line</p>
+          <p class="calibre6"></p>
+          <pre class="calibre13"><code class="calibre11">$ cd Desktop
         </code></pre>
-     </sec>
-     <sec data-collapse="true" data-id="Linux_move_to" data-title="Change current directory: Linux">
-      <b class="calibre10">
-       Change current directory: Linux
-      </b>
-      <p class="calibre6">
-      </p>
-      <p class="calibre6">
-       command-line
-      </p>
-      <p class="calibre6">
-      </p>
-      <pre class="calibre13"><code class="calibre11">$ cd Desktop
+        </sec>
+        <sec
+          data-collapse="true"
+          data-id="Linux_move_to"
+          data-title="Change current directory: Linux"
+        >
+          <b class="calibre10"> Change current directory: Linux </b>
+          <p class="calibre6"></p>
+          <p class="calibre6">command-line</p>
+          <p class="calibre6"></p>
+          <pre class="calibre13"><code class="calibre11">$ cd Desktop
         </code></pre>
-      <p class="calibre6">
-       Note that
-        the directory name "Desktop" might be translated
-        to the language of your Linux account.
-        If that's the case, you'll need to replace
-       <code class="calibre11">
-        Desktop
-       </code>
-       with the translated name;
-        for example,
-       <code class="calibre11">
-        Schreibtisch
-       </code>
-       for German.
-      </p>
-     </sec>
-     <sec data-collapse="true" data-id="windows_move_to" data-title="Change current directory: Windows">
-      <b class="calibre10">
-       Change current directory: Windows
-      </b>
-      <p class="calibre6">
-      </p>
-      <p class="calibre6">
-       command-line
-      </p>
-      <p class="calibre6">
-      </p>
-      <pre class="calibre13"><code class="calibre11">&gt; cd Desktop
+          <p class="calibre6">
+            Note that the directory name "Desktop" might be translated to the
+            language of your Linux account. If that's the case, you'll need to
+            replace
+            <code class="calibre11"> Desktop </code>
+            with the translated name; for example,
+            <code class="calibre11"> Schreibtisch </code>
+            for German.
+          </p>
+        </sec>
+        <sec
+          data-collapse="true"
+          data-id="windows_move_to"
+          data-title="Change current directory: Windows"
+        >
+          <b class="calibre10"> Change current directory: Windows </b>
+          <p class="calibre6"></p>
+          <p class="calibre6">command-line</p>
+          <p class="calibre6"></p>
+          <pre class="calibre13"><code class="calibre11">&gt; cd Desktop
         </code></pre>
-     </sec>
-     <p class="calibre6">
-      Check if it's really changed:
-     </p>
-     <sec data-collapse="true" data-id="OSX_Linux_pwd2" data-title="Check if changed: macOS and Linux">
-      <b class="calibre10">
-       Check if changed: macOS and Linux
-      </b>
-      <p class="calibre6">
-      </p>
-      <p class="calibre6">
-       command-line
-      </p>
-      <p class="calibre6">
-      </p>
-      <pre class="calibre13"><code class="calibre11">$ pwd
+        </sec>
+        <p class="calibre6">Check if it's really changed:</p>
+        <sec
+          data-collapse="true"
+          data-id="OSX_Linux_pwd2"
+          data-title="Check if changed: macOS and Linux"
+        >
+          <b class="calibre10"> Check if changed: macOS and Linux </b>
+          <p class="calibre6"></p>
+          <p class="calibre6">command-line</p>
+          <p class="calibre6"></p>
+          <pre class="calibre13"><code class="calibre11">$ pwd
         /Users/olasitarska/Desktop
         </code></pre>
-     </sec>
-     <sec data-collapse="true" data-id="windows_cd2" data-title="Check if changed: Windows">
-      <b class="calibre10">
-       Check if changed: Windows
-      </b>
-      <p class="calibre6">
-      </p>
-      <p class="calibre6">
-       command-line
-      </p>
-      <p class="calibre6">
-      </p>
-      <pre class="calibre13"><code class="calibre11">&gt; cd
+        </sec>
+        <sec
+          data-collapse="true"
+          data-id="windows_cd2"
+          data-title="Check if changed: Windows"
+        >
+          <b class="calibre10"> Check if changed: Windows </b>
+          <p class="calibre6"></p>
+          <p class="calibre6">command-line</p>
+          <p class="calibre6"></p>
+          <pre class="calibre13"><code class="calibre11">&gt; cd
         C:\Users\olasitarska\Desktop
         </code></pre>
-     </sec>
-     <p class="calibre6">
-      Here it is!
-     </p>
-     <blockquote class="calibre5">
-      <p class="calibre6">
-       PRO tip: if you type
-       <code class="calibre11">
-        cd D
-       </code>
-       and then hit
-       <code class="calibre11">
-        tab
-       </code>
-       on your keyboard, the command line will automatically fill in the rest of the name so you can navigate faster. If there is more than one folder starting with "D", hit the
-       <code class="calibre11">
-        tab
-       </code>
-       key twice to get a list of options.
-      </p>
-     </blockquote>
-     <hr class="calibre15"/>
-     <h3 class="calibre12" id="create-directory">
-      Create directory
-     </h3>
-     <p class="calibre6">
-      How about creating a practice directory on your desktop? You can do it this way:
-     </p>
-     <sec data-collapse="true" data-id="OSX_Linux_mkdir" data-title="Create directory: macOS and Linux">
-      <b class="calibre10">
-       Create directory: macOS and Linux
-      </b>
-      <p class="calibre6">
-      </p>
-      <p class="calibre6">
-       command-line
-      </p>
-      <p class="calibre6">
-      </p>
-      <pre class="calibre13"><code class="calibre11">$ mkdir practice
+        </sec>
+        <p class="calibre6">Here it is!</p>
+        <blockquote class="calibre5">
+          <p class="calibre6">
+            PRO tip: if you type
+            <code class="calibre11"> cd D </code>
+            and then hit
+            <code class="calibre11"> tab </code>
+            on your keyboard, the command line will automatically fill in the
+            rest of the name so you can navigate faster. If there is more than
+            one folder starting with "D", hit the
+            <code class="calibre11"> tab </code>
+            key twice to get a list of options.
+          </p>
+        </blockquote>
+        <hr class="calibre15" />
+        <h3 class="calibre12" id="create-directory">Create directory</h3>
+        <p class="calibre6">
+          How about creating a practice directory on your desktop? You can do it
+          this way:
+        </p>
+        <sec
+          data-collapse="true"
+          data-id="OSX_Linux_mkdir"
+          data-title="Create directory: macOS and Linux"
+        >
+          <b class="calibre10"> Create directory: macOS and Linux </b>
+          <p class="calibre6"></p>
+          <p class="calibre6">command-line</p>
+          <p class="calibre6"></p>
+          <pre class="calibre13"><code class="calibre11">$ mkdir practice
         </code></pre>
-     </sec>
-     <sec data-collapse="true" data-id="windows_mkdir" data-title="Create directory: Windows">
-      <b class="calibre10">
-       Create directory: Windows
-      </b>
-      <p class="calibre6">
-      </p>
-      <p class="calibre6">
-       command-line
-      </p>
-      <p class="calibre6">
-      </p>
-      <pre class="calibre13"><code class="calibre11">&gt; mkdir practice
+        </sec>
+        <sec
+          data-collapse="true"
+          data-id="windows_mkdir"
+          data-title="Create directory: Windows"
+        >
+          <b class="calibre10"> Create directory: Windows </b>
+          <p class="calibre6"></p>
+          <p class="calibre6">command-line</p>
+          <p class="calibre6"></p>
+          <pre class="calibre13"><code class="calibre11">&gt; mkdir practice
         </code></pre>
-     </sec>
-     <p class="calibre6">
-      This little command will create a folder with the name
-      <code class="calibre11">
-       practice
-      </code>
-      on your desktop. You can check if it's there by looking on your Desktop or by running a
-      <code class="calibre11">
-       ls
-      </code>
-      or
-      <code class="calibre11">
-       dir
-      </code>
-      command! Try it. :)
-     </p>
-     <blockquote class="calibre5">
-      <p class="calibre6">
-       PRO tip: If you don't want to type the same commands over and over, try pressing the
-       <code class="calibre11">
-        up arrow
-       </code>
-       and
-       <code class="calibre11">
-        down arrow
-       </code>
-       on your keyboard to cycle through recently used commands.
-      </p>
-     </blockquote>
-     <hr class="calibre15"/>
-     <h3 class="calibre12" id="exercise">
-      Exercise!
-     </h3>
-     <p class="calibre6">
-      A small challenge for you: in your newly created
-      <code class="calibre11">
-       practice
-      </code>
-      directory, create a directory called
-      <code class="calibre11">
-       test
-      </code>
-      . (Use the
-      <code class="calibre11">
-       cd
-      </code>
-      and
-      <code class="calibre11">
-       mkdir
-      </code>
-      commands.)
-     </p>
-     <h4 class="calibre16" id="solution">
-      Solution:
-     </h4>
-     <sec data-collapse="true" data-id="OSX_Linux_test_dir" data-title="Exercise solution: macOS and Linux">
-      <b class="calibre10">
-       Exercise solution: macOS and Linux
-      </b>
-      <p class="calibre6">
-      </p>
-      <p class="calibre6">
-       command-line
-      </p>
-      <p class="calibre6">
-      </p>
-      <pre class="calibre13"><code class="calibre11">$ cd practice
+        </sec>
+        <p class="calibre6">
+          This little command will create a folder with the name
+          <code class="calibre11"> practice </code>
+          on your desktop. You can check if it's there by looking on your
+          Desktop or by running a
+          <code class="calibre11"> ls </code>
+          or
+          <code class="calibre11"> dir </code>
+          command! Try it. :)
+        </p>
+        <blockquote class="calibre5">
+          <p class="calibre6">
+            PRO tip: If you don't want to type the same commands over and over,
+            try pressing the
+            <code class="calibre11"> up arrow </code>
+            and
+            <code class="calibre11"> down arrow </code>
+            on your keyboard to cycle through recently used commands.
+          </p>
+        </blockquote>
+        <hr class="calibre15" />
+        <h3 class="calibre12" id="exercise">Exercise!</h3>
+        <p class="calibre6">
+          A small challenge for you: in your newly created
+          <code class="calibre11"> practice </code>
+          directory, create a directory called
+          <code class="calibre11"> test </code>
+          . (Use the
+          <code class="calibre11"> cd </code>
+          and
+          <code class="calibre11"> mkdir </code>
+          commands.)
+        </p>
+        <h4 class="calibre16" id="solution">Solution:</h4>
+        <sec
+          data-collapse="true"
+          data-id="OSX_Linux_test_dir"
+          data-title="Exercise solution: macOS and Linux"
+        >
+          <b class="calibre10"> Exercise solution: macOS and Linux </b>
+          <p class="calibre6"></p>
+          <p class="calibre6">command-line</p>
+          <p class="calibre6"></p>
+          <pre class="calibre13"><code class="calibre11">$ cd practice
         $ mkdir test
         $ ls
         test
         </code></pre>
-     </sec>
-     <sec data-collapse="true" data-id="windows_test_dir" data-title="Exercise solution: Windows">
-      <b class="calibre10">
-       Exercise solution: Windows
-      </b>
-      <p class="calibre6">
-      </p>
-      <p class="calibre6">
-       command-line
-      </p>
-      <p class="calibre6">
-      </p>
-      <pre class="calibre13"><code class="calibre11">&gt; cd practice
+        </sec>
+        <sec
+          data-collapse="true"
+          data-id="windows_test_dir"
+          data-title="Exercise solution: Windows"
+        >
+          <b class="calibre10"> Exercise solution: Windows </b>
+          <p class="calibre6"></p>
+          <p class="calibre6">command-line</p>
+          <p class="calibre6"></p>
+          <pre class="calibre13"><code class="calibre11">&gt; cd practice
         &gt; mkdir test
         &gt; dir
         05/08/2020 07:28 PM &lt;DIR&gt;      test
         </code></pre>
-     </sec>
-     <p class="calibre6">
-      Congrats! :)
-     </p>
-     <hr class="calibre15"/>
-     <h3 class="calibre12" id="clean-up">
-      Clean up
-     </h3>
-     <p class="calibre6">
-      We don't want to leave a mess, so let's remove everything we did until that point.
-     </p>
-     <p class="calibre6">
-      First, we need to get back to Desktop:
-     </p>
-     <sec data-collapse="true" data-id="OSX_Linux_back" data-title="Clean up: macOS and Linux">
-      <b class="calibre10">
-       Clean up: macOS and Linux
-      </b>
-      <p class="calibre6">
-      </p>
-      <p class="calibre6">
-       command-line
-      </p>
-      <p class="calibre6">
-      </p>
-      <pre class="calibre13"><code class="calibre11">$ cd ..
+        </sec>
+        <p class="calibre6">Congrats! :)</p>
+        <hr class="calibre15" />
+        <h3 class="calibre12" id="clean-up">Clean up</h3>
+        <p class="calibre6">
+          We don't want to leave a mess, so let's remove everything we did until
+          that point.
+        </p>
+        <p class="calibre6">First, we need to get back to Desktop:</p>
+        <sec
+          data-collapse="true"
+          data-id="OSX_Linux_back"
+          data-title="Clean up: macOS and Linux"
+        >
+          <b class="calibre10"> Clean up: macOS and Linux </b>
+          <p class="calibre6"></p>
+          <p class="calibre6">command-line</p>
+          <p class="calibre6"></p>
+          <pre class="calibre13"><code class="calibre11">$ cd ..
         </code></pre>
-     </sec>
-     <sec data-collapse="true" data-id="windows_back" data-title="Clean up: Windows">
-      <b class="calibre10">
-       Clean up: Windows
-      </b>
-      <p class="calibre6">
-      </p>
-      <p class="calibre6">
-       command-line
-      </p>
-      <p class="calibre6">
-      </p>
-      <pre class="calibre13"><code class="calibre11">&gt; cd ..
+        </sec>
+        <sec
+          data-collapse="true"
+          data-id="windows_back"
+          data-title="Clean up: Windows"
+        >
+          <b class="calibre10"> Clean up: Windows </b>
+          <p class="calibre6"></p>
+          <p class="calibre6">command-line</p>
+          <p class="calibre6"></p>
+          <pre class="calibre13"><code class="calibre11">&gt; cd ..
         </code></pre>
-     </sec>
-     <p class="calibre6">
-      Using
-      <code class="calibre11">
-       ..
-      </code>
-      with the
-      <code class="calibre11">
-       cd
-      </code>
-      command will change your current directory to the parent directory (that is, the directory that contains your current directory).
-     </p>
-     <p class="calibre6">
-      Check where you are:
-     </p>
-     <sec data-collapse="true" data-id="OSX_Linux_pwd3" data-title="Check location: macOS and Linux">
-      <b class="calibre10">
-       Check location: macOS and Linux
-      </b>
-      <p class="calibre6">
-      </p>
-      <p class="calibre6">
-       command-line
-      </p>
-      <p class="calibre6">
-      </p>
-      <pre class="calibre13"><code class="calibre11">$ pwd
+        </sec>
+        <p class="calibre6">
+          Using
+          <code class="calibre11"> .. </code>
+          with the
+          <code class="calibre11"> cd </code>
+          command will change your current directory to the parent directory
+          (that is, the directory that contains your current directory).
+        </p>
+        <p class="calibre6">Check where you are:</p>
+        <sec
+          data-collapse="true"
+          data-id="OSX_Linux_pwd3"
+          data-title="Check location: macOS and Linux"
+        >
+          <b class="calibre10"> Check location: macOS and Linux </b>
+          <p class="calibre6"></p>
+          <p class="calibre6">command-line</p>
+          <p class="calibre6"></p>
+          <pre class="calibre13"><code class="calibre11">$ pwd
         /Users/olasitarska/Desktop
         </code></pre>
-     </sec>
-     <sec data-collapse="true" data-id="windows_cd3" data-title="Check location: Windows">
-      <b class="calibre10">
-       Check location: Windows
-      </b>
-      <p class="calibre6">
-      </p>
-      <p class="calibre6">
-       command-line
-      </p>
-      <p class="calibre6">
-      </p>
-      <pre class="calibre13"><code class="calibre11">&gt; cd
+        </sec>
+        <sec
+          data-collapse="true"
+          data-id="windows_cd3"
+          data-title="Check location: Windows"
+        >
+          <b class="calibre10"> Check location: Windows </b>
+          <p class="calibre6"></p>
+          <p class="calibre6">command-line</p>
+          <p class="calibre6"></p>
+          <pre class="calibre13"><code class="calibre11">&gt; cd
         C:\Users\olasitarska\Desktop
         </code></pre>
-     </sec>
-     <p class="calibre6">
-      Now time to delete the
-      <code class="calibre11">
-       practice
-      </code>
-      directory:
-     </p>
-     <blockquote class="calibre5">
-      <p class="calibre6">
-       <strong class="calibre10">
-        Attention
-       </strong>
-       : Deleting files using
-       <code class="calibre11">
-        del
-       </code>
-       ,
-       <code class="calibre11">
-        rmdir
-       </code>
-       or
-       <code class="calibre11">
-        rm
-       </code>
-       is irrecoverable, meaning
-       <em class="calibre14">
-        the deleted files will be gone forever
-       </em>
-       ! So be very careful with this command.
-      </p>
-     </blockquote>
-     <sec data-collapse="true" data-id="OSX_Linux_rm" data-title="Delete directory: Windows Powershell, macOS and Linux">
-      <b class="calibre10">
-       Delete directory: Windows Powershell, macOS and Linux
-      </b>
-      <p class="calibre6">
-      </p>
-      <p class="calibre6">
-       command-line
-      </p>
-      <p class="calibre6">
-      </p>
-      <pre class="calibre13"><code class="calibre11">$ rm -r practice
+        </sec>
+        <p class="calibre6">
+          Now time to delete the
+          <code class="calibre11"> practice </code>
+          directory:
+        </p>
+        <blockquote class="calibre5">
+          <p class="calibre6">
+            <strong class="calibre10"> Attention </strong>
+            : Deleting files using
+            <code class="calibre11"> del </code>
+            ,
+            <code class="calibre11"> rmdir </code>
+            or
+            <code class="calibre11"> rm </code>
+            is irrecoverable, meaning
+            <em class="calibre14"> the deleted files will be gone forever </em>
+            ! So be very careful with this command.
+          </p>
+        </blockquote>
+        <sec
+          data-collapse="true"
+          data-id="OSX_Linux_rm"
+          data-title="Delete directory: Windows Powershell, macOS and Linux"
+        >
+          <b class="calibre10">
+            Delete directory: Windows Powershell, macOS and Linux
+          </b>
+          <p class="calibre6"></p>
+          <p class="calibre6">command-line</p>
+          <p class="calibre6"></p>
+          <pre class="calibre13"><code class="calibre11">$ rm -r practice
         </code></pre>
-     </sec>
-     <sec data-collapse="true" data-id="windows_rmdir" data-title="Delete directory: Windows Command Prompt">
-      <b class="calibre10">
-       Delete directory: Windows Command Prompt
-      </b>
-      <p class="calibre6">
-      </p>
-      <p class="calibre6">
-       command-line
-      </p>
-      <p class="calibre6">
-      </p>
-      <pre class="calibre13"><code class="calibre11">&gt; rmdir /S practice
+        </sec>
+        <sec
+          data-collapse="true"
+          data-id="windows_rmdir"
+          data-title="Delete directory: Windows Command Prompt"
+        >
+          <b class="calibre10"> Delete directory: Windows Command Prompt </b>
+          <p class="calibre6"></p>
+          <p class="calibre6">command-line</p>
+          <p class="calibre6"></p>
+          <pre class="calibre13"><code class="calibre11">&gt; rmdir /S practice
         practice, Are you sure &lt;Y/N&gt;? Y
         </code></pre>
-     </sec>
-     <p class="calibre6">
-      Done! To be sure it's actually deleted, let's check it:
-     </p>
-     <sec data-collapse="true" data-id="OSX_Linux_ls2" data-title="Check deletion: macOS and Linux">
-      <b class="calibre10">
-       Check deletion: macOS and Linux
-      </b>
-      <p class="calibre6">
-      </p>
-      <p class="calibre6">
-       command-line
-      </p>
-      <p class="calibre6">
-      </p>
-      <pre class="calibre13"><code class="calibre11">$ ls
+        </sec>
+        <p class="calibre6">
+          Done! To be sure it's actually deleted, let's check it:
+        </p>
+        <sec
+          data-collapse="true"
+          data-id="OSX_Linux_ls2"
+          data-title="Check deletion: macOS and Linux"
+        >
+          <b class="calibre10"> Check deletion: macOS and Linux </b>
+          <p class="calibre6"></p>
+          <p class="calibre6">command-line</p>
+          <p class="calibre6"></p>
+          <pre class="calibre13"><code class="calibre11">$ ls
         </code></pre>
-     </sec>
-     <sec data-collapse="true" data-id="windows_dir2" data-title="Check deletion: Windows">
-      <b class="calibre10">
-       Check deletion: Windows
-      </b>
-      <p class="calibre6">
-      </p>
-      <p class="calibre6">
-       command-line
-      </p>
-      <p class="calibre6">
-      </p>
-      <pre class="calibre13"><code class="calibre11">&gt; dir
+        </sec>
+        <sec
+          data-collapse="true"
+          data-id="windows_dir2"
+          data-title="Check deletion: Windows"
+        >
+          <b class="calibre10"> Check deletion: Windows </b>
+          <p class="calibre6"></p>
+          <p class="calibre6">command-line</p>
+          <p class="calibre6"></p>
+          <pre class="calibre13"><code class="calibre11">&gt; dir
         </code></pre>
-     </sec>
-     <h3 class="calibre12" id="exit">
-      Exit
-     </h3>
-     <p class="calibre6">
-      That's it for now! You can safely close the command line now. Let's do it the hacker way, alright? :)
-     </p>
-     <sec data-collapse="true" data-id="OSX_Linux_exit" data-title="Exit: macOS and Linux">
-      <b class="calibre10">
-       Exit: macOS and Linux
-      </b>
-      <p class="calibre6">
-      </p>
-      <p class="calibre6">
-       command-line
-      </p>
-      <p class="calibre6">
-      </p>
-      <pre class="calibre13"><code class="calibre11">$ exit
+        </sec>
+        <h3 class="calibre12" id="exit">Exit</h3>
+        <p class="calibre6">
+          That's it for now! You can safely close the command line now. Let's do
+          it the hacker way, alright? :)
+        </p>
+        <sec
+          data-collapse="true"
+          data-id="OSX_Linux_exit"
+          data-title="Exit: macOS and Linux"
+        >
+          <b class="calibre10"> Exit: macOS and Linux </b>
+          <p class="calibre6"></p>
+          <p class="calibre6">command-line</p>
+          <p class="calibre6"></p>
+          <pre class="calibre13"><code class="calibre11">$ exit
         </code></pre>
-     </sec>
-     <sec data-collapse="true" data-id="windows_exit" data-title="Exit: Windows">
-      <b class="calibre10">
-       Exit: Windows
-      </b>
-      <p class="calibre6">
-      </p>
-      <p class="calibre6">
-       command-line
-      </p>
-      <p class="calibre6">
-      </p>
-      <pre class="calibre13"><code class="calibre11">&gt; exit
+        </sec>
+        <sec
+          data-collapse="true"
+          data-id="windows_exit"
+          data-title="Exit: Windows"
+        >
+          <b class="calibre10"> Exit: Windows </b>
+          <p class="calibre6"></p>
+          <p class="calibre6">command-line</p>
+          <p class="calibre6"></p>
+          <pre class="calibre13"><code class="calibre11">&gt; exit
         </code></pre>
-     </sec>
-     <p class="calibre6">
-      Cool, huh? :)
-     </p>
-     <h2 class="calibre7" id="summary">
-      Summary
-     </h2>
-     <p class="calibre6">
-      Here is a summary of some useful commands:
-     </p>
-     <table class="calibre17">
-      <thead class="calibre18">
-       <tr class="calibre19">
-        <th class="calibre20">
-         Command (Windows)
-        </th>
-        <th class="calibre20">
-         Command (Mac OS / Linux)
-        </th>
-        <th class="calibre20">
-         Description
-        </th>
-        <th class="calibre20">
-         Example
-        </th>
-       </tr>
-      </thead>
-      <tbody class="calibre21">
-       <tr class="calibre19">
-        <td class="calibre22">
-         exit
-        </td>
-        <td class="calibre22">
-         exit
-        </td>
-        <td class="calibre22">
-         close the window
-        </td>
-        <td class="calibre22">
-         <strong class="calibre10">
-          exit
-         </strong>
-        </td>
-       </tr>
-       <tr class="calibre19">
-        <td class="calibre22">
-         cd
-        </td>
-        <td class="calibre22">
-         cd
-        </td>
-        <td class="calibre22">
-         change directory
-        </td>
-        <td class="calibre22">
-         <strong class="calibre10">
-          cd test
-         </strong>
-        </td>
-       </tr>
-       <tr class="calibre19">
-        <td class="calibre22">
-         cd
-        </td>
-        <td class="calibre22">
-         pwd
-        </td>
-        <td class="calibre22">
-         show the current directory
-        </td>
-        <td class="calibre22">
-         <strong class="calibre10">
-          cd
-         </strong>
-         (Windows) or
-         <strong class="calibre10">
-          pwd
-         </strong>
-         (Mac OS / Linux)
-        </td>
-       </tr>
-       <tr class="calibre19">
-        <td class="calibre22">
-         dir
-        </td>
-        <td class="calibre22">
-         ls
-        </td>
-        <td class="calibre22">
-         list directories/files
-        </td>
-        <td class="calibre22">
-         <strong class="calibre10">
-          dir
-         </strong>
-        </td>
-       </tr>
-       <tr class="calibre19">
-        <td class="calibre22">
-         copy
-        </td>
-        <td class="calibre22">
-         cp
-        </td>
-        <td class="calibre22">
-         copy file
-        </td>
-        <td class="calibre22">
-         <strong class="calibre10">
-          copy c:\test\test.txt c:\windows\test.txt
-         </strong>
-        </td>
-       </tr>
-       <tr class="calibre19">
-        <td class="calibre22">
-         move
-        </td>
-        <td class="calibre22">
-         mv
-        </td>
-        <td class="calibre22">
-         move file
-        </td>
-        <td class="calibre22">
-         <strong class="calibre10">
-          move c:\test\test.txt c:\windows\test.txt
-         </strong>
-        </td>
-       </tr>
-       <tr class="calibre19">
-        <td class="calibre22">
-         mkdir
-        </td>
-        <td class="calibre22">
-         mkdir
-        </td>
-        <td class="calibre22">
-         create a new directory
-        </td>
-        <td class="calibre22">
-         <strong class="calibre10">
-          mkdir testdirectory
-         </strong>
-        </td>
-       </tr>
-       <tr class="calibre19">
-        <td class="calibre22">
-         rmdir (or del)
-        </td>
-        <td class="calibre22">
-         rm
-        </td>
-        <td class="calibre22">
-         delete a file
-        </td>
-        <td class="calibre22">
-         <strong class="calibre10">
-          del c:\test\test.txt
-         </strong>
-        </td>
-       </tr>
-       <tr class="calibre19">
-        <td class="calibre22">
-         rmdir /S
-        </td>
-        <td class="calibre22">
-         rm -r
-        </td>
-        <td class="calibre22">
-         delete a directory
-        </td>
-        <td class="calibre22">
-         <strong class="calibre10">
-          rm -r testdirectory
-         </strong>
-        </td>
-       </tr>
-       <tr class="calibre19">
-        <td class="calibre22">
-         [CMD] /?
-        </td>
-        <td class="calibre22">
-         man [CMD]
-        </td>
-        <td class="calibre22">
-         get help for a command
-        </td>
-        <td class="calibre22">
-         <strong class="calibre10">
-          cd /?
-         </strong>
-         (Windows) or
-         <strong class="calibre10">
-          man cd
-         </strong>
-         (Mac OS / Linux)
-        </td>
-       </tr>
-      </tbody>
-     </table>
-     <p class="calibre6">
-      These are just a very few of the commands you can run in your command line, but you're not going to use anything more than that today.
-     </p>
-     <p class="calibre6">
-      If you're curious,
-      <a href="https://ss64.com" target="_blank">
-       ss64.com
-      </a>
-      contains a complete reference of commands for all operating systems.
-     </p>
-     <h2 class="calibre7" id="ready">
-      Ready?
-     </h2>
-     <p class="calibre6">
-      Let's dive into Python!
-     </p>
-    </div>
-   </div>
-  </main>
-  <nav class="book-nav nav-bottom">
-   <a href="../index.html">
-    Home
-   </a>
-   <a href="index.html">
-    Contents
-   </a>
-   <a href="006-how-the-internet-works.html">
-    Previous
-   </a>
-   <a href="008-python-installation.html">
-    Next
-   </a>
-  </nav>
-  <footer class="book-footer">
-   <p>
-    Generated from the original EPUB. Content © respective authors under CC BY-SA 4.0.
-   </p>
-  </footer>
- </body>
+        </sec>
+        <p class="calibre6">Cool, huh? :)</p>
+        <h2 class="calibre7" id="summary">Summary</h2>
+        <p class="calibre6">Here is a summary of some useful commands:</p>
+        <table class="calibre17">
+          <thead class="calibre18">
+            <tr class="calibre19">
+              <th class="calibre20">Command (Windows)</th>
+              <th class="calibre20">Command (Mac OS / Linux)</th>
+              <th class="calibre20">Description</th>
+              <th class="calibre20">Example</th>
+            </tr>
+          </thead>
+          <tbody class="calibre21">
+            <tr class="calibre19">
+              <td class="calibre22">exit</td>
+              <td class="calibre22">exit</td>
+              <td class="calibre22">close the window</td>
+              <td class="calibre22">
+                <strong class="calibre10"> exit </strong>
+              </td>
+            </tr>
+            <tr class="calibre19">
+              <td class="calibre22">cd</td>
+              <td class="calibre22">cd</td>
+              <td class="calibre22">change directory</td>
+              <td class="calibre22">
+                <strong class="calibre10"> cd test </strong>
+              </td>
+            </tr>
+            <tr class="calibre19">
+              <td class="calibre22">cd</td>
+              <td class="calibre22">pwd</td>
+              <td class="calibre22">show the current directory</td>
+              <td class="calibre22">
+                <strong class="calibre10"> cd </strong>
+                (Windows) or
+                <strong class="calibre10"> pwd </strong>
+                (Mac OS / Linux)
+              </td>
+            </tr>
+            <tr class="calibre19">
+              <td class="calibre22">dir</td>
+              <td class="calibre22">ls</td>
+              <td class="calibre22">list directories/files</td>
+              <td class="calibre22">
+                <strong class="calibre10"> dir </strong>
+              </td>
+            </tr>
+            <tr class="calibre19">
+              <td class="calibre22">copy</td>
+              <td class="calibre22">cp</td>
+              <td class="calibre22">copy file</td>
+              <td class="calibre22">
+                <strong class="calibre10">
+                  copy c:\test\test.txt c:\windows\test.txt
+                </strong>
+              </td>
+            </tr>
+            <tr class="calibre19">
+              <td class="calibre22">move</td>
+              <td class="calibre22">mv</td>
+              <td class="calibre22">move file</td>
+              <td class="calibre22">
+                <strong class="calibre10">
+                  move c:\test\test.txt c:\windows\test.txt
+                </strong>
+              </td>
+            </tr>
+            <tr class="calibre19">
+              <td class="calibre22">mkdir</td>
+              <td class="calibre22">mkdir</td>
+              <td class="calibre22">create a new directory</td>
+              <td class="calibre22">
+                <strong class="calibre10"> mkdir testdirectory </strong>
+              </td>
+            </tr>
+            <tr class="calibre19">
+              <td class="calibre22">rmdir (or del)</td>
+              <td class="calibre22">rm</td>
+              <td class="calibre22">delete a file</td>
+              <td class="calibre22">
+                <strong class="calibre10"> del c:\test\test.txt </strong>
+              </td>
+            </tr>
+            <tr class="calibre19">
+              <td class="calibre22">rmdir /S</td>
+              <td class="calibre22">rm -r</td>
+              <td class="calibre22">delete a directory</td>
+              <td class="calibre22">
+                <strong class="calibre10"> rm -r testdirectory </strong>
+              </td>
+            </tr>
+            <tr class="calibre19">
+              <td class="calibre22">[CMD] /?</td>
+              <td class="calibre22">man [CMD]</td>
+              <td class="calibre22">get help for a command</td>
+              <td class="calibre22">
+                <strong class="calibre10"> cd /? </strong>
+                (Windows) or
+                <strong class="calibre10"> man cd </strong>
+                (Mac OS / Linux)
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="calibre6">
+          These are just a very few of the commands you can run in your command
+          line, but you're not going to use anything more than that today.
+        </p>
+        <p class="calibre6">
+          If you're curious,
+          <a href="https://ss64.com" target="_blank"> ss64.com </a>
+          contains a complete reference of commands for all operating systems.
+        </p>
+        <h2 class="calibre7" id="ready">Ready?</h2>
+        <p class="calibre6">Let's dive into Python!</p>
+      </div>
+    </main>
+    <footer class="book-footer">
+      <p>
+        Generated from the original EPUB. Content © respective authors under CC
+        BY-SA 4.0.
+      </p>
+    </footer>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll(".nav-toggle").forEach(function (toggle) {
+          var targetId =
+            toggle.getAttribute("data-target") ||
+            toggle.getAttribute("aria-controls");
+          var drawer = document.getElementById(targetId);
+          if (!drawer) {
+            return;
+          }
+          var closeDrawer = function () {
+            drawer.classList.remove("open");
+            drawer.setAttribute("aria-hidden", "true");
+            toggle.setAttribute("aria-expanded", "false");
+            document.body.classList.remove("drawer-open");
+          };
+
+          toggle.addEventListener("click", function () {
+            var willOpen = !drawer.classList.contains("open");
+            if (willOpen) {
+              drawer.classList.add("open");
+              drawer.setAttribute("aria-hidden", "false");
+              toggle.setAttribute("aria-expanded", "true");
+              document.body.classList.add("drawer-open");
+            } else {
+              closeDrawer();
+            }
+          });
+
+          drawer.querySelectorAll("a").forEach(function (link) {
+            link.addEventListener("click", closeDrawer);
+          });
+
+          document.addEventListener("click", function (event) {
+            if (
+              !drawer.contains(event.target) &&
+              event.target !== toggle &&
+              !toggle.contains(event.target)
+            ) {
+              closeDrawer();
+            }
+          });
+
+          drawer.addEventListener("keydown", function (event) {
+            if (event.key === "Escape") {
+              closeDrawer();
+              toggle.focus();
+            }
+          });
+        });
+      });
+    </script>
+  </body>
 </html>
