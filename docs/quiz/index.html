@@ -186,6 +186,58 @@
       text-decoration: none;
       font-weight: 600;
     }
+    .question-bank {
+      margin-top: clamp(2rem, 5vw, 3rem);
+      border-top: 1px solid #d9e4f5;
+      padding-top: clamp(1.5rem, 4vw, 2rem);
+    }
+    .question-bank h3 {
+      font-size: 1.2rem;
+      margin: 0 0 1rem;
+      color: #102a4c;
+    }
+    .question-bank__sections {
+      display: grid;
+      gap: 1rem;
+    }
+    .question-bank__item {
+      border-radius: 12px;
+      background: #f4f8ff;
+      border: 1px solid #dce5f4;
+      overflow: hidden;
+    }
+    .question-bank__item summary {
+      cursor: pointer;
+      list-style: none;
+      padding: 0.95rem 1.1rem;
+      font-weight: 600;
+      color: #183861;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .question-bank__item summary::-webkit-details-marker {
+      display: none;
+    }
+    .question-bank__item summary::after {
+      content: '▸';
+      font-size: 1rem;
+      transition: transform 0.2s ease;
+    }
+    .question-bank__item[open] summary::after {
+      transform: rotate(90deg);
+    }
+    .question-bank__questions {
+      margin: 0;
+      padding: 0 1.2rem 1.2rem;
+      list-style: decimal;
+      display: grid;
+      gap: 0.75rem;
+    }
+    .question-bank__questions li {
+      color: #1c3453;
+      line-height: 1.5;
+    }
     @media (max-width: 640px) {
       .quiz-actions {
         justify-content: center;
@@ -238,6 +290,13 @@
      <a class="secondary button-like" href="../index.html" role="button">
       Back to home
      </a>
+    </div>
+    <div class="question-bank" id="question-bank" hidden>
+     <h3>
+      Question bank by section
+     </h3>
+     <div class="question-bank__sections" id="question-bank-sections">
+     </div>
     </div>
    </section>
    <section class="quiz-card" id="screen-question" hidden>
@@ -316,6 +375,8 @@
       scoreSummary: document.getElementById('score-summary'),
       scoreMessage: document.getElementById('score-message'),
       scoreBanner: document.getElementById('score-banner'),
+      questionBank: document.getElementById('question-bank'),
+      questionBankSections: document.getElementById('question-bank-sections'),
     };
 
     const state = {
@@ -401,6 +462,42 @@
       } else {
         elements.btnNext.textContent = 'Next';
       }
+    }
+
+    function renderQuestionBank() {
+      const container = elements.questionBank;
+      const sectionList = elements.questionBankSections;
+      if (!container || !sectionList) {
+        return;
+      }
+      if (!state.sections.length) {
+        container.hidden = true;
+        sectionList.innerHTML = '';
+        return;
+      }
+      sectionList.innerHTML = '';
+      state.sections.forEach((section) => {
+        const details = document.createElement('details');
+        details.className = 'question-bank__item';
+
+        const summary = document.createElement('summary');
+        summary.textContent = `${section.title} (${section.questions.length})`;
+        details.appendChild(summary);
+
+        if (Array.isArray(section.questions) && section.questions.length) {
+          const list = document.createElement('ol');
+          list.className = 'question-bank__questions';
+          section.questions.forEach((question) => {
+            const item = document.createElement('li');
+            item.textContent = question.prompt;
+            list.appendChild(item);
+          });
+          details.appendChild(list);
+        }
+
+        sectionList.appendChild(details);
+      });
+      container.hidden = false;
     }
 
     function recordResponse(selectedIndex) {
@@ -529,9 +626,11 @@
     fetch('questions.json')
       .then((response) => response.json())
       .then((data) => {
-        state.sections = data.sections;
-        elements.questionCount.textContent = String(state.sections.length);
+        const sections = Array.isArray(data.sections) ? data.sections : [];
+        state.sections = sections;
+        elements.questionCount.textContent = String(sections.length);
         elements.btnStart.disabled = false;
+        renderQuestionBank();
       })
       .catch((error) => {
         console.error('Failed to load questions.json', error);
