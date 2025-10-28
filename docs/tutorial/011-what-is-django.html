@@ -1,158 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
- <head>
-  <meta charset="utf-8"/>
-  <meta content="width=device-width, initial-scale=1" name="viewport"/>
-  <title>
-   What is Django?
-  </title>
-  <link href="book.css" rel="stylesheet"/>
-  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
-  <meta content="" name="description"/>
-  <meta content="HonKit 3.7.5" name="generator"/>
-  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
-  <link href="content/stylesheet.css" rel="stylesheet" type="text/css"/>
-  <link href="content/page_styles.css" rel="stylesheet" type="text/css"/>
-  <!-- Google tag (gtag.js) -->
-  <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-BN9REN07NH">
-  </script>
-  <script>
-   window.dataLayer = window.dataLayer || [];
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>What is Django?</title>
+    <link href="book.css" rel="stylesheet" />
+    <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+    <meta content="" name="description" />
+    <meta content="HonKit 3.7.5" name="generator" />
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <link href="content/stylesheet.css" rel="stylesheet" type="text/css" />
+    <link href="content/page_styles.css" rel="stylesheet" type="text/css" />
+    <!-- Google tag (gtag.js) -->
+    <script
+      async=""
+      src="https://www.googletagmanager.com/gtag/js?id=G-BN9REN07NH"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
       function gtag() {
         dataLayer.push(arguments);
       }
       gtag("js", new Date());
 
       gtag("config", "G-BN9REN07NH");
-  </script>
- </head>
- <body data-chapter="011-what-is-django">
-  <header class="book-header">
-   <h1 class="page-title">
-    What is Django?
-   </h1>
-  </header>
-  <main>
-   <aside class="page-toc">
-    <button aria-controls="page-toc-011-what-is-django" aria-expanded="false" aria-label="Toggle page outline" class="page-toc__toggle" type="button">
-     ▸
-    </button>
-    <div class="page-toc__panel" id="page-toc-011-what-is-django">
-    </div>
-   </aside>
-   <div class="page">
-    <h2 class="calibre1" id="calibre_toc_9">
-     What is Django?
-    </h2>
-    <p class="calibre6">
-     Django (/ˈdʒæŋɡoʊ/
-     <em class="calibre14">
-      jang-goh
-     </em>
-     ) is a free and open source web application framework, written in
+    </script>
+  </head>
+  <body data-chapter="011-what-is-django">
+    <header class="book-header">
+      <h1 class="page-title">What is Django?</h1>
+    </header>
+    <main>
+      <div class="page">
+        <h2 class="calibre1" id="calibre_toc_9">What is Django?</h2>
+        <p class="calibre6">
+          Django (/ˈdʒæŋɡoʊ/
+          <em class="calibre14"> jang-goh </em>
+          ) is a free and open source web application framework, written in
           Python. A web framework is a set of components that helps you to
           develop websites faster and easier.
-    </p>
-    <p class="calibre6">
-     When you're building a website, you always need a similar set of
+        </p>
+        <p class="calibre6">
+          When you're building a website, you always need a similar set of
           components: a way to handle user authentication (signing up, signing
           in, signing out), a management panel for your website, forms, a way to
           upload files, etc.
-    </p>
-    <p class="calibre6">
-     Luckily for you, other people long ago noticed that web developers
+        </p>
+        <p class="calibre6">
+          Luckily for you, other people long ago noticed that web developers
           face similar problems when building a new site, so they teamed up and
           created frameworks (Django being one of them) that give you ready-made
           components to use.
-    </p>
-    <p class="calibre6">
-     Frameworks exist to save you from having to reinvent the wheel and to
+        </p>
+        <p class="calibre6">
+          Frameworks exist to save you from having to reinvent the wheel and to
           help alleviate some of the overhead when you’re building a new site.
-    </p>
-    <h2 class="calibre7" id="why-do-you-need-a-framework">
-     Why do you need a framework?
-    </h2>
-    <p class="calibre6">
-     To understand what Django is actually for, we need to take a closer
+        </p>
+        <h2 class="calibre7" id="why-do-you-need-a-framework">
+          Why do you need a framework?
+        </h2>
+        <p class="calibre6">
+          To understand what Django is actually for, we need to take a closer
           look at the servers. The first thing is that the server needs to know
           that you want it to serve you a web page.
-    </p>
-    <p class="calibre6">
-     Imagine a mailbox (port) which is monitored for incoming letters
+        </p>
+        <p class="calibre6">
+          Imagine a mailbox (port) which is monitored for incoming letters
           (requests). This is done by a web server. The web server reads the
           letter and then sends a response with a webpage. But when you want to
           send something, you need to have some content. And Django is something
           that helps you create the content.
-    </p>
-    <h2 class="calibre7" id="what-happens-when-someone-requests-a-website-from-your-server">
-     What happens when someone requests a website from your server?
-    </h2>
-    <p class="calibre6">
-     When a request comes to a web server, it's passed to Django which
+        </p>
+        <h2
+          class="calibre7"
+          id="what-happens-when-someone-requests-a-website-from-your-server"
+        >
+          What happens when someone requests a website from your server?
+        </h2>
+        <p class="calibre6">
+          When a request comes to a web server, it's passed to Django which
           tries to figure out what is actually requested. It takes a web page
           address first and tries to figure out what to do. This part is done by
           Django's
-     <strong class="calibre10">
-      urlresolver
-     </strong>
-     (note that a website address is called a URL – Uniform Resource
+          <strong class="calibre10"> urlresolver </strong>
+          (note that a website address is called a URL – Uniform Resource
           Locator – so the name
-     <em class="calibre14">
-      urlresolver
-     </em>
-     makes sense). It is not very smart – it takes a list of patterns and
+          <em class="calibre14"> urlresolver </em>
+          makes sense). It is not very smart – it takes a list of patterns and
           tries to match the URL. Django checks patterns from top to bottom and
           if something is matched, then Django passes the request to the
           associated function (which is called
-     <em class="calibre14">
-      view
-     </em>
-     ).
-    </p>
-    <p class="calibre6">
-     Imagine a mail carrier with a letter. She is walking down the street
+          <em class="calibre14"> view </em>
+          ).
+        </p>
+        <p class="calibre6">
+          Imagine a mail carrier with a letter. She is walking down the street
           and checks each house number against the one on the letter. If it
           matches, she puts the letter there. This is how the urlresolver works!
-    </p>
-    <p class="calibre6">
-     In the
-     <em class="calibre14">
-      view
-     </em>
-     function, all the interesting things are done: we can look at a
+        </p>
+        <p class="calibre6">
+          In the
+          <em class="calibre14"> view </em>
+          function, all the interesting things are done: we can look at a
           database to look for some information. Maybe the user asked to change
           something in the data? Like a letter saying, "Please change the
           description of my job." The
-     <em class="calibre14">
-      view
-     </em>
-     can check if you are allowed to do that, then update the job
+          <em class="calibre14"> view </em>
+          can check if you are allowed to do that, then update the job
           description for you and send back a message: "Done!" Then the
-     <em class="calibre14">
-      view
-     </em>
-     generates a response and Django can send it to the user's web browser.
-    </p>
-    <p class="calibre6">
-     The description above is a little bit simplified, but you don't need
+          <em class="calibre14"> view </em>
+          generates a response and Django can send it to the user's web browser.
+        </p>
+        <p class="calibre6">
+          The description above is a little bit simplified, but you don't need
           to know all the technical things yet. Having a general idea is enough.
-    </p>
-    <p class="calibre6">
-     So instead of diving too much into details, we will start creating
+        </p>
+        <p class="calibre6">
+          So instead of diving too much into details, we will start creating
           something with Django and we will learn all the important parts along
           the way!
-    </p>
-   </div>
-  </main>
-  <footer class="book-footer">
-   <p>
-    Generated from the original EPUB. Content © respective authors under CC
+        </p>
+      </div>
+    </main>
+    <footer class="book-footer">
+      <p>
+        Generated from the original EPUB. Content © respective authors under CC
         BY-SA 4.0.
-   </p>
-  </footer>
-  <script defer="" src="toc.js">
-  </script>
-  <script defer="" src="nav.js">
-  </script>
- </body>
+      </p>
+    </footer>
+    <script defer="" src="toc.js"></script>
+    <script defer="" src="nav.js"></script>
+  </body>
 </html>

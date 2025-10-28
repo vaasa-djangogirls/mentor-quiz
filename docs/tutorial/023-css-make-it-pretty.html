@@ -1,381 +1,292 @@
 <!DOCTYPE html>
 <html lang="en">
- <head>
-  <meta charset="utf-8"/>
-  <meta content="width=device-width, initial-scale=1" name="viewport"/>
-  <title>
-   CSS – make it pretty
-  </title>
-  <link href="book.css" rel="stylesheet"/>
-  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
-  <meta content="" name="description"/>
-  <meta content="HonKit 3.7.5" name="generator"/>
-  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
-  <link href="content/stylesheet.css" rel="stylesheet" type="text/css"/>
-  <link href="content/page_styles.css" rel="stylesheet" type="text/css"/>
-  <!-- Google tag (gtag.js) -->
-  <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-BN9REN07NH">
-  </script>
-  <script>
-   window.dataLayer = window.dataLayer || [];
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>CSS – make it pretty</title>
+    <link href="book.css" rel="stylesheet" />
+    <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+    <meta content="" name="description" />
+    <meta content="HonKit 3.7.5" name="generator" />
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <link href="content/stylesheet.css" rel="stylesheet" type="text/css" />
+    <link href="content/page_styles.css" rel="stylesheet" type="text/css" />
+    <!-- Google tag (gtag.js) -->
+    <script
+      async=""
+      src="https://www.googletagmanager.com/gtag/js?id=G-BN9REN07NH"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
       function gtag() {
         dataLayer.push(arguments);
       }
       gtag("js", new Date());
 
       gtag("config", "G-BN9REN07NH");
-  </script>
- </head>
- <body data-chapter="023-css-make-it-pretty">
-  <header class="book-header">
-   <h1 class="page-title">
-    CSS – make it pretty
-   </h1>
-  </header>
-  <main>
-   <aside class="page-toc">
-    <button aria-controls="page-toc-023-css-make-it-pretty" aria-expanded="false" aria-label="Toggle page outline" class="page-toc__toggle" type="button">
-     ▸
-    </button>
-    <div class="page-toc__panel" id="page-toc-023-css-make-it-pretty">
-    </div>
-   </aside>
-   <div class="page">
-    <h2 class="calibre1" id="css-–-make-it-pretty">
-     CSS – make it pretty!
-    </h2>
-    <p class="calibre6">
-     Our blog still looks pretty ugly, right? Time to make it nice! We will
+    </script>
+  </head>
+  <body data-chapter="023-css-make-it-pretty">
+    <header class="book-header">
+      <h1 class="page-title">CSS – make it pretty</h1>
+    </header>
+    <main>
+      <div class="page">
+        <h2 class="calibre1" id="css-–-make-it-pretty">
+          CSS – make it pretty!
+        </h2>
+        <p class="calibre6">
+          Our blog still looks pretty ugly, right? Time to make it nice! We will
           use CSS for that.
-    </p>
-    <h2 class="calibre7" id="what-is-css">
-     What is CSS?
-    </h2>
-    <p class="calibre6">
-     Cascading Style Sheets (CSS) is a language used for describing the
+        </p>
+        <h2 class="calibre7" id="what-is-css">What is CSS?</h2>
+        <p class="calibre6">
+          Cascading Style Sheets (CSS) is a language used for describing the
           look and formatting of a website written in a markup language (like
           HTML). Treat it as make-up for our web page. ;)
-    </p>
-    <p class="calibre6">
-     But we don't want to start from scratch again, right? Once more, we'll
+        </p>
+        <p class="calibre6">
+          But we don't want to start from scratch again, right? Once more, we'll
           use something that programmers released on the Internet for free.
           Reinventing the wheel is no fun, you know.
-    </p>
-    <h2 class="calibre7" id="lets-use-bootstrap">
-     Let's use Bootstrap!
-    </h2>
-    <p class="calibre6">
-     Bootstrap is one of the most popular HTML and CSS frameworks for
+        </p>
+        <h2 class="calibre7" id="lets-use-bootstrap">Let's use Bootstrap!</h2>
+        <p class="calibre6">
+          Bootstrap is one of the most popular HTML and CSS frameworks for
           developing beautiful websites:
-     <a href="https://getbootstrap.com/" target="_blank">
-      https://getbootstrap.com/
-     </a>
-    </p>
-    <p class="calibre6">
-     It was written by programmers who worked for Twitter. Now it's
+          <a href="https://getbootstrap.com/" target="_blank">
+            https://getbootstrap.com/
+          </a>
+        </p>
+        <p class="calibre6">
+          It was written by programmers who worked for Twitter. Now it's
           developed by volunteers from all over the world!
-    </p>
-    <h2 class="calibre7" id="install-bootstrap">
-     Install Bootstrap
-    </h2>
-    <p class="calibre6">
-     To install Bootstrap, open up your
-     <code class="calibre11">
-      .html
-     </code>
-     file in the code editor and add this to the
-     <code class="calibre11">
-      &lt;head&gt;
-     </code>
-     section:
-    </p>
-    <p class="calibre6">
-    </p>
-    <p class="calibre6">
-     blog/templates/blog/post_list.html
-    </p>
-    <p class="calibre6">
-    </p>
-    <pre class="calibre13"><code class="calibre11"><span>&lt;<span>link</span> <span>rel</span>=<span>"stylesheet"</span> <span>href</span>=<span>"https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"</span> <span>integrity</span>=<span>"sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"</span> <span>crossorigin</span>=<span>"anonymous"</span>&gt;</span>
+        </p>
+        <h2 class="calibre7" id="install-bootstrap">Install Bootstrap</h2>
+        <p class="calibre6">
+          To install Bootstrap, open up your
+          <code class="calibre11"> .html </code>
+          file in the code editor and add this to the
+          <code class="calibre11"> &lt;head&gt; </code>
+          section:
+        </p>
+        <p class="calibre6"></p>
+        <p class="calibre6">blog/templates/blog/post_list.html</p>
+        <p class="calibre6"></p>
+        <pre
+          class="calibre13"
+        ><code class="calibre11"><span>&lt;<span>link</span> <span>rel</span>=<span>"stylesheet"</span> <span>href</span>=<span>"https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"</span> <span>integrity</span>=<span>"sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"</span> <span>crossorigin</span>=<span>"anonymous"</span>&gt;</span>
         </code></pre>
-    <p class="calibre6">
-     This doesn't add any files to your project. It just points to files
+        <p class="calibre6">
+          This doesn't add any files to your project. It just points to files
           that exist on the Internet. So go ahead, open your website and refresh
           the page. Here it is!
-    </p>
-    <p class="calibre6">
-     <img alt="Figure 14.1" class="calibre8" src="content/bootstrap1.png"/>
-    </p>
-    <p class="calibre6">
-     Looking nicer already!
-    </p>
-    <h2 class="calibre7" id="static-files-in-django">
-     Static files in Django
-    </h2>
-    <p class="calibre6">
-     Finally we will take a closer look at these things we've been calling
-     <strong class="calibre10">
-      static files
-     </strong>
-     . Static files are all your CSS and images. Their content doesn't
+        </p>
+        <p class="calibre6">
+          <img
+            alt="Figure 14.1"
+            class="calibre8"
+            src="content/bootstrap1.png"
+          />
+        </p>
+        <p class="calibre6">Looking nicer already!</p>
+        <h2 class="calibre7" id="static-files-in-django">
+          Static files in Django
+        </h2>
+        <p class="calibre6">
+          Finally we will take a closer look at these things we've been calling
+          <strong class="calibre10"> static files </strong>
+          . Static files are all your CSS and images. Their content doesn't
           depend on the request context and will be the same for every user.
-    </p>
-    <h3 class="calibre12" id="where-to-put-static-files-for-django">
-     Where to put static files for Django
-    </h3>
-    <p class="calibre6">
-     Django already knows where to find the static files for the built-in
+        </p>
+        <h3 class="calibre12" id="where-to-put-static-files-for-django">
+          Where to put static files for Django
+        </h3>
+        <p class="calibre6">
+          Django already knows where to find the static files for the built-in
           "admin" app. Now we need to add some static files for our own app,
-     <code class="calibre11">
-      blog
-     </code>
-     .
-    </p>
-    <p class="calibre6">
-     We do that by creating a folder called
-     <code class="calibre11">
-      static
-     </code>
-     inside the blog app:
-    </p>
-    <pre class="calibre13"><code class="calibre11">djangogirls
+          <code class="calibre11"> blog </code>
+          .
+        </p>
+        <p class="calibre6">
+          We do that by creating a folder called
+          <code class="calibre11"> static </code>
+          inside the blog app:
+        </p>
+        <pre class="calibre13"><code class="calibre11">djangogirls
         ├── blog
         │   ├── migrations
         │   ├── static
         │   └── templates
         └── mysite
         </code></pre>
-    <p class="calibre6">
-     Django will automatically find any folders called "static" inside any
+        <p class="calibre6">
+          Django will automatically find any folders called "static" inside any
           of your apps' folders. Then it will be able to use their contents as
           static files.
-    </p>
-    <h2 class="calibre7" id="your-first-css-file">
-     Your first CSS file!
-    </h2>
-    <p class="calibre6">
-     Let's create a CSS file now, to add your own style to your web page.
+        </p>
+        <h2 class="calibre7" id="your-first-css-file">Your first CSS file!</h2>
+        <p class="calibre6">
+          Let's create a CSS file now, to add your own style to your web page.
           Create a new directory called
-     <code class="calibre11">
-      css
-     </code>
-     inside your
-     <code class="calibre11">
-      static
-     </code>
-     directory. Then create a new file called
-     <code class="calibre11">
-      blog.css
-     </code>
-     inside this
-     <code class="calibre11">
-      css
-     </code>
-     directory. Ready?
-    </p>
-    <pre class="calibre13"><code class="calibre11">djangogirls
+          <code class="calibre11"> css </code>
+          inside your
+          <code class="calibre11"> static </code>
+          directory. Then create a new file called
+          <code class="calibre11"> blog.css </code>
+          inside this
+          <code class="calibre11"> css </code>
+          directory. Ready?
+        </p>
+        <pre class="calibre13"><code class="calibre11">djangogirls
         └─── blog
              └─── static
                   └─── css
                        └─── blog.css
         </code></pre>
-    <p class="calibre6">
-     Time to write some CSS! Open up the
-     <code class="calibre11">
-      blog/static/css/blog.css
-     </code>
-     file in your code editor.
-    </p>
-    <p class="calibre6">
-     We won't be going too deep into customizing and learning about CSS
+        <p class="calibre6">
+          Time to write some CSS! Open up the
+          <code class="calibre11"> blog/static/css/blog.css </code>
+          file in your code editor.
+        </p>
+        <p class="calibre6">
+          We won't be going too deep into customizing and learning about CSS
           here. There is a recommendation for a free CSS course at the end of
           this page if you would like to learn more.
-    </p>
-    <p class="calibre6">
-     But let's do at least a little. Maybe we could change the color of our
+        </p>
+        <p class="calibre6">
+          But let's do at least a little. Maybe we could change the color of our
           headers? To understand colors, computers use special codes. These
           codes start with
-     <code class="calibre11">
-      #
-     </code>
-     followed by 6 letters (A–F) and numbers (0–9). For example, the code
+          <code class="calibre11"> # </code>
+          followed by 6 letters (A–F) and numbers (0–9). For example, the code
           for blue is
-     <code class="calibre11">
-      #0000FF
-     </code>
-     . You can find the color codes for many colors here:
-     <a href="https://www.colorpicker.com/" target="_blank">
-      https://www.colorpicker.com/
-     </a>
-     . You may also use predefined
-     <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/named-color" target="_blank">
-      named colors
-     </a>
-     , such as
-     <code class="calibre11">
-      red
-     </code>
-     and
-     <code class="calibre11">
-      green
-     </code>
-     .
-    </p>
-    <p class="calibre6">
-     In your
-     <code class="calibre11">
-      blog/static/css/blog.css
-     </code>
-     file you should add the following code:
-    </p>
-    <p class="calibre6">
-    </p>
-    <p class="calibre6">
-     blog/static/css/blog.css
-    </p>
-    <p class="calibre6">
-    </p>
-    <pre class="calibre13"><code class="calibre11"><span>h1</span> <span>a</span>, <span>h2</span> <span>a</span> {
+          <code class="calibre11"> #0000FF </code>
+          . You can find the color codes for many colors here:
+          <a href="https://www.colorpicker.com/" target="_blank">
+            https://www.colorpicker.com/
+          </a>
+          . You may also use predefined
+          <a
+            href="https://developer.mozilla.org/en-US/docs/Web/CSS/named-color"
+            target="_blank"
+          >
+            named colors
+          </a>
+          , such as
+          <code class="calibre11"> red </code>
+          and
+          <code class="calibre11"> green </code>
+          .
+        </p>
+        <p class="calibre6">
+          In your
+          <code class="calibre11"> blog/static/css/blog.css </code>
+          file you should add the following code:
+        </p>
+        <p class="calibre6"></p>
+        <p class="calibre6">blog/static/css/blog.css</p>
+        <p class="calibre6"></p>
+        <pre
+          class="calibre13"
+        ><code class="calibre11"><span>h1</span> <span>a</span>, <span>h2</span> <span>a</span> {
             <span>color</span>: <span>#C25100</span>;
         }
         </code></pre>
-    <p class="calibre6">
-     <code class="calibre11">
-      h1 a
-     </code>
-     is a CSS Selector. This means we're applying our styles to any
-     <code class="calibre11">
-      a
-     </code>
-     element inside of an
-     <code class="calibre11">
-      h1
-     </code>
-     element; the
-     <code class="calibre11">
-      h2 a
-     </code>
-     selector does the same thing for
-     <code class="calibre11">
-      h2
-     </code>
-     elements. So when we have something like
-     <code class="calibre11">
-      &lt;h1&gt;&lt;a href=""&gt;link&lt;/a&gt;&lt;/h1&gt;
-     </code>
-     , the
-     <code class="calibre11">
-      h1 a
-     </code>
-     style will apply. In this case, we're telling it to change its color
+        <p class="calibre6">
+          <code class="calibre11"> h1 a </code>
+          is a CSS Selector. This means we're applying our styles to any
+          <code class="calibre11"> a </code>
+          element inside of an
+          <code class="calibre11"> h1 </code>
+          element; the
+          <code class="calibre11"> h2 a </code>
+          selector does the same thing for
+          <code class="calibre11"> h2 </code>
+          elements. So when we have something like
+          <code class="calibre11">
+            &lt;h1&gt;&lt;a href=""&gt;link&lt;/a&gt;&lt;/h1&gt;
+          </code>
+          , the
+          <code class="calibre11"> h1 a </code>
+          style will apply. In this case, we're telling it to change its color
           to
-     <code class="calibre11">
-      #C25100
-     </code>
-     , which is a dark orange. Or you can put your own color here, but make
+          <code class="calibre11"> #C25100 </code>
+          , which is a dark orange. Or you can put your own color here, but make
           sure it has good contrast against a white background!
-    </p>
-    <p class="calibre6">
-     In a CSS file we determine styles for elements in the HTML file. The
+        </p>
+        <p class="calibre6">
+          In a CSS file we determine styles for elements in the HTML file. The
           first way we identify elements is with the element name. You might
           remember these as tags from the HTML section. Things like
-     <code class="calibre11">
-      a
-     </code>
-     ,
-     <code class="calibre11">
-      h1
-     </code>
-     , and
-     <code class="calibre11">
-      body
-     </code>
-     are all examples of element names. We also identify elements by the
+          <code class="calibre11"> a </code>
+          ,
+          <code class="calibre11"> h1 </code>
+          , and
+          <code class="calibre11"> body </code>
+          are all examples of element names. We also identify elements by the
           attribute
-     <code class="calibre11">
-      class
-     </code>
-     or the attribute
-     <code class="calibre11">
-      id
-     </code>
-     . Class and id are names you give the element by yourself. Classes
+          <code class="calibre11"> class </code>
+          or the attribute
+          <code class="calibre11"> id </code>
+          . Class and id are names you give the element by yourself. Classes
           define groups of elements, and ids point to specific elements. For
           example, you could identify the following element by using the element
           name
-     <code class="calibre11">
-      a
-     </code>
-     , the class
-     <code class="calibre11">
-      external_link
-     </code>
-     , or the id
-     <code class="calibre11">
-      link_to_wiki_page
-     </code>
-     :
-    </p>
-    <pre class="calibre13"><code class="calibre11"><span>&lt;<span>a</span> <span>href</span>=<span>"https://en.wikipedia.org/wiki/Django"</span> <span>class</span>=<span>"external_link"</span> <span>id</span>=<span>"link_to_wiki_page"</span>&gt;</span>
+          <code class="calibre11"> a </code>
+          , the class
+          <code class="calibre11"> external_link </code>
+          , or the id
+          <code class="calibre11"> link_to_wiki_page </code>
+          :
+        </p>
+        <pre
+          class="calibre13"
+        ><code class="calibre11"><span>&lt;<span>a</span> <span>href</span>=<span>"https://en.wikipedia.org/wiki/Django"</span> <span>class</span>=<span>"external_link"</span> <span>id</span>=<span>"link_to_wiki_page"</span>&gt;</span>
         </code></pre>
-    <p class="calibre6">
-     You can read more about
-     <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_selectors" target="_blank">
-      CSS Selectors at MDN
-     </a>
-     . We also need to tell our HTML template that we added some CSS. Open
+        <p class="calibre6">
+          You can read more about
+          <a
+            href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_selectors"
+            target="_blank"
+          >
+            CSS Selectors at MDN
+          </a>
+          . We also need to tell our HTML template that we added some CSS. Open
           the
-     <code class="calibre11">
-      blog/templates/blog/post_list.html
-     </code>
-     file in the code editor and add this line at the very beginning of it:
-    </p>
-    <p class="calibre6">
-    </p>
-    <p class="calibre6">
-     blog/templates/blog/post_list.html
-    </p>
-    <p class="calibre6">
-    </p>
-    <pre class="calibre13"><code class="calibre11">{% load static %}
+          <code class="calibre11"> blog/templates/blog/post_list.html </code>
+          file in the code editor and add this line at the very beginning of it:
+        </p>
+        <p class="calibre6"></p>
+        <p class="calibre6">blog/templates/blog/post_list.html</p>
+        <p class="calibre6"></p>
+        <pre class="calibre13"><code class="calibre11">{% load static %}
         </code></pre>
-    <p class="calibre6">
-     We're just loading static files here. :) Between the
-     <code class="calibre11">
-      &lt;head&gt;
-     </code>
-     and
-     <code class="calibre11">
-      &lt;/head&gt;
-     </code>
-     tags, after the links to the Bootstrap CSS files, add this line:
-    </p>
-    <p class="calibre6">
-    </p>
-    <p class="calibre6">
-     blog/templates/blog/post_list.html
-    </p>
-    <p class="calibre6">
-    </p>
-    <pre class="calibre13"><code class="calibre11"><span>&lt;<span>link</span> <span>rel</span>=<span>"stylesheet"</span> <span>href</span>=<span>"{% static 'css/blog.css' %}"</span>&gt;</span>
+        <p class="calibre6">
+          We're just loading static files here. :) Between the
+          <code class="calibre11"> &lt;head&gt; </code>
+          and
+          <code class="calibre11"> &lt;/head&gt; </code>
+          tags, after the links to the Bootstrap CSS files, add this line:
+        </p>
+        <p class="calibre6"></p>
+        <p class="calibre6">blog/templates/blog/post_list.html</p>
+        <p class="calibre6"></p>
+        <pre
+          class="calibre13"
+        ><code class="calibre11"><span>&lt;<span>link</span> <span>rel</span>=<span>"stylesheet"</span> <span>href</span>=<span>"{% static 'css/blog.css' %}"</span>&gt;</span>
         </code></pre>
-    <p class="calibre6">
-     The browser reads the files in the order they're given, so we need to
+        <p class="calibre6">
+          The browser reads the files in the order they're given, so we need to
           make sure this is in the right place. Otherwise the code in our file
           may be overridden by code in Bootstrap files. We just told our
           template where our CSS file is located.
-    </p>
-    <p class="calibre6">
-     Your file should now look like this:
-    </p>
-    <p class="calibre6">
-    </p>
-    <p class="calibre6">
-     blog/templates/blog/post_list.html
-    </p>
-    <p class="calibre6">
-    </p>
-    <pre class="calibre13"><code class="calibre11">{% load static %}
+        </p>
+        <p class="calibre6">Your file should now look like this:</p>
+        <p class="calibre6"></p>
+        <p class="calibre6">blog/templates/blog/post_list.html</p>
+        <p class="calibre6"></p>
+        <pre class="calibre13"><code class="calibre11">{% load static %}
         <span>&lt;!DOCTYPE <span>html</span>&gt;</span>
         <span>&lt;<span>html</span>&gt;</span>
             <span>&lt;<span>head</span>&gt;</span>
@@ -398,182 +309,136 @@
             <span>&lt;/<span>body</span>&gt;</span>
         <span>&lt;/<span>html</span>&gt;</span>
         </code></pre>
-    <p class="calibre6">
-     OK, save the file and refresh the site!
-    </p>
-    <p class="calibre6">
-     <img alt="Figure 14.2" class="calibre8" src="content/color2.png"/>
-    </p>
-    <p class="calibre6">
-     Nice work! Maybe we would also like to give our website a little air
+        <p class="calibre6">OK, save the file and refresh the site!</p>
+        <p class="calibre6">
+          <img alt="Figure 14.2" class="calibre8" src="content/color2.png" />
+        </p>
+        <p class="calibre6">
+          Nice work! Maybe we would also like to give our website a little air
           and increase the margin on the left side? Let's try this!
-    </p>
-    <p class="calibre6">
-    </p>
-    <p class="calibre6">
-     blog/static/css/blog.css
-    </p>
-    <p class="calibre6">
-    </p>
-    <pre class="calibre13"><code class="calibre11"><span>body</span> {
+        </p>
+        <p class="calibre6"></p>
+        <p class="calibre6">blog/static/css/blog.css</p>
+        <p class="calibre6"></p>
+        <pre class="calibre13"><code class="calibre11"><span>body</span> {
             <span>padding-left</span>: <span>15px</span>;
         }
         </code></pre>
-    <p class="calibre6">
-     Add that to your CSS, save the file and see how it works!
-    </p>
-    <p class="calibre6">
-     <img alt="Figure 14.3" class="calibre8" src="content/margin2.png"/>
-    </p>
-    <p class="calibre6">
-     Maybe we can customize the font in our header? Paste this into your
-     <code class="calibre11">
-      &lt;head&gt;
-     </code>
-     in
-     <code class="calibre11">
-      blog/templates/blog/post_list.html
-     </code>
-     file:
-    </p>
-    <p class="calibre6">
-    </p>
-    <p class="calibre6">
-     blog/templates/blog/post_list.html
-    </p>
-    <p class="calibre6">
-    </p>
-    <pre class="calibre13"><code class="calibre11"><span>&lt;<span>link</span> <span>rel</span>=<span>"stylesheet"</span> <span>href</span>=<span>"https://fonts.googleapis.com/css?family=Lobster&amp;subset=latin,latin-ext"</span>&gt;</span>
+        <p class="calibre6">
+          Add that to your CSS, save the file and see how it works!
+        </p>
+        <p class="calibre6">
+          <img alt="Figure 14.3" class="calibre8" src="content/margin2.png" />
+        </p>
+        <p class="calibre6">
+          Maybe we can customize the font in our header? Paste this into your
+          <code class="calibre11"> &lt;head&gt; </code>
+          in
+          <code class="calibre11"> blog/templates/blog/post_list.html </code>
+          file:
+        </p>
+        <p class="calibre6"></p>
+        <p class="calibre6">blog/templates/blog/post_list.html</p>
+        <p class="calibre6"></p>
+        <pre
+          class="calibre13"
+        ><code class="calibre11"><span>&lt;<span>link</span> <span>rel</span>=<span>"stylesheet"</span> <span>href</span>=<span>"https://fonts.googleapis.com/css?family=Lobster&amp;subset=latin,latin-ext"</span>&gt;</span>
         </code></pre>
-    <p class="calibre6">
-     Again, check the order and place it before the link to
-     <code class="calibre11">
-      blog/static/css/blog.css
-     </code>
-     . This line will import a font called
-     <em class="calibre14">
-      Lobster
-     </em>
-     from Google Fonts (
-     <a href="https://www.google.com/fonts" target="_blank">
-      https://www.google.com/fonts
-     </a>
-     ).
-    </p>
-    <p class="calibre6">
-     Find the
-     <code class="calibre11">
-      h1 a
-     </code>
-     declaration block (the code between braces
-     <code class="calibre11">
-      {
-     </code>
-     and
-     <code class="calibre11">
-      }
-     </code>
-     ) in the CSS file
-     <code class="calibre11">
-      blog/static/css/blog.css
-     </code>
-     . Now add the line
-     <code class="calibre11">
-      font-family: 'Lobster';
-     </code>
-     between the braces, and refresh the page:
-    </p>
-    <p class="calibre6">
-    </p>
-    <p class="calibre6">
-     blog/static/css/blog.css
-    </p>
-    <p class="calibre6">
-    </p>
-    <pre class="calibre13"><code class="calibre11"><span>h1</span> <span>a</span>, <span>h2</span> <span>a</span> {
+        <p class="calibre6">
+          Again, check the order and place it before the link to
+          <code class="calibre11"> blog/static/css/blog.css </code>
+          . This line will import a font called
+          <em class="calibre14"> Lobster </em>
+          from Google Fonts (
+          <a href="https://www.google.com/fonts" target="_blank">
+            https://www.google.com/fonts
+          </a>
+          ).
+        </p>
+        <p class="calibre6">
+          Find the
+          <code class="calibre11"> h1 a </code>
+          declaration block (the code between braces
+          <code class="calibre11"> { </code>
+          and
+          <code class="calibre11"> } </code>
+          ) in the CSS file
+          <code class="calibre11"> blog/static/css/blog.css </code>
+          . Now add the line
+          <code class="calibre11"> font-family: 'Lobster'; </code>
+          between the braces, and refresh the page:
+        </p>
+        <p class="calibre6"></p>
+        <p class="calibre6">blog/static/css/blog.css</p>
+        <p class="calibre6"></p>
+        <pre
+          class="calibre13"
+        ><code class="calibre11"><span>h1</span> <span>a</span>, <span>h2</span> <span>a</span> {
             <span>color</span>: <span>#C25100</span>;
             <span>font-family</span>: <span>'Lobster'</span>;
         }
         </code></pre>
-    <p class="calibre6">
-     <img alt="Figure 14.3" class="calibre8" src="content/font.png"/>
-    </p>
-    <p class="calibre6">
-     Great!
-    </p>
-    <p class="calibre6">
-     As mentioned above, CSS has a concept of classes. These allow you to
+        <p class="calibre6">
+          <img alt="Figure 14.3" class="calibre8" src="content/font.png" />
+        </p>
+        <p class="calibre6">Great!</p>
+        <p class="calibre6">
+          As mentioned above, CSS has a concept of classes. These allow you to
           name a part of the HTML code and apply styles only to this part,
           without affecting other parts. This can be super helpful! Maybe you
           have two divs that are doing something different (like your header and
           your post). A class can help you make them look different.
-    </p>
-    <p class="calibre6">
-     Go ahead and name some parts of the HTML code. Replace the
-     <code class="calibre11">
-      header
-     </code>
-     that contains your header with the following:
-    </p>
-    <p class="calibre6">
-    </p>
-    <p class="calibre6">
-     blog/templates/blog/post_list.html
-    </p>
-    <p class="calibre6">
-    </p>
-    <pre class="calibre13"><code class="calibre11"><span>&lt;<span>header</span> <span>class</span>=<span>"page-header"</span>&gt;</span>
+        </p>
+        <p class="calibre6">
+          Go ahead and name some parts of the HTML code. Replace the
+          <code class="calibre11"> header </code>
+          that contains your header with the following:
+        </p>
+        <p class="calibre6"></p>
+        <p class="calibre6">blog/templates/blog/post_list.html</p>
+        <p class="calibre6"></p>
+        <pre
+          class="calibre13"
+        ><code class="calibre11"><span>&lt;<span>header</span> <span>class</span>=<span>"page-header"</span>&gt;</span>
             <span>&lt;<span>div</span> <span>class</span>=<span>"container"</span>&gt;</span>
                 <span>&lt;<span>h1</span>&gt;</span><span>&lt;<span>a</span> <span>href</span>=<span>"/"</span>&gt;</span>Django Girls Blog<span>&lt;/<span>a</span>&gt;</span><span>&lt;/<span>h1</span>&gt;</span>
             <span>&lt;/<span>div</span>&gt;</span>
         <span>&lt;/<span>header</span>&gt;</span>
         </code></pre>
-    <p class="calibre6">
-     And now add a class
-     <code class="calibre11">
-      post
-     </code>
-     to your
-     <code class="calibre11">
-      article
-     </code>
-     containing a blog post.
-    </p>
-    <p class="calibre6">
-    </p>
-    <p class="calibre6">
-     blog/templates/blog/post_list.html
-    </p>
-    <p class="calibre6">
-    </p>
-    <pre class="calibre13"><code class="calibre11"><span>&lt;<span>article</span> <span>class</span>=<span>"post"</span>&gt;</span>
+        <p class="calibre6">
+          And now add a class
+          <code class="calibre11"> post </code>
+          to your
+          <code class="calibre11"> article </code>
+          containing a blog post.
+        </p>
+        <p class="calibre6"></p>
+        <p class="calibre6">blog/templates/blog/post_list.html</p>
+        <p class="calibre6"></p>
+        <pre
+          class="calibre13"
+        ><code class="calibre11"><span>&lt;<span>article</span> <span>class</span>=<span>"post"</span>&gt;</span>
             <span>&lt;<span>time</span>&gt;</span>published: {{ post.published_date }}<span>&lt;/<span>time</span>&gt;</span>
             <span>&lt;<span>h2</span>&gt;</span><span>&lt;<span>a</span> <span>href</span>=<span>""</span>&gt;</span>{{ post.title }}<span>&lt;/<span>a</span>&gt;</span><span>&lt;/<span>h2</span>&gt;</span>
             <span>&lt;<span>p</span>&gt;</span>{{ post.text|linebreaksbr }}<span>&lt;/<span>p</span>&gt;</span>
         <span>&lt;/<span>article</span>&gt;</span>
         </code></pre>
-    <p class="calibre6">
-     We will now add declaration blocks to different selectors. Selectors
+        <p class="calibre6">
+          We will now add declaration blocks to different selectors. Selectors
           starting with
-     <code class="calibre11">
-      .
-     </code>
-     relate to classes. There are many great tutorials and explanations
+          <code class="calibre11"> . </code>
+          relate to classes. There are many great tutorials and explanations
           about CSS on the Web that can help you understand the following code.
           For now, copy and paste it into your
-     <code class="calibre11">
-      blog/static/css/blog.css
-     </code>
-     file:
-    </p>
-    <p class="calibre6">
-    </p>
-    <p class="calibre6">
-     blog/static/css/blog.css
-    </p>
-    <p class="calibre6">
-    </p>
-    <pre class="calibre13"><code class="calibre11"><span>.page-header</span> {
+          <code class="calibre11"> blog/static/css/blog.css </code>
+          file:
+        </p>
+        <p class="calibre6"></p>
+        <p class="calibre6">blog/static/css/blog.css</p>
+        <p class="calibre6"></p>
+        <pre
+          class="calibre13"
+        ><code class="calibre11"><span>.page-header</span> {
             <span>background-color</span>: <span>#C25100</span>;
             <span>margin-top</span>: <span>0</span>;
             <span>margin-bottom</span>: <span>40px</span>;
@@ -645,18 +510,14 @@
             <span>background-color</span>: <span>#C25100</span>;
         }
         </code></pre>
-    <p class="calibre6">
-     Then surround the HTML code which displays the posts with declarations
+        <p class="calibre6">
+          Then surround the HTML code which displays the posts with declarations
           of classes. Replace this:
-    </p>
-    <p class="calibre6">
-    </p>
-    <p class="calibre6">
-     blog/templates/blog/post_list.html
-    </p>
-    <p class="calibre6">
-    </p>
-    <pre class="calibre13"><code class="calibre11">{% for post in posts %}
+        </p>
+        <p class="calibre6"></p>
+        <p class="calibre6">blog/templates/blog/post_list.html</p>
+        <p class="calibre6"></p>
+        <pre class="calibre13"><code class="calibre11">{% for post in posts %}
             <span>&lt;<span>article</span> <span>class</span>=<span>"post"</span>&gt;</span>
                 <span>&lt;<span>time</span>&gt;</span>published: {{ post.published_date }}<span>&lt;/<span>time</span>&gt;</span>
                 <span>&lt;<span>h2</span>&gt;</span><span>&lt;<span>a</span> <span>href</span>=<span>""</span>&gt;</span>{{ post.title }}<span>&lt;/<span>a</span>&gt;</span><span>&lt;/<span>h2</span>&gt;</span>
@@ -664,21 +525,17 @@
             <span>&lt;/<span>article</span>&gt;</span>
         {% endfor %}
         </code></pre>
-    <p class="calibre6">
-     in the
-     <code class="calibre11">
-      blog/templates/blog/post_list.html
-     </code>
-     with this:
-    </p>
-    <p class="calibre6">
-    </p>
-    <p class="calibre6">
-     blog/templates/blog/post_list.html
-    </p>
-    <p class="calibre6">
-    </p>
-    <pre class="calibre13"><code class="calibre11"><span>&lt;<span>main</span> <span>class</span>=<span>"container"</span>&gt;</span>
+        <p class="calibre6">
+          in the
+          <code class="calibre11"> blog/templates/blog/post_list.html </code>
+          with this:
+        </p>
+        <p class="calibre6"></p>
+        <p class="calibre6">blog/templates/blog/post_list.html</p>
+        <p class="calibre6"></p>
+        <pre
+          class="calibre13"
+        ><code class="calibre11"><span>&lt;<span>main</span> <span>class</span>=<span>"container"</span>&gt;</span>
             <span>&lt;<span>div</span> <span>class</span>=<span>"row"</span>&gt;</span>
                 <span>&lt;<span>div</span> <span>class</span>=<span>"col"</span>&gt;</span>
                     {% for post in posts %}
@@ -694,47 +551,41 @@
             <span>&lt;/<span>div</span>&gt;</span>
         <span>&lt;/<span>main</span>&gt;</span>
         </code></pre>
-    <p class="calibre6">
-     Save those files and refresh your website.
-    </p>
-    <p class="calibre6">
-     <img alt="Figure 14.4" class="calibre8" src="content/final.png"/>
-    </p>
-    <p class="calibre6">
-     Woohoo! Looks awesome, right? Look at the code we just pasted to find
+        <p class="calibre6">Save those files and refresh your website.</p>
+        <p class="calibre6">
+          <img alt="Figure 14.4" class="calibre8" src="content/final.png" />
+        </p>
+        <p class="calibre6">
+          Woohoo! Looks awesome, right? Look at the code we just pasted to find
           the places where we added classes in the HTML and used them in the
           CSS. Where would you make the change if you wanted the date to be
           turquoise?
-    </p>
-    <p class="calibre6">
-     Don't be afraid to tinker with this CSS a little bit and try to change
+        </p>
+        <p class="calibre6">
+          Don't be afraid to tinker with this CSS a little bit and try to change
           some things. Playing with the CSS can help you understand what the
           different things are doing. If you break something, don't worry – you
           can always undo it!
-    </p>
-    <p class="calibre6">
-     We really recommend taking the free online courses "Basic HTML &amp;
+        </p>
+        <p class="calibre6">
+          We really recommend taking the free online courses "Basic HTML &amp;
           HTML5" and "Basic CSS" on
-     <a href="https://learn.freecodecamp.org/" target="_blank">
-      freeCodeCamp
-     </a>
-     . They can help you learn all about making your websites prettier with
+          <a href="https://learn.freecodecamp.org/" target="_blank">
+            freeCodeCamp
+          </a>
+          . They can help you learn all about making your websites prettier with
           HTML and CSS.
-    </p>
-    <p class="calibre6">
-     Ready for the next chapter?! :)
-    </p>
-   </div>
-  </main>
-  <footer class="book-footer">
-   <p>
-    Generated from the original EPUB. Content © respective authors under CC
+        </p>
+        <p class="calibre6">Ready for the next chapter?! :)</p>
+      </div>
+    </main>
+    <footer class="book-footer">
+      <p>
+        Generated from the original EPUB. Content © respective authors under CC
         BY-SA 4.0.
-   </p>
-  </footer>
-  <script defer="" src="toc.js">
-  </script>
-  <script defer="" src="nav.js">
-  </script>
- </body>
+      </p>
+    </footer>
+    <script defer="" src="toc.js"></script>
+    <script defer="" src="nav.js"></script>
+  </body>
 </html>

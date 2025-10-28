@@ -76,7 +76,11 @@
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
     const handleScroll = () => {
-      if (window.scrollY > 280) {
+      const doc = document.documentElement;
+      const scrollTop = doc.scrollTop || window.pageYOffset;
+      const scrollHeight = doc.scrollHeight - doc.clientHeight;
+      const nearBottom = scrollHeight > 0 && scrollTop >= scrollHeight - 32;
+      if (scrollTop > 80 || nearBottom) {
         button.classList.add('visible');
       } else {
         button.classList.remove('visible');
@@ -264,9 +268,14 @@
     });
   }
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', attachNav);
-  } else {
+  function init() {
     attachNav();
+    attachBackToTop();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
   }
 })();
